@@ -1,0 +1,26 @@
+{
+  "name": "digitalhub",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Site for the Trinity Mirror Digital Hub site.",
+  "author": "Trinity Mirror Creative",
+  "contributors": [
+    {
+      "name": "Michael Bragg",
+      "email": "michael@michaelbragg.net"
+    }
+  ],
+  "license": "MIT",
+  "scripts": {
+    "dev": "grunt dev",
+    "test": "grunt test --verbose"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-less": "0.7.x",
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-contrib-jshint": "0.6.x",
+    "grunt-contrib-csslint": "0.1.x",
+    "grunt-htmlhint": "0.4.x"
+  }
+}

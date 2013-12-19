@@ -6,7 +6,19 @@ The Digital Hub website is a central repository for showing customers our full, 
 
 ## Dependencies
 
+- PHP
+- MySQL
+- WordPress
+
 ## Instructions
+
+### Install
+
+Copy the `./_scripts/local-config.sample.php` file to the `digitalhub` folder and rename it `local-config.php`. Do the same with the `./_scripts/wp-config.sample.php` file renaming it to `wp-config.php`.
+
+Fill in the `local-config.php` with your local MySQL database details.
+
+Navigate to the home page, eg `http://localhost/digitalhub/`, and follow the default WordPress instructions.
 
 ## Documentation
 
