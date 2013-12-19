@@ -1,0 +1,10 @@
+#  NodeJS
+
+node_modules/
+npm_logs.txt
+
+#  WordPress
+
+/local-config.php
+/wp-config.php
+/shared
