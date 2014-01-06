@@ -87,6 +87,8 @@ class Adverts {
     // Define custom template order.
     add_action("template_redirect", array( $this, 'adverts_template_redirect' ) );
 
+    add_action('template_redirect', array( $this, 'taxonomy_template_redirect' ) );
+
   }
 
   /**
@@ -439,6 +441,50 @@ class Adverts {
             exit;
         }
 
+      }
+
+    }
+
+  }
+
+  /**
+   * Control which template file is used for taxonomies
+   *
+   * @since    0.1.0
+   */
+  public function taxonomy_template_redirect() {
+
+    global $wp;
+    global $wp_query;
+    $_taxonomy = get_query_var( 'taxonomy' );
+
+    // Check that we are view a taxonomy of 'packages'
+    if( is_tax() ) {
+
+      // Use term specific taxonomy theme template
+      if( locate_template( 'taxonomy-' . $_taxonomy . '-' . $wp->query_vars[$_taxonomy] . '.php' )) {
+        include(TEMPLATEPATH . '/taxonomy-'. $_taxonomy . '-' . $wp->query_vars[$_taxonomy] .'.php');
+        exit;
+
+      // Use taxonomy specific theme template
+      } elseif( locate_template('taxonomy-' . $_taxonomy . '.php') != '' ) {
+        include( TEMPLATEPATH . '/taxonomy-' . $_taxonomy . '.php' );
+        exit;
+
+      // Use default taxonomy theme template
+      } elseif( locate_template('taxonomy' . '.php') != '' ) {
+        include( TEMPLATEPATH . '/taxonomy' . '.php' );
+        exit;
+
+      // Use taxonomy specific plugin template
+      } elseif( is_file( plugin_dir_path( __FILE__ ) . 'views/taxonomy-' . $_taxonomy . '.php') ) {
+        include(plugin_dir_path( __FILE__ ) . 'views/taxonomy-' . $_taxonomy . '.php');
+        exit;
+
+      // Use generic taxonomy plugin template
+      } elseif( is_file( plugin_dir_path( __FILE__ ) . 'views/taxonomy' . '.php' ) ) {
+        include(plugin_dir_path( __FILE__ ) . 'views/taxonomy' . '.php');
+        exit;
       }
 
     }
