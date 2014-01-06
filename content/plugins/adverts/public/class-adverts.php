@@ -421,10 +421,10 @@ class Adverts {
     global $wp;
     global $wp_query;
 
-    if( !empty( $wp->query_vars['post_type'] ) && $wp->query_vars['post_type'] == 'adverts') {
+    if( !empty( $wp->query_vars['post_type'] ) && $wp->query_vars['post_type'] == 'adverts' ) {
       // Archive Views
       if( is_post_type_archive() ){
-        if(locate_template('archive-'.'adverts'.'.php') != '') {
+        if(locate_template( 'archive-' . 'adverts' . '.php') != '' ) {
           include(TEMPLATEPATH . "/archive-".'adverts'.".php");
             exit;
         } elseif(is_file( plugin_dir_path( __FILE__ ) . 'views/archive-' . $wp->query_vars['post_type'] . '.php') ) {
@@ -433,10 +433,10 @@ class Adverts {
         }
 
       } elseif (is_single()) {
-        if(locate_template('single-'.'adverts'.'.php') != '') {
-          include(TEMPLATEPATH . "/single-".'adverts'.".php");
+        if(locate_template( 'single-'.'adverts' . '.php') != '' ) {
+          include( TEMPLATEPATH . '/single-' . 'adverts'. '.php' );
             exit;
-        } elseif(is_file( plugin_dir_path( __FILE__ ) . 'views/single-' . $wp->query_vars['post_type'] . '.php') ) {
+        } elseif( is_file( plugin_dir_path( __FILE__ ) . 'views/single-' . $wp->query_vars['post_type'] . '.php' ) ) {
           include(plugin_dir_path( __FILE__ ) . 'views/single-' . $wp->query_vars['post_type'] . '.php');
             exit;
         }
@@ -463,7 +463,7 @@ class Adverts {
 
       // Use term specific taxonomy theme template
       if( locate_template( 'taxonomy-' . $_taxonomy . '-' . $wp->query_vars[$_taxonomy] . '.php' )) {
-        include(TEMPLATEPATH . '/taxonomy-'. $_taxonomy . '-' . $wp->query_vars[$_taxonomy] .'.php');
+        include(TEMPLATEPATH . '/taxonomy-' . $_taxonomy . '-' . $wp->query_vars[$_taxonomy] .'.php');
         exit;
 
       // Use taxonomy specific theme template
