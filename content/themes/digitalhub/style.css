@@ -16,10 +16,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
 
  DigitalHub is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 
-Resetting and rebuilding styles have been helped along thanks to the fine work of
-Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
-along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
-and Blueprint http://www.blueprintcss.org/
 */
 
 /**
@@ -32,6 +28,7 @@ and Blueprint http://www.blueprintcss.org/
  *   1.4 - List
  *   1.5 - Table
  *   1.6 - Form
+ * 98.0 - Grid
  * 99.0 - Core
  *
  */
@@ -865,6 +862,52 @@ object {
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
 .infinity-end.neverending .site-footer {
   display: block;
+}
+
+/**
+ * 98.0 Grid
+ */
+
+/**
+ * This class is applied to all parent elements to be fitted
+ * to the grid.
+ */
+.grid {
+  float: left;
+  display: block;
+  padding-left: 14.5px;
+  padding-right: 14.5px;
+}
+
+/**
+ * Adds a line the height of the element on the left side
+ */
+.grid__seperator {
+  border-left: 1px solid #666;
+}
+
+/**
+ * Small Screen Grid
+ * In a mobile first fashion.
+ */
+
+.ss__1,
+.ss__2,
+.ss__3,
+.ss__4 {
+  width: 25.0%;
+}
+
+.ss__1-2,
+.ss__3-4 {
+  width: 50%;
+}
+.ss__1-3,
+.ss__2-4 {
+  width: 75%;
+}
+.ss__1-4 {
+  width: 100%;
 }
 
 /**
