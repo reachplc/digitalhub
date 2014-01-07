@@ -910,6 +910,48 @@ object {
   width: 100%;
 }
 
+/*
+ * Medium Screen
+ */
+@media screen and (min-width: 481px) {
+  .ms__1,
+  .ms__2,
+  .ms__3,
+  .ms__4,
+  .ms__5,
+  .ms__6 {
+    width: 16.6666666667%;
+  }
+
+  .ms__1-2,
+  .ms__2-3,
+  .ms__3-4,
+  .ms__4-5,
+  .ms__5-6 {
+    width: 33.3333333333%;
+  }
+
+  .ms__1-3,
+  .ms__4-6 {
+    width: 50%;
+  }
+  .ms__1-4,
+  .ms__2-5,
+  .ms__3-6 {
+    width: 66.6666666667%;
+  }
+
+  .ms__1-5,
+  .ms__2-6 {
+    width: 83.3333333334%;
+  }
+
+  .ms__1-6 {
+    width: 100%;
+  }
+
+}
+
 /**
  * 99.0 Core
  * Placed at the end as most of these classes will overwrite others.
