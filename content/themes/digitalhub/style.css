@@ -914,6 +914,7 @@ object {
  * Medium Screen
  */
 @media screen and (min-width: 481px) {
+
   .ms__1,
   .ms__2,
   .ms__3,
@@ -956,6 +957,7 @@ object {
  * Large Screen
  */
 @media screen and (min-width: 769px) {
+
   .ls__1,
   .ls__2,
   .ls__3,
@@ -1002,7 +1004,7 @@ object {
   .ls__3-6,
   .ls__4-7,
   .ls__5-8,
-  .ls__6-9
+  .ls__6-9,
   .ls__7-10,
   .ls__8-11,
   .ls__9-12 {
@@ -1014,7 +1016,7 @@ object {
   .ls__3-8,
   .ls__4-9,
   .ls__5-10,
-  .ls__6-12,{
+  .ls__6-12 {
     width: 50%;
   }
 
@@ -1056,12 +1058,13 @@ object {
   .ls__1-12 {
     width: 100%;
   }
+
 }
 
 /*
  * eXtra Large Screen
  */
-@media screen and (min-width: 1025px){
+@media screen and (min-width: 1025px) {
 
   .xls__1,
   .xls__2,
