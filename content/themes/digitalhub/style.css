@@ -107,6 +107,8 @@ textarea {
 body {
   font-size: 100%;
   line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -1367,3 +1369,159 @@ object {
 .site-footer:after {
   clear: both;
 }
+
+/**
+ * These are the sliding Menu styles
+ */
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.content {
+  //  Move the content from under the fixed header
+  padding-top: 1em;
+}
+
+.header__main,
+.footer__main {
+  position: fixed;
+  z-index: 5;
+}
+
+.header__main {
+  width: 100%;
+  //  Proves the header is shrinking
+  border-right: 1em solid lime;
+}
+
+.footer__main {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* =styles/_navigation.less
+----------------------------------------------- */
+
+.nav-main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  //  Allows the footer to show through
+  bottom: 1em;
+  width: 34%;
+  background: #3a383a;
+  box-shadow: inset 4px 0 4px 0 rgba(0, 0, 0, 0.2);
+  color: #717275;
+}
+
+.nav-main a {
+  color: #717275;
+}
+
+.nav-main a:hover {
+  color: #2cc2e4;
+}
+
+.nav-main ul {
+  padding: 20px;
+}
+
+.nav-main ul li {
+  list-style: none;
+}
+
+/* =styles/_nav-main.less
+ *  extends jquery.nav-main.js
+----------------------------------------------- */
+
+@nav-main__transition-type: 0.3s ease;
+
+.nav-main__content {
+  width: 66%;
+  -webkit-transition: width @nav-main__transition-type;
+  -moz-transition: width @nav-main__transition-type;
+  -o-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.nav-main__nav {
+  width: 34%;
+  -webkit-transition: right @nav-main__transition-type;
+  -moz-transition: right @nav-main__transition-type;
+  -o-transition: right @nav-main__transition-type;
+  transition: right @nav-main__transition-type;
+}
+
+.nav-main__header {
+  width: 66%;
+  -webkit-transition: width @nav-main__transition-type;
+  -moz-transition: width @nav-main__transition-type;
+  -o-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.is-expand {
+  width: 100%;
+  -webkit-transition: width @nav-main__transition-type;
+  -moz-transition: width @nav-main__transition-type;
+  -o-transition: width @nav-main__transition-type;
+  transition: width @nav-main__transition-type;
+}
+
+.is-nav-inactive {
+  right: -34%;
+  -webkit-transition: right @nav-main__transition-type;
+  -moz-transition: right @nav-main__transition-type;
+  -o-transition: right @nav-main__transition-type;
+  transition: right @nav-main__transition-type;
+}
+
+/*  Core  */
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.cf:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/**
+ * Header Styles
+ */
+
+.site-branding {
+  padding: 5px;
+  background: url(images/black.gif) repeat-x 0 -140px; transparent;
+ }
+
+.site-branding h1 {
+  display: inline;
+}
+
+ .site-branding button {
+  float: right;
+ }
+  

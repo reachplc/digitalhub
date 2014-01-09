@@ -10,6 +10,10 @@
 
 	</div><!-- #content -->
 
+</div><!-- #end of container -->
+
+</div><!-- #end of wrapper -->
+
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'digitalhub_credits' ); ?>
@@ -19,7 +23,8 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-
+<script src="js/menu-slide.js">
+<script src="js/jquery.toggle-nav.js">
 <?php wp_footer(); ?>
 
 </body>
