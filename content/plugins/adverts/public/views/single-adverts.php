@@ -13,8 +13,6 @@
  */
 ?>
 
-<div>Plugin Template</div>
-
 <?php
 get_header(); ?>
 
