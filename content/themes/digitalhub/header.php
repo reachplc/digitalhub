@@ -9,8 +9,6 @@
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<script type='text/javascript' src='http://omc.soapboxserver.co.uk/wp-includes/js/jquery/jquery.js?ver=1.10.2'></script>
-<script type='text/javascript' src='http://omc.soapboxserver.co.uk/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.2.1'></script>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title><?php wp_title( '|', true, 'right' ); ?></title>

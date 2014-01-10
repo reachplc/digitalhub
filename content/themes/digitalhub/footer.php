@@ -23,8 +23,6 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
-<script src="js/menu-slide.js">
-<script src="js/jquery.toggle-nav.js">
 <?php wp_footer(); ?>
 
 </body>
