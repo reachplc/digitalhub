@@ -17,8 +17,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'digitalhub_credits' ); ?>
-			
-			Copyright © Trinity Mirror plc 2014 | Trinity Mirror Creative
+			<div id="tm-logo"></div>
+			<div id="copy-credit">Copyright © Trinity Mirror plc 2014 <a href="#" id="credit"> Trinity Mirror Creative</a></div>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

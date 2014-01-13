@@ -31,16 +31,27 @@
 
 
 		<?php do_action( 'before' ); ?>
-		<div id="bg-img">
+		<div id="bgimg">
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/content/themes/digitalhub/images/logo.png"></a></h1>
-				<button id="js-nav-button">Navicon</button>
-			</div>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
+				<button id="js-nav-button">Menu</button>
+				<a href="http://www.facebook.com"><div id="facebook"></div></a>
+				<a href="http://www.twitter.com"><div id="twitter"></div></a>
+				<div id="search">
+					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
+					<div><input id="s" class="text" type="text" name="s" value="Search"  onclick='javascript: this.value = ""'/>
+					<input class="submit button" type="submit" name="submit" value=""/>
+					</div>
+				</div>
+				</form>
+			
+			</div><!-- end of site-branding-->
 
 
 	</header><!-- #s-header -->
-</div><!-- end of #bg-img -->
+	<div id="strip"></div>
+</div><!-- end of #bgimg -->
 
 	<div id="content" class="site-content nav-main__content">

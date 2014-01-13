@@ -105,7 +105,8 @@ textarea {
 }
 
 body {
-  font-size: 100%;
+  font-size: 13px;
+  font-family: "Open Sans", arial, sans-serif;
   line-height: 1.5;
   margin: 0;
   padding: 0;
@@ -1433,6 +1434,17 @@ object {
   list-style: none;
 }
 
+#js-nav-button {
+  background: url(images/new_sprite.png) no-repeat -225px -336px transparent;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 17px;
+  float: right;
+  padding-right: 38px;
+  height: 20px;
+}
+
 /* =styles/_nav-main.less
  *  extends jquery.nav-main.js
 ----------------------------------------------- */
@@ -1515,21 +1527,72 @@ object {
 .site-branding {
   padding: 5px;
   background: url(images/black.gif) repeat-x 0 -140px; transparent;
+  min-height: 80px;
  }
 
 .site-branding h1 {
   display: inline;
+  float: left;
 }
 
-.site-branding button {
-float: right;
+.site-title {
+  background: url(images/new_sprite.png) no-repeat 0 0 transparent;
+  width: 221px;
+  height: 62px;
+}
+
+#facebook {
+  width: 25px;
+  height: 25px;
+  background: url(images/new_sprite.png) no-repeat -275px -126px transparent;
+  display: inline;
+  margin-top: 15px;
+  float: right;
+  margin-right: 8px;
+}
+
+#twitter {
+  width: 25px;
+  height: 25px;
+  background: url(images/new_sprite.png) no-repeat -275px -90px transparent;
+  display: inline;
+  margin-top: 15px;
+  float: right;
+  margin-right: 8px;
+}
+
+#strip {
+  background: url(images/arrow-strip.gif) no-repeat center bottom transparent;
+  height: 300px;
+}
+
+#search {
+  display: inline;
+  float: right;
+  margin-top: 15px;
+  background: #363737;
+  padding: 2px;
+  margin-right: 20px;
+}
+
+#search input {
+  background: #363737;
+  color: #666666;
+  border: 0;
+}
+
+#search .submit {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  background: url(images/new_sprite.png) no-repeat 0 -123px transparent;
 }
 
 /**
 * Random Background Image
 */
 
-#bg-img {
+#bgimg {
   min-height: 300px;
   background-size: cover;
   width: auto;
@@ -1547,4 +1610,23 @@ float: right;
   
 .site-info {
   padding: 17px 0 0 0;
+}
+
+#copy-credit {
+  float: right;
+}
+
+#tm-logo {
+  background: url(images/new_sprite.png) no-repeat 0 -539px transparent;
+  height: 24px;
+  width: 200px;
+  float: left;
+  display: inline;
+}
+
+#credit {
+  border-left: #2c2c2c 1px solid;
+  padding: 0 0 0 10px;
+  margin: 0 0 0 10px;
+  color: #ababab; 
 }
