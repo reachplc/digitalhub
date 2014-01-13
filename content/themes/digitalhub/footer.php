@@ -17,9 +17,8 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<?php do_action( 'digitalhub_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'digitalhub' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'digitalhub' ), 'DigitalHub', '<a href="http://www.trinitymirror.com" rel="designer">Trinity Mirror Creative</a>' ); ?>
+			
+			Copyright © Trinity Mirror plc 2014 | Trinity Mirror Creative
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

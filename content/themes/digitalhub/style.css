@@ -1521,7 +1521,30 @@ object {
   display: inline;
 }
 
- .site-branding button {
-  float: right;
- }
+.site-branding button {
+float: right;
+}
+
+/**
+* Random Background Image
+*/
+
+#bg-img {
+  min-height: 300px;
+  background-size: cover;
+  width: auto;
+}
+
+/**
+ * Footer Styles
+ */
+
+#colophon {
+  height: 55px;
+  background: #171717;
+  color: #ababab;
+}
   
+.site-info {
+  padding: 17px 0 0 0;
+}

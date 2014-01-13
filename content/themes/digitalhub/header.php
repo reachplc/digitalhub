@@ -31,6 +31,7 @@
 
 
 		<?php do_action( 'before' ); ?>
+		<div id="bg-img">
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
 			<div class="site-branding">
@@ -40,5 +41,6 @@
 
 
 	</header><!-- #s-header -->
+</div><!-- end of #bg-img -->
 
 	<div id="content" class="site-content nav-main__content">
