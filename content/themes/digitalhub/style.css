@@ -876,7 +876,7 @@ textarea {
   top: 0;
   right: 0;
   /*  Allows the footer to show through */
-  bottom: 1em;
+  bottom: 0;
   width: 34%;
   background: #3a383a;
   box-shadow: inset 4px 0 4px 0 rgba(0, 0, 0, 0.2);
