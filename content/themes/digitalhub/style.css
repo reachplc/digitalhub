@@ -28,6 +28,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   1.4 - List
  *   1.5 - Table
  *   1.6 - Form
+ * 2.0 - Objects
+ *   2.1 - Button
+ * 3.0 - Styles
+ *       - Button
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -101,15 +105,16 @@ button,
 input,
 select,
 textarea {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-size: 13px;
   font-family: "Open Sans", arial, sans-serif;
   line-height: 1.5;
-  margin: 0;
-  padding: 0;
+  color: rgb(37,37,37);
 }
 
 /**
@@ -131,18 +136,18 @@ a:focus {
 
 a:focus:hover {
   outline: 0;
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 a:focus:active {
   outline: 0;
-  color: blue;
+  color: rgb(27,196,229);
 }
 
 a:link,
 a:visited,
 a:active {
-  color: blue;
+  color: rgb(27,196,229);
   text-decoration: none;
   vertical-align: baseline;
 }
@@ -162,7 +167,7 @@ a:active {
 
 a:hover,
 a:focus {
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 /**
@@ -173,6 +178,9 @@ a:focus {
 h1, .alpha {
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid rgb(220,220,220);
+  font-size: 1.875em;
+  font-weight: normal;
 }
 
 h2, .beta {
@@ -207,12 +215,16 @@ h6, .zeta {
 
 .mega {
   margin: 0;
-  padding: 0;
+  padding: 0.5em 1em;
+  background: rgb(255,255,255);
+  text-transform: uppercase;
 }
 
 .kilo {
   margin: 0;
   padding: 0;
+  background: rgb(18,176,217);
+  color: rgb(255,255,255);
 }
 
 /**
@@ -239,7 +251,7 @@ p {
 }
 
 abbr[title] {
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted rgb(27,196,229);
 }
 
 @media print {
@@ -280,8 +292,8 @@ dfn {
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: rgb(18,217,165);
+  color: rgb(37,37,37);
 }
 
 /*
@@ -333,18 +345,20 @@ q:after {
 }
 
 blockquote {
-  font-weight: bold;
-  color: #333;
+  padding-left: 1em;
+  border-left: 0.2em solid rgb(27,196,229);
+  color: rgb(37,37,37);
 }
 
-blockquote .p {
+  blockquote p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+  }
 
-    }
-
-blockquote cite {
-      display: block;
-
-    }
+  blockquote cite {
+    display: block;
+  }
 
 cite {
   font-weight: normal;
@@ -640,6 +654,131 @@ textarea {
   vertical-align: top;  /* 2. */
   resize: vertical;
 }
+
+/**
+ * 2.0 Objects
+ */
+
+/**
+ * 2.1 Button
+ */
+
+.btn {
+  display: inline-block;
+  padding: 0.5em;
+  border: none;
+  line-height: 1em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  text-decoration: none;
+}
+
+.btn--disabled {
+  cursor: default;
+}
+
+/*  Button Large */
+
+.btn__large {
+  padding: 0.75em;
+  line-height: 1.5em;
+}
+
+/*  Button Group */
+
+.btn__group {
+  /* Aligns the button to the center of the `div` */
+  text-align:center;
+}
+
+  .btn__group .btn {
+    margin-left: 2em;
+  }
+
+  .btn__group .btn:first-child {
+    margin-left: 0;
+  }
+
+/**
+ * 3.0 Styles
+ */
+
+/**
+ *    Button
+ */
+
+/*  styles/_button.less
+ *
+ */
+
+/* Primary Button */
+
+.btn {
+  background-color: #666;
+  background-repeat: repeat-x;
+  color: rgb(255,255,255);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+  .btn:link,
+  .btn:visited,
+  .btn:active,
+  input.btn {
+    color: rgb(255,255,255);
+  }
+
+  .btn:hover,
+  .btn:focus,
+  input.btn:hover,
+  input.btn:focus {
+    background-color: rgb(37,37,37);
+  }
+
+.btn--primary {
+  background-color: rgb(27,196,229);
+}
+
+  .btn--primary:hover,
+  .btn--primary:focus,
+  input.btn--primary:hover,
+  input.btn--primary:focus {
+    background-color: rgb(237,20,91);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+/*  Secondary Button */
+
+.btn--secondary {
+  background-color: rgb(18,217,165);
+}
+
+  .btn--secondary:hover,
+  .btn--secondary:focus,
+  input.btn--secondary:hover,
+  input.btn--secondary:focus {
+    background-color: rgb(27,196,229);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+  .btn__large:hover,
+  .btn__large:focus {
+    background-position: 0 -2em;
+  }
 
 /* General */
 
@@ -1375,13 +1514,8 @@ object {
  * These are the sliding Menu styles
  */
 
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
 .content {
-  //  Move the content from under the fixed header
+  /*  Move the content from under the fixed header */
   padding-top: 1em;
 }
 
@@ -1393,7 +1527,7 @@ object {
 
 .header__main {
   width: 100%;
-  //  Proves the header is shrinking
+  /*  Proves the header is shrinking */
   border-right: 1em solid lime;
 }
 
@@ -1410,7 +1544,7 @@ object {
   position: fixed;
   top: 0;
   right: 0;
-  //  Allows the footer to show through
+  /*  Allows the footer to show through */
   bottom: 1em;
   width: 34%;
   background: #3a383a;
@@ -1449,46 +1583,44 @@ object {
  *  extends jquery.nav-main.js
 ----------------------------------------------- */
 
-@nav-main__transition-type: 0.3s ease;
-
 .nav-main__content {
   width: 66%;
-  -webkit-transition: width @nav-main__transition-type;
-  -moz-transition: width @nav-main__transition-type;
-  -o-transition: width @nav-main__transition-type;
-  transition: width @nav-main__transition-type;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .nav-main__nav {
   width: 34%;
-  -webkit-transition: right @nav-main__transition-type;
-  -moz-transition: right @nav-main__transition-type;
-  -o-transition: right @nav-main__transition-type;
-  transition: right @nav-main__transition-type;
+  -webkit-transition: right 0.3s ease;
+  -moz-transition: right 0.3s ease;
+  -o-transition: right 0.3s ease;
+  transition: right 0.3s ease;
 }
 
 .nav-main__header {
   width: 66%;
-  -webkit-transition: width @nav-main__transition-type;
-  -moz-transition: width @nav-main__transition-type;
-  -o-transition: width @nav-main__transition-type;
-  transition: width @nav-main__transition-type;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .is-expand {
   width: 100%;
-  -webkit-transition: width @nav-main__transition-type;
-  -moz-transition: width @nav-main__transition-type;
-  -o-transition: width @nav-main__transition-type;
-  transition: width @nav-main__transition-type;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease;
 }
 
 .is-nav-inactive {
   right: -34%;
-  -webkit-transition: right @nav-main__transition-type;
-  -moz-transition: right @nav-main__transition-type;
-  -o-transition: right @nav-main__transition-type;
-  transition: right @nav-main__transition-type;
+  -webkit-transition: right 0.3s ease;
+  -moz-transition: right 0.3s ease;
+  -o-transition: right 0.3s ease;
+  transition: right 0.3s ease;
 }
 
 /*  Core  */
@@ -1599,15 +1731,15 @@ object {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: #666666;  
+   color: #666666;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: #666666;  
+   color: #666666;
 }
 
-:-ms-input-placeholder {  
-   color: #666666;  
+:-ms-input-placeholder {
+   color: #666666;
 }
 
 /**
@@ -1629,7 +1761,7 @@ object {
   background: #171717;
   color: #ababab;
 }
-  
+
 .site-info {
   padding: 17px 0 0 0;
 }
@@ -1650,5 +1782,5 @@ object {
   border-left: #2c2c2c 1px solid;
   padding: 0 0 0 10px;
   margin: 0 0 0 10px;
-  color: #ababab; 
+  color: #ababab;
 }
