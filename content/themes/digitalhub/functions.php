@@ -43,7 +43,11 @@ function digitalhub_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'digitalhub' ),
+		'secondary' => __( 'second-menu', 'digitalhub' ),
 	) );
+
+	// Add support for extra menu.
+	add_theme_support('menus');
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );

@@ -206,13 +206,26 @@ h6, .zeta {
 }
 
 .mega {
-  margin: 0;
-  padding: 0;
+  padding: 5px 15px;
+  margin-top: 100px;
+  text-align: right;
+  background: #fff;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 300%;
+  margin-right: 20px;
+  display: inline-block;
 }
 
 .kilo {
-  margin: 0;
-  padding: 0;
+  padding: 5px 50px 5px 15px;
+  text-align: right;
+  background: url(images/new_sprite.png) no-repeat 505px -320px #2ac2e3;
+  font-weight: 200;
+  color: #fff;
+  font-size: 200%;
+  margin-right: 20px;
+  display: inline-block;
 }
 
 /**
@@ -1419,7 +1432,7 @@ object {
 }
 
 .nav-main a {
-  color: #717275;
+  color: #909090;
 }
 
 .nav-main a:hover {
@@ -1428,6 +1441,24 @@ object {
 
 .nav-main ul {
   padding: 20px;
+  font-size: 180%;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.nav-main ul.sub-menu {
+  padding: 0 0 20px 0;
+  font-size: 60%;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.sub-menu li {
+  margin: 6px 0;
+}
+
+.sub-menu li a{
+    color: #717275;
 }
 
 .nav-main ul li {
@@ -1439,10 +1470,11 @@ object {
   border: none;
   color: #fff;
   text-transform: uppercase;
-  margin-top: 17px;
+  margin: 17px 0 0 ;
   float: right;
-  padding-right: 38px;
+  padding: 0 38px 0 0;
   height: 20px;
+  width: auto;
 }
 
 /* =styles/_nav-main.less
@@ -1461,6 +1493,7 @@ object {
 
 .nav-main__nav {
   width: 34%;
+  height: 100%;
   -webkit-transition: right @nav-main__transition-type;
   -moz-transition: right @nav-main__transition-type;
   -o-transition: right @nav-main__transition-type;
@@ -1530,12 +1563,6 @@ object {
   min-height: 80px;
  }
 
- .home .site-branding {
-  padding: 5px;
-  background: url(images/gradient.png) repeat-x 0 0 transparent;
-  min-height: 100px;
- }
-
 .site-branding h1 {
   display: inline;
   float: left;
@@ -1569,7 +1596,7 @@ object {
 
 #strip {
   background: url(images/arrow-strip.gif) no-repeat center bottom transparent;
-  height: 300px;
+  height: 150px;
 }
 
 #search {
@@ -1610,16 +1637,79 @@ object {
    color: #666666;  
 }
 
+#titles {
+  text-align: right;
+}
+
 /**
 * Random Background Image
 */
 
 #bgimg {
-  min-height: 300px;
+  min-height: 350px;
   background-size: cover;
   width: auto;
 }
 
+/**
+ * Second Nav Styles
+ */
+
+ .sf-menu ul {
+  margin: 0px;
+  padding-top: 100px;
+ }
+
+ .sf-menu li {
+  float: left;
+  list-style: none;
+  padding-right: 40px;
+ }
+
+
+/**
+ * Button Styles
+ */
+
+ button {
+  border: 0;
+  background: url(images/new_sprite.png) no-repeat 180px -84px #2ac2e3;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 25px 5px 5px;
+  width: 200px;
+  text-align: left;
+  margin: 10px 0;
+ }
+
+ button.category {
+  background: url(images/new_sprite.png) no-repeat 180px -287px #2ac2e3;
+ }
+
+button.build {
+  background: url(images/new_sprite.png) no-repeat -105px -163px #2ac2e3;
+ }
+
+ button.next {
+  width: 50px;
+  height: 50px;
+  background: url(images/new_sprite.png) no-repeat 18px -215px #2ac2e3;
+ }
+
+ button.prev {
+  width: 50px;
+  height: 50px;
+  background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
+ }
+
+/**
+ *  General Styles
+ */
+
+ h1 {
+  font-weight: 200;
+  border-bottom: 1px solid #bbb;
+   } 
 /**
  * Footer Styles
  */

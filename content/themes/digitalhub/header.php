@@ -44,6 +44,7 @@
 					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
+
 				</div>
 				</form>
 			
@@ -51,7 +52,11 @@
 
 
 	</header><!-- #s-header -->
-	<div id="strip"></div>
+	<div id="titles">
+	<h1 class="mega">Trinity Mirror Digital Hub</h1><br />
+	<h2 class="kilo">Inspiring advertising to maximize impact<div class="arrow"></div></h2>
+</div>
+	<div id="strip"><!--<?php wp_nav_menu( 'sort_column=menu_order&menu_class=sf-menu&theme_location=second-menu' ); ?>--></div>
 </div><!-- end of #bgimg -->
 
 	<div id="content" class="site-content nav-main__content">
