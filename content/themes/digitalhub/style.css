@@ -1527,8 +1527,6 @@ object {
 
 .header__main {
   width: 100%;
-  /*  Proves the header is shrinking */
-  border-right: 1em solid lime;
 }
 
 .footer__main {
