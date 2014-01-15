@@ -107,6 +107,7 @@ textarea {
 body {
   font-size: 100%;
   line-height: 1.5;
+  color: rgb(37,37,37);
 }
 
 /**
@@ -128,18 +129,18 @@ a:focus {
 
 a:focus:hover {
   outline: 0;
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 a:focus:active {
   outline: 0;
-  color: blue;
+  color: rgb(27,196,229);
 }
 
 a:link,
 a:visited,
 a:active {
-  color: blue;
+  color: rgb(27,196,229);
   text-decoration: none;
   vertical-align: baseline;
 }
@@ -159,7 +160,7 @@ a:active {
 
 a:hover,
 a:focus {
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 /**
@@ -243,7 +244,7 @@ p {
 }
 
 abbr[title] {
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted rgb(27,196,229);
 }
 
 @media print {
@@ -284,8 +285,8 @@ dfn {
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: rgb(18,217,165);
+  color: rgb(37,37,37);
 }
 
 /*
@@ -337,18 +338,20 @@ q:after {
 }
 
 blockquote {
-  font-weight: bold;
-  color: #333;
+  padding-left: 1em;
+  border-left: 0.2em solid rgb(27,196,229);
+  color: rgb(37,37,37);
 }
 
-blockquote .p {
+  blockquote p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+  }
 
-    }
-
-blockquote cite {
-      display: block;
-
-    }
+  blockquote cite {
+    display: block;
+  }
 
 cite {
   font-weight: normal;
