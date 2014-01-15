@@ -35,7 +35,7 @@
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"></a></h1>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"></h1></a>
 				<button id="js-nav-button">Menu</button>
 				<a href="http://www.facebook.com"><div id="facebook"></div></a>
 				<a href="http://www.twitter.com"><div id="twitter"></div></a>
