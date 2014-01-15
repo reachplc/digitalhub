@@ -41,7 +41,7 @@
 				<a href="http://www.twitter.com"><div id="twitter"></div></a>
 				<div id="search">
 					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
-					<div><input id="s" class="text" type="text" name="s" value="Search"  onclick='javascript: this.value = ""'/>
+					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
 				</div>

@@ -1526,8 +1526,14 @@ object {
 
 .site-branding {
   padding: 5px;
-  background: url(images/black.gif) repeat-x 0 -140px; transparent;
+  background: url(images/black.gif) repeat-x 0 -140px transparent;
   min-height: 80px;
+ }
+
+ .home .site-branding {
+  padding: 5px;
+  background: url(images/gradient.png) repeat-x 0 0 transparent;
+  min-height: 100px;
  }
 
 .site-branding h1 {
@@ -1586,6 +1592,22 @@ object {
   width: 20px;
   height: 20px;
   background: url(images/new_sprite.png) no-repeat 0 -123px transparent;
+}
+
+::-webkit-input-placeholder {
+   color: #666666;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #666666;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #666666;  
+}
+
+:-ms-input-placeholder {  
+   color: #666666;  
 }
 
 /**
