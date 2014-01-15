@@ -28,6 +28,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   1.4 - List
  *   1.5 - Table
  *   1.6 - Form
+ * 2.0 - Objects
+ *   2.1 - Button
+ * 3.0 - Styles
+ *   3.1 - Header
+ *   3.2 - Hero
+ *   3.3 - Footer
+ *   3.4 - Navigation
+ *   3.5 - Button
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -101,15 +109,16 @@ button,
 input,
 select,
 textarea {
-  font-family: sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   font-size: 13px;
   font-family: "Open Sans", arial, sans-serif;
   line-height: 1.5;
-  margin: 0;
-  padding: 0;
+  color: rgb(37,37,37);
 }
 
 /**
@@ -131,18 +140,18 @@ a:focus {
 
 a:focus:hover {
   outline: 0;
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 a:focus:active {
   outline: 0;
-  color: blue;
+  color: rgb(27,196,229);
 }
 
 a:link,
 a:visited,
 a:active {
-  color: blue;
+  color: rgb(27,196,229);
   text-decoration: none;
   vertical-align: baseline;
 }
@@ -162,7 +171,7 @@ a:active {
 
 a:hover,
 a:focus {
-  color: purple;
+  color: rgb(237,20,91);
 }
 
 /**
@@ -173,6 +182,9 @@ a:focus {
 h1, .alpha {
   margin: 0;
   padding: 0;
+  border-bottom: 1px solid rgb(220,220,220);
+  font-size: 1.875em;
+  font-weight: normal;
 }
 
 h2, .beta {
@@ -206,6 +218,7 @@ h6, .zeta {
 }
 
 .mega {
+<<<<<<< HEAD
   padding: 5px 15px;
   margin-top: 100px;
   text-align: right;
@@ -226,6 +239,19 @@ h6, .zeta {
   font-size: 200%;
   margin-right: 20px;
   display: inline-block;
+=======
+  margin: 0;
+  padding: 0.5em 1em;
+  background: rgb(255,255,255);
+  text-transform: uppercase;
+}
+
+.kilo {
+  margin: 0;
+  padding: 0;
+  background: rgb(18,176,217);
+  color: rgb(255,255,255);
+>>>>>>> a89a79776e04291186684a9f44108b065cb9f464
 }
 
 /**
@@ -252,7 +278,7 @@ p {
 }
 
 abbr[title] {
-    border-bottom: 1px dotted;
+    border-bottom: 1px dotted rgb(27,196,229);
 }
 
 @media print {
@@ -293,8 +319,8 @@ dfn {
  */
 
 mark {
-  background: #ff0;
-  color: #000;
+  background: rgb(18,217,165);
+  color: rgb(37,37,37);
 }
 
 /*
@@ -346,18 +372,20 @@ q:after {
 }
 
 blockquote {
-  font-weight: bold;
-  color: #333;
+  padding-left: 1em;
+  border-left: 0.2em solid rgb(27,196,229);
+  color: rgb(37,37,37);
 }
 
-blockquote .p {
+  blockquote p {
+    font-size: 1.5em;
+    line-height: 1.5em;
+    font-weight: bold;
+  }
 
-    }
-
-blockquote cite {
-      display: block;
-
-    }
+  blockquote cite {
+    display: block;
+  }
 
 cite {
   font-weight: normal;
@@ -654,6 +682,378 @@ textarea {
   resize: vertical;
 }
 
+/**
+ * 2.0 Objects
+ */
+
+/**
+ * 2.1 Button
+ */
+
+.btn {
+  display: inline-block;
+  padding: 0.5em;
+  border: none;
+  line-height: 1em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  text-decoration: none;
+}
+
+.btn--disabled {
+  cursor: default;
+}
+
+/*  Button Large */
+
+.btn__large {
+  padding: 0.75em;
+  line-height: 1.5em;
+}
+
+/*  Button Group */
+
+.btn__group {
+  /* Aligns the button to the center of the `div` */
+  text-align:center;
+}
+
+  .btn__group .btn {
+    margin-left: 2em;
+  }
+
+  .btn__group .btn:first-child {
+    margin-left: 0;
+  }
+
+/**
+ * 3.0 Styles
+ */
+
+/**
+ * 3.1 Header
+ */
+
+.site-branding {
+  padding: 5px;
+  background: url(images/black.gif) repeat-x 0 -140px transparent;
+  min-height: 80px;
+ }
+
+ .home .site-branding {
+  padding: 5px;
+  background: url(images/gradient.png) repeat-x 0 0 transparent;
+  min-height: 100px;
+ }
+
+.site-branding h1 {
+  display: inline;
+  float: left;
+}
+
+.site-title {
+  background: url(images/new_sprite.png) no-repeat 0 0 transparent;
+  width: 221px;
+  height: 62px;
+}
+
+#facebook {
+  width: 25px;
+  height: 25px;
+  background: url(images/new_sprite.png) no-repeat -275px -126px transparent;
+  display: inline;
+  margin-top: 15px;
+  float: right;
+  margin-right: 8px;
+}
+
+#twitter {
+  width: 25px;
+  height: 25px;
+  background: url(images/new_sprite.png) no-repeat -275px -90px transparent;
+  display: inline;
+  margin-top: 15px;
+  float: right;
+  margin-right: 8px;
+}
+
+#strip {
+  background: url(images/arrow-strip.gif) no-repeat center bottom transparent;
+  height: 300px;
+}
+
+#search {
+  display: inline;
+  float: right;
+  margin-top: 15px;
+  background: #363737;
+  padding: 2px;
+  margin-right: 20px;
+}
+
+#search input {
+  background: #363737;
+  color: #666666;
+  border: 0;
+}
+
+#search .submit {
+  border: 0;
+  width: 20px;
+  height: 20px;
+  background: url(images/new_sprite.png) no-repeat 0 -123px transparent;
+}
+
+::-webkit-input-placeholder {
+   color: #666666;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #666666;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #666666;
+}
+
+:-ms-input-placeholder {
+   color: #666666;
+}
+
+/**
+ * 3.2 Hero
+ */
+
+#bgimg {
+  min-height: 300px;
+  background-size: cover;
+  width: auto;
+}
+
+/**
+ * 3.3 Footer
+ */
+
+#colophon {
+  height: 55px;
+  background: #171717;
+  color: #ababab;
+}
+
+.site-info {
+  padding: 17px 0 0 0;
+}
+
+#copy-credit {
+  float: right;
+}
+
+#tm-logo {
+  background: url(images/new_sprite.png) no-repeat 0 -539px transparent;
+  height: 24px;
+  width: 200px;
+  float: left;
+  display: inline;
+}
+
+#credit {
+  border-left: #2c2c2c 1px solid;
+  padding: 0 0 0 10px;
+  margin: 0 0 0 10px;
+  color: #ababab;
+}
+
+/**
+ * 3.4 Navigation
+ */
+
+.content {
+  /*  Move the content from under the fixed header */
+  padding-top: 1em;
+}
+
+.header__main,
+.footer__main {
+  position: fixed;
+  z-index: 5;
+}
+
+.header__main {
+  width: 100%;
+}
+
+.footer__main {
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+/* =styles/_navigation.less
+----------------------------------------------- */
+
+.nav-main {
+  position: fixed;
+  top: 0;
+  right: 0;
+  /*  Allows the footer to show through */
+  bottom: 0;
+  width: 34%;
+  background: #3a383a;
+  box-shadow: inset 4px 0 4px 0 rgba(0, 0, 0, 0.2);
+  color: #717275;
+}
+
+.nav-main a {
+  color: #717275;
+}
+
+.nav-main a:hover {
+  color: #2cc2e4;
+}
+
+.nav-main ul {
+  padding: 20px;
+}
+
+.nav-main ul li {
+  list-style: none;
+}
+
+#js-nav-button {
+  background: url(images/new_sprite.png) no-repeat -225px -336px transparent;
+  border: none;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 17px;
+  float: right;
+  padding-right: 38px;
+  height: 20px;
+}
+
+/* =styles/_nav-main.less
+ *  extends jquery.nav-main.js
+----------------------------------------------- */
+
+.nav-main__content {
+  width: 66%;
+  -webkit-transition: right 0.3s ease;
+     -moz-transition: right 0.3s ease;
+      -ms-transition: right 0.3s ease;
+       -o-transition: right 0.3s ease;
+          transition: right 0.3s ease;
+}
+
+.nav-main__nav {
+  width: 34%;
+  -webkit-transition: right 0.3s ease;
+     -moz-transition: right 0.3s ease;
+      -ms-transition: right 0.3s ease;
+       -o-transition: right 0.3s ease;
+          transition: right 0.3s ease;
+}
+
+.nav-main__header {
+  width: 66%;
+  -webkit-transition: right 0.3s ease;
+     -moz-transition: right 0.3s ease;
+      -ms-transition: right 0.3s ease;
+       -o-transition: right 0.3s ease;
+          transition: right 0.3s ease;
+}
+
+.is-expand {
+  width: 100%;
+  -webkit-transition: right 0.3s ease;
+     -moz-transition: right 0.3s ease;
+      -ms-transition: right 0.3s ease;
+       -o-transition: right 0.3s ease;
+          transition: right 0.3s ease;
+}
+
+.is-nav-inactive {
+  right: -34%;
+  -webkit-transition: right 0.3s ease;
+     -moz-transition: right 0.3s ease;
+      -ms-transition: right 0.3s ease;
+       -o-transition: right 0.3s ease;
+          transition: right 0.3s ease;
+}
+
+/**
+ * 3.5 Button
+ */
+
+/* Standard Button */
+
+.btn {
+  background-color: #666;
+  background-repeat: repeat-x;
+  color: rgb(255,255,255);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+  .btn:link,
+  .btn:visited,
+  .btn:active,
+  input.btn {
+    color: rgb(255,255,255);
+  }
+
+  .btn:hover,
+  .btn:focus,
+  input.btn:hover,
+  input.btn:focus {
+    background-color: rgb(37,37,37);
+  }
+
+/* Primary Button */
+
+.btn--primary {
+  background-color: rgb(27,196,229);
+}
+
+  .btn--primary:hover,
+  .btn--primary:focus,
+  input.btn--primary:hover,
+  input.btn--primary:focus {
+    background-color: rgb(237,20,91);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+/*  Secondary Button */
+
+.btn--secondary {
+  background-color: rgb(18,217,165);
+}
+
+  .btn--secondary:hover,
+  .btn--secondary:focus,
+  input.btn--secondary:hover,
+  input.btn--secondary:focus {
+    background-color: rgb(27,196,229);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+  .btn__large:hover,
+  .btn__large:focus {
+    background-position: 0 -2em;
+  }
+
 /* General */
 
 body {
@@ -883,6 +1283,17 @@ object {
 /**
  * 98.0 Grid
  */
+
+.wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper__sub {
+  margin: 0 auto;
+  max-width: 95%;
+}
 
 /**
  * This class is applied to all parent elements to be fitted
@@ -1384,6 +1795,7 @@ object {
   clear: both;
 }
 
+<<<<<<< HEAD
 /**
  * These are the sliding Menu styles
  */
@@ -1526,6 +1938,8 @@ object {
 
 /*  Core  */
 
+=======
+>>>>>>> a89a79776e04291186684a9f44108b065cb9f464
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -1552,6 +1966,7 @@ object {
   display: table;
   clear: both;
 }
+<<<<<<< HEAD
 
 /**
  * Header Styles
@@ -1742,3 +2157,5 @@ button.build {
   margin: 0 0 0 10px;
   color: #ababab; 
 }
+=======
+>>>>>>> a89a79776e04291186684a9f44108b065cb9f464

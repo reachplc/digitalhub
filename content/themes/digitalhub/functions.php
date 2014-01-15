@@ -97,6 +97,17 @@ function digitalhub_scripts() {
 add_action( 'wp_enqueue_scripts', 'digitalhub_scripts' );
 
 /**
+ * Add custom web fonts
+ */
+
+function load_fonts() {
+  wp_register_style('googleapisFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:600,300');
+  wp_enqueue_style( 'googleapisFonts');
+}
+
+add_action('wp_print_styles', 'load_fonts');
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
