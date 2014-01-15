@@ -28,6 +28,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   1.4 - List
  *   1.5 - Table
  *   1.6 - Form
+ * 2.0 - Objects
+ *   2.1 - Button
+ * 3.0 - Styles
+ *       - Button
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -647,6 +651,131 @@ textarea {
   vertical-align: top;  /* 2. */
   resize: vertical;
 }
+
+/**
+ * 2.0 Objects
+ */
+
+/**
+ * 2.1 Button
+ */
+
+.btn {
+  display: inline-block;
+  padding: 0.5em;
+  border: none;
+  line-height: 1em;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:focus {
+  text-decoration: none;
+}
+
+.btn--disabled {
+  cursor: default;
+}
+
+/*  Button Large */
+
+.btn__large {
+  padding: 0.75em;
+  line-height: 1.5em;
+}
+
+/*  Button Group */
+
+.btn__group {
+  /* Aligns the button to the center of the `div` */
+  text-align:center;
+}
+
+  .btn__group .btn {
+    margin-left: 2em;
+  }
+
+  .btn__group .btn:first-child {
+    margin-left: 0;
+  }
+
+/**
+ * 3.0 Styles
+ */
+
+/**
+ *    Button
+ */
+
+/*  styles/_button.less
+ *
+ */
+
+/* Primary Button */
+
+.btn {
+  background-color: #666;
+  background-repeat: repeat-x;
+  color: rgb(255,255,255);
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+  .btn:link,
+  .btn:visited,
+  .btn:active,
+  input.btn {
+    color: rgb(255,255,255);
+  }
+
+  .btn:hover,
+  .btn:focus,
+  input.btn:hover,
+  input.btn:focus {
+    background-color: rgb(37,37,37);
+  }
+
+.btn--primary {
+  background-color: rgb(27,196,229);
+}
+
+  .btn--primary:hover,
+  .btn--primary:focus,
+  input.btn--primary:hover,
+  input.btn--primary:focus {
+    background-color: rgb(237,20,91);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+/*  Secondary Button */
+
+.btn--secondary {
+  background-color: rgb(18,217,165);
+}
+
+  .btn--secondary:hover,
+  .btn--secondary:focus,
+  input.btn--secondary:hover,
+  input.btn--secondary:focus {
+    background-color: rgb(27,196,229);
+    background-position: 0 -1em;
+    -webkit-transition: background-position 0.1s linear;
+       -moz-transition: background-position 0.1s linear;
+        -ms-transition: backgorund-position 0.1s linear;
+         -o-transition: background-position 0.1s linear;
+            transition: background-position 0.1s linear;
+  }
+
+  .btn__large:hover,
+  .btn__large:focus {
+    background-position: 0 -2em;
+  }
 
 /* General */
 
