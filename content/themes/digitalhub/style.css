@@ -1261,6 +1261,17 @@ object {
  * 98.0 Grid
  */
 
+.wrapper {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper__sub {
+  margin: 0 auto;
+  max-width: 95%;
+}
+
 /**
  * This class is applied to all parent elements to be fitted
  * to the grid.
