@@ -84,7 +84,7 @@ function digitalhub_scripts() {
 
 	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'));
 
-	wp_enqueue_script( 'digitalhub-background', get_template_directory_uri() . '/js/background.js', array('jquery'));	
+	wp_enqueue_script( 'digitalhub-hero', get_template_directory_uri() . '/js/jquery.randomHero.js', array());
 
 	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
