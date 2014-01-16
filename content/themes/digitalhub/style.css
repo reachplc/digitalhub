@@ -732,6 +732,7 @@ textarea {
 .site-branding h1 {
   display: inline;
   float: left;
+  border-bottom: 0;
 }
 
 /**
@@ -908,6 +909,20 @@ textarea {
 
 .nav-main ul {
   padding: 20px;
+  font-size: 180%;
+  font-weight: 200;
+  text-transform: uppercase;
+}
+
+.nav-main ul.sub-menu {
+  padding: 0 0 20px; 0;
+  font-size: 60%;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.sub-menu li {
+  margin: 6px; 0;
 }
 
 .nav-main ul li {
@@ -919,10 +934,11 @@ textarea {
   border: none;
   color: #fff;
   text-transform: uppercase;
-  margin-top: 17px;
+  margin: 17px 0 0;
   float: right;
-  padding-right: 38px;
+  padding: 0 38px 0 0;
   height: 20px;
+  width: auto;
 }
 
 /* =styles/_nav-main.less
