@@ -24,5 +24,19 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
+<script>
+;(function( $ ){
+  $(document).ready(function() {
+
+    // To extend the default config settings
+    // pass a object as an argument for the init function
+    // eg. randomHero.init({ images: 'image01.jpg', 'image02.jpg' });
+
+    randomHero.init( { parent: '#bgimg', path: '<?php echo get_template_directory_uri(); ?>/images/', images: ['back_one.png', 'backgroundtest_02.jpg', 'backgroundtest_03.jpg'] });
+
+  });
+})( jQuery );
+</script>
+
 </body>
 </html>

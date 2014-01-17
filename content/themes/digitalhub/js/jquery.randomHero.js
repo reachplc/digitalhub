@@ -7,9 +7,10 @@
  *  Under MIT License
  */
 
+var randomHero = randomHero || {};
+
 ;(function( $ ){
 
-  var randomHero = randomHero || {};
 
   //  Default config settings
 
@@ -45,7 +46,7 @@
  *  eg. randomHero.init({ images: 'image01.jpg', 'image02.jpg' });
  */
 
-  /*  Initialise and extend on page load */
+  /*  Initialise and extend on page load
 
   $(document).ready(function() {
 
@@ -55,6 +56,6 @@
 
     randomHero.init( { parent: '#bgimg', path: 'content/themes/digitalhub/images/', images: ['back_one.png', 'backgroundtest_02.jpg', 'backgroundtest_03.jpg'] });
 
-  });
+  }); */
 
 })( jQuery );
