@@ -24,7 +24,6 @@
 	<nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
 		<h1 class="menu-toggle"><?php _e( 'Menu', 'digitalhub' ); ?></h1>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
-
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav><!-- #site-navigation -->
 
@@ -57,7 +56,9 @@
 	<h2 class="kilo">Inspiring advertising to maximize impact<div class="arrow"></div></h2>
 </div>
 	<div id="strip">
-		<?php wp_nav_menu( array( 'theme_location' => 'second-menu', 'menu_class' => 'secondary', 'fallback_cb' => '') ); ?></div>
+		<?php wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'menu_class' => 'secondary-menu') ); ?>
+	</div>
+	</div>
 </div><!-- end of #bgimg -->
 
 	<div id="content" class="site-content nav-main__content">

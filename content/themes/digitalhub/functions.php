@@ -40,14 +40,24 @@ function digitalhub_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'digitalhub' ),
-		'secondary' => __( 'second-menu' ),
-	) );
-
 	// Add support for extra menu.
 	add_theme_support('menus');
+
+	// This theme uses wp_nav_menu() in one location.
+	//register_nav_menus( array(
+	//	'primary' => __( 'Primary Menu', 'digitalhub' ),
+	//	'secondary' => __( 'Secondary Menu' ),
+	//) );
+
+add_action( 'init', 'my_custom_menus' );
+      function my_custom_menus() {
+         register_nav_menus(
+            array(
+      'primary-menu' => __( 'Primary Menu' ),
+      'secondary-menu' => __( 'Secondary Menu' )
+                    )
+             );
+      }
 
 	// Enable support for Post Formats.
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link' ) );

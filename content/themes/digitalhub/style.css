@@ -770,8 +770,11 @@ textarea {
 }
 
 #strip {
-  background: url(images/arrow-strip.gif) no-repeat center bottom transparent;
-  height: 150px;
+  margin: 0 auto;
+  width: 100%;
+  min-height: 60px;
+  text-align: center;
+  background: url(images/white-sides.png) no-repeat center top transparent;
 }
 
 #search {
@@ -824,6 +827,7 @@ textarea {
   min-height: 350px;
   background-size: cover;
   width: auto;
+  margin-bottom: 30px;
 }
 
 /**
@@ -927,6 +931,30 @@ textarea {
 
 .nav-main ul li {
   list-style: none;
+}
+
+.secondary-menu {
+  margin: 0 auto;
+}
+
+.secondary-menu li {
+  display: inline;
+  list-style: none;
+  padding: 1px 40px 0 40px;
+  text-transform: uppercase;
+  font-size: 130%;
+  font-weight: 200;
+  background: #fff;
+  margin-right: -4px;
+}
+
+.secondary-menu li.current-menu-item,
+.secondary-menu li.current_page_item {
+  background: url(images/arrow-strip.gif) no-repeat top center transparent;
+}
+
+.secondary-menu li a{
+    color: #999;
 }
 
 #js-nav-button {
