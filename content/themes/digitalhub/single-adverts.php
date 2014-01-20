@@ -64,6 +64,20 @@
               ?>
             </div>
 
+            <footer class="example__preview">
+              <ul class="list list__inline">
+                <li>
+                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
+                </li><!--
+             --><li>
+                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
+                </li><!--
+             --><li>
+                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
+                </li>
+              </ul>
+            </footer>
+
           </section>
           <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18">
 
