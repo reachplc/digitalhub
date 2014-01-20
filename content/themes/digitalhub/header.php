@@ -22,7 +22,6 @@
 <div id="page" class="hfeed site">
 	
 	<nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
-		<h1 class="menu-toggle"><?php _e( 'Menu', 'digitalhub' ); ?></h1>
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav><!-- #site-navigation -->
@@ -35,7 +34,8 @@
 			<div class="wrapper">
 			<div class="site-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"></h1></a>
-				<button id="js-nav-button">Menu</button>
+				<button id="js-nav-button"></button>
+				<button class="search"></button>
 				<a href="http://www.facebook.com"><div id="facebook"></div></a>
 				<a href="http://www.twitter.com"><div id="twitter"></div></a>
 				<div id="search">

@@ -41,15 +41,14 @@
     <?php endif; // is_single() ?>
 
     <div class="entry-meta">
-      <?php
 
-        if(!empty($custom['document_file_id'][0]) && $custom['document_file_id'][0] != '0') {
-          $download_id    = $custom['document_file_id'][0];
+    <?php if ( is_buildGuide() ) :?>
+      <p>
+        <a href="
+        <?php the_buildGuide(); ?>">Download Build Guide</a>
+      </p>
+    <?php endif; ?>
 
-            echo '<p><a href="' . wp_get_attachment_url($download_id) . '">
-                Download Build Guide</a></p>';
-        }
-        ?>
 
       <?php get_example_video($custom); ?>
 
@@ -69,6 +68,15 @@
   <?php endif; ?>
 
   <footer class="entry-meta">
+
+  <?php if ( is_example() ) : // Only display if examples exist ?>
+    <div class="example__preview">
+      <ul class="list list__inline">
+        <?php get_example_preview($custom); ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+
     <?php if ( comments_open() && ! is_single() ) : ?>
       <div class="comments-link">
         <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
