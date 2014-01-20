@@ -334,9 +334,12 @@ class Adverts_Admin {
     $_formats = array('mp4', 'webm', 'ogg', 'flv');
     $custom         = get_post_custom($post->ID);
 
+
+
     for ($i = 1; $i <= $example_limit; $i++) {
 
       $example_preview = get_post_meta($post->ID, '_example_' . $i .'_url_preview', true);
+      $example_video = get_post_meta($post->ID, '_example_' . $i .'_url_video', true);
 
       echo '<fieldset>';
       echo '<legend>Example ' . $i .' URL:</legend>';
@@ -345,6 +348,10 @@ class Adverts_Admin {
       echo '<p>';
       echo '<label for="_example_' . $i .'_url_preview">Preview: </label><br>';
       echo '<input type="text" name="_example_' . $i .'_url_preview" placeholder="http://example.net/preview-image.png" value="' . urldecode($example_preview) . '">';
+      echo '</p>';
+      echo '<p>';
+      echo '<label for="_example_' . $i .'_url_video">Video Placeholder: </label><br>';
+      echo '<input type="text" name="_example_' . $i .'_url_video" placeholder="http://example.net/video-image.png" value="' . urldecode($example_video) . '">';
       echo '</p>';
 
       foreach ($_formats as $value) {
@@ -397,9 +404,30 @@ class Adverts_Admin {
 
       // Preview image
 
-      $new_meta_value = ( isset( $_POST[ '_example_' . $i .'_url_preview' ] ) ? urlencode( $_POST[ '_example_' . $i .'_url_preview' ] ) : '' );
+      $placeholder_meta_value = ( isset( $_POST[ '_example_' . $i .'_url_preview' ] ) ? urlencode( $_POST[ '_example_' . $i .'_url_preview' ] ) : '' );
 
         $meta_key = '_example_' . $i .'_url_preview' ;
+
+        $meta_value = get_post_meta( $post_id, $meta_key, true );
+
+        /* If a new meta value was added and there was no previous value, add it. */
+        if ( $placeholder_meta_value && '' == $meta_value ) {
+          add_post_meta( $post_id, $meta_key, $placeholder_meta_value, true );
+        }
+        /* If the new meta value does not match the old value, update it. */
+        elseif ( $placeholder_meta_value && $placeholder_meta_value != $meta_value ) {
+          update_post_meta( $post_id, $meta_key, $placeholder_meta_value );
+        }
+        /* If there is no new meta value but an old value exists, delete it. */
+        elseif ( '' == $placeholder_meta_value && $meta_value ) {
+          delete_post_meta( $post_id, $meta_key, $meta_value );
+        }
+
+      // Video Placeholder
+
+      $new_meta_value = ( isset( $_POST[ '_example_' . $i .'_url_video' ] ) ? urlencode( $_POST[ '_example_' . $i .'_url_video' ] ) : '' );
+
+        $meta_key = '_example_' . $i .'_url_video' ;
 
         $meta_value = get_post_meta( $post_id, $meta_key, true );
 
