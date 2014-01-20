@@ -52,7 +52,6 @@ get_header(); ?>
      </main><!-- #main -->
   </div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-
   </div><!--/ wrapper__sub  -->
+
 <?php get_footer(); ?>
