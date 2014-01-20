@@ -41,15 +41,14 @@
     <?php endif; // is_single() ?>
 
     <div class="entry-meta">
-      <?php
 
-        if(!empty($custom['document_file_id'][0]) && $custom['document_file_id'][0] != '0') {
-          $download_id    = $custom['document_file_id'][0];
+    <?php if ( is_buildGuide() ) :?>
+      <p>
+        <a href="
+        <?php the_buildGuide(); ?>">Download Build Guide</a>
+      </p>
+    <?php endif; ?>
 
-            echo '<p><a href="' . wp_get_attachment_url($download_id) . '">
-                Download Build Guide</a></p>';
-        }
-        ?>
 
       <?php get_example_video($custom); ?>
 
