@@ -89,6 +89,10 @@ class Adverts {
 
     add_action('template_redirect', array( $this, 'taxonomy_template_redirect' ) );
 
+    // Include functions for outputting info to themes
+
+    include(plugin_dir_path( __FILE__ ) . 'includes/get_example_video' . '.php');
+
   }
 
   /**

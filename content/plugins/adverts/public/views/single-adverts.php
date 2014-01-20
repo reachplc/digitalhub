@@ -11,10 +11,12 @@
  * @link      http://trinitymirror.github.io
  * @copyright 2013 Trinity Mirror Creative
  */
+
+  $custom         = get_post_custom();
+
 ?>
 
-<?php
-get_header(); ?>
+<?php get_header(); ?>
 
   <div id="primary" class="content-area">
     <div id="content" class="site-content" role="main">
@@ -40,7 +42,6 @@ get_header(); ?>
 
     <div class="entry-meta">
       <?php
-        $custom         = get_post_custom();
 
         if(!empty($custom['document_file_id'][0]) && $custom['document_file_id'][0] != '0') {
           $download_id    = $custom['document_file_id'][0];
@@ -50,62 +51,7 @@ get_header(); ?>
         }
         ?>
 
-        <?php
-
-        //  Example Adverts
-
-        if(!empty($custom['_example_1_url_preview']) && $custom['_example_1_url_preview'][0] != '0') {
-
-          $_example_preview = urldecode( $custom['_example_1_url_preview'][0] );
-          $_example_mp4 = urldecode( $custom['_example_1_url_mp4'][0] );
-          $_example_webm = urldecode( $custom['_example_1_url_webm'][0] );
-          $_example_ogg = urldecode( $custom['_example_1_url_ogg'][0] );
-          $_example_flv = urldecode( $custom['_example_1_url_flv'][0] );
-          echo '<div class="example-video example_video--active">';
-          echo '<video poster="' . $_example_preview . '" controls>';
-          echo '<source src="' . $_example_mp4 . '">';
-          echo '<source src="' . $_example_webm . '">';
-          echo '<source src="' . $_example_ogg . '">';
-          echo '<p>This is fallback content</p>';
-          echo '</video>';
-          echo '</div>';
-        }
-
-        if(!empty($custom['_example_2_url_preview']) && $custom['_example_2_url_preview'][0] != '0') {
-
-          $_example_preview = urldecode( $custom['_example_2_url_preview'][0] );
-          $_example_mp4 = urldecode( $custom['_example_2_url_mp4'][0] );
-          $_example_webm = urldecode( $custom['_example_2_url_webm'][0] );
-          $_example_ogg = urldecode( $custom['_example_2_url_ogg'][0] );
-          $_example_flv = urldecode( $custom['_example_2_url_flv'][0] );
-          echo '<div class="example-video example_video--active">';
-          echo '<video poster="' . $_example_preview . '" controls>';
-          echo '<source src="' . $_example_mp4 . '">';
-          echo '<source src="' . $_example_webm . '">';
-          echo '<source src="' . $_example_ogg . '">';
-          echo '<p>This is fallback content</p>';
-          echo '</video>';
-          echo '</div>';
-        }
-
-        if(!empty($custom['_example_3_url_preview']) && $custom['_example_3_url_preview'][0] != '0') {
-
-          $_example_preview = urldecode( $custom['_example_3_url_preview'][0] );
-          $_example_mp4 = urldecode( $custom['_example_3_url_mp4'][0] );
-          $_example_webm = urldecode( $custom['_example_3_url_webm'][0] );
-          $_example_ogg = urldecode( $custom['_example_3_url_ogg'][0] );
-          $_example_flv = urldecode( $custom['_example_3_url_flv'][0] );
-          echo '<div class="example-video example_video--active">';
-          echo '<video poster="' . $_example_preview . '" controls>';
-          echo '<source src="' . $_example_mp4 . '">';
-          echo '<source src="' . $_example_webm . '">';
-          echo '<source src="' . $_example_ogg . '">';
-          echo '<p>This is fallback content</p>';
-          echo '</video>';
-          echo '</div>';
-        }
-
-        ?>
+      <?php get_example_video($custom); ?>
 
       <?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
     </div><!-- .entry-meta -->
