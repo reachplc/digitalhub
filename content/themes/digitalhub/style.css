@@ -2033,53 +2033,21 @@ object {
 (-webkit-min-device-pixel-ratio: 2), 
 (min-resolution: 192dpi) { 
 
-  .kilo {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  button.prev {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  button.next {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }  
-
-  button.build {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  button.category {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  button{
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  #js-nav-button {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  #tm-logo {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }    
-
-  #search .submit {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }
-
-  #twitter {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }   
-
-  #facebook {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-  }   
-
+  .kilo,
+  button.prev, 
+  button.next,
+  button.build,
+  button.category,
+  button.search,
+  button,
+  #js-nav-button,
+  #tm-logo,
+  #search .submit,
+  #twitter,
+  #facebook,
   .site-title {
     background: url(images/sprite_x2.png) no-repeat transparent;
-  }   
-
+    background-size: 300px 800px; 
+  }
 
 }
