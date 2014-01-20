@@ -36,6 +36,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.3 - Footer
  *   3.4 - Navigation
  *   3.5 - Button
+ *   3.6 - Content
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -1133,6 +1134,57 @@ button.build {
   background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
  }
 
+/**
+ * 3.6 Content
+ */
+
+.sticky {
+
+}
+.hentry {
+  margin: 0 0 1.5em;
+}
+.byline,
+.updated {
+  display: none;
+}
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 1em;
+  border-bottom: 1px solid rgb(220,220,220);
+}
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/**
+ * 3.7 Examples
+ */
+
+.example {
+  background: url(images/bg_example_monitor.png) no-repeat top center;
+  background-size: 100% auto;
+}
+
+@media screen and (min-width: 481px) {
+
+  .example {
+    min-height: 344px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  .example {
+    min-height: 515px;
+  }
+}
 
 /* General */
 
@@ -1208,33 +1260,6 @@ body {
   .main-navigation ul {
     display: none;
   }
-}
-
-
-/* =Content
------------------------------------------------ */
-
-.sticky {
-}
-.hentry {
-  margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-  display: none;
-}
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
 }
 
 
