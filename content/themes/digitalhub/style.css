@@ -30,6 +30,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   1.6 - Form
  * 2.0 - Objects
  *   2.1 - Button
+ *   2.2 - List
  * 3.0 - Styles
  *   3.1 - Header
  *   3.2 - Hero
@@ -717,6 +718,41 @@ textarea {
   }
 
 /**
+ * 2.2 List
+ */
+
+/*  objects/_list.less
+ *
+ */
+
+/*
+ * 1. Removes bullets
+ * 2. Removes default margin for ul
+ * 3. Removes default padding
+ */
+
+.list {
+  list-style:none;  /* 1. */
+  margin-top: 0;  /* 2. */
+  margin-bottom: 0;  /* 2. */
+  padding-left:0;  /* 3. */
+}
+
+  /* List Inline */
+
+  .list__inline > li,
+  .list__inline > li > a {
+    display: inline-block;
+  }
+
+  /* List Block */
+
+  .list__block > li {
+    display: block;
+  }
+
+
+/**
  * 3.0 Styles
  */
 
@@ -1184,6 +1220,21 @@ button.build {
   .example {
     min-height: 515px;
   }
+}
+
+/* Example Preview Images */
+
+.example__preview {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.example__preview li {
+  padding-left: 0.5em;
+}
+
+.example__preview li:first-child {
+  padding-left: 0;
 }
 
 /* General */
