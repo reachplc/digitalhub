@@ -55,13 +55,12 @@
             <?php endif; ?>
 
             <div class="entry-meta">
-              <?php
-                if(!empty($custom['document_file_id'][0]) && $custom['document_file_id'][0] != '0') {
-                  $download_id    = $custom['document_file_id'][0];
-
-                  echo '<p><a class="btn btn--primary" href="' . wp_get_attachment_url($download_id) . '">Download Build Guide</a></p>';
-                }
-              ?>
+              <?php if ( is_buildGuide() ) :?>
+                <p>
+                  <a class="btn btn--primary" href="
+                  <?php the_buildGuide(); ?>">Download Build Guide</a>
+                </p>
+              <?php endif; ?>
             </div>
 
             <?php if ( is_example() ) : // Only display if examples exist ?>
