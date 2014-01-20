@@ -69,6 +69,15 @@
   <?php endif; ?>
 
   <footer class="entry-meta">
+
+  <?php if ( is_example() ) : // Only display if examples exist ?>
+    <div class="example__preview">
+      <ul class="list list__inline">
+        <?php get_example_preview($custom); ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+
     <?php if ( comments_open() && ! is_single() ) : ?>
       <div class="comments-link">
         <?php comments_popup_link( '<span class="leave-reply">' . __( 'Leave a comment', 'twentythirteen' ) . '</span>', __( 'One comment so far', 'twentythirteen' ), __( 'View all % comments', 'twentythirteen' ) ); ?>
