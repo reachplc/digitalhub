@@ -64,19 +64,15 @@
               ?>
             </div>
 
+            <?php if ( is_example() ) : // Only display if examples exist ?>
+
             <footer class="example__preview">
               <ul class="list list__inline">
-                <li>
-                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
-                </li><!--
-             --><li>
-                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
-                </li><!--
-             --><li>
-                  <a href="#"><img src="http://placehold.it/100x100.png"></a>
-                </li>
+                <?php get_example_preview($custom); ?>
               </ul>
             </footer>
+
+          <?php endif; ?>
 
           </section>
           <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18">
