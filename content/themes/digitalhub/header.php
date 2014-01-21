@@ -6,7 +6,8 @@
  *
  * @package DigitalHub
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -20,7 +21,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
-	
+
 	<nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
@@ -33,6 +34,7 @@
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
 			<div class="site-branding">
+				<div class="wrapper__sub">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"></h1></a>
 				<button id="js-nav-button"></button>
 				<button class="search"></button>
@@ -43,10 +45,10 @@
 					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
-
+				</div>
 				</div>
 				</form>
-			
+
 			</div><!-- end of site-branding-->
 
 
