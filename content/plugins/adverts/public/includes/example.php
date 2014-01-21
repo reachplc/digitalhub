@@ -57,8 +57,8 @@ function get_example_video($custom) {
     $_example_webm = urldecode( $custom['_example_1_url_webm'][0] );
     $_example_ogg = urldecode( $custom['_example_1_url_ogg'][0] );
     $_example_flv = urldecode( $custom['_example_1_url_flv'][0] );
-    echo '<div class="example">';
-    echo '<video class="example__video" poster="' . $_example_video . '" controls>';
+    echo '<div class="example__video">';
+    echo '<video poster="' . $_example_video . '" controls>';
     echo '<source src="' . $_example_mp4 . '">';
     echo '<source src="' . $_example_webm . '">';
     echo '<source src="' . $_example_ogg . '">';
@@ -74,7 +74,7 @@ function get_example_video($custom) {
     $_example_webm = urldecode( $custom['_example_2_url_webm'][0] );
     $_example_ogg = urldecode( $custom['_example_2_url_ogg'][0] );
     $_example_flv = urldecode( $custom['_example_2_url_flv'][0] );
-    echo '<div class="example-video example_video--active">';
+    echo '<div class="example__video hidden">';
     echo '<video poster="' . $_example_video . '" controls>';
     echo '<source src="' . $_example_mp4 . '">';
     echo '<source src="' . $_example_webm . '">';
@@ -91,7 +91,7 @@ function get_example_video($custom) {
     $_example_webm = urldecode( $custom['_example_3_url_webm'][0] );
     $_example_ogg = urldecode( $custom['_example_3_url_ogg'][0] );
     $_example_flv = urldecode( $custom['_example_3_url_flv'][0] );
-    echo '<div class="example-video example_video--active">';
+    echo '<div class="example__video hidden">';
     echo '<video poster="' . $_example_video . '" controls>';
     echo '<source src="' . $_example_mp4 . '">';
     echo '<source src="' . $_example_webm . '">';
