@@ -35,6 +35,17 @@ $terms = get_terms('packages');
       }
 ?>
 
+<?php
+$id = $post->ID;
+ query_posts(array('showposts' => 20, 'post_parent' => $id, 'post_type' => 'page')); while (have_posts()) { the_post(); ?>
+
+<h1><?php the_title(); ?></h1>
+<p>@TODO: description</p>
+<p>
+  <a class="btn btn--primary" href="#">View Available Formats</a>
+</p>
+<?php } ?>
+
     </main><!-- #main -->
   </div><!-- #primary -->
 
