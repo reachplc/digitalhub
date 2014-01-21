@@ -74,7 +74,7 @@
           <?php endif; ?>
 
           </section>
-          <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18">
+          <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18 example">
 
           <?php get_example_video($custom); ?>
 

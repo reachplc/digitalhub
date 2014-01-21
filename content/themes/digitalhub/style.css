@@ -493,6 +493,12 @@ video {
   display: inline-block;
 }
 
+video {
+  /* Adds for compatibility with FitVids.js */
+  width: 100%;
+  height: auto;
+}
+
 /*
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
@@ -1225,6 +1231,15 @@ button.build {
   .example {
     min-height: 515px;
   }
+}
+
+/* Example Video */
+
+.example__video {
+  /* Centre's video inside parent element */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 18px 15.5% 0;
 }
 
 /* Example Preview Images */
@@ -1978,6 +1993,15 @@ object {
 }
 
 /*  Core  */
+
+/*
+ *  Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
 
 .visuallyhidden {
   border: 0;
