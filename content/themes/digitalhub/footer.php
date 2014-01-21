@@ -36,6 +36,14 @@
 
   });
 })( jQuery );
+<?php if( $post_type == 'adverts' ) {?>
+;(function( $ ){
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $(".example").fitVids();
+  });
+})( jQuery );
+<?php } ?>
 </script>
 
 </body>
