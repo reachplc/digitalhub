@@ -2159,7 +2159,11 @@ object {
   #facebook,
   .site-title {
     background: url(images/sprite_x2.png) no-repeat transparent;
-    background-size: 300px 800px;
+    background-size: 100% auto;
+  }
+
+  #tm-logo {
+    background-position: 0 -353px
   }
 
 }
