@@ -1023,11 +1023,11 @@ textarea {
 
 .nav-main__content {
   width: 66%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .nav-main__nav {
@@ -1041,20 +1041,20 @@ textarea {
 
 .nav-main__header {
   width: 66%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .is-expand {
   width: 100%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .is-nav-inactive {
