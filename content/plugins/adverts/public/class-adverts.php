@@ -91,7 +91,8 @@ class Adverts {
 
     // Include functions for outputting info to themes
 
-    include(plugin_dir_path( __FILE__ ) . 'includes/get_example_video' . '.php');
+    include(plugin_dir_path( __FILE__ ) . 'includes/example' . '.php');
+    include(plugin_dir_path( __FILE__ ) . 'includes/build-guide' . '.php');
 
   }
 

@@ -13,8 +13,7 @@
  */
 ?>
 
-<?
-get_header(); ?>
+<?php get_header(); ?>
 
   <div class="wrapper__sub">
 

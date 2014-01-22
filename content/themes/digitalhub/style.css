@@ -30,12 +30,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   1.6 - Form
  * 2.0 - Objects
  *   2.1 - Button
+ *   2.2 - List
  * 3.0 - Styles
  *   3.1 - Header
  *   3.2 - Hero
  *   3.3 - Footer
  *   3.4 - Navigation
  *   3.5 - Button
+ *   3.6 - Content
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -492,6 +494,12 @@ video {
   display: inline-block;
 }
 
+video {
+  /* Adds for compatibility with FitVids.js */
+  width: 100%;
+  height: auto;
+}
+
 /*
  * Prevents modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices.
@@ -715,6 +723,41 @@ textarea {
   .btn__group .btn:first-child {
     margin-left: 0;
   }
+
+/**
+ * 2.2 List
+ */
+
+/*  objects/_list.less
+ *
+ */
+
+/*
+ * 1. Removes bullets
+ * 2. Removes default margin for ul
+ * 3. Removes default padding
+ */
+
+.list {
+  list-style:none;  /* 1. */
+  margin-top: 0;  /* 2. */
+  margin-bottom: 0;  /* 2. */
+  padding-left:0;  /* 3. */
+}
+
+  /* List Inline */
+
+  .list__inline > li,
+  .list__inline > li > a {
+    display: inline-block;
+  }
+
+  /* List Block */
+
+  .list__block > li {
+    display: block;
+  }
+
 
 /**
  * 3.0 Styles
@@ -987,11 +1030,11 @@ textarea {
 
 .nav-main__content {
   width: 66%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .nav-main__nav {
@@ -1005,20 +1048,20 @@ textarea {
 
 .nav-main__header {
   width: 66%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .is-expand {
   width: 100%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+     -moz-transition: width 0.3s ease;
+      -ms-transition: width 0.3s ease;
+       -o-transition: width 0.3s ease;
+          transition: width 0.3s ease;
 }
 
 .is-nav-inactive {
@@ -1144,6 +1187,82 @@ button.build {
   background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
  }
 
+/**
+ * 3.6 Content
+ */
+
+.sticky {
+
+}
+.hentry {
+  margin: 0 0 1.5em;
+}
+.byline,
+.updated {
+  display: none;
+}
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5em 0 1em;
+  border-bottom: 1px solid rgb(220,220,220);
+}
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+
+/**
+ * 3.7 Examples
+ */
+
+.example {
+  background: url(images/bg_example_monitor.png) no-repeat top center;
+  background-size: 100% auto;
+}
+
+@media screen and (min-width: 481px) {
+
+  .example {
+    min-height: 344px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  .example {
+    min-height: 515px;
+  }
+}
+
+/* Example Video */
+
+.example__video {
+  /* Centre's video inside parent element */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 18px 15.5% 0;
+}
+
+/* Example Preview Images */
+
+.example__preview {
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.example__preview li {
+  padding-left: 0.5em;
+}
+
+.example__preview li:first-child {
+  padding-left: 0;
+}
+
  button.search {
   width: 30px;
   height: 50px;
@@ -1153,7 +1272,6 @@ button.build {
   margin: 15px 0 0;
   display: none;
  }
-
 
 /* General */
 
@@ -1229,33 +1347,6 @@ body {
   .main-navigation ul {
     display: none;
   }
-}
-
-
-/* =Content
------------------------------------------------ */
-
-.sticky {
-}
-.hentry {
-  margin: 0 0 1.5em;
-}
-.byline,
-.updated {
-  display: none;
-}
-.single .byline,
-.group-blog .byline {
-  display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 0;
-}
-.page-links {
-  clear: both;
-  margin: 0 0 1.5em;
 }
 
 
@@ -1539,6 +1630,17 @@ object {
     width: 33.3333333333%;
   }
 
+  .ls__1-5,
+  .ls__2-6,
+  .ls__3-7,
+  .ls__4-8,
+  .ls__5-9,
+  .ls__6-10,
+  .ls__7-11,
+  .ls__8-12 {
+    width: 41.66667%;
+  }
+
   .ls__1-6,
   .ls__2-7,
   .ls__3-8,
@@ -1549,11 +1651,11 @@ object {
   }
 
   .ls__1-7,
-  .ls__3-8,
-  .ls__4-9,
-  .ls__5-10,
-  .ls__6-11,
-  .ls__7-12 {
+  .ls__2-8,
+  .ls__3-9,
+  .ls__4-10,
+  .ls__5-11,
+  .ls__6-12 {
     width: 58.33333334%
   }
 
@@ -1898,6 +2000,15 @@ object {
 
 /*  Core  */
 
+/*
+ *  Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -2050,12 +2161,12 @@ object {
  * Retina Display Images below
 */
 
-@media 
-(-webkit-min-device-pixel-ratio: 2), 
-(min-resolution: 192dpi) { 
+@media
+(-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
 
   .kilo,
-  button.prev, 
+  button.prev,
   button.next,
   button.build,
   button.category,
@@ -2070,6 +2181,10 @@ object {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
     background-size: 300px 800px; 
+  }
+
+  #tm-logo {
+    background-position: 0 -353px
   }
 
   #js-nav-button {
