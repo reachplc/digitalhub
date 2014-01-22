@@ -18,6 +18,16 @@ Copy the `./_scripts/local-config.sample.php` file to the `digitalhub` folder an
 
 Fill in the `local-config.php` with your local MySQL database details.
 
+Symlink the uploads folder to your local shared folder:
+
+```
+mkdir shared shared/content shared/content/uploads
+cd content
+ln -s ../shared/content/uploads uploads
+cd ../
+chmod 777 -r shared/content/uploads
+```
+
 Navigate to the home page, eg `http://localhost/digitalhub/`, and follow the default WordPress instructions.
 
 ## Documentation
