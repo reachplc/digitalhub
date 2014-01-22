@@ -2095,8 +2095,6 @@ object {
 
 }
 
-}
-
 /**
  * Responsive Middle (768) iPad portraite
  */
@@ -2120,7 +2118,7 @@ object {
 
   button.search {
   display: inline;
-}
+  }
 
 }
 
