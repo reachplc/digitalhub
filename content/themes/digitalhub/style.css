@@ -361,6 +361,7 @@ blockquote {
   padding-left: 1em;
   border-left: 0.2em solid rgb(27,196,229);
   color: rgb(37,37,37);
+  z-index: -10;
 }
 
   blockquote p {
@@ -752,7 +753,10 @@ textarea {
 #facebook {
   width: 25px;
   height: 25px;
-  background: url(images/new_sprite.png) no-repeat -275px -126px transparent;
+  background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+  background-position:  -275px -126px;
+  background-color: transparent;
   display: inline;
   margin-top: 15px;
   float: right;
@@ -796,7 +800,10 @@ textarea {
   border: 0;
   width: 20px;
   height: 20px;
-  background: url(images/new_sprite.png) no-repeat 0 -123px transparent;
+  background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 -123px;
+  background-color: transparent;
 }
 
 ::-webkit-input-placeholder {
@@ -1941,6 +1948,8 @@ object {
   .secondary-menu li {
     padding: 10px 0;
     width: 25%;
+    margin: 0;
+    float: left;
   }
 
   #strip {
@@ -1950,7 +1959,7 @@ object {
   }
 
   .mega {
-    font-size: 170%;
+    font-size: 155%;
   }
 
   .kilo {
@@ -2000,7 +2009,10 @@ object {
 }
 
 #js-nav-button {
-  background: url(images/new_sprite.png) no-repeat -266px -336px transparent;
+  background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+  background-position: -266px -336px;
+  background-color: transparent;
 }
 
  button.search {
@@ -2022,6 +2034,15 @@ object {
   padding: 0 10px;
 }
 
+#credit {
+  border-left: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-main ul {
+  font-size: 120%;
 }
 
 
@@ -2046,8 +2067,22 @@ object {
   #twitter,
   #facebook,
   .site-title {
-    background: url(images/sprite_x2.png) no-repeat transparent;
+    background-image: url(images/sprite_x2.png);
+    background-repeat: no-repeat;
     background-size: 300px 800px; 
+  }
+
+  #js-nav-button {
+      background-position: -266px -336px;
+      background-color: transparent;
+  }
+  .kilo,
+  button.prev,
+  button.next,
+  button.build,
+  button.category,
+  button {
+    background-color: #2ac2e3;
   }
 
 }
