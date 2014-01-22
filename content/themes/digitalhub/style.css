@@ -2077,12 +2077,52 @@ object {
 
 
 /**
- * Responsive Middle (768)
+ * Responsive large (1024) iPad landscape
  */
 
- @media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
 
- }
+  #js-nav-button:after {
+    content: " ";
+  }
+
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
+  }
+
+}
+
+}
+
+/**
+ * Responsive Middle (768) iPad portraite
+ */
+
+@media screen and (max-width: 768px) {
+
+  #js-nav-button:after {
+    content: " ";
+  }
+
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
+  }
+
+  #search {
+  display: none;
+  }
+
+  button.search {
+  display: inline;
+}
+
+}
 
 
 /**
@@ -2198,7 +2238,7 @@ object {
 .nav-main ul {
   font-size: 120%;
 }
-
+}
 
 /**
  * Retina Display Images below
@@ -2227,7 +2267,7 @@ object {
   }
 
   #tm-logo {
-    background-position: 0 -353px
+    background-position: 0 -539px
   }
 
   #js-nav-button {
