@@ -25,39 +25,26 @@ var exampleSwitch = exampleSwitch || {};
       $.extend(exampleSwitch.config, config);
     }
 
-//    $( '.example__video' ).each(function( index ) {
-//      console.log( index, $( this ), $( this ).data('example') );
-//    });
-
-    var _holder = $( '.example__video' ).parent();
-
     var _clicked = $('.js-example-preview').on( 'click', function() {
-      var _selected = $( this ).data('example');
 
-     if( _selected === 1) {
-        $('.example__video[data-example=1]').removeClass('hidden');
-        $('.example__video[data-example=2]').addClass('hidden');
-        $('.example__video[data-example=3]').addClass('hidden');
+      var _holder = $( '.example__video' ).parent(),
+          _children = _holder.children('.example__video'),
+          _selected = $( this ).data('example');
 
-      }
+          for ( var i = 0; i < _children.length; i++ ) {
+              // Logs "try 0", "try 1", ..., "try 4".
+              var _current = i+1;
+              console.log( i, _current, _selected );
 
-      if( _selected === 2) {
-        $('.example__video[data-example=1]').addClass('hidden');
-        $('.example__video[data-example=2]').removeClass('hidden');
-        $('.example__video[data-example=3]').addClass('hidden');
-      }
-
-      if( _selected === 3) {
-        $('.example__video[data-example=1]').addClass('hidden');
-        $('.example__video[data-example=2]').addClass('hidden');
-        $('.example__video[data-example=3]').removeClass('hidden');
-      }
+              if( _selected === _current ) {
+                $('.example__video[data-example=' + _current + ']').removeClass('hidden');
+              }
+              if( _selected !== _current ) {
+                $('.example__video[data-example=' + _current + ']').addClass('hidden');
+              }
+          }
 
     });
-
-    //.attr('data-example');
-    //var _video = $('.example__video').attr;
-    //console.log();
 
   };
 
