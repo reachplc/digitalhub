@@ -34,7 +34,7 @@ function get_example_preview($custom) {
 
       $_example_preview = urldecode( $custom['_example_' . $i . '_url_preview'][0] );
 
-    echo '<li><img class="example__preview--image" id="js-example-preview" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
+    echo '<li><img class="example__preview--image js-example-preview" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
     }
 
   }
