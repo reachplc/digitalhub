@@ -33,6 +33,13 @@
 		<div id="bgimg">
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
+				<div id="search-slide">
+					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
+					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
+					<input class="submit button" type="submit" name="submit" value=""/>
+					</div>
+				</form>
+				</div>
 			<div class="site-branding">
 				<div class="wrapper__sub">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"></h1></a>
