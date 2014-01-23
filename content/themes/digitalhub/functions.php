@@ -109,7 +109,11 @@ add_action( 'wp_enqueue_scripts', 'digitalhub_scripts' );
 function digitalhub_scripts_adverts() {
   global $post_type;
   if( $post_type == 'adverts' ) {
+
     wp_enqueue_script( 'digitalhub-fitvid', get_template_directory_uri() . '/js/lib/jquery.fitvids.js', array('jquery'), '20130816', true );
+
+    wp_enqueue_script( 'digitalhub-exampleSwitcher', get_template_directory_uri() . '/js/jquery.exampleSwitcher.js', array('jquery'), '20130816', true );
+
   }
 }
 
