@@ -1291,12 +1291,12 @@ button.build {
 }
 
 .region__preview li:first-child {
-  
+
 }
 
 .region__preview h1 {
   margin-bottom:10px;
-  
+
 }
 .region-img{
   width:100%;
@@ -1680,7 +1680,8 @@ object {
   .ls__3-8,
   .ls__4-9,
   .ls__5-10,
-  .ls__6-12 {
+  .ls__6-11,
+  .ls__7-12 {
     width: 50%;
   }
 
