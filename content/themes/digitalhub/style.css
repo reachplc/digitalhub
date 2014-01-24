@@ -829,6 +829,31 @@ textarea {
   background: url(images/white-sides.png) no-repeat center top transparent;
 }
 
+#search-slide {
+  display: none;
+  width: 100%;
+  background-color: #666666;
+  padding: 10px;
+}
+
+#search-slide form {
+  display: inline;
+}
+
+#search-close {
+  float: right;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url(images/close.png) no-repeat -5px -5px;
+  display: none;
+}
+
+#search-left {
+  display: inline;
+}
+
 #search {
   display: inline;
   float: right;
@@ -838,19 +863,32 @@ textarea {
   margin-right: 20px;
 }
 
+#search-slide input,
 #search input {
   background: #363737;
   color: #666666;
   border: 0;
 }
 
+#search-slide input {
+  padding: 10px;
+  width: 85%;
+  border-radius: 0;
+}
+
+#search-slide .submit {
+  height: 27px !important;
+  margin-left: 10px;
+}
+
+#search-slide .submit,
 #search .submit {
   border: 0;
   width: 20px;
   height: 20px;
   background-image: url(images/new_sprite.png);
   background-repeat: no-repeat;
-  background-position: 0 -123px;
+  background-position: 0 -116px;
   background-color: transparent;
 }
 
@@ -974,7 +1012,7 @@ textarea {
 }
 
 .nav-main ul.children {
-  padding: 0 0 20px; 0;
+  padding: 0 0 20px 0;
   font-size: 60%;
   font-weight: 400;
   text-transform: none;
@@ -985,7 +1023,7 @@ textarea {
 }
 
 .nav-main ul.sub-menu {
-  padding: 0 0 20px; 0;
+  padding: 0 0 20px 0;
   font-size: 60%;
   font-weight: 400;
   text-transform: none;
@@ -1303,13 +1341,17 @@ button.build {
 }
 
  button.search {
-  width: 30px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat -279px -224px transparent;
+  width: 24px;
+  height: 28px;
+  background: url(images/new_sprite.png) no-repeat -277px -224px transparent;
   float: right;
   padding: 0;
   margin: 15px 0 0;
   display: none;
+ }
+
+ button.search.clicked {
+    background: url(images/close.png) no-repeat 0 0 transparent;
  }
 
 /* General */
@@ -2075,7 +2117,6 @@ object {
   clear: both;
 }
 
-
 /**
  * Responsive large (1024) iPad landscape
  */
@@ -2122,6 +2163,31 @@ object {
 
 }
 
+/**
+ * Responsive fix for submenu at 700px width
+ */
+
+ @media screen and (max-width: 700px) {
+  
+  .secondary-menu li {
+  padding: 20px 0;
+  width: 25%;
+  margin: 0;
+  float: left;
+ }
+
+ .mega {
+  font-size: 230%;
+ }
+
+ .kilo {
+  font-size: 150%
+ }
+
+ #strip {
+  margin: 96px auto 0px;
+ }
+}
 
 /**
  * Responsive Smallest (480)
@@ -2147,11 +2213,11 @@ object {
 }
 
 .mega {
-  font-size: 155%;
+  font-size: 145%;
 }
 
 .kilo {
-  font-size: 100%;
+  font-size: 80%;
   background: url(images/new_sprite.png) no-repeat 272px -329px #2ac2e3
 }
 
@@ -2264,6 +2330,9 @@ object {
     background-size: 300px 800px; 
   }
 
+  button.search.clicked {
+    background: url(images/close_x2.png) no-repeat 0 0 transparent;
+  }
   #tm-logo {
     background-position: 0 -539px
   }

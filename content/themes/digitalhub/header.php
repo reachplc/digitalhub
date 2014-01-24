@@ -34,11 +34,12 @@
 		<header class="header__main nav-main__header cf" id="masthead" role="banner">
 			<div class="wrapper">
 				<div id="search-slide">
-					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
-					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
+					<form action="?php bloginfo('url'); ?" method="get">
+					<div id="search-left"><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
 				</form>
+				<div id="search-close">x</div>
 				</div>
 			<div class="site-branding">
 				<div class="wrapper__sub">
