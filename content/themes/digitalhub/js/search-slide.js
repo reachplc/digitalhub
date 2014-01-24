@@ -1,7 +1,7 @@
 jQuery(document).ready(function($) {
 	
-	$('.search').on('click' , function() {
-		$('.search').toggleClass('clicked');
+	$('button.search').on('click' , function() {
+		$('button.search').toggleClass('clicked');
 		$('.wrapper #search-slide').slideToggle();
 	});
 	$('#search-close').on('click' , function() {

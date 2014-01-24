@@ -878,6 +878,7 @@ textarea {
 
 #search-slide .submit {
   height: 27px !important;
+  background-position: 0 -116px !important;
   margin-left: 10px;
 }
 
@@ -888,7 +889,7 @@ textarea {
   height: 20px;
   background-image: url(images/new_sprite.png);
   background-repeat: no-repeat;
-  background-position: 0 -116px;
+  background-position: 0 -123px;
   background-color: transparent;
 }
 
@@ -911,6 +912,29 @@ textarea {
 #titles {
   text-align: right;
 }
+
+#primary,
+#secondary {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.search .page-header .page-title {
+  margin-bottom: 20px;
+  border-bottom: 0 none;
+}
+
+.search .page-header .page-title span {
+  padding: 0 10px;
+  color: #fff;
+  background: #2ac2e3;
+}
+
+.search article {
+  background: #f1f1f1;
+  padding: 10px;
+}
+
 
 /**
  * 3.2 Hero
