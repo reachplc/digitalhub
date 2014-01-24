@@ -2326,6 +2326,10 @@ object {
 .nav-main ul {
   font-size: 120%;
 }
+
+.nav-main ul.children {
+  font-size: 80%;
+}
 }
 
 /**
