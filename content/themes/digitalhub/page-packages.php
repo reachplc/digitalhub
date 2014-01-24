@@ -30,7 +30,7 @@ $terms = get_terms('packages');
         <img src="http://placehold.it/250x250.png" alt="">
       </aside>
 
-      <section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+      <section class="grid ss__1-4 ms__3-6 ls__5-12 xls__7-18">
         <h1 class="term-heading"><?php echo $term->name; ?></h1>
         <p><?php echo $term->description; ?></p>
         <p><a class="btn btn--primary" href="<?php echo trailingslashit(home_url()) . trailingslashit('packages') . trailingslashit($term->slug); ?>">View Available Formats</a></p>
