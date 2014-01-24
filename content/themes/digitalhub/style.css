@@ -742,6 +742,7 @@ textarea {
   margin-top: 0;  /* 2. */
   margin-bottom: 0;  /* 2. */
   padding-left:0;  /* 3. */
+
 }
 
   /* List Inline */
@@ -1180,7 +1181,6 @@ button.build {
   background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
  }
 
-<<<<<<< HEAD
 /**
  * 3.6 Content
  */
@@ -1266,6 +1266,46 @@ button.build {
   margin: 15px 0 0;
   display: none;
  }
+
+ /* Region Preview Images */
+
+/* Region Preview Images */
+
+.region__preview {
+  display:block;
+  margin-bottom: 2em;
+  float:left;
+  width:100%;
+}
+
+.region__preview li {
+
+  padding-left: 0.5em;
+  margin-bottom:0.5em;
+  width:50%;
+  float:left;
+}
+
+.region__preview li img{
+  width:100%;
+}
+
+.region__preview li:first-child {
+  
+}
+
+.region__preview h1 {
+  margin-bottom:10px;
+  
+}
+.region-img{
+  width:100%;
+}
+
+.region__map{
+  margin-bottom:20px;
+}
+
 
 /* General */
 
@@ -2032,10 +2072,24 @@ object {
 
 
 /**
+ * Responsive XL (1025)
+ */
+
+ @media screen and (min-width: 1025px) {
+
+  .region__preview li {
+  width:33%;
+  }
+
+
+ }
+
+/**
  * Responsive Middle (768)
  */
 
  @media screen and (max-width: 768px) {
+
 
  }
 
@@ -2134,6 +2188,12 @@ object {
   padding: 0 10px;
 }
 
+.region__map{
+  display:none;
+}
+
+
+
 }
 
 
@@ -2167,3 +2227,5 @@ object {
   }
 
 }
+
+

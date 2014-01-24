@@ -44,6 +44,16 @@
   });
 })( jQuery );
 <?php } ?>
+
+<?php if( $page == 'regions' || $page == 'contacts') {?>
+;(function( $ ){
+  $(document).ready(function(){
+    // Target your .container, .wrapper, .post, etc.
+    $('img[usemap]').rwdImageMaps();
+  });
+})( jQuery );
+<?php } ?>
+
 </script>
 
 </body>
