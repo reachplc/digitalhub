@@ -93,7 +93,7 @@ class Adverts {
 
     include(plugin_dir_path( __FILE__ ) . 'includes/example' . '.php');
     include(plugin_dir_path( __FILE__ ) . 'includes/build-guide' . '.php');
-
+    include(plugin_dir_path( __FILE__ ) . 'includes/packages' . '.php');
   }
 
   /**

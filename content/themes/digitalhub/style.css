@@ -2105,6 +2105,14 @@ object {
 
 /*  Core  */
 
+/**
+ * Apply max-width: 100% to image that are required to be responsive
+ */
+
+.image__responsive {
+  max-width: 100%;
+}
+
 /*
  *  Hide from both screenreaders and browsers: h5bp.com/u
  */
@@ -2355,7 +2363,7 @@ object {
   .site-title {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
-    background-size: 300px 800px; 
+    background-size: 300px 800px;
   }
 
   button.search.clicked {

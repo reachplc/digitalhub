@@ -9,6 +9,26 @@
  *
  * @package DigitalHub
  */
+$taxonomy_type = 'packages';
+$id = $post->ID;
+$pages = query_posts(array('showposts' => 99, 'post_parent' => $id, 'post_type' => 'page'));
+$current_package = 0;
+$current_package_post = 0;
+$alt = true;
+
+function package_aside(){ ?>
+  <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
+  <img class="image__responsive" src="<?php the_package_image(); ?>" alt="">
+  </aside>
+<?php }
+
+function package_section(){?>
+  <section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+    <h1 class="term-heading"><?php the_package_title(); ?></h1>
+    <p><?php the_package_description();?></p>
+    <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats</a></p>
+  </section>
+<?php }
 
 get_header(); ?>
 
@@ -17,43 +37,37 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-<?php
-$terms = get_terms('packages');
-  foreach ($terms as $term) {
-    $wpq = array ('taxonomy'=>'packages','term'=>$term->slug);
-    $myquery = new WP_Query ($wpq);
-    $article_count = $myquery->post_count;
-?>
-    <article id="<?php echo $term->slug; ?>" class="cf">
+    <?php /* Start the Loop */ ?>
+      <?php while ( have_packages() ) : the_packages(); ?>
 
-      <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-        <img src="http://placehold.it/250x250.png" alt="">
-      </aside>
+      <article id="" class="cf">
+        <?php echo (($alt = !$alt)?package_aside() . package_section():package_section() . package_aside());?>
+      </article>
 
-      <section class="grid ss__1-4 ms__3-6 ls__5-12 xls__7-18">
-        <h1 class="term-heading"><?php echo $term->name; ?></h1>
-        <p><?php echo $term->description; ?></p>
-        <p><a class="btn btn--primary" href="<?php echo trailingslashit(home_url()) . trailingslashit('packages') . trailingslashit($term->slug); ?>">View Available Formats</a></p>
-      </section>
 
-    </article>
-<?php } ?>
+      <?php endwhile; ?>
 
 <?php
-$id = $post->ID;
-query_posts(array('showposts' => 20, 'post_parent' => $id, 'post_type' => 'page'));
-while (have_posts()) { the_post(); ?>
+function package_page_aside() { ?>
+<aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
+<img class="image__responsive" src="<?php the_package_page_image(); ?>" alt="">
+</aside><?php
+}
+
+function package_page_section(){ ?>
+<section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+  <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
+  <p><?php the_package_page_description(); ?></p>
+  <p><a class="btn btn--primary" href="<?php the_package_page_link(); ?>">View Available Formats</a></p>
+</section>
+<?php }
+
+while (have_package_page()) { the_package_page(); ?>
+
   <article id="" class="cf">
-    <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-      <img src="http://placehold.it/250x250.png" alt="">
-    </aside>
-
-    <section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
-        <h1 class="term-heading"><?php the_title(); ?></h1>
-        <p>@TODO: description</p>
-        <p><a class="btn btn--primary" href="#">View Available Formats</a></p>
-    </section>
+    <?php echo (($alt = !$alt)?package_page_aside() . package_page_section():package_page_section() . package_page_aside());?>
   </article>
+
 <?php } ?>
 
     </main><!-- #main -->
