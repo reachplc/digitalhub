@@ -132,8 +132,8 @@ function the_package_page_link() {
 
   global $pages;
   global $current_package_post;
-
-  echo $pages[$current_package_post-1]->guid;
+  $slug = $pages[$current_package_post-1]->post_name;
+  echo trailingslashit(home_url()) . trailingslashit('packages') . trailingslashit($slug);
 
 }
 
@@ -142,7 +142,7 @@ function the_package_page_image() {
   global $pages;
   global $current_package_post;
 
-  $slug = $terms[$current_package -1]->slug;
+  $slug = $pages[$current_package_post-1]->post_name;
 
   echo get_stylesheet_directory_uri() . '/images/' . $slug . '.jpg';
 
