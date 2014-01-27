@@ -123,8 +123,6 @@ function the_package_page_description() {
   global $current_package_post;
 
   echo $pages[$current_package_post-1]->post_content;
-    echo json_encode($pages[$current_package_post-1]);
-
 
 }
 
