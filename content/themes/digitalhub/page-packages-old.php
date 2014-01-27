@@ -49,18 +49,16 @@ get_header(); ?>
 
 <?php
 function package_page_aside() { ?>
-<aside class="packages-image">
+<aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
 <img class="image__responsive" src="<?php the_package_page_image(); ?>" alt="">
 </aside><?php
 }
 
 function package_page_section(){ ?>
-<section class="packages-text">
-
+<section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
   <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
   <p><?php the_package_page_description(); ?></p>
-  <p><button>View available formats</button></p>
-  <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
+  <p><a class="btn btn--primary" href="<?php the_package_page_link(); ?>">View Available Formats</a></p>
 </section>
 <?php }
 

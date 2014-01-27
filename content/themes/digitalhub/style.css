@@ -189,6 +189,49 @@ h1, .alpha {
   font-weight: normal;
 }
 
+h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 250%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#main .cf {
+  border-top: 1px solid #dcdcdc;
+  padding: 30px 0 0;
+}
+
+#main .cf:nth-child(1) {
+  border-top: 0;
+}
+
+#main .cf img {
+  margin-top: -49px;
+}
+
+.packages-image,
+.packages-text {
+  float: left;
+}
+
+.packages-text .hide {
+  display: none;
+}
+
+
+.packages-text {
+  width: 45%;
+}
+
+.packages-image {
+  width: 55%;
+}
+
+.packages-image:nth-child(even) {
+  text-align: right;
+}
+
 h2, .beta {
   margin: 0;
   padding: 0;
@@ -1248,6 +1291,7 @@ textarea {
 
  button:hover {
   background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
+  text-shadow: 0 -1px 0 #c8124e;
  }
 
  button.category {
@@ -2337,6 +2381,41 @@ object {
 
 .nav-main ul.children {
   font-size: 80%;
+}
+
+.packages-image,
+.packages-text {
+  width: auto;
+  float: none;
+}
+
+.packages-image {
+  display: none;
+}
+
+.packages-text .hide {
+  display: block;
+}
+
+h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 250%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#main .cf {
+  border-top: 1px solid #dcdcdc;
+  padding: 20px 0 0;
+}
+
+#main .cf:nth-child(1) {
+  border-top: 0;
+}
+
+#main .cf img {
+  margin-top: 0;
 }
 }
 

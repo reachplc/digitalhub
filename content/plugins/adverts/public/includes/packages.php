@@ -81,7 +81,7 @@ function the_package_image() {
 
   $slug = $terms[$current_package -1]->slug;
 
-  echo get_stylesheet_directory_uri() . '/images/' . $slug . '.jpg';
+  echo get_stylesheet_directory_uri() . '/images/' . $slug . '.png';
 
 }
 
@@ -142,6 +142,6 @@ function the_package_page_image() {
 
   $slug = $pages[$current_package_post-1]->post_name;
 
-  echo get_stylesheet_directory_uri() . '/images/' . $slug . '.jpg';
+  echo get_stylesheet_directory_uri() . '/images/' . $slug . '.png';
 
 }
