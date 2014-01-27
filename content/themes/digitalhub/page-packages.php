@@ -18,7 +18,7 @@ $alt = true;
 
 function package_aside(){ ?>
   <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-  <img src="<?php the_package_image(); ?>" alt="">
+  <img class="image__responsive" src="<?php the_package_image(); ?>" alt="">
   </aside>
 <?php }
 
@@ -50,7 +50,7 @@ get_header(); ?>
 <?php
 function package_page_aside() { ?>
 <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-<img src="<?php the_package_page_image(); ?>" alt="">
+<img class="image__responsive" src="<?php the_package_page_image(); ?>" alt="">
 </aside><?php
 }
 
