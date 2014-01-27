@@ -1322,7 +1322,7 @@ button.build {
  */
 
 .example {
-  background: url(images/bg_example_monitor.png) no-repeat top center;
+  background: url(images/bg_example_monitor.jpg) no-repeat top center;
   background-size: 100% auto;
 }
 
@@ -2200,7 +2200,7 @@ object {
  */
 
  @media screen and (max-width: 700px) {
-  
+
   .secondary-menu li {
   padding: 20px 0;
   width: 25%;
