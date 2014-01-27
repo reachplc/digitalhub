@@ -50,7 +50,7 @@ get_header(); ?>
 <?php
 function package_page_aside() { ?>
 <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-<img src="http://placehold.it/250x250.png" alt="">
+<img src="<?php the_package_page_image(); ?>" alt="">
 </aside><?php
 }
 
