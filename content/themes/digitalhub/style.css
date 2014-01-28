@@ -2254,6 +2254,31 @@ object {
   display: inline;
   }
 
+  h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 200%;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+#main .packages__img {
+  padding: 0px
+}
+
+#main .packages__img img {
+  margin-top: -19px;
+  vertical-align:bottom;
+}
+
+.packages-image {
+  width: 50%;
+}
+
+.packages-text {
+  width: 50%;
+}
+
 }
 
 /**
