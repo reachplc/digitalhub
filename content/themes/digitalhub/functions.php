@@ -181,3 +181,15 @@ function my_login_head() {
 	";
 }
 
+/**
+ * Set amount of posts to show in archives
+ */
+
+function per_category_basis($query) {
+  if (is_post_type_archive( 'adverts' )) {
+    $query->set('posts_per_archive_page', 100);
+  }
+  return $query;
+}
+
+add_filter('pre_get_posts', 'per_category_basis');
