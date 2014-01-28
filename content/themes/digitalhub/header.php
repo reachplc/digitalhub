@@ -51,11 +51,12 @@
 				</div>
 			<div class="site-branding">
 				<div class="wrapper__sub">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title"></h1></a>
-				<button id="js-nav-button"></button>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title sprite"></h1>
+				</a>
+				<button id="js-nav-button" class="sprite"></button>
 				<button class="search"></button>
-				<a href="http://www.facebook.com"><div id="facebook"></div></a>
-				<a href="http://www.twitter.com"><div id="twitter"></div></a>
+				<a href="http://www.facebook.com"><div id="facebook" class="sprite"></div></a>
+				<a href="http://www.twitter.com"><div id="twitter" class="sprite"></div></a>
 				<div id="search">
 					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
 					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />

@@ -899,7 +899,9 @@ textarea {
 }
 
 .site-title {
-  background: url(images/new_sprite.png) no-repeat 0 0 transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
   width: 221px;
   height: 62px;
 }
@@ -907,7 +909,6 @@ textarea {
 #facebook {
   width: 25px;
   height: 25px;
-  background-image: url(images/new_sprite.png);
   background-repeat: no-repeat;
   background-position:  -275px -126px;
   background-color: transparent;
@@ -920,7 +921,9 @@ textarea {
 #twitter {
   width: 25px;
   height: 25px;
-  background: url(images/new_sprite.png) no-repeat -275px -90px transparent;
+  background-repeat: no-repeat;
+  background-position: -275px -90px;
+  background-color: transparent;
   display: inline;
   margin-top: 15px;
   float: right;
@@ -1072,7 +1075,9 @@ textarea {
 }
 
 #tm-logo {
-  background: url(images/new_sprite.png) no-repeat 0 -539px transparent;
+  background-repeat: no-repeat;
+  background-position: 0 -539px;
+  background-color: transparent;
   height: 24px;
   width: 200px;
   float: left;
@@ -1193,7 +1198,9 @@ textarea {
 }
 
 #js-nav-button {
-  background: url(images/new_sprite.png) no-repeat -225px -336px transparent;
+  background-repeat: no-repeat;
+  background-position: -225px -336px;
+  background-color: transparent;
   border: none;
   color: #fff;
   text-transform: uppercase;
@@ -1564,6 +1571,10 @@ button.build {
 }
 
 /* General */
+
+.sprite {
+  background-image: url(images/new_sprite.png);
+}
 
 body {
   background: #fff;
@@ -2602,17 +2613,14 @@ h1.term-heading {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
+  .sprite,
   button.prev,
   button.next,
   button.build,
   button.category,
   button.search,
   button,
-  #js-nav-button,
-  #tm-logo,
   #search .submit,
-  #twitter,
-  #facebook,
   .site-title,
   .pack-button {
     background-image: url(images/sprite_x2.png);
