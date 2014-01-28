@@ -197,16 +197,16 @@ h1.term-heading {
   margin-top: 20px;
 }
 
-#main .cf {
+#main .packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 30px 0 0;
 }
 
-#main .cf:nth-child(1) {
+#main .packages__img:nth-child(1) {
   border-top: 0;
 }
 
-#main .cf img {
+#main .packages__img img {
   margin-top: -49px;
 }
 
@@ -1400,6 +1400,23 @@ button.build {
   background-color: #ed145b;
  }
 
+.pack-button {
+  border: 0;
+  background: url(images/new_sprite.png) no-repeat 180px -82px #2ac2e3;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding: 5px 35px 5px 8px;
+  width: 200px;
+  text-align: left;
+  margin: 10px 0;
+  text-shadow: 0 -1px 0 #198eb9;
+}
+
+ .pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 180px -82px #ed145b;
+  text-shadow: 0 -1px 0 #c8124e;
+ }
+
 /**
  * 3.6 Content
  */
@@ -2362,6 +2379,41 @@ object {
   display: inline;
   }
 
+  h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 200%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#main .packages__img {
+  padding: 0px
+}
+
+#main .packages__img img {
+  margin-top: -19px;
+  vertical-align:bottom;
+}
+
+.packages-image {
+  width: 50%;
+}
+
+.packages-text {
+  width: 50%;
+  font-size: 85%
+}
+
+.pack-button {
+  font-size: 80%;
+  background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
+}
+
+.pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
+}
+
 }
 
 /**
@@ -2530,16 +2582,16 @@ h1.term-heading {
   margin-top: 20px;
 }
 
-#main .cf {
+#main .packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 20px 0 0;
 }
 
-#main .cf:nth-child(1) {
+#main .packages__img:nth-child(1) {
   border-top: 0;
 }
 
-#main .cf img {
+#main .packages__img img {
   margin-top: 0;
 }
 }
@@ -2564,7 +2616,8 @@ h1.term-heading {
   #search .submit,
   #twitter,
   #facebook,
-  .site-title {
+  .site-title,
+  .pack-button {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
     background-size: 300px 800px;
@@ -2586,7 +2639,8 @@ h1.term-heading {
   button.next,
   button.build,
   button.category,
-  button {
+  button,
+  .pack-button {
     background-color: #2ac2e3;
   }
 

@@ -17,16 +17,17 @@ $current_package_post = 0;
 $alt = true;
 
 function package_aside(){ ?>
-  <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
+  <aside class="packages-image">
   <img class="image__responsive" src="<?php the_package_image(); ?>" alt="">
   </aside>
 <?php }
 
 function package_section(){?>
-  <section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+  <section class="packages-text">
     <h1 class="term-heading"><?php the_package_title(); ?></h1>
     <p><?php the_package_description();?></p>
-    <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats</a></p>
+    <p><a class="pack-button" href="<?php the_package_link();?>">View Available Formats</a></p>
+    <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
   </section>
 <?php }
 
@@ -40,7 +41,7 @@ get_header(); ?>
     <?php /* Start the Loop */ ?>
       <?php while ( have_packages() ) : the_packages(); ?>
 
-      <article id="" class="cf">
+      <article id="" class="cf packages__img">
         <?php echo (($alt = !$alt)?package_aside() . package_section():package_section() . package_aside());?>
       </article>
 
@@ -59,14 +60,15 @@ function package_page_section(){ ?>
 
   <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
   <p><?php the_package_page_description(); ?></p>
-  <p><button>View available formats</button></p>
+  <p>
+    <p><a class="pack-button" href="<?php the_package_link();?>">View Available Formats</a></p>
   <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
 </section>
 <?php }
 
 while (have_package_page()) { the_package_page(); ?>
 
-  <article id="" class="cf">
+  <article id="" class="cf packages__img">
     <?php echo (($alt = !$alt)?package_page_aside() . package_page_section():package_page_section() . package_page_aside());?>
   </article>
 
