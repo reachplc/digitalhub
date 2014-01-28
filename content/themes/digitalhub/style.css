@@ -1333,11 +1333,11 @@ button.build {
  }
 
 .pack-button {
-   border: 0;
-  background: url(images/new_sprite.png) no-repeat 180px -84px #2ac2e3;
-  color: #fff;
+  border: 0;
+  background: url(images/new_sprite.png) no-repeat 180px -82px #2ac2e3;
+  color: #fff !important;
   text-transform: uppercase;
-  padding: 5px 25px 5px 5px;
+  padding: 5px 35px 5px 8px;
   width: 200px;
   text-align: left;
   margin: 10px 0;
@@ -1345,7 +1345,7 @@ button.build {
 }
 
  .pack-button:hover {
-  background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
+  background: url(images/new_sprite.png) no-repeat 180px -82px #ed145b;
   text-shadow: 0 -1px 0 #c8124e;
  }
 
