@@ -17,16 +17,16 @@ $current_package_post = 0;
 $alt = true;
 
 function package_aside(){ ?>
-  <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
+  <aside class="packages-image">
   <img class="image__responsive" src="<?php the_package_image(); ?>" alt="">
   </aside>
 <?php }
 
 function package_section(){?>
-  <section class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+  <section class="packages-text">
     <h1 class="term-heading"><?php the_package_title(); ?></h1>
     <p><?php the_package_description();?></p>
-    <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats</a></p>
+    <p><a href="<?php the_package_link();?><button>View available formats</button></a></p>
   </section>
 <?php }
 
@@ -58,8 +58,8 @@ function package_page_section(){ ?>
 <section class="packages-text">
 
   <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
-  <p><?php the_package_page_description(); ?></p><p>This is some text</p>
-  <p><button>View available formats</button></p>
+  <p><?php the_package_page_description(); ?></p>
+   <p><a href="<?php the_package_link();?><button>View available formats</button></a></p>
   <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
 </section>
 <?php }
