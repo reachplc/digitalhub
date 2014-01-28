@@ -197,16 +197,16 @@ h1.term-heading {
   margin-top: 20px;
 }
 
-#main .cf {
+#main .packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 30px 0 0;
 }
 
-#main .cf:nth-child(1) {
+#main .packages__img:nth-child(1) {
   border-top: 0;
 }
 
-#main .cf img {
+#main .packages__img img {
   margin-top: -49px;
 }
 
@@ -2422,16 +2422,16 @@ h1.term-heading {
   margin-top: 20px;
 }
 
-#main .cf {
+#main .packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 20px 0 0;
 }
 
-#main .cf:nth-child(1) {
+#main .packages__img:nth-child(1) {
   border-top: 0;
 }
 
-#main .cf img {
+#main .packages__img img {
   margin-top: 0;
 }
 }

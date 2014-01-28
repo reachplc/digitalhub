@@ -41,7 +41,7 @@ get_header(); ?>
     <?php /* Start the Loop */ ?>
       <?php while ( have_packages() ) : the_packages(); ?>
 
-      <article id="" class="cf">
+      <article id="" class="cf packages__img">
         <?php echo (($alt = !$alt)?package_aside() . package_section():package_section() . package_aside());?>
       </article>
 
@@ -67,7 +67,7 @@ function package_page_section(){ ?>
 
 while (have_package_page()) { the_package_page(); ?>
 
-  <article id="" class="cf">
+  <article id="" class="cf packages__img">
     <?php echo (($alt = !$alt)?package_page_aside() . package_page_section():package_page_section() . package_page_aside());?>
   </article>
 
