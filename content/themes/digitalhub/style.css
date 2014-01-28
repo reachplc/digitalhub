@@ -275,19 +275,14 @@ h6, .zeta {
 }
 
 .kilo {
-  padding: 5px 50px 5px 15px;
-  text-align: right;
-  background: url(images/new_sprite.png) no-repeat 505px -320px #2ac2e3;
-  font-weight: 200;
-  color: #fff;
-  font-size: 200%;
-  margin: 0 20px 0 0;
   display: inline-block;
-  text-shadow: 0 -1px 0 #198eb9;
-}
-
-.kilo:hover {
-  background: url(images/new_sprite.png) no-repeat 505px -320px #ed145b;
+  margin: 0 20px 0 0;
+  padding: 5px 15px;
+  background: rgb(27,196,229);
+  color: rgb(255,255,255);
+  font-size: 2em;
+  font-weight: 200;
+  text-shadow: 0 1px 0 #198eb9;
 }
 
 /**
@@ -2438,7 +2433,7 @@ object {
  }
 
  .kilo {
-  font-size: 150%
+  font-size: 1.5em;
  }
 
  #strip {
@@ -2474,8 +2469,7 @@ object {
 }
 
 .kilo {
-  font-size: 80%;
-  background: url(images/new_sprite.png) no-repeat 272px -329px #2ac2e3
+  font-size: 1em;
 }
 
 #bgimg {
@@ -2608,7 +2602,6 @@ h1.term-heading {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-  .kilo,
   button.prev,
   button.next,
   button.build,
@@ -2638,7 +2631,7 @@ h1.term-heading {
       background-position: -266px -336px;
       background-color: transparent;
   }
-  .kilo,
+
   button.prev,
   button.next,
   button.build,

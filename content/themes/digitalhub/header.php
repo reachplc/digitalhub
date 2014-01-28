@@ -71,7 +71,7 @@
 	</header><!-- #s-header -->
 	<div id="titles">
 	<h1 class="mega">Trinity Mirror Digital Hub</h1><br />
-	<h2 class="kilo">Inspiring advertising to maximize impact<div class="arrow"></div></h2>
+	<h2 class="kilo">Inspiring advertising to maximize impact</h2>
 </div>
 	<div id="strip">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'menu_class' => 'secondary-menu') ); ?>
