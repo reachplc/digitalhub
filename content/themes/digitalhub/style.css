@@ -1332,6 +1332,23 @@ button.build {
   background-color: #ed145b;
  }
 
+.pack-button {
+   border: 0;
+  background: url(images/new_sprite.png) no-repeat 180px -84px #2ac2e3;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 25px 5px 5px;
+  width: 200px;
+  text-align: left;
+  margin: 10px 0;
+  text-shadow: 0 -1px 0 #198eb9;
+}
+
+ .pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
+  text-shadow: 0 -1px 0 #c8124e;
+ }
+
 /**
  * 3.6 Content
  */
@@ -2439,7 +2456,8 @@ h1.term-heading {
   #search .submit,
   #twitter,
   #facebook,
-  .site-title {
+  .site-title,
+  .pack-button {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
     background-size: 300px 800px;
@@ -2461,7 +2479,8 @@ h1.term-heading {
   button.next,
   button.build,
   button.category,
-  button {
+  button,
+  .pack-button {
     background-color: #2ac2e3;
   }
 
