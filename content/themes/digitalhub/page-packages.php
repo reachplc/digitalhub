@@ -58,7 +58,7 @@ function package_page_section(){ ?>
 <section class="packages-text">
 
   <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
-  <p><?php the_package_page_description(); ?></p>
+  <p><?php the_package_page_description(); ?></p><p>This is some text</p>
   <p><button>View available formats</button></p>
   <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
 </section>
