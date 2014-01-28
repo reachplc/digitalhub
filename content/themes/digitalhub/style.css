@@ -189,7 +189,7 @@ h1, .alpha {
   font-weight: normal;
 }
 
-h1.term-heading {
+.packages__title {
   border-bottom: 0;
   font-weight: 200;
   font-size: 250%;
@@ -197,16 +197,16 @@ h1.term-heading {
   margin-top: 20px;
 }
 
-#main .packages__img {
+.packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 30px 0 0;
 }
 
-#main .packages__img:nth-child(1) {
+.packages__img:nth-child(1) {
   border-top: 0;
 }
 
-#main .packages__img img {
+.packages__img img {
   margin-top: -49px;
 }
 
