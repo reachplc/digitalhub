@@ -1453,32 +1453,54 @@ button.build {
  * 3.7 Examples
  */
 
-.example {
+.example--desktop {
   background: url(images/bg_example_monitor.jpg) no-repeat top center;
   background-size: 100% auto;
 }
 
+.example--app {
+  /*background: url(images/bg_example_app.jpg) no-repeat top center;*/
+  background: url(http://placehold.it/320x480.jpg) no-repeat top center;
+  background-size: auto 100%;
+}
+
+.example--app video {
+  width: 320px;
+  height: 480px;
+}
+
 @media screen and (min-width: 481px) {
 
-  .example {
+  .example--app {
+    min-height: 480px;
+  }
+
+  .example--desktop {
     min-height: 344px;
   }
 
 }
 
 @media screen and (min-width: 1025px) {
-  .example {
+  .example--desktop {
     min-height: 515px;
   }
 }
 
 /* Example Video */
 
-.example__video {
+.example--desktop .example__video {
   /* Centre's video inside parent element */
   margin-right: auto;
   margin-left: auto;
   padding: 18px 15.5% 0;
+}
+
+.example--app .example__video {
+  /* Centre's video inside parent element */
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 17.5%;
 }
 
 /* Example Preview Images */
