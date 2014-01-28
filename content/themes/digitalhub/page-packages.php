@@ -27,6 +27,7 @@ function package_section(){?>
     <h1 class="term-heading"><?php the_package_title(); ?></h1>
     <p><?php the_package_description();?></p>
     <p><a href="<?php the_package_link();?>"><button>View available formats</button></a></p>
+    <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
   </section>
 <?php }
 
