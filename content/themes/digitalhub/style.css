@@ -1482,7 +1482,11 @@ button.build {
 
 .example__preview {
   margin-bottom: 2em;
-  text-align: center;
+  text-align: left;
+}
+
+.example__preview--image {
+  border: 1px solid #2ac2e3;
 }
 
 .example__preview li {
