@@ -2277,11 +2277,11 @@ object {
 
 .packages-text {
   width: 50%;
-  font-size: 85%;
+  font-size: 85%
 }
 
 .pack-button {
-  font-size: 70%;
+  font-size: 80%;
   background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
 }
 
