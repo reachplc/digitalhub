@@ -24,6 +24,9 @@
   <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-60x60-precomposed.png">
 
 
+
+
+
 <?php wp_head(); ?>
 </head>
 

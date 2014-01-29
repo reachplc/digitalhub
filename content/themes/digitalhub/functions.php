@@ -121,6 +121,15 @@ function digitalhub_scripts_adverts() {
 
 add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_adverts' );
 
+  function digitalhub_scripts_map() {
+  global $page;
+  if( $page == 'regions' || $page == 'contacts') {
+    wp_enqueue_script( 'digitalhub-rwdImageMaps', get_template_directory_uri() . '/js/lib/jquery.rwdImageMaps.js', array('jquery'), '20140124', true );
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_map' );
+
 /**
  * Add custom web fonts
  */

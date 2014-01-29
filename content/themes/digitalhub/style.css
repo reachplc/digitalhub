@@ -38,6 +38,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.4 - Navigation
  *   3.5 - Button
  *   3.6 - Content
+ *   3.10 - Regions
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -1574,6 +1575,95 @@ button.build {
   background: rgb(237,20,91);
 }
 
+/**
+ * 3.10 Regions
+ */
+
+.region__preview {
+  display:block;
+  margin-bottom: 2em;
+  float:left;
+  width:100%;
+}
+
+.region__preview li {
+  -moz-transition:width 1s;
+  -o-transition:width 1s;
+  -transition:width 1s;
+  -webkit-transition:width 1s;
+
+  padding-left: 0.5em;
+  margin-bottom:0.5em;
+  width:16.66666666%;
+  float:left;
+}
+
+.region__preview li img{
+  width:100%;
+}
+
+.region__preview li:first-child {
+
+}
+
+.region__preview h1 {
+  margin-bottom:10px;
+
+}
+.region-img{
+  max-width: 100%;
+max-height: 476px;
+text-align: center;
+}
+
+.region__map{
+  margin-bottom:20px;
+}
+
+#reg__map-wrap{position:relative;text-align:center;}
+
+#area__tags-wrap{position:absolute; top:0; left:0;width: 100%;}
+
+*:focus {
+  outline: none;
+}
+
+/**
+ * Responsive XL (1025)
+ */
+
+@media screen and (max-width: 1025px) {
+
+  .region__preview li {
+    width:25%;
+  }
+
+}
+
+/**
+ * Responsive Middle (768)
+ */
+
+ @media screen and (max-width: 768px) {
+
+  .region__preview li {
+    width:33%;
+  }
+
+}
+
+/**
+ * Responsive Smallest (480)
+ */
+
+ @media screen and (max-width: 480px) {
+
+.region__preview li {
+  width:50%;
+  }
+
+}
+
 /* General */
 
 .sprite {
@@ -2306,6 +2396,69 @@ object {
 
 /*  Core  */
 
+/*  -- Animations -- */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
 /**
  * Apply max-width: 100% to image that are required to be responsive
  */
@@ -2461,153 +2614,153 @@ object {
  * Responsive Smallest (480)
  */
 
- @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
-.secondary-menu {
-  font-size: 70%;
-}
+  .secondary-menu {
+    font-size: 70%;
+  }
 
-.secondary-menu li {
-  padding: 10px 0;
-  width: 25%;
-  margin: 0;
-  float: left;
-}
+  .secondary-menu li {
+    padding: 10px 0;
+    width: 25%;
+    margin: 0;
+    float: left;
+  }
 
-#strip {
-  margin: 60px auto 0;
-  background: transparent; /* TODO */
-  min-height: 28px;
-}
+  #strip {
+    margin: 60px auto 0;
+    background: transparent; /* TODO */
+    min-height: 28px;
+  }
 
-.mega {
-  font-size: 145%;
-}
+  .mega {
+    font-size: 145%;
+  }
 
-.kilo {
-  font-size: 1em;
-}
+  .kilo {
+    font-size: 1em;
+  }
 
-#bgimg {
-  min-height: 260px;
-}
+  #bgimg {
+    min-height: 260px;
+  }
 
-#search {
-  display: none;
-}
+  #search {
+    display: none;
+  }
 
-.secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
-  background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
- }
+  .secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
+    background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
+   }
 
-.nav-main__nav {
-  width: 100%;
-  padding-top: 60px;
-}
+  .nav-main__nav {
+    width: 100%;
+    padding-top: 60px;
+  }
 
-.is-nav-inactive {
-  right: -100%;
-}
+  .is-nav-inactive {
+    right: -100%;
+  }
 
-.nav-main__header {
-  width: 100%;
-}
+  .nav-main__header {
+    width: 100%;
+  }
 
-.sub-menu li {
-  margin: 0;
-}
+  .sub-menu li {
+    margin: 0;
+  }
 
- .children li {
-  margin: 0;
-}
+   .children li {
+    margin: 0;
+  }
 
-#twitter {
-  display: none;
-}
+  #twitter {
+    display: none;
+  }
 
-#facebook {
-  display: none;
-}
+  #facebook {
+    display: none;
+  }
 
-#js-nav-button:after {
-  content: " ";
-}
+  #js-nav-button:after {
+    content: " ";
+  }
 
-#js-nav-button {
-  background-image: url(images/new_sprite.png);
-  background-repeat: no-repeat;
-  background-position: -266px -336px;
-  background-color: transparent;
-}
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
+  }
 
- button.search {
-  display: inline;
-}
+   button.search {
+    display: inline;
+  }
 
-#tm-logo {
-  float: none;
-  display: block;
-}
+  #tm-logo {
+    float: none;
+    display: block;
+  }
 
-#copy-credit {
-  display: block;
-  float: none;
-}
+  #copy-credit {
+    display: block;
+    float: none;
+  }
 
-#colophon {
-  height: 80px;
-  padding: 0 10px;
-}
+  #colophon {
+    height: 80px;
+    padding: 0 10px;
+  }
 
-#credit {
-  border-left: 0;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
+  #credit {
+    border-left: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
 
-.nav-main ul {
-  font-size: 120%;
-}
+  .nav-main ul {
+    font-size: 120%;
+  }
 
-.nav-main ul.children {
-  font-size: 80%;
-}
+  .nav-main ul.children {
+    font-size: 80%;
+  }
 
-.packages-image,
-.packages-text {
-  width: auto;
-  float: none;
-}
+  .packages-image,
+  .packages-text {
+    width: auto;
+    float: none;
+  }
 
-.packages-image {
-  display: none;
-}
+  .packages-image {
+    display: none;
+  }
 
-.packages-text .hide {
-  display: block;
-}
+  .packages-text .hide {
+    display: block;
+  }
 
-h1.term-heading {
-  border-bottom: 0;
-  font-weight: 200;
-  font-size: 250%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
+  h1.term-heading {
+    border-bottom: 0;
+    font-weight: 200;
+    font-size: 250%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
-#main .packages__img {
-  border-top: 1px solid #dcdcdc;
-  padding: 20px 0 0;
-}
+  #main .packages__img {
+    border-top: 1px solid #dcdcdc;
+    padding: 20px 0 0;
+  }
 
-#main .packages__img:nth-child(1) {
-  border-top: 0;
-}
+  #main .packages__img:nth-child(1) {
+    border-top: 0;
+  }
 
-#main .packages__img img {
-  margin-top: 0;
-}
+  #main .packages__img img {
+    margin-top: 0;
+  }
 }
 
 /**
