@@ -13,7 +13,12 @@
  */
 ?>
 
-<?php $custom = get_post_custom();?>
+<?php
+global $post;
+$custom = get_post_custom();
+$terms = get_the_terms( $post->ID, 'formats' );
+?>
+
 <?php get_header(); ?>
 
   <div class="wrapper__sub">
@@ -74,7 +79,14 @@
           <?php endif; ?>
 
           </section>
-          <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18 example">
+          <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18 example<?php
+          if(has_term( 'app', 'formats')) {
+            echo ' example--app';
+          } else {
+            echo ' example--desktop';
+          }
+          ?>">
+
 
           <?php get_example_video($custom); ?>
 

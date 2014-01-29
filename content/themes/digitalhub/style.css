@@ -1453,32 +1453,53 @@ button.build {
  * 3.7 Examples
  */
 
-.example {
+.example--desktop {
   background: url(images/bg_example_monitor.jpg) no-repeat top center;
   background-size: 100% auto;
 }
 
+.example--app {
+  background: url(images/bg_example_mobile.png) no-repeat top center;
+  background-size: auto 100%;
+  min-height: 480px;
+}
+
+.example--app video {
+  width: 210px;
+  height: 315px;
+}
+
 @media screen and (min-width: 481px) {
 
-  .example {
+  .example--app {
+    min-height: 480px;
+  }
+
+  .example--desktop {
     min-height: 344px;
   }
 
 }
 
 @media screen and (min-width: 1025px) {
-  .example {
+  .example--desktop {
     min-height: 515px;
   }
 }
 
 /* Example Video */
 
-.example__video {
+.example--desktop .example__video {
   /* Centre's video inside parent element */
   margin-right: auto;
   margin-left: auto;
   padding: 18px 15.5% 0;
+}
+
+.example--app .example__video {
+  /* Centre's video inside parent element */
+  text-align: center;
+  padding-top: 70px;
 }
 
 /* Example Preview Images */
