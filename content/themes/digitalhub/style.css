@@ -2614,153 +2614,153 @@ object {
  * Responsive Smallest (480)
  */
 
- @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
-.secondary-menu {
-  font-size: 70%;
-}
+  .secondary-menu {
+    font-size: 70%;
+  }
 
-.secondary-menu li {
-  padding: 10px 0;
-  width: 25%;
-  margin: 0;
-  float: left;
-}
+  .secondary-menu li {
+    padding: 10px 0;
+    width: 25%;
+    margin: 0;
+    float: left;
+  }
 
-#strip {
-  margin: 60px auto 0;
-  background: transparent; /* TODO */
-  min-height: 28px;
-}
+  #strip {
+    margin: 60px auto 0;
+    background: transparent; /* TODO */
+    min-height: 28px;
+  }
 
-.mega {
-  font-size: 145%;
-}
+  .mega {
+    font-size: 145%;
+  }
 
-.kilo {
-  font-size: 1em;
-}
+  .kilo {
+    font-size: 1em;
+  }
 
-#bgimg {
-  min-height: 260px;
-}
+  #bgimg {
+    min-height: 260px;
+  }
 
-#search {
-  display: none;
-}
+  #search {
+    display: none;
+  }
 
-.secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
-  background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
- }
+  .secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
+    background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
+   }
 
-.nav-main__nav {
-  width: 100%;
-  padding-top: 60px;
-}
+  .nav-main__nav {
+    width: 100%;
+    padding-top: 60px;
+  }
 
-.is-nav-inactive {
-  right: -100%;
-}
+  .is-nav-inactive {
+    right: -100%;
+  }
 
-.nav-main__header {
-  width: 100%;
-}
+  .nav-main__header {
+    width: 100%;
+  }
 
-.sub-menu li {
-  margin: 0;
-}
+  .sub-menu li {
+    margin: 0;
+  }
 
- .children li {
-  margin: 0;
-}
+   .children li {
+    margin: 0;
+  }
 
-#twitter {
-  display: none;
-}
+  #twitter {
+    display: none;
+  }
 
-#facebook {
-  display: none;
-}
+  #facebook {
+    display: none;
+  }
 
-#js-nav-button:after {
-  content: " ";
-}
+  #js-nav-button:after {
+    content: " ";
+  }
 
-#js-nav-button {
-  background-image: url(images/new_sprite.png);
-  background-repeat: no-repeat;
-  background-position: -266px -336px;
-  background-color: transparent;
-}
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
+  }
 
- button.search {
-  display: inline;
-}
+   button.search {
+    display: inline;
+  }
 
-#tm-logo {
-  float: none;
-  display: block;
-}
+  #tm-logo {
+    float: none;
+    display: block;
+  }
 
-#copy-credit {
-  display: block;
-  float: none;
-}
+  #copy-credit {
+    display: block;
+    float: none;
+  }
 
-#colophon {
-  height: 80px;
-  padding: 0 10px;
-}
+  #colophon {
+    height: 80px;
+    padding: 0 10px;
+  }
 
-#credit {
-  border-left: 0;
-  display: block;
-  padding: 0;
-  margin: 0;
-}
+  #credit {
+    border-left: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
+  }
 
-.nav-main ul {
-  font-size: 120%;
-}
+  .nav-main ul {
+    font-size: 120%;
+  }
 
-.nav-main ul.children {
-  font-size: 80%;
-}
+  .nav-main ul.children {
+    font-size: 80%;
+  }
 
-.packages-image,
-.packages-text {
-  width: auto;
-  float: none;
-}
+  .packages-image,
+  .packages-text {
+    width: auto;
+    float: none;
+  }
 
-.packages-image {
-  display: none;
-}
+  .packages-image {
+    display: none;
+  }
 
-.packages-text .hide {
-  display: block;
-}
+  .packages-text .hide {
+    display: block;
+  }
 
-h1.term-heading {
-  border-bottom: 0;
-  font-weight: 200;
-  font-size: 250%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
+  h1.term-heading {
+    border-bottom: 0;
+    font-weight: 200;
+    font-size: 250%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
 
-#main .packages__img {
-  border-top: 1px solid #dcdcdc;
-  padding: 20px 0 0;
-}
+  #main .packages__img {
+    border-top: 1px solid #dcdcdc;
+    padding: 20px 0 0;
+  }
 
-#main .packages__img:nth-child(1) {
-  border-top: 0;
-}
+  #main .packages__img:nth-child(1) {
+    border-top: 0;
+  }
 
-#main .packages__img img {
-  margin-top: 0;
-}
+  #main .packages__img img {
+    margin-top: 0;
+  }
 }
 
 /**

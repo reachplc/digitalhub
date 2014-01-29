@@ -92,7 +92,7 @@ add_action( 'widgets_init', 'digitalhub_widgets_init' );
 function digitalhub_scripts() {
 	wp_enqueue_style( 'digitalhub-style', get_stylesheet_uri() );
 
-  wp_enqueue_script( 'digitalhub-searchslide', get_template_directory_uri() . '/js/search-slide.js', array('jquery'));
+	wp_enqueue_script( 'digitalhub-searchslide', get_template_directory_uri() . '/js/search-slide.js', array('jquery'));
 
 	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'));
 
@@ -174,20 +174,20 @@ function wpb_adding_scripts() {
 }
 
 /**
-        * Custom Login Logo
-        */
+	* Custom Login Logo
+	*/
 
 add_action("login_head", "my_login_head");
 function my_login_head() {
-        echo "
-        <style>
-        body.login #login h1 a {
-                background: url('".get_bloginfo('template_url')."/images/logo-login.png') no-repeat scroll center top transparent;
-                height: 83px;
-                width: 300px;
-        }
-        </style>
-        ";
+	echo "
+	<style>
+	body.login #login h1 a {
+		background: url('".get_bloginfo('template_url')."/images/logo-login.png') no-repeat scroll center top transparent;
+		height: 83px;
+		width: 300px;
+	}
+	</style>
+	";
 }
 
 /**
