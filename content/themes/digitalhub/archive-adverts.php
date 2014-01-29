@@ -21,7 +21,7 @@
 
     <main id="main" class="site-main" role="main">
 
-      <section class="cf">
+      <section class="adverts__intro cf">
         <article class="grid ss__1-4 ms__1-6 ls__1-6 xls__1-10">
 
       <header class="archive-header">
