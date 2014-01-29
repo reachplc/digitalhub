@@ -24,6 +24,7 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
+
 <script>
 ;(function( $ ){
   $(document).ready(function() {
@@ -36,6 +37,8 @@
 
   });
 })( jQuery );
+
+
 <?php if( $post_type == 'adverts' ) {?>
 ;(function( $ ){
   $(document).ready(function(){
@@ -45,16 +48,58 @@
 })( jQuery );
 <?php } ?>
 
-<?php if( $page == 'regions' || $page == 'contacts') {?>
+</script>
+
+
+
+<script>
+<?php if( $page == 'regions') {?>
 ;(function( $ ){
-  $(document).ready(function(){
-    // Target your .container, .wrapper, .post, etc.
-    $('img[usemap]').rwdImageMaps();
-  });
+$(document).ready(function(e) {
+  $('img[usemap]').rwdImageMaps();
+});
 })( jQuery );
 <?php } ?>
-
 </script>
+
+
+
+
+    <script>
+
+    ;(function( $ ){
+
+    function goToScrollDiv(link){
+          // Reove "link" from the ID
+var href = link;
+
+ 
+        //link = link.remove("#", "");
+        $('html,body').animate({
+            scrollTop: $(href).offset().top},
+            'slow');
+       
+        console.log (href);  
+    }
+    
+
+    $("#reg__map-wrap map area").click(function(e) { 
+          // Prevent a page reload when a link is pressed
+        
+
+        var link = $(this).attr('href');
+      
+          // Call the scroll function
+        goToScrollDiv(link); 
+
+
+             
+    });
+
+})( jQuery );
+
+
+    </script>
 
 </body>
 </html>

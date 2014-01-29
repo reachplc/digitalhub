@@ -58,6 +58,10 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *  http://paulirish.com/2012/box-sizing-border-box-ftw/
  */
 
+
+
+
+
 *,
 *:before,
 *:after {
@@ -130,6 +134,8 @@ body {
 /**
  * Addresses `outline` inconsistency between Chrome and other browsers
  */
+
+
 
 a:focus {
   outline: thin dotted;
@@ -1279,10 +1285,14 @@ button.build {
 }
 
 .region__preview li {
+  -moz-transition:width 1s;
+  -o-transition:width 1s;
+  -transition:width 1s;
+  -webkit-transition:width 1s;
 
   padding-left: 0.5em;
   margin-bottom:0.5em;
-  width:50%;
+  width:16.66666666%;
   float:left;
 }
 
@@ -1299,12 +1309,23 @@ button.build {
 
 }
 .region-img{
-  width:100%;
+  max-width: 100%;
+max-height: 476px;
+text-align: center;
 }
 
 .region__map{
   margin-bottom:20px;
 }
+
+#reg__map-wrap{position:relative;text-align:center;}
+
+#area__tags-wrap{position:absolute; top:0; left:0;width: 100%;}
+
+*:focus  
+{  
+    outline: none;  
+} 
 
 
 /* General */
@@ -1963,6 +1984,69 @@ object {
  * Placed at the end as most of these classes will overwrite others.
  */
 
+ /*  -- Animations -- */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
 /* Alignment */
 .alignleft {
   display: inline;
@@ -2072,14 +2156,16 @@ object {
 }
 
 
+
+
 /**
  * Responsive XL (1025)
  */
 
- @media screen and (min-width: 1025px) {
+ @media screen and (max-width: 1025px) {
 
   .region__preview li {
-  width:33%;
+  width:25%;
   }
 
 
@@ -2090,7 +2176,13 @@ object {
  */
 
  @media screen and (max-width: 768px) {
+.region__preview li {
+  width:33%;
+  }
 
+  .region__map{
+  display:none;
+}
 
  }
 
@@ -2189,9 +2281,10 @@ object {
   padding: 0 10px;
 }
 
-.region__map{
-  display:none;
-}
+
+.region__preview li {
+  width:50%;
+  }
 
 
 
@@ -2228,5 +2321,8 @@ object {
   }
 
 }
+
+
+
 
 

@@ -19,52 +19,117 @@ Template Name: Regions
 get_header(); ?>
 
 <div class="wrapper__sub">
-
-  <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-
-
-    <article id="<?php echo $term->slug; ?>" class="cf">
-
-      
-
-      <section class="grid ss__1-4 ms__1-3 ls__1-6 xls__1-10">
-         <?php while ( have_posts() ) : the_post(); ?>
-
-        <?php get_template_part( 'content', 'page' ); ?>
-
-        <?php
+<div id="primary" class="content-area">
+<main id="main" class="site-main" role="main">
+<article id="<?php echo $term->slug; ?>" class="cf">
+<section class="grid ss__1-4 ms__1-6 ls__1-12 xls__1-18">
+<div class="grid ss__1-4 ms__1-6 ls__1-6 xls__1-9">
+  <?php while ( have_posts() ) : the_post(); ?>
+  <?php get_template_part( 'content', 'page' ); ?>
+  <?php
           // If comments are open or we have at least one comment, load up the comment template
           if ( comments_open() || '0' != get_comments_number() ) :
             comments_template();
           endif;
         ?>
+  <?php endwhile; // end of the loop. ?>
+</div>
+<aside class="grid ss__1-4 ms__1-6 ls__7-12 xls__10-18">
+<div id = "reg__map-wrap">
+<img name="regionmap" src="
+<?php echo get_template_directory_uri(); ?>/images/map_base.png" class="region-img" id="regionmap" usemap="#m_regionmap" alt="" />
+<div id = "area__tags-wrap" class="animated fadeInDown">
+<img name="area-tags" src="<?php echo get_template_directory_uri(); ?>/images/area-tags.png" class="region-img" id="area-tags" usemap="#m_area-tags" alt="" />
+<map name="m_area-tags" id="m_area-tags">
+<area shape="rect" coords="298,368,403,407" href="#tms" title="Southwest" alt="Southwest" />
+<area shape="rect" coords="162,329,244,368" href="#wales" title="Wales" alt="Wales" />
+<area shape="rect" coords="255,287,356,323" href="#midlands" title="Midlands" alt="Midlands" />
+<area shape="rect" coords="264,238,346,276" href="#men" title="MEN" alt="MEN" />
+<area shape="rect" coords="148,246,261,287" href="#northwest" title="NorthWest" alt="NorthWest" />
+<area shape="rect" coords="268,165,385,204" href="#northeast" title="NorthEast" alt="NorthEast" />
+<area shape="rect" coords="191,125,298,160" href="#scotland" title="Scotland" alt="Scotland" />
+</div>
+</div>
+</aside>
+</section>
+<section class="grid ss__1-4 ms__1-6 ls__1-12 xls__1-18">
+  <div class="region__preview">
+    <h1>National</h1>
+    <ul class="list list__inline">
+      <li><a title="Mirror" href="http://www.mirror.co.uk/" target="_blank"><img class="alignnone size-full wp-image-127" alt="mirror" src="http://localhost/digitalhub/content/uploads/2014/01/mirror.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="northwest">
+    <h1>Northwest</h1>
+    <ul class="list list__inline">
+      <li><a title="Crewe Chronicle" href="http://www.crewechronicle.co.uk/" target="_blank"><img class="alignnone size-full wp-image-111" alt="crewe_chronicle" src="http://localhost/digitalhub/content/uploads/2014/01/crewe_chronicle.jpg" /></a></li>
+      <li><a title="Chester Chronicle" href="http://www.chesterchronicle.co.uk/" target="_blank"><img class="alignnone size-full wp-image-109" alt="chester_chron" src="http://localhost/digitalhub/content/uploads/2014/01/chester_chron.jpg" /></a></li>
+      <li><a title="Crosby Herald" href="http://www.crosbyherald.co.uk/" target="_blank"><img class="alignnone size-full wp-image-112" alt="crosby_herald" src="http://localhost/digitalhub/content/uploads/2014/01/crosby_herald.jpg" /></a></li>
+      <li><a title="Formby Times" href="http://www.formbytimes.co.uk/" target="_blank"><img class="alignnone  wp-image-114" alt="formbytimes" src="http://localhost/digitalhub/content/uploads/2014/01/formbytimes.jpg" /></a></li>
+      <li><a title="Liverpool Echo" href="http://www.liverpoolecho.co.uk/" target="_blank"><img class="alignnone size-full wp-image-123" alt="liverpool_echo" src="http://localhost/digitalhub/content/uploads/2014/01/liverpool_echo.jpg" /></a></li>
+      <li><a title="Ormskirk &amp; Skelmersdale Advertiser" href="http://www.osadvertiser.co.uk/" target="_blank"><img class="alignnone size-full wp-image-128" alt="orm_skem_advertiser" src="http://localhost/digitalhub/content/uploads/2014/01/orm_skem_advertiser.jpg" /></a></li>
+      <li><a title="Runcorn and Widnes Weekly News" href="http://www.runcornandwidnesweeklynews.co.uk/" target="_blank"><img class="alignnone size-full wp-image-130" alt="runc_widness_weekly" src="http://localhost/digitalhub/content/uploads/2014/01/runc_widness_weekly.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="midlands">
+    <h1>Midlands</h1>
+    <ul class="list ">
+      <li><a title="Birmingham Mail" href="http://www.birminghammail.co.uk/" target="_blank"><img class="alignnone size-full wp-image-131" alt="birm_mail" src="http://localhost/digitalhub/content/uploads/2014/01/birm_mail-300x116.jpg" /></a></li>
+      <li><a href="http://www.birminghampost.co.uk/"><img class="alignnone size-full wp-image-131" alt="birm_post" src="http://localhost/digitalhub/content/uploads/2014/01/birm_post-300x116.jpg" /></a></li>
+      <li><a title="Coventry Telegraph" href="http://www.coventrytelegraph.net/"><img class="alignnone size-full wp-image-131" alt="coventry_tele" src="http://localhost/digitalhub/content/uploads/2014/01/coventry_tele-300x116.jpg" /></a></li>
+      <li><a href="http://www.hinckleytimes.net/" target="_blank"><img class="alignnone size-full wp-image-121" alt="hinckleytimes" src="http://localhost/digitalhub/content/uploads/2014/01/hinckleytimes.jpg" /></a></li>
+      <li><a title="Loughborough Echo" href="http://www.loughboroughecho.net/" target="_blank"><img class="alignnone size-full wp-image-131" alt="loughborough_echo" src="http://localhost/digitalhub/content/uploads/2014/01/loughborough_echo-300x116.jpg" /></a></li>
+      <li><a title="Solihull News" href="http://www.solihullnews.net/" target="_blank"><img class="alignnone size-full wp-image-131" alt="solihull_news" src="http://localhost/digitalhub/content/uploads/2014/01/solihull_news.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="scotland">
+    <h1>Scotland</h1>
+    <ul class="list list__inline">
+      <li><a title="Daily Record" href="http://www.dailyrecord.co.uk/" target="_blank"><img class="alignnone size-full wp-image-155" alt="daily_recorder" src="http://localhost/digitalhub/content/uploads/2014/01/daily_recorder.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="tms">
+    <h1>TMS</h1>
+    <ul class="list list__inline">
+      <li><a title="getbucks" href="http://www.getbucks.co.uk/" target="_blank"><img class="alignnone size-full wp-image-116" alt="get_bucks" src="http://localhost/digitalhub/content/uploads/2014/01/get_bucks.jpg" /></a></li>
+      <li><a title="gethampshire" href="http://www.gethampshire.co.uk/"><img class="alignnone size-full wp-image-117" alt="get_hamps" src="http://localhost/digitalhub/content/uploads/2014/01/get_hamps.jpg" /></a></li>
+      <li><a title="getreading" href="http://www.getreading.co.uk/" target="_blank"><img class="alignnone size-full wp-image-118" alt="getreading" src="http://localhost/digitalhub/content/uploads/2014/01/getreading.jpg" /></a></li>
+      <li><a title="getsurrey" href="http://www.getsurrey.co.uk/" target="_blank"><img class="alignnone size-full wp-image-119" alt="getsurrey" src="http://localhost/digitalhub/content/uploads/2014/01/getsurrey.jpg" /></a></li>
+      <li><a title="getwestlondon" href="http://www.getwestlondon.co.uk/"><img class="alignnone size-full wp-image-120" alt="getwestlondon" src="http://localhost/digitalhub/content/uploads/2014/01/getwestlondon.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="men">
+    <h1>MEN</h1>
+    <ul class="list list__inline">
+      <li><a title="Accrington Observer" href="http://www.accringtonobserver.co.uk/" target="_blank"><img class="alignnone  wp-image-89" alt="accrington_ob" src="http://localhost/digitalhub/content/uploads/2014/01/accrington_ob.jpg" /></a></li>
+      <li><a title="Macclesfield Express" href="http://www.macclesfield-express.co.uk/"><img class="alignnone size-full wp-image-125" alt="macc_express" src="http://localhost/digitalhub/content/uploads/2014/01/macc_express.jpg" /></a></li>
+      <li><a title="Manchester Evening News" href="http://www.manchestereveningnews.co.uk/" target="_blank"><img class="alignnone size-full wp-image-126" alt="MEN" src="http://localhost/digitalhub/content/uploads/2014/01/MEN.jpg" /></a></li>
+      <li><a title="Huddersfield Examiner" href="http://www.examiner.co.uk/" target="_blank"><img class="alignnone size-full wp-image-122" alt="hudder_examiner" src="http://localhost/digitalhub/content/uploads/2014/01/hudder_examiner.jpg" /></a></li>
+      <li><a title="Rossendale Free Press" href="http://www.rossendalefreepress.co.uk/" target="_blank"><img class="alignnone size-full wp-image-129" alt="rossendale_fp" src="http://localhost/digitalhub/content/uploads/2014/01/rossendale_fp.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="northeast">
+    <h1>Northeast</h1>
+    <ul class="list list__inline">
+      <li><a title="Gazette Live" href="http://www.gazettelive.co.uk/" target="_blank"><img class="alignnone size-full wp-image-115" alt="gazzette_live" src="http://localhost/digitalhub/content/uploads/2014/01/gazzette_live.jpg" /></a></li>
+      <li><a title="The Journal" href="http://www.thejournal.co.uk/" target="_blank"><img class="alignnone size-full wp-image-132" alt="thejounal" src="http://localhost/digitalhub/content/uploads/2014/01/thejounal.jpg" /></a></li>
+    </ul>
+  </div>
+  <div class="region__preview" id="wales">
+    <h1>Wales</h1>
+    <ul class="list list__inline">
+      <li><a title="Daily Post" href="http://www.dailypost.co.uk/" target="_blank"><img class="alignnone size-full wp-image-113" alt="dailypost" src="http://localhost/digitalhub/content/uploads/2014/01/dailypost.jpg" /></a></li>
+      <li><a title="Wales Online" href="http://www.walesonline.co.uk/" target="_blank"><img class="alignnone size-full wp-image-133" alt="walesonline" src="http://localhost/digitalhub/content/uploads/2014/01/walesonline.jpg" /></a></li>
+    </ul>
+  </div>
+</section>
+</article>
+</main>
+<!-- #main -->
+</div>
+<!-- #primary -->
 
-      <?php endwhile; // end of the loop. ?>
-      </section>
-
-      <aside class="grid ss__1-4 ms__4-6 ls__7-12 xls__11-18 region__map">
-      <img name="regionmap" src="
-<?php echo get_template_directory_uri(); ?>/images/region-map.png" class="region-img" id="regionmap" usemap="#m_regionmap" alt="" /><map name="m_regionmap" id="m_regionmap">
-<area shape="poly" coords="561,681,559,675,565,675,566,673,566,670,569,665,572,663,572,658,570,656,573,655,573,652,571,650,572,649,572,639,571,635,568,633,564,636,562,639,560,635,559,634,555,633,552,633,552,629,549,628,546,626,544,623,535,619,529,616,525,616,520,620,519,626,517,628,514,627,509,624,505,622,493,621,486,621,482,621,480,622,477,618,476,616,478,613,473,611,469,609,468,611,465,611,461,614,460,614,458,612,453,615,453,617,451,618,446,619,445,622,446,625,444,626,445,631,446,635,443,639,446,644,446,650,442,656,442,661,444,663,442,669,441,672,436,673,435,674,433,672,431,672,429,676,426,681,423,682,411,686,413,689,410,691,410,697,422,700,433,708,435,713,437,713,437,710,436,706,438,704,446,704,450,705,456,708,460,708,462,705,464,702,462,699,458,695,462,695,464,697,468,696,471,695,475,695,479,694,484,694,486,697,486,699,491,700,497,703,499,706,503,706,506,705,508,700,509,698,512,698,511,694,510,692,508,688,511,687,516,687,520,688,523,691,529,692,529,689,537,686,545,685,561,681" href="#southwest" alt="" />
-<area shape="poly" coords="362,471,356,467,353,469,353,472,349,475,342,476,344,473,344,471,338,472,336,472,334,464,330,461,322,461,318,465,318,470,318,474,315,471,312,470,313,473,316,477,318,476,322,482,325,484,328,486,333,486,329,491,324,500,317,504,310,511,307,515,312,517,318,516,322,519,323,513,326,509,331,508,337,506,343,505,339,514,341,521,345,523,341,530,341,533,343,538,345,538,347,539,344,541,342,551,338,558,334,563,329,567,323,570,320,573,312,573,309,575,304,579,303,582,302,583,297,584,296,584,292,582,289,584,289,588,284,590,279,593,277,596,281,598,285,598,288,599,288,603,287,605,282,607,282,611,284,613,287,611,292,612,288,615,290,617,295,621,301,621,303,618,306,618,309,617,312,615,313,610,325,608,328,606,329,610,328,612,331,614,340,615,345,616,341,618,336,617,331,618,332,623,335,626,342,626,345,625,347,625,353,622,356,619,358,624,362,626,363,630,366,633,369,634,374,638,383,639,390,639,393,637,395,634,397,630,401,628,403,625,407,625,415,623,419,621,421,614,421,608,422,603,423,599,421,596,419,595,415,591,410,589,407,589,406,591,398,580,398,575,399,572,400,570,399,567,401,563,405,560,406,555,406,554,398,551,394,547,394,544,397,541,403,539,404,536,403,534,400,535,396,535,396,532,400,527,402,524,403,521,405,518,402,516,400,517,398,515,395,513,390,516,386,512,382,510,379,509,378,508,376,506,376,501,376,500,371,497,367,496,364,494,364,487,364,480,364,476,361,473,360,470" href="#wales" alt="" />
-<area shape="poly" coords="425,390,423,395,426,399,429,402,434,404,436,408,442,409,450,420,447,423,446,428,445,434,448,434,450,433,454,442,458,446,457,449,454,450,453,456,453,459,453,463,447,463,445,466,442,465,431,462,429,460,428,455,425,457,423,456,418,453,419,457,419,462,417,462,415,462,414,466,408,468,404,467,400,462,400,465,402,469,397,469,397,473,402,475,405,479,408,487,411,494,415,497,417,500,416,504,413,504,410,502,407,502,404,500,399,503,396,508,395,513,390,516,387,513,382,510,378,509,376,504,377,500,372,499,365,495,364,490,363,481,363,476,360,471,368,472,372,470,377,468,380,466,385,467,391,472,394,474,394,472,392,469,390,463,392,461,397,458,394,450,394,443,400,437,403,433,397,431,395,424,395,416,401,413,405,413,405,410,402,409,403,403,407,400,406,396,405,393,408,392,411,391,415,392,419,387,425,390,425,390" href="#northwest" alt="" />
-<area shape="poly" coords="432,501,432,500,431,499,429,499,428,499,426,500,424,499,421,497,419,498,416,499,416,499,415,498,414,497,411,496,409,493,407,488,406,483,404,478,400,475,396,473,396,472,395,471,395,471,395,470,395,470,396,470,399,469,400,469,401,469,403,469,403,468,403,469,406,470,407,470,410,470,412,469,412,468,412,468,411,469,411,468,411,465,412,465,413,463,413,462,415,461,417,461,418,461,418,459,419,458,418,456,417,455,417,453,419,452,422,454,423,455,423,456,424,455,427,454,429,455,430,459,431,461,433,461,435,462,441,463,444,464,445,465,446,464,448,462,450,462,451,462,452,462,453,461,453,462,453,463,454,467,455,472,455,474,456,475,456,476,455,476,454,477,450,480,446,482,446,483,445,483,439,488,438,489,436,490,436,493,434,497,434,497,435,498,435,499,433,501,432,501,432,501" href="#men" alt="" />
-<area shape="poly" coords="517,493,516,500,509,508,504,507,500,510,496,511,494,507,494,503,489,505,488,510,484,513,480,516,479,519,476,523,475,527,473,530,462,529,460,524,456,525,455,528,451,527,447,527,445,532,448,536,447,541,447,545,452,545,459,546,463,547,467,550,465,554,462,558,462,562,462,566,461,568,468,569,474,575,476,578,480,578,478,582,478,584,482,584,485,581,485,576,488,573,493,570,495,567,497,574,496,579,499,582,503,581,507,579,508,575,512,574,514,576,515,577,518,577,519,576,519,572,517,569,522,566,525,565,530,563,531,559,531,556,535,555,536,555,538,552,539,547,540,544,544,541,546,538,544,534,542,532,542,529,538,527,538,525,536,521,538,519,540,517,538,515,532,513,526,512,524,505,521,501,523,499,517,493" href="#midlands" alt="" />
-<area shape="poly" coords="443,249,454,263,457,263,457,265,461,266,466,276,467,284,466,286,469,291,467,296,472,309,480,331,483,339,488,344,488,351,492,352,507,355,507,359,504,361,492,359,484,363,482,362,477,361,477,364,471,363,467,360,461,358,461,362,458,362,456,365,452,365,446,364,443,367,441,365,439,360,433,354,433,349,431,345,433,340,427,334,424,337,418,335,417,329,419,326,419,321,424,317,424,313,417,312,412,305,424,287,429,289,434,285,438,281,430,266,436,262,443,249" href="#northeast" alt="" />
-<area shape="poly" coords="242,15,245,32,232,43,234,50,234,62,220,70,207,78,197,92,196,116,189,135,185,145,177,150,176,142,181,126,185,107,184,96,178,91,185,85,195,86,201,79,199,73,207,67,204,62,199,53,201,41,209,35,220,32" href="javascript:;" alt="" />
-<area shape="poly" coords="445,246,434,264,430,266,438,281,428,289,423,287,414,302,394,327,368,324,368,332,356,337,345,344,325,333,331,350,322,349,302,335,297,338,304,354,300,354,286,327,289,317,295,330,296,315,310,287,316,278,304,266,296,254,290,252,289,262,295,279,289,287,282,281,276,273,270,287,265,297,258,293,265,255,264,224,245,262,236,273,222,261,223,249,248,234,265,216,286,173,266,190,260,204,238,210,229,208,243,195,237,187,242,178,228,177,208,195,202,188,226,173,240,173,242,168,255,166,262,159,265,141,251,156,240,158,228,145,233,141,250,141,237,133,218,111,221,97,238,88,244,98,250,107,262,121,256,105,262,92,261,76,268,69,273,73,284,70,290,65,277,52,285,49,283,38,294,38,291,19,300,5,316,9,337,11,376,2,390,5,387,20,370,46,338,74,355,76,336,103,357,93,372,83,387,86,397,87,419,87,438,84,447,90,449,106,440,124,432,156,418,180,405,204,417,207,407,219,391,223,381,232,389,238,404,228,412,228,445,246" href="#scotland" title="Scotland" alt="Scotland" />
-</map>
-      
-
-      </aside>
-
-    </article>
-
-
-    </main><!-- #main -->
-  </div><!-- #primary -->
-
-</div><!--/ wrapper_sub  -->
+</div>
+<!--/ wrapper_sub  -->
 
 <?php get_footer(); ?>

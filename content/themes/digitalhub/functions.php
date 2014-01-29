@@ -115,7 +115,7 @@ function digitalhub_scripts_adverts() {
 
 add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_adverts' );
 
-function digitalhub_scripts_map() {
+  function digitalhub_scripts_map() {
   global $page;
   if( $page == 'regions' || $page == 'contacts') {
     wp_enqueue_script( 'digitalhub-rwdImageMaps', get_template_directory_uri() . '/js/lib/jquery.rwdImageMaps.js', array('jquery'), '20140124', true );
@@ -166,4 +166,9 @@ function wpb_adding_scripts() {
   wp_register_script('toggle-nav', get_template_directory_uri() . '/js/jquery.toggle-nav.js', array('jquery'),'0.0.0', true);
   wp_enqueue_script('toggle-nav');
 }
+
+
+
+
+
 
