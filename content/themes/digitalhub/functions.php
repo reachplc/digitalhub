@@ -92,6 +92,8 @@ add_action( 'widgets_init', 'digitalhub_widgets_init' );
 function digitalhub_scripts() {
 	wp_enqueue_style( 'digitalhub-style', get_stylesheet_uri() );
 
+  wp_enqueue_script( 'digitalhub-searchslide', get_template_directory_uri() . '/js/search-slide.js', array('jquery'));
+
 	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'));
 
 	wp_enqueue_script( 'digitalhub-hero', get_template_directory_uri() . '/js/jquery.randomHero.js', array());
@@ -109,7 +111,11 @@ add_action( 'wp_enqueue_scripts', 'digitalhub_scripts' );
 function digitalhub_scripts_adverts() {
   global $post_type;
   if( $post_type == 'adverts' ) {
+
     wp_enqueue_script( 'digitalhub-fitvid', get_template_directory_uri() . '/js/lib/jquery.fitvids.js', array('jquery'), '20130816', true );
+
+    wp_enqueue_script( 'digitalhub-exampleSwitcher', get_template_directory_uri() . '/js/jquery.exampleSwitcher.js', array('jquery'), '20130816', true );
+
   }
 }
 
@@ -167,8 +173,32 @@ function wpb_adding_scripts() {
   wp_enqueue_script('toggle-nav');
 }
 
+/**
+        * Custom Login Logo
+        */
 
+add_action("login_head", "my_login_head");
+function my_login_head() {
+        echo "
+        <style>
+        body.login #login h1 a {
+                background: url('".get_bloginfo('template_url')."/images/logo-login.png') no-repeat scroll center top transparent;
+                height: 83px;
+                width: 300px;
+        }
+        </style>
+        ";
+}
 
+/**
+ * Set amount of posts to show in archives
+ */
 
+function per_category_basis($query) {
+  if (is_post_type_archive( 'adverts' )) {
+    $query->set('posts_per_archive_page', 100);
+  }
+  return $query;
+}
 
-
+add_filter('pre_get_posts', 'per_category_basis');

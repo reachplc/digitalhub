@@ -38,6 +38,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.4 - Navigation
  *   3.5 - Button
  *   3.6 - Content
+ *   3.10 - Regions
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -57,10 +58,6 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *  Normalise the Box Model
  *  http://paulirish.com/2012/box-sizing-border-box-ftw/
  */
-
-
-
-
 
 *,
 *:before,
@@ -135,8 +132,6 @@ body {
  * Addresses `outline` inconsistency between Chrome and other browsers
  */
 
-
-
 a:focus {
   outline: thin dotted;
 }
@@ -195,6 +190,49 @@ h1, .alpha {
   font-weight: normal;
 }
 
+.packages__title {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 250%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.packages__img {
+  border-top: 1px solid #dcdcdc;
+  padding: 30px 0 0;
+}
+
+.packages__img:nth-child(1) {
+  border-top: 0;
+}
+
+.packages__img img {
+  margin-top: -49px;
+}
+
+.packages-image,
+.packages-text {
+  float: left;
+}
+
+.packages-text .hide {
+  display: none;
+}
+
+
+.packages-text {
+  width: 45%;
+}
+
+.packages-image {
+  width: 55%;
+}
+
+.packages-image:nth-child(even) {
+  text-align: right;
+}
+
 h2, .beta {
   margin: 0;
   padding: 0;
@@ -238,14 +276,14 @@ h6, .zeta {
 }
 
 .kilo {
-  padding: 5px 50px 5px 15px;
-  text-align: right;
-  background: url(images/new_sprite.png) no-repeat 505px -320px #2ac2e3;
-  font-weight: 200;
-  color: #fff;
-  font-size: 200%;
-  margin: 0 20px 0 0;
   display: inline-block;
+  margin: 0 20px 0 0;
+  padding: 5px 15px;
+  background: rgb(27,196,229);
+  color: rgb(255,255,255);
+  font-size: 2em;
+  font-weight: 200;
+  text-shadow: 0 1px 0 #198eb9;
 }
 
 /**
@@ -369,6 +407,7 @@ blockquote {
   padding-left: 1em;
   border-left: 0.2em solid rgb(27,196,229);
   color: rgb(37,37,37);
+  z-index: -10;
 }
 
   blockquote p {
@@ -748,7 +787,6 @@ textarea {
   margin-top: 0;  /* 2. */
   margin-bottom: 0;  /* 2. */
   padding-left:0;  /* 3. */
-
 }
 
   /* List Inline */
@@ -764,6 +802,74 @@ textarea {
     display: block;
   }
 
+/**
+ * 2.3 Gallery
+ */
+
+.gallery {
+  width: 100%;
+}
+
+.gallery--image img {
+  width: 100%;
+}
+
+@media screen and (min-width: 481px) {
+
+  .gallery__item {
+    float: left;
+    display: block;
+    width: 50%;
+    padding-left: 14.5px;
+    padding-right: 14.5px;
+  }
+
+  .gallery--image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+
+@media screen and (min-width: 769px) {
+
+  .gallery__item {
+    width: 25%;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+  .gallery__item {
+    width: 20%;
+  }
+
+}
+
+/**
+ * 2.4 Pagination
+ *
+ * Example:
+ *  <section class="pagination">
+ *   <a class="prev page-numbers" href="#">« Previous</a>
+ *   <a class="page-numbers" href="#">1</a>
+ *   <span class="page-numbers current">2</span>
+ *   <span class="page-numbers dots">…</span>
+ *   <a class="page-numbers" href="#">4</a>
+ *   <a class="next page-numbers" href="#">Next »</a>
+ *  </section>
+ */
+
+.pagination {
+  margin-bottom: 2em;
+}
+
+.page-numbers {
+  display: inline-block;
+  padding: 0 0.75em;
+  line-height: 2em;
+}
 
 /**
  * 3.0 Styles
@@ -794,7 +900,9 @@ textarea {
 }
 
 .site-title {
-  background: url(images/new_sprite.png) no-repeat 0 0 transparent;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-color: transparent;
   width: 221px;
   height: 62px;
 }
@@ -802,7 +910,9 @@ textarea {
 #facebook {
   width: 25px;
   height: 25px;
-  background: url(images/new_sprite.png) no-repeat -275px -126px transparent;
+  background-repeat: no-repeat;
+  background-position:  -275px -126px;
+  background-color: transparent;
   display: inline;
   margin-top: 15px;
   float: right;
@@ -812,7 +922,9 @@ textarea {
 #twitter {
   width: 25px;
   height: 25px;
-  background: url(images/new_sprite.png) no-repeat -275px -90px transparent;
+  background-repeat: no-repeat;
+  background-position: -275px -90px;
+  background-color: transparent;
   display: inline;
   margin-top: 15px;
   float: right;
@@ -827,6 +939,31 @@ textarea {
   background: url(images/white-sides.png) no-repeat center top transparent;
 }
 
+#search-slide {
+  display: none;
+  width: 100%;
+  background-color: #666666;
+  padding: 10px;
+}
+
+#search-slide form {
+  display: inline;
+}
+
+#search-close {
+  float: right;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  background: url(images/close.png) no-repeat -5px -5px;
+  display: none;
+}
+
+#search-left {
+  display: inline;
+}
+
 #search {
   display: inline;
   float: right;
@@ -836,17 +973,34 @@ textarea {
   margin-right: 20px;
 }
 
+#search-slide input,
 #search input {
   background: #363737;
   color: #666666;
   border: 0;
 }
 
+#search-slide input {
+  padding: 10px;
+  width: 85%;
+  border-radius: 0;
+}
+
+#search-slide .submit {
+  height: 27px !important;
+  background-position: 0 -116px !important;
+  margin-left: 10px;
+}
+
+#search-slide .submit,
 #search .submit {
   border: 0;
   width: 20px;
   height: 20px;
-  background: url(images/new_sprite.png) no-repeat 0 -123px transparent;
+  background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+  background-position: 0 -123px;
+  background-color: transparent;
 }
 
 ::-webkit-input-placeholder {
@@ -868,6 +1022,29 @@ textarea {
 #titles {
   text-align: right;
 }
+
+#primary,
+#secondary {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.search .page-header .page-title {
+  margin-bottom: 20px;
+  border-bottom: 0 none;
+}
+
+.search .page-header .page-title span {
+  padding: 0 10px;
+  color: #fff;
+  background: #2ac2e3;
+}
+
+.search article {
+  background: #f1f1f1;
+  padding: 10px;
+}
+
 
 /**
  * 3.2 Hero
@@ -899,7 +1076,9 @@ textarea {
 }
 
 #tm-logo {
-  background: url(images/new_sprite.png) no-repeat 0 -539px transparent;
+  background-repeat: no-repeat;
+  background-position: 0 -539px;
+  background-color: transparent;
   height: 24px;
   width: 200px;
   float: left;
@@ -968,8 +1147,19 @@ textarea {
   text-transform: uppercase;
 }
 
+.nav-main ul.children {
+  padding: 0 0 20px 0;
+  font-size: 60%;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.children li {
+  margin: 6px 0;
+}
+
 .nav-main ul.sub-menu {
-  padding: 0 0 20px; 0;
+  padding: 0 0 20px 0;
   font-size: 60%;
   font-weight: 400;
   text-transform: none;
@@ -1009,7 +1199,9 @@ textarea {
 }
 
 #js-nav-button {
-  background: url(images/new_sprite.png) no-repeat -225px -336px transparent;
+  background-repeat: no-repeat;
+  background-position: -225px -336px;
+  background-color: transparent;
   border: none;
   color: #fff;
   text-transform: uppercase;
@@ -1165,14 +1357,30 @@ textarea {
   width: 200px;
   text-align: left;
   margin: 10px 0;
+  text-shadow: 0 -1px 0 #198eb9;
+ }
+
+ button:hover {
+  background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
+  text-shadow: 0 -1px 0 #c8124e;
  }
 
  button.category {
   background: url(images/new_sprite.png) no-repeat 180px -287px #2ac2e3;
+  text-shadow: 0 -1px 0 #198eb9;
+ }
+
+  button.category:hover {
+  background: url(images/new_sprite.png) no-repeat 180px -287px #ed145b;
  }
 
 button.build {
   background: url(images/new_sprite.png) no-repeat -105px -163px #2ac2e3;
+  text-shadow: 0 -1px 0 #198eb9;
+ }
+
+ button.build:hover {
+  background: url(images/new_sprite.png) no-repeat -105px -163px #ed145b;
  }
 
  button.next {
@@ -1181,10 +1389,35 @@ button.build {
   background: url(images/new_sprite.png) no-repeat 18px -215px #2ac2e3;
  }
 
+ button.next:hover {
+  background: url(images/new_sprite.png) no-repeat 18px -215px #ed145b;
+ }
+
  button.prev {
   width: 50px;
   height: 50px;
   background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
+ }
+
+  button.prev:hover {
+  background-color: #ed145b;
+ }
+
+.pack-button {
+  border: 0;
+  background: url(images/new_sprite.png) no-repeat 180px -82px #2ac2e3;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding: 5px 35px 5px 8px;
+  width: 200px;
+  text-align: left;
+  margin: 10px 0;
+  text-shadow: 0 -1px 0 #198eb9;
+}
+
+ .pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 180px -82px #ed145b;
+  text-shadow: 0 -1px 0 #c8124e;
  }
 
 /**
@@ -1221,7 +1454,7 @@ button.build {
  */
 
 .example {
-  background: url(images/bg_example_monitor.png) no-repeat top center;
+  background: url(images/bg_example_monitor.jpg) no-repeat top center;
   background-size: 100% auto;
 }
 
@@ -1252,7 +1485,11 @@ button.build {
 
 .example__preview {
   margin-bottom: 2em;
-  text-align: center;
+  text-align: left;
+}
+
+.example__preview--image {
+  border: 1px solid #2ac2e3;
 }
 
 .example__preview li {
@@ -1264,18 +1501,83 @@ button.build {
 }
 
  button.search {
-  width: 30px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat -279px -224px transparent;
+  width: 24px;
+  height: 28px;
+  background: url(images/new_sprite.png) no-repeat -277px -224px transparent;
   float: right;
   padding: 0;
   margin: 15px 0 0;
   display: none;
  }
 
- /* Region Preview Images */
+ button.search.clicked {
+    background: url(images/close.png) no-repeat 0 0 transparent;
+ }
 
-/* Region Preview Images */
+/**
+ * 3.8 Packages
+ */
+
+.adverts {
+  position: relative;
+}
+
+  .adverts__intro {
+    margin-bottom: 2em;
+  }
+
+  .adverts__header {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    padding-right: 0.5em;
+    padding-left: 0.5em;
+    background-color: rgb(37,37,37);
+    background-color: rgba(37,37,37,0.6);
+  }
+
+@media screen and (min-width: 481px) {
+  .adverts__header {
+    right: 14.5px;
+    left: 14.5px;
+  }
+}
+
+  .adverts__title {
+    border-bottom: none;
+    font-size: 1.5em;
+  }
+
+  .adverts__content {
+    margin-bottom: 0;
+    color: rgb(255,255,255);
+  }
+
+/**
+ * 3.9 Pagination
+ */
+
+.page-numbers {
+  background: rgb(27,196,229);
+  color: rgb(255,255,255);
+}
+
+.page-numbers:active,
+.page-numbers:link,
+.page-numbers:visited {
+  color: rgb(255,255,255);
+}
+
+.page-numbers:hover,
+.page-numbers:focus {
+  background: rgb(237,20,91);
+}
+
+/**
+ * 3.10 Regions
+ */
 
 .region__preview {
   display:block;
@@ -1322,13 +1624,51 @@ text-align: center;
 
 #area__tags-wrap{position:absolute; top:0; left:0;width: 100%;}
 
-*:focus  
-{  
-    outline: none;  
-} 
+*:focus {
+  outline: none;
+}
 
+/**
+ * Responsive XL (1025)
+ */
+
+@media screen and (max-width: 1025px) {
+
+  .region__preview li {
+    width:25%;
+  }
+
+}
+
+/**
+ * Responsive Middle (768)
+ */
+
+ @media screen and (max-width: 768px) {
+
+  .region__preview li {
+    width:33%;
+  }
+
+}
+
+/**
+ * Responsive Smallest (480)
+ */
+
+ @media screen and (max-width: 480px) {
+
+.region__preview li {
+  width:50%;
+  }
+
+}
 
 /* General */
+
+.sprite {
+  background-image: url(images/new_sprite.png);
+}
 
 body {
   background: #fff;
@@ -1984,69 +2324,6 @@ object {
  * Placed at the end as most of these classes will overwrite others.
  */
 
- /*  -- Animations -- */
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-.fadeIn {
-  -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
-}
-
-@-webkit-keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateY(-40px);
-    -ms-transform: translateY(-40px);
-    transform: translateY(-40px);
-  }
-
-  100% {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-}
-
-.fadeInDown {
-  -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
-}
-
 /* Alignment */
 .alignleft {
   display: inline;
@@ -2119,6 +2396,77 @@ object {
 
 /*  Core  */
 
+/*  -- Animations -- */
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+    -ms-transform: translateY(-40px);
+    transform: translateY(-40px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+/**
+ * Apply max-width: 100% to image that are required to be responsive
+ */
+
+.image__responsive {
+  max-width: 100%;
+}
+
 /*
  *  Hide from both screenreaders and browsers: h5bp.com/u
  */
@@ -2155,37 +2503,112 @@ object {
   clear: both;
 }
 
-
-
-
 /**
- * Responsive XL (1025)
+ * Responsive large (1024) iPad landscape
  */
 
- @media screen and (max-width: 1025px) {
+@media screen and (max-width: 1024px) {
 
-  .region__preview li {
-  width:25%;
+  #js-nav-button:after {
+    content: " ";
   }
 
-
- }
-
-/**
- * Responsive Middle (768)
- */
-
- @media screen and (max-width: 768px) {
-.region__preview li {
-  width:33%;
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
   }
 
-  .region__map{
-  display:none;
 }
 
+/**
+ * Responsive Middle (768) iPad portraite
+ */
+
+@media screen and (max-width: 768px) {
+
+  #js-nav-button:after {
+    content: " ";
+  }
+
+  #js-nav-button {
+    background-image: url(images/new_sprite.png);
+    background-repeat: no-repeat;
+    background-position: -266px -336px;
+    background-color: transparent;
+  }
+
+  #search {
+  display: none;
+  }
+
+  button.search {
+  display: inline;
+  }
+
+  h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 200%;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#main .packages__img {
+  padding: 0px
+}
+
+#main .packages__img img {
+  margin-top: -19px;
+  vertical-align:bottom;
+}
+
+.packages-image {
+  width: 50%;
+}
+
+.packages-text {
+  width: 50%;
+  font-size: 85%
+}
+
+.pack-button {
+  font-size: 80%;
+  background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
+}
+
+.pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
+}
+
+}
+
+/**
+ * Responsive fix for submenu at 700px width
+ */
+
+ @media screen and (max-width: 700px) {
+
+  .secondary-menu li {
+  padding: 20px 0;
+  width: 25%;
+  margin: 0;
+  float: left;
  }
 
+ .mega {
+  font-size: 230%;
+ }
+
+ .kilo {
+  font-size: 1.5em;
+ }
+
+ #strip {
+  margin: 96px auto 0px;
+ }
+}
 
 /**
  * Responsive Smallest (480)
@@ -2193,56 +2616,61 @@ object {
 
  @media screen and (max-width: 480px) {
 
-  .secondary-menu {
-    font-size: 70%;
-  }
+.secondary-menu {
+  font-size: 70%;
+}
 
-  .secondary-menu li {
-    padding: 10px 0;
-    width: 25%;
-  }
+.secondary-menu li {
+  padding: 10px 0;
+  width: 25%;
+  margin: 0;
+  float: left;
+}
 
-  #strip {
-    margin: 60px auto 0;
-    background: transparent; /* TODO */
-    min-height: 28px;
-  }
+#strip {
+  margin: 60px auto 0;
+  background: transparent; /* TODO */
+  min-height: 28px;
+}
 
-  .mega {
-    font-size: 170%;
-  }
+.mega {
+  font-size: 145%;
+}
 
-  .kilo {
-    font-size: 100%;
-    background: url(images/new_sprite.png) no-repeat 272px -329px #2ac2e3
-  }
+.kilo {
+  font-size: 1em;
+}
 
-  #bgimg {
-    min-height: 260px;
-  }
+#bgimg {
+  min-height: 260px;
+}
 
-  #search {
-    display: none;
-  }
+#search {
+  display: none;
+}
 
-  .secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
-    background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
+.secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
+  background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
  }
 
- .nav-main__nav {
+.nav-main__nav {
   width: 100%;
   padding-top: 60px;
- }
+}
 
- .is-nav-inactive {
+.is-nav-inactive {
   right: -100%;
- }
+}
 
- .nav-main__header {
+.nav-main__header {
   width: 100%;
- }
+}
 
- .sub-menu li {
+.sub-menu li {
+  margin: 0;
+}
+
+ .children li {
   margin: 0;
 }
 
@@ -2259,7 +2687,10 @@ object {
 }
 
 #js-nav-button {
-  background: url(images/new_sprite.png) no-repeat -266px -336px transparent;
+  background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+  background-position: -266px -336px;
+  background-color: transparent;
 }
 
  button.search {
@@ -2281,15 +2712,56 @@ object {
   padding: 0 10px;
 }
 
-
-.region__preview li {
-  width:50%;
-  }
-
-
-
+#credit {
+  border-left: 0;
+  display: block;
+  padding: 0;
+  margin: 0;
 }
 
+.nav-main ul {
+  font-size: 120%;
+}
+
+.nav-main ul.children {
+  font-size: 80%;
+}
+
+.packages-image,
+.packages-text {
+  width: auto;
+  float: none;
+}
+
+.packages-image {
+  display: none;
+}
+
+.packages-text .hide {
+  display: block;
+}
+
+h1.term-heading {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 250%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#main .packages__img {
+  border-top: 1px solid #dcdcdc;
+  padding: 20px 0 0;
+}
+
+#main .packages__img:nth-child(1) {
+  border-top: 0;
+}
+
+#main .packages__img img {
+  margin-top: 0;
+}
+}
 
 /**
  * Retina Display Images below
@@ -2299,30 +2771,40 @@ object {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-  .kilo,
+  .sprite,
   button.prev,
   button.next,
   button.build,
   button.category,
   button.search,
   button,
-  #js-nav-button,
-  #tm-logo,
   #search .submit,
-  #twitter,
-  #facebook,
-  .site-title {
-    background: url(images/sprite_x2.png) no-repeat transparent;
-    background-size: 100% auto;
+  .site-title,
+  .pack-button {
+    background-image: url(images/sprite_x2.png);
+    background-repeat: no-repeat;
+    background-size: 300px 800px;
   }
 
+  button.search.clicked {
+    background: url(images/close_x2.png) no-repeat 0 0 transparent;
+  }
   #tm-logo {
-    background-position: 0 -353px
+    background-position: 0 -539px
+  }
+
+  #js-nav-button {
+      background-position: -266px -336px;
+      background-color: transparent;
+  }
+
+  button.prev,
+  button.next,
+  button.build,
+  button.category,
+  button,
+  .pack-button {
+    background-color: #2ac2e3;
   }
 
 }
-
-
-
-
-
