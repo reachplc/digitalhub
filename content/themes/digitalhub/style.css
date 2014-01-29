@@ -1459,14 +1459,14 @@ button.build {
 }
 
 .example--app {
-  /*background: url(images/bg_example_app.jpg) no-repeat top center;*/
-  background: url(http://placehold.it/320x480.jpg) no-repeat top center;
+  background: url(images/bg_example_mobile.png) no-repeat top center;
   background-size: auto 100%;
+  min-height: 480px;
 }
 
 .example--app video {
-  width: 320px;
-  height: 480px;
+  width: 210px;
+  height: 315px;
 }
 
 @media screen and (min-width: 481px) {
@@ -1498,9 +1498,8 @@ button.build {
 
 .example--app .example__video {
   /* Centre's video inside parent element */
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0 17.5%;
+  text-align: center;
+  padding-top: 70px;
 }
 
 /* Example Preview Images */
