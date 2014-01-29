@@ -8,19 +8,19 @@
  */
 ?>
 
-	</div><!-- #content -->
+        </div><!-- #content -->
 
 </div><!-- #end of container -->
 
 </div><!-- #end of wrapper -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info wrapper__sub">
-			<?php do_action( 'digitalhub_credits' ); ?>
-			<div id="tm-logo" class="sprite"></div>
-			<div id="copy-credit">Copyright © Trinity Mirror plc 2014 <a href="#" id="credit">Trinity Mirror Creative</a></div>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+        <footer id="colophon" class="site-footer" role="contentinfo">
+                <div class="site-info wrapper__sub">
+                        <?php do_action( 'digitalhub_credits' ); ?>
+                        <div id="tm-logo" class="sprite"></div>
+                        <div id="copy-credit">Copyright © Trinity Mirror plc 2014 <a href="#" id="credit">Trinity Mirror Creative</a></div>
+                </div><!-- .site-info -->
+        </footer><!-- #colophon -->
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
@@ -44,6 +44,44 @@
   });
 })( jQuery );
 <?php } ?>
+</script>
+
+<script>
+<?php if( $page == 'regions') {?>
+;(function( $ ){
+$(document).ready(function(e) {
+  $('img[usemap]').rwdImageMaps();
+});
+})( jQuery );
+<?php } ?>
+</script>
+
+<script>
+
+;(function( $ ){
+
+  function goToScrollDiv(link){
+    // Reove "link" from the ID
+    var href = link;
+
+    //link = link.remove("#", "");
+    $('html,body').animate({
+      scrollTop: $(href).offset().top},
+      'slow');
+    }
+
+    $("#reg__map-wrap map area").click(function(e) {
+          // Prevent a page reload when a link is pressed
+
+        var link = $(this).attr('href');
+
+          // Call the scroll function
+        goToScrollDiv(link);
+
+    });
+
+})( jQuery );
+
 </script>
 
 </body>
