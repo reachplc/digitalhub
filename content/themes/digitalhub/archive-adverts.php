@@ -22,7 +22,7 @@
     <main id="main" class="site-main" role="main">
 
       <section class="cf">
-        <article class="grid ss__1-4 ms__3-6 ls_5-12 xls__7-18">
+        <article class="grid ss__1-4 ms__1-6 ls__1-6 xls__1-10">
 
       <header class="archive-header">
         <h1 class="archive-title">Adverts</h1>
@@ -33,8 +33,8 @@
             <p>Etiam sapien urna, iaculis non ante vitae, tincidunt tincidunt ante. Aliquam erat volutpat. Fusce fringilla vel quam quis congue. Donec et nulla odio. Maecenas scelerisque velit vitae augue volutpat, in vulputate dui ornare. Duis pulvinar mollis pellentesque.</p>
           </div>
         </article>
-        <aside class="grid ss__1-4 ms__1-2 ls__1-4 xls__1-6">
-          <img class="image__responsive" src="http://placehold.it/600x326.png" alt="">
+        <aside class="grid ss__1-4 ms__1-6 ls__7-12 xls__11-18">
+          <img class="image__responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/format_header.png" alt="">
         </aside>
       </section>
 
