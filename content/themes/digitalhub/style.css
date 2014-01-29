@@ -1521,6 +1521,10 @@ button.build {
   position: relative;
 }
 
+  .adverts__intro {
+    margin-bottom: 2em;
+  }
+
   .adverts__header {
     position: absolute;
     right: 0;

@@ -13,7 +13,7 @@
 <?php } else { ?>
 
   <aside class="gallery--image">
-    <img src="http://placehold.it/400x326.png" alt="">
+    <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/adverts_generic.jpg" alt="">
   </aside>
 
 <?php } ?>
