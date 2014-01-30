@@ -82,6 +82,18 @@ $(document).ready(function(e) {
 
 })( jQuery );
 
+;(function( $ ){
+
+$(window).scroll(function(){
+    if ($(this).scrollTop() > 120) {
+       $('#area__tags-wrap').addClass('fadeInDown');
+    } else {
+       $('#area__tags-wrap').removeClass('fadeInDown');
+    }
+});
+
+})( jQuery );
+
 </script>
 
 </body>
