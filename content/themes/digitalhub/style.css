@@ -2797,6 +2797,10 @@ object {
 
  @media screen and (max-width: 700px) {
 
+  .colophon {
+    position: relative;
+  }
+
   .secondary-menu li {
   padding: 20px 0;
   width: 25%;
