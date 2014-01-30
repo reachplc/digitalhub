@@ -1021,6 +1021,8 @@ textarea {
 
 #titles {
   text-align: right;
+  margin: 0 auto;
+  width: 95%;
 }
 
 #primary,
@@ -1065,6 +1067,9 @@ textarea {
   height: 55px;
   background: #171717;
   color: #ababab;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
 }
 
 .site-info {
@@ -1541,6 +1546,7 @@ button.build {
 
 .adverts {
   position: relative;
+  overflow: hidden
 }
 
   .adverts__intro {
@@ -1550,14 +1556,23 @@ button.build {
   .adverts__header {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -80px;
     left: 0;
     z-index: 1;
     padding-right: 0.5em;
     padding-left: 0.5em;
     background-color: rgb(37,37,37);
     background-color: rgba(37,37,37,0.6);
+    opacity: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition:    all 0.3s ease;
+  -o-transition:      all 0.3s ease;
   }
+
+    .adverts:hover .adverts__header {
+      opacity: 1;
+      bottom: 0;
+    }
 
 @media screen and (min-width: 481px) {
   .adverts__header {
@@ -1569,6 +1584,10 @@ button.build {
   .adverts__title {
     border-bottom: none;
     font-size: 1.5em;
+  }
+
+  .adverts__title a:hover {
+    color: #fff;
   }
 
   .adverts__content {
@@ -2539,6 +2558,14 @@ object {
     background-repeat: no-repeat;
     background-position: -266px -336px;
     background-color: transparent;
+  }
+
+    .adverts__header {
+    bottom: 0;
+    opacity: 1;
+  -webkit-transition: none;
+  -moz-transition:    none;
+  -o-transition:      none;
   }
 
 }
