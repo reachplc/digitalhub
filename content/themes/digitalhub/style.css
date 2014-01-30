@@ -1745,6 +1745,16 @@ text-align: center;
 
 .sprite {
   background-image: url(images/new_sprite.png);
+  background-repeat: no-repeat;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+
+  .sprite {
+    background-image: url(images/sprite_x2.png);
+    background-size: 300px 800px;
+  }
+
 }
 
   .sprite--navicon {
@@ -2931,7 +2941,6 @@ object {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-  .sprite,
   button.prev,
   button.next,
   button.build,
