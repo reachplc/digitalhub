@@ -27,7 +27,7 @@ function package_section(){?>
   <section class="packages-text">
     <h1 class="packages__title"><?php the_package_title(); ?></h1>
     <p><?php the_package_description();?></p>
-    <p><a class="pack-button" href="<?php the_package_link();?>">View Available Formats</a></p>
+    <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
     <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
   </section>
 <?php }
@@ -62,7 +62,7 @@ function package_page_section(){ ?>
   <h1 class="packages__title"><?php the_package_page_title(); ?></h1>
   <p><?php the_package_page_description(); ?></p>
   <p>
-    <p><a class="pack-button" href="<?php the_package_page_link();?>">View Available Formats</a></p>
+    <p><a class="btn btn--primary" href="<?php the_package_page_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
   <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
 </section>
 <?php }
