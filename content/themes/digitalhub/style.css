@@ -33,13 +33,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   2.2 - List
  *   2.5 - Icon
  * 3.0 - Styles
- *   3.1 - Header
- *   3.2 - Hero
- *   3.3 - Footer
- *   3.4 - Navigation
- *   3.5 - Button
- *   3.6 - Content
- *   3.10 - Regions
+ *   3.1  - Header
+ *   3.2  - Hero
+ *   3.3  - Footer
+ *   3.4  - Navigation
+ *   3.5  - Button
+ *   3.6  - Content
+ *   3.8  - Package
+ *   3.9  - Adverts
+ *   3.10 - Pagination
+ *   3.11 - Regions
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -189,49 +192,6 @@ h1, .alpha {
   border-bottom: 1px solid rgb(220,220,220);
   font-size: 1.875em;
   font-weight: normal;
-}
-
-.packages__title {
-  border-bottom: 0;
-  font-weight: 200;
-  font-size: 250%;
-  margin-bottom: 20px;
-  margin-top: 20px;
-}
-
-.packages__img {
-  border-top: 1px solid #dcdcdc;
-  padding: 30px 0 0;
-}
-
-.packages__img:nth-child(1) {
-  border-top: 0;
-}
-
-.packages__img img {
-  margin-top: -49px;
-}
-
-.packages-image,
-.packages-text {
-  float: left;
-}
-
-.packages-text .hide {
-  display: none;
-}
-
-
-.packages-text {
-  width: 45%;
-}
-
-.packages-image {
-  width: 55%;
-}
-
-.packages-image:nth-child(even) {
-  text-align: right;
 }
 
 h2, .beta {
@@ -1578,6 +1538,117 @@ button.build {
  * 3.8 Packages
  */
 
+.packages__title {
+  border-bottom: 0;
+  font-weight: 200;
+  font-size: 250%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.packages__img {
+  border-top: 1px solid #dcdcdc;
+  padding: 30px 0 0;
+}
+
+.packages__img:nth-child(1) {
+  border-top: 0;
+}
+
+.packages__img img {
+  margin-top: -49px;
+}
+
+.packages-image,
+.packages-text {
+  float: left;
+}
+
+.packages-text .hide {
+  display: none;
+}
+
+
+.packages-text {
+  width: 45%;
+}
+
+.packages-image {
+  width: 55%;
+}
+
+.packages-image:nth-child(even) {
+  text-align: right;
+}
+
+/* Small Screen */
+
+@media screen and (max-width: 481px) {
+
+  .packages-image,
+  .packages-text {
+    width: auto;
+    float: none;
+  }
+
+  .packages-image {
+    display: none;
+  }
+
+  .packages-text .hide {
+    display: block;
+  }
+
+  .packages__img {
+    padding: 20px 0 0;
+  }
+
+  .packages__img:nth-child(1) {
+    border-top: 0;
+  }
+
+  .packages__img img {
+    margin-top: 0;
+  }
+
+}
+
+@media screen and (max-width: 700px) {
+
+
+.packages__img {
+  padding: 0;
+}
+
+.packages__img img {
+  margin-top: -19px;
+  vertical-align:bottom;
+}
+
+.packages-image {
+  width: 50%;
+}
+
+.packages-text {
+  width: 50%;
+  font-size: 85%
+}
+
+.pack-button {
+  font-size: 80%;
+  background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
+}
+
+.pack-button:hover {
+  background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
+}
+
+}
+
+/**
+ * 3.9 Adverts
+ */
+
 .adverts {
   position: relative;
   overflow: hidden
@@ -1630,7 +1701,7 @@ button.build {
   }
 
 /**
- * 3.9 Pagination
+ * 3.10 Pagination
  */
 
 .page-numbers {
@@ -1650,7 +1721,7 @@ button.build {
 }
 
 /**
- * 3.10 Regions
+ * 3.11 Regions
  */
 
 .region__preview {
@@ -1739,7 +1810,7 @@ text-align: center;
 }
 
 /**
- * 3.11 Sprite
+ * 3.12 Sprite
  *
  */
 
@@ -2717,41 +2788,6 @@ object {
   display: inline;
   }
 
-  h1.term-heading {
-  border-bottom: 0;
-  font-weight: 200;
-  font-size: 200%;
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
-#main .packages__img {
-  padding: 0px
-}
-
-#main .packages__img img {
-  margin-top: -19px;
-  vertical-align:bottom;
-}
-
-.packages-image {
-  width: 50%;
-}
-
-.packages-text {
-  width: 50%;
-  font-size: 85%
-}
-
-.pack-button {
-  font-size: 80%;
-  background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
-}
-
-.pack-button:hover {
-  background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
-}
-
 }
 
 /**
@@ -2897,40 +2933,6 @@ object {
     font-size: 80%;
   }
 
-  .packages-image,
-  .packages-text {
-    width: auto;
-    float: none;
-  }
-
-  .packages-image {
-    display: none;
-  }
-
-  .packages-text .hide {
-    display: block;
-  }
-
-  h1.term-heading {
-    border-bottom: 0;
-    font-weight: 200;
-    font-size: 250%;
-    margin-bottom: 20px;
-    margin-top: 20px;
-  }
-
-  #main .packages__img {
-    border-top: 1px solid #dcdcdc;
-    padding: 20px 0 0;
-  }
-
-  #main .packages__img:nth-child(1) {
-    border-top: 0;
-  }
-
-  #main .packages__img img {
-    margin-top: 0;
-  }
 }
 
 /**
