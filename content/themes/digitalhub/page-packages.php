@@ -58,7 +58,7 @@ function package_page_aside() { ?>
 function package_page_section(){ ?>
 <section class="packages-text">
 
-  <h1 class="term-heading"><?php the_package_page_title(); ?></h1>
+  <h1 class="packages__title"><?php the_package_page_title(); ?></h1>
   <p><?php the_package_page_description(); ?></p>
   <p>
     <p><a class="pack-button" href="<?php the_package_link();?>">View Available Formats</a></p>
