@@ -31,6 +31,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 2.0 - Objects
  *   2.1 - Button
  *   2.2 - List
+ *   2.5 - Icon
  * 3.0 - Styles
  *   3.1 - Header
  *   3.2 - Hero
@@ -872,6 +873,36 @@ textarea {
 }
 
 /**
+ * 2.5 Icons
+ *
+ * Example:
+
+    <a class="" href="#">
+      <span class="icon sprite sprite--[icon name]"></span>
+      Text
+    </a>
+
+ *
+ */
+
+.icon {
+  display: inline-block;
+  position: relative;
+  zoom: 1;
+  margin-right: 0.5em;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.icon__prepend {
+  margin-right: 0.5em;
+}
+
+.icon__append {
+  margin-left: 0.5em;
+}
+
+/**
  * 3.0 Styles
  */
 
@@ -1685,11 +1716,29 @@ text-align: center;
 
 }
 
-/* General */
+/**
+ * 3.11 Sprite
+ *
+ */
 
 .sprite {
   background-image: url(images/new_sprite.png);
 }
+
+  .sprite--download {
+    background-position: -282px -166px;
+    width: 18px;
+    height: 19px;
+  }
+
+  .sprite--back {
+    background-position: -200px -382px;
+    width: 21px;
+    height: 21px;
+    top: -2px;
+  }
+
+/* General */
 
 body {
   background: #fff;
