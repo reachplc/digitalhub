@@ -1582,37 +1582,6 @@ button.build {
   text-align: right;
 }
 
-/* Small Screen */
-
-@media screen and (max-width: 481px) {
-
-  .packages-image,
-  .packages-text {
-    width: auto;
-    float: none;
-  }
-
-  .packages-image {
-    display: none;
-  }
-
-  .packages-text .hide {
-    display: block;
-  }
-
-  .packages__img {
-    padding: 20px 0 0;
-  }
-
-  .packages__img:nth-child(1) {
-    border-top: 0;
-  }
-
-  .packages__img img {
-    margin-top: 0;
-  }
-
-}
 
 @media screen and (max-width: 700px) {
 
@@ -1643,6 +1612,38 @@ button.build {
 .pack-button:hover {
   background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
 }
+
+}
+
+/* Small Screen */
+
+@media screen and (max-width: 481px) {
+
+  .packages-image,
+  .packages-text {
+    width: auto;
+    float: none;
+  }
+
+  .packages-image {
+    display: none;
+  }
+
+  .packages-text .hide {
+    display: block;
+  }
+
+  .packages__img {
+    padding: 20px 0 0;
+  }
+
+  .packages__img:nth-child(1) {
+    border-top: 0;
+  }
+
+  .packages__img img {
+    margin-top: 0;
+  }
 
 }
 
