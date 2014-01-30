@@ -1017,7 +1017,7 @@ textarea {
 #primary,
 #secondary {
   width: 95%;
-  margin: 0 auto;
+  margin: 0 auto 130px auto;
 }
 
 .search .page-header .page-title {
@@ -1059,6 +1059,7 @@ textarea {
   position: fixed;
   width: 100%;
   bottom: 0;
+  z-index: 1;
 }
 
 .site-info {
