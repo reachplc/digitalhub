@@ -10,8 +10,9 @@
  * @package DigitalHub
  */
 $taxonomy_type = 'packages';
-$id = $post->ID;
-$pages = query_posts(array('showposts' => 99, 'post_parent' => $id, 'post_type' => 'page'));
+$posts = get_categories('taxonomy=packages&type=adverts');
+$pages = get_pages(array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ));
+
 $current_package = 0;
 $current_package_post = 0;
 $alt = true;

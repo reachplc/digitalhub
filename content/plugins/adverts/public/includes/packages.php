@@ -10,11 +10,10 @@ function have_packages() {
 
   global $taxonomy_type;
   global $current_package;
-  global $post;
+  global $posts;
 
   //
-  $terms = get_terms($taxonomy_type);
-  $package_count = count($terms);
+  $package_count = count($posts);
 
   if ( $current_package +1 <= $package_count ) {
     return true;
