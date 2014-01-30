@@ -39,6 +39,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.5 - Button
  *   3.6 - Content
  *   3.10 - Regions
+ *   3.11 - Contacts
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -1628,6 +1629,7 @@ text-align: center;
   outline: none;
 }
 
+
 /**
  * Responsive XL (1025)
  */
@@ -1663,6 +1665,33 @@ text-align: center;
   }
 
 }
+
+/**
+ * 3.11 Contacts
+ */
+
+.contact-wrap{
+  display:block;
+  width:100%;
+  float:left;
+  margin: 10px 0;
+
+}
+
+.contact-hm{margin-bottom:10px;}
+.contact-hp{margin-right:10px;}
+.contact-np{padding-left:0 !important;}
+
+
+
+.contact-wrap img{
+width:100%;
+max-width:300px;
+height:100%;
+float:right;
+}
+
+.contact-wrap-inside{float:left; padding:0 !important; margin-bottom:10px;}
 
 /* General */
 
