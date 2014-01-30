@@ -63,7 +63,7 @@ $terms = get_the_terms( $post->ID, 'formats' );
               <?php if ( is_buildGuide() ) :?>
                 <p>
                   <a class="btn btn--primary" href="
-                  <?php the_buildGuide(); ?>">Download Build Guide</a>
+                  <?php the_buildGuide(); ?>">Download Build Guide <span class="sprite sprite--download icon icon__append"></span></a>
                 </p>
               <?php endif; ?>
             </div>
@@ -74,6 +74,15 @@ $terms = get_the_terms( $post->ID, 'formats' );
               <ul class="list list__inline">
                 <?php get_example_preview($custom); ?>
               </ul>
+
+              <section class="">
+              <?php
+                $url = wp_get_referer();
+                $path_parts = pathinfo($url);
+                echo '<a class="btn btn--primary" href="' . $url . '"><span class="sprite sprite--back icon icon__prepend"></span>'. 'Back to '. $path_parts['filename'] .'</a>';
+              ?>
+              </section>
+
             </footer>
 
           <?php endif; ?>
