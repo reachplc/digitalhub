@@ -71,11 +71,14 @@ $terms = get_the_terms( $post->ID, 'formats' );
             <?php if ( is_example() ) : // Only display if examples exist ?>
 
             <footer class="example__preview">
-              <ul class="list list__inline">
-                <?php get_example_preview($custom); ?>
-              </ul>
 
-              <section class="">
+              <section class="entry-meta">
+                <ul class="list list__inline">
+                  <?php get_example_preview($custom); ?>
+                </ul>
+              </section>
+
+              <section class="entry-meta">
               <?php
                 $url = wp_get_referer();
                 $path_parts = pathinfo($url);

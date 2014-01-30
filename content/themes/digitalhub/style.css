@@ -1478,6 +1478,11 @@ button.build {
   margin: 1.5em 0 1em;
   border-bottom: 1px solid rgb(220,220,220);
 }
+
+.entry-meta {
+  margin-bottom: 1em;
+}
+
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
