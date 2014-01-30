@@ -885,7 +885,7 @@ textarea {
  */
 
 #titles h1 {
-  border-bottom: 0px;
+  border-bottom: 0;
 }
 
 .site-title {
@@ -1260,7 +1260,7 @@ textarea {
 }
 
  .sf-menu ul {
-  margin: 0px;
+  margin: 0;
   padding-top: 100px;
  }
 
@@ -2812,7 +2812,7 @@ object {
  }
 
  #strip {
-  margin: 96px auto 0px;
+  margin: 96px auto 0;
  }
 }
 
