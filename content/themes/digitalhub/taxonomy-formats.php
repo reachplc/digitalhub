@@ -22,12 +22,22 @@
 
     <main id="main" class="site-main" role="main">
 
-    <?php if ( have_posts() ) : ?>
-
+      <section class="adverts__intro cf">
+        <article class="grid ss__1-4 ms__1-6 ls__1-6 xls__1-10">
       <header class="archive-header">
         <h1 class="archive-title"><?php echo $taxomnomy->name; ?></h1>
-        <p> <?php echo $taxomnomy->description; ?></p>
       </header><!-- .archive-header -->
+
+          <div class="entry-content">
+            <p><?php echo $taxomnomy->description; ?></p>
+          </div>
+        </article>
+        <aside class="grid ss__1-4 ms__1-6 ls__7-12 xls__11-18">
+          <img class="image__responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/formats_<?php echo $taxomnomy->slug; ?>.png" alt="">
+        </aside>
+      </section>
+
+    <?php if ( have_posts() ) : ?>
 
       <?php get_template_part( 'nav', 'taxonomies' ); ?>
 
