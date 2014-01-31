@@ -1703,6 +1703,30 @@ button.build {
     color: rgb(255,255,255);
   }
 
+/* Sub Navigation found in `nav-taxonomies.php` */
+
+  .adverts__nav {
+    margin-bottom: 2em;
+    text-transform: uppercase;
+  }
+
+    .adverts__nav li:before {
+      content: '';
+      border-left: 1px solid rgb(37,37,37);
+    }
+
+    .adverts__nav li:first-child:before {
+      border-left: none;
+    }
+
+    .adverts__nav li a {
+      margin: 0 1em;
+    }
+
+    .adverts__nav li:first-child a {
+      margin-left: 0;
+    }
+
 /**
  * 3.10 Pagination
  */

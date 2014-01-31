@@ -29,6 +29,8 @@
         <p> <?php echo $taxomnomy->description; ?></p>
       </header><!-- .archive-header -->
 
+      <?php get_template_part( 'nav', 'taxonomies' ); ?>
+
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', 'formats'); ?>
