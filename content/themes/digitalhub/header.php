@@ -33,7 +33,7 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<nav id="js-nav" class="nav-main nav-main__nav" role="navigation">
+	<nav id="js-nav" class="nav-main nav-main__nav is-nav-inactive" role="navigation">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
 		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 	</nav><!-- #site-navigation -->
@@ -42,7 +42,7 @@
 
 		<?php do_action( 'before' ); ?>
 		<div id="bgimg">
-		<header class="header__main nav-main__header cf" id="masthead" role="banner">
+		<header class="header__main nav-main__header is-expand cf" id="masthead" role="banner">
 			<div class="wrapper">
 				<div id="search-slide">
 					<form action="?php bloginfo('url'); ?" method="get">
@@ -75,7 +75,7 @@
 	</header><!-- #s-header -->
 	<div id="titles">
 	<h1 class="mega">Trinity Mirror Digital Hub</h1><br />
-	<h2 class="kilo">Inspiring advertising to maximize impact</h2>
+	<h2 class="kilo">Inspiring advertising to maximise impact</h2>
 </div>
 	<div id="strip">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'menu_class' => 'secondary-menu') ); ?>
@@ -83,4 +83,4 @@
 	</div>
 </div><!-- end of #bgimg -->
 
-	<div id="content" class="site-content nav-main__content">
+	<div id="content" class="site-content nav-main__content is-expand">
