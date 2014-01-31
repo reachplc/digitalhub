@@ -1479,7 +1479,7 @@ button.build {
   }
 
   .example--desktop {
-    min-height: 344px;
+    min-height: 390px;
   }
 
 }
@@ -1670,6 +1670,7 @@ button.build {
 
   .adverts__header {
     position: absolute;
+    bottom: 0;
     right: 0;
     left: 0;
     z-index: 1;
@@ -1677,16 +1678,13 @@ button.build {
     padding-left: 0.5em;
     background-color: rgb(37,37,37);
     background-color: rgba(37,37,37,0.6);
-    opacity: 1;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition:    all 0.3s ease;
-  -o-transition:      all 0.3s ease;
   }
 
-    .adverts:hover .adverts__header {
-      opacity: 1;
-      bottom: 0;
-    }
+  h1.adverts__title {
+    margin: 0 !important;
+    font-size: 120%;
+    font-weight: 700;
+  }
 
 @media screen and (min-width: 481px) {
   .adverts__header {
@@ -2197,7 +2195,7 @@ object {
 }
 
 .wrapper__sub h1 {
-  margin: 0px;
+  margin: 0 0 15px 0;
 }
 
 /**
