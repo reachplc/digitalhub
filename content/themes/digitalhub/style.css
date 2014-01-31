@@ -191,9 +191,8 @@ a:focus {
 h1, .alpha {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid rgb(220,220,220);
-  font-size: 1.875em;
-  font-weight: normal;
+  font-size: 250%;
+  font-weight: 200;
 }
 
 h2, .beta {
@@ -244,7 +243,6 @@ h6, .zeta {
   color: rgb(255,255,255);
   font-size: 2em;
   font-weight: 200;
-  text-shadow: 0 1px 0 #198eb9;
 }
 
 /**
@@ -969,6 +967,7 @@ textarea {
   background: #363737;
   color: #666666;
   border: 0;
+  padding-left: 5px;
 }
 
 #search-slide input {
@@ -990,7 +989,7 @@ textarea {
   height: 20px;
   background-image: url(images/new_sprite.png);
   background-repeat: no-repeat;
-  background-position: 0 -123px;
+  background-position: 0 -122px;
   background-color: transparent;
 }
 
@@ -1195,6 +1194,10 @@ textarea {
     color: #999;
 }
 
+.secondary-menu li.current-menu-item a {
+  color: rgb(27,196,229);
+}
+
 #js-nav-button {
   background-repeat: no-repeat;
   background-position: -225px -336px;
@@ -1283,7 +1286,6 @@ textarea {
   background-color: #666;
   background-repeat: repeat-x;
   color: rgb(255,255,255);
-  text-shadow: 0 1px 0 rgba(0,0,0,0.3);
   text-transform: uppercase;
   font-weight: normal;
 }
@@ -1354,12 +1356,11 @@ textarea {
   width: 200px;
   text-align: left;
   margin: 10px 0;
-  text-shadow: 0 1px 0 #198eb9;
+  font-weight: 600;
  }
 
  button:hover {
   background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
-  text-shadow: 0 1px 0 #c8124e;
  }
 
  button.category {
@@ -1439,7 +1440,6 @@ button.build {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 1em;
-  border-bottom: 1px solid rgb(220,220,220);
 }
 
 .entry-meta {
@@ -1574,6 +1574,10 @@ button.build {
 
 .packages-text {
   width: 45%;
+}
+
+.packages-text .btn {
+  margin-top: 15px;
 }
 
 .packages-image {
