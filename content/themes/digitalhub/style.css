@@ -1915,7 +1915,7 @@ text-align: center;
   display:block;
   width:100%;
   float:left;
-  margin: 10px 0;
+  margin-top:14.5px;
 
 }
 
@@ -1927,9 +1927,7 @@ text-align: center;
   margin-right: 10px;
 }
 
-.contact-np {
-  padding-left: 0 !important;
-}
+
 
 .contact-wrap img{
   width:100%;
@@ -1940,9 +1938,34 @@ text-align: center;
 
 .contact-wrap-inside{
   float:left;
-  padding:0 !important;
+  width:50%;
   margin-bottom:10px;
+  padding-right:14.5px;
 }
+
+.contact-wrap > .last{
+  float:left;
+  margin-bottom:10px;
+  padding-right:0;
+  padding-left:14.5px;
+}
+
+.contact-address, .contact-map{ width:50%;float:left;}
+
+@media screen and (max-width: 1024px) {
+
+.contact-wrap-inside{
+  width:100%;
+  padding-left:0;
+  padding-right:0;
+}
+
+.contact-wrap > .last{
+  padding-left:0px;
+}
+
+}
+
 
 /* General */
 
