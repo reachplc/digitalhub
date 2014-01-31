@@ -39,6 +39,9 @@
       </section>
 
     <?php if ( have_posts() ) : ?>
+
+      <?php get_template_part( 'nav', 'taxonomies' ); ?>
+
       <section class="gallery cf">
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
