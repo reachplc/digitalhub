@@ -21,7 +21,7 @@ get_header(); ?>
 <div class="wrapper__sub">
 <div id="primary" class="content-area">
 <main id="main" class="site-main" role="main">
-<article id="<?php echo $term->slug; ?>" class="grid ss__1-4 ms__1-6 ls__1-12 xls__1-18 cf">
+
   <?php while ( have_posts() ) : the_post(); ?>
   <?php get_template_part( 'content', 'page' ); ?>
   <?php
@@ -31,7 +31,7 @@ get_header(); ?>
           endif;
         ?>
   <?php endwhile; // end of the loop. ?>
-</article>
+
 </main>
 <!-- #main -->
 </div>

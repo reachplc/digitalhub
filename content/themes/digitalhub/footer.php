@@ -66,7 +66,7 @@ $(document).ready(function(e) {
 
     //link = link.remove("#", "");
     $('html,body').animate({
-      scrollTop: $(href).offset().top},
+      scrollTop: $(href).offset().top-100},
       'slow');
     }
 

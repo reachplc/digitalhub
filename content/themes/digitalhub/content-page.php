@@ -5,8 +5,7 @@
  * @package DigitalHub
  */
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="<?php echo $term->slug; ?>" class="grid ss__1-4 ms__1-6 ls__1-12 xls__1-18 cf">
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 	</header><!-- .entry-header -->
