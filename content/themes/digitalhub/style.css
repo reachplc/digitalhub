@@ -191,9 +191,9 @@ a:focus {
 h1, .alpha {
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid rgb(220,220,220);
-  font-size: 1.875em;
-  font-weight: normal;
+  font-size: 250%;
+  font-weight: 200;
+  margin: 20px 0;
 }
 
 h2, .beta {
@@ -228,7 +228,7 @@ h6, .zeta {
 
 .mega {
   padding: 5px 15px;
-  margin-top: 100px;
+  margin-top: 120px;
   text-align: right;
   background: #fff;
   font-weight: 200;
@@ -243,8 +243,7 @@ h6, .zeta {
   background: rgb(27,196,229);
   color: rgb(255,255,255);
   font-size: 2em;
-  font-weight: 200;
-  text-shadow: 0 1px 0 #198eb9;
+  font-weight: 400;
 }
 
 /**
@@ -888,6 +887,7 @@ textarea {
 
 #titles h1 {
   border-bottom: 0;
+  margin-bottom: 0;
 }
 
 .site-title {
@@ -923,7 +923,7 @@ textarea {
 }
 
 #strip {
-  margin: 90px auto 0;
+  margin: 70px auto 0;
   width: 100%;
   min-height: 60px;
   text-align: center;
@@ -1406,10 +1406,10 @@ button.build {
   color: #fff !important;
   text-transform: uppercase;
   padding: 5px 35px 5px 8px;
-  width: 200px;
+  width: 205px;
   text-align: left;
-  margin: 10px 0;
-  text-shadow: 0 1px 0 #198eb9;
+  margin: 25px 0;
+  display: inline-block;
 }
 
 .pack-button:hover {
@@ -1439,7 +1439,6 @@ button.build {
 .entry-content,
 .entry-summary {
   margin: 1.5em 0 1em;
-  border-bottom: 1px solid rgb(220,220,220);
 }
 
 .entry-meta {
@@ -1546,16 +1545,12 @@ button.build {
   font-weight: 200;
   font-size: 250%;
   margin-bottom: 20px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 .packages__img {
   border-top: 1px solid #dcdcdc;
   padding: 30px 0 0;
-}
-
-.packages__img:nth-child(1) {
-  border-top: 0;
 }
 
 .packages__img img {
@@ -1607,12 +1602,13 @@ button.build {
 }
 
 .pack-button {
-  font-size: 80%;
-  background: url(images/new_sprite.png) no-repeat 134px -85px #1BC4E5
+  font-size: 90%;
+  background: url(images/new_sprite.png) no-repeat 144px -85px #1BC4E5;
+  font-weight: 400;
 }
 
 .pack-button:hover {
-  background: url(images/new_sprite.png) no-repeat 134px -85px #ed145b;
+  background: url(images/new_sprite.png) no-repeat 144px -85px #ed145b;
 }
 
 }
@@ -1658,6 +1654,10 @@ button.build {
   overflow: hidden
 }
 
+.adverts a:hover {
+  color: rgb(27,196,229);
+}
+
   .adverts__intro {
     margin-bottom: 2em;
   }
@@ -1665,14 +1665,13 @@ button.build {
   .adverts__header {
     position: absolute;
     right: 0;
-    bottom: -80px;
     left: 0;
     z-index: 1;
     padding-right: 0.5em;
     padding-left: 0.5em;
     background-color: rgb(37,37,37);
     background-color: rgba(37,37,37,0.6);
-    opacity: 0;
+    opacity: 1;
   -webkit-transition: all 0.3s ease;
   -moz-transition:    all 0.3s ease;
   -o-transition:      all 0.3s ease;
@@ -2165,6 +2164,10 @@ object {
 .wrapper__sub {
   margin: 0 auto;
   max-width: 95%;
+}
+
+.wrapper__sub h1 {
+  margin: 0px;
 }
 
 /**
@@ -2972,6 +2975,7 @@ object {
   #colophon {
     height: 80px;
     padding: 0 10px;
+    position: relative;
   }
 
   #credit {
