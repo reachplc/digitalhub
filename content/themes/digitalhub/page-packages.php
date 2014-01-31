@@ -38,9 +38,9 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-<h1>Welcome to the TM Digital Hub.</h1>
+<h1 class="packages__title">Welcome to the TM Digital Hub.</h1>
 
-<p>Just by choosing us, you’ve already taken the first step to a larger audience, more innovative advertising and a bigger market share for your business.</p>
+<p>Just by choosing us, you've already taken the first step to a larger audience, more innovative advertising and a bigger market share for your business.</p>
 
 <p>Browse our gallery of exciting and innovative digital advertising solutions, from simple online ad slots, to bespoke campaigns that employ the most creative and effective strategies to drive audience and maximise response.</p>
 
