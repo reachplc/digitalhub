@@ -89,6 +89,7 @@ $(window).scroll(function(){
        $('#area__tags-wrap').addClass('fadeInDown');
     } else {
        $('#area__tags-wrap').removeClass('fadeInDown');
+       
     }
 });
 
