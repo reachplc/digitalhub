@@ -10,11 +10,10 @@
  * @package DigitalHub
  */
 $taxonomy_type = 'packages';
-$posts = get_categories('taxonomy=packages&type=adverts');
-$pages = get_pages(array( 'child_of' => $post->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ));
+$posts = get_categories('taxonomy=' . $taxonomy_type . '&type=adverts');
+$terms = get_terms($taxonomy_type, array( 'orderby' => 'menu_order' ));
 
 $current_package = 0;
-$current_package_post = 0;
 $alt = true;
 
 function package_aside(){ ?>
@@ -28,7 +27,7 @@ function package_section(){?>
     <h1 class="packages__title"><?php the_package_title(); ?></h1>
     <p><?php the_package_description();?></p>
     <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
-    <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
+    <img class="image__responsive hide" src="<?php #the_package_image(); ?>" alt="">
   </section>
 <?php }
 
@@ -45,40 +44,14 @@ get_header(); ?>
 <p>Browse our gallery of exciting and innovative digital advertising solutions, from simple online ad slots, to bespoke campaigns that employ the most creative and effective strategies to drive audience and maximise response.</p>
 
     <?php /* Start the Loop */ ?>
-      <?php while ( have_packages() ) : the_packages(); ?>
+      <?php while ( have_packages() ) : ?>
 
       <article id="" class="cf packages__img">
         <?php echo (($alt = !$alt)?package_aside() . package_section():package_section() . package_aside());?>
       </article>
 
 
-      <?php endwhile; ?>
-
-<?php
-function package_page_aside() { ?>
-<aside class="packages-image">
-<img class="image__responsive" src="<?php the_package_page_image(); ?>" alt="">
-</aside><?php
-}
-
-function package_page_section(){ ?>
-<section class="packages-text">
-
-  <h1 class="packages__title"><?php the_package_page_title(); ?></h1>
-  <p><?php the_package_page_description(); ?></p>
-  <p>
-    <p><a class="btn btn--primary" href="<?php the_package_page_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
-  <img class="image__responsive hide" src="<?php the_package_page_image(); ?>" alt="">
-</section>
-<?php }
-
-while (have_package_page()) { the_package_page(); ?>
-
-  <article id="" class="cf packages__img">
-    <?php echo (($alt = !$alt)?package_page_aside() . package_page_section():package_page_section() . package_page_aside());?>
-  </article>
-
-<?php } ?>
+      <?php the_packages(); endwhile; ?>
 
     </main><!-- #main -->
   </div><!-- #primary -->
