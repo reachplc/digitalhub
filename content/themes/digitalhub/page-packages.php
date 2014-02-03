@@ -10,8 +10,8 @@
  * @package DigitalHub
  */
 $taxonomy_type = 'packages';
-$posts = get_categories('taxonomy=' . $taxonomy_type . '&type=adverts&orderby=term_group');
-$terms = get_terms($taxonomy_type);
+$posts = get_categories('taxonomy=' . $taxonomy_type . '&type=adverts');
+$terms = get_terms($taxonomy_type, array( 'orderby' => 'menu_order' ));
 
 $current_package = 0;
 $alt = true;
