@@ -2831,14 +2831,6 @@ object {
     background-color: transparent;
   }
 
-    .adverts__header {
-    bottom: 0;
-    opacity: 1;
-  -webkit-transition: none;
-  -moz-transition:    none;
-  -o-transition:      none;
-  }
-
 }
 
 /**
