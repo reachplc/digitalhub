@@ -1681,9 +1681,12 @@ button.build {
     background-color: rgba(37,37,37,0.6);
   }
 
-  h1.adverts__title {
-    font-size: 120%;
-    font-weight: 700;
+  .adverts__title {
+    font-size: 1.25em;
+  }
+
+  .adverts:hover .adverts__title {
+    color: rgb(237,20,91);
   }
 
 @media screen and (min-width: 481px) {
@@ -1695,7 +1698,6 @@ button.build {
 
   .adverts__title {
     border-bottom: none;
-    font-size: 1.5em;
   }
 
   .adverts__title a:hover {
@@ -2830,14 +2832,6 @@ object {
     background-repeat: no-repeat;
     background-position: -266px -336px;
     background-color: transparent;
-  }
-
-    .adverts__header {
-    bottom: 0;
-    opacity: 1;
-  -webkit-transition: none;
-  -moz-transition:    none;
-  -o-transition:      none;
   }
 
 }
