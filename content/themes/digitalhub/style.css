@@ -1223,6 +1223,7 @@ textarea {
 
 .nav-main__content {
   width: 66%;
+  margin-bottom: 70px;
   -webkit-transition: width 0.3s ease;
      -moz-transition: width 0.3s ease;
       -ms-transition: width 0.3s ease;
