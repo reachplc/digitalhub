@@ -192,7 +192,7 @@ h1, .alpha {
   margin: 0;
   padding: 0;
   font-size: 250%;
-  font-weight: 200;
+  font-weight: 300;
 }
 
 h2, .beta {
@@ -230,7 +230,7 @@ h6, .zeta {
   margin-top: 120px;
   text-align: right;
   background: #fff;
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
   font-size: 300%;
   display: inline-block;
@@ -242,7 +242,7 @@ h6, .zeta {
   background: rgb(27,196,229);
   color: rgb(255,255,255);
   font-size: 2em;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /**
@@ -293,7 +293,7 @@ em {
 b,
 strong {
   font-style: inherit;
-  font-weight: 700;
+  font-weight: 600;
   line-height:inherit;
 }
 
@@ -372,7 +372,7 @@ blockquote {
   blockquote p {
     font-size: 1.5em;
     line-height: 1.5em;
-    font-weight: bold;
+    font-weight: 600;
   }
 
   blockquote cite {
@@ -460,7 +460,7 @@ kbd {
   background-color: #FCFCFC;
   color: #666;
   font-size: 0.875em;
-  font-weight: normal;
+  font-weight: 300;
   line-height: 90%;
 }
 
@@ -1140,7 +1140,7 @@ textarea {
 .nav-main ul {
   padding: 20px;
   font-size: 180%;
-  font-weight: 200;
+  font-weight: 300;
   text-transform: uppercase;
 }
 
@@ -1158,7 +1158,7 @@ textarea {
 .nav-main ul.sub-menu {
   padding: 0 0 20px 0;
   font-size: 60%;
-  font-weight: 400;
+  font-weight: 300;
   text-transform: none;
 }
 
@@ -1181,7 +1181,7 @@ textarea {
   padding: 30px 40px 0 40px;
   text-transform: uppercase;
   font-size: 130%;
-  font-weight: 200;
+  font-weight: 300;
   background: #fff;
   margin-right: -4px;
 }
@@ -1289,7 +1289,7 @@ textarea {
   background-repeat: repeat-x;
   color: rgb(255,255,255);
   text-transform: uppercase;
-  font-weight: normal;
+  font-weight: 600;
 }
 
   .btn:link,
@@ -1545,7 +1545,7 @@ button.build {
 
 .packages__title {
   border-bottom: 0;
-  font-weight: 200;
+  font-weight: 300;
   font-size: 250%;
   margin-bottom: 20px;
   margin-top: 15px;
@@ -1611,7 +1611,7 @@ button.build {
 .pack-button {
   font-size: 90%;
   background: url(images/new_sprite.png) no-repeat 144px -85px #1BC4E5;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .pack-button:hover {
@@ -1662,7 +1662,7 @@ button.build {
 }
 
 .adverts a:hover {
-  color: rgb(27,196,229);
+  color: rgb(255,255,255);
 }
 
   .adverts__intro {
@@ -2671,7 +2671,7 @@ object {
   color: #21759b;
   display: block;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 600;
   height: auto;
   left: 5px;
   line-height: normal;
