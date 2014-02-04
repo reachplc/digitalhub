@@ -94,8 +94,6 @@ function digitalhub_scripts() {
 
 	wp_enqueue_script( 'digitalhub-searchslide', get_template_directory_uri() . '/js/search-slide.js', array('jquery'));
 
-	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'));
-
 	wp_enqueue_script( 'digitalhub-hero', get_template_directory_uri() . '/js/jquery.randomHero.js', array());
 
 	wp_enqueue_script( 'digitalhub-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
@@ -167,8 +165,6 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 function wpb_adding_scripts() {
-	wp_register_script('nav-main', get_template_directory_uri() . '/js/jquery.nav-main.js', array('jquery'),'0.0.0', true);
-	wp_enqueue_script('nav-main');
   wp_register_script('toggle-nav', get_template_directory_uri() . '/js/jquery.toggle-nav.js', array('jquery'),'0.0.0', true);
   wp_enqueue_script('toggle-nav');
 }

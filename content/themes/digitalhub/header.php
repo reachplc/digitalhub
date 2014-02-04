@@ -33,16 +33,11 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 
-	<nav id="js-nav" class="nav-main nav-main__nav is-nav-inactive" role="navigation">
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
-		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-	</nav><!-- #site-navigation -->
-
-
 
 		<?php do_action( 'before' ); ?>
 		<div id="bgimg">
-		<header class="header__main nav-main__header is-expand cf" id="masthead" role="banner">
+		<header class="header__main cf" id="masthead" role="banner">
 			<div class="wrapper">
 				<div id="search-slide">
 					<form action="<?php echo home_url( '/' ); ?>" method="get">
@@ -56,7 +51,6 @@
 				<div class="wrapper__sub">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><h1 class="site-title sprite"></h1>
 				</a>
-				<button id="js-nav-button" class="sprite"></button>
 				<button class="search"></button>
 				<a href="http://www.facebook.com"><div id="facebook" class="sprite"></div></a>
 				<a href="http://www.twitter.com"><div id="twitter" class="sprite"></div></a>
@@ -83,4 +77,4 @@
 	</div>
 </div><!-- end of #bgimg -->
 
-	<div id="content" class="site-content nav-main__content is-expand">
+	<div id="content" class="site-content">

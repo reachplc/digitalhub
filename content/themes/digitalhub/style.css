@@ -1114,62 +1114,6 @@ textarea {
   left: 0;
 }
 
-/* =styles/_navigation.less
------------------------------------------------ */
-
-.nav-main {
-  position: fixed;
-  top: 0;
-  right: 0;
-  /*  Allows the footer to show through */
-  bottom: 0;
-  width: 34%;
-  background: #3a383a;
-  box-shadow: inset 4px 0 4px 0 rgba(0, 0, 0, 0.2);
-  color: #717275;
-}
-
-.nav-main a {
-  color: #717275;
-}
-
-.nav-main a:hover {
-  color: #2cc2e4;
-}
-
-.nav-main ul {
-  padding: 20px;
-  font-size: 180%;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-
-.nav-main ul.children {
-  padding: 0 0 20px 0;
-  font-size: 60%;
-  font-weight: 400;
-  text-transform: none;
-}
-
-.children li {
-  margin: 6px 0;
-}
-
-.nav-main ul.sub-menu {
-  padding: 0 0 20px 0;
-  font-size: 60%;
-  font-weight: 300;
-  text-transform: none;
-}
-
-.sub-menu li {
-  margin: 6px 0;
-}
-
-.nav-main ul li {
-  list-style: none;
-}
-
 .secondary-menu {
   margin: 0 auto;
   padding: 0;
@@ -1197,74 +1141,6 @@ textarea {
 
 .secondary-menu li.current-menu-item a {
   color: rgb(27,196,229);
-}
-
-#js-nav-button {
-  background-repeat: no-repeat;
-  background-position: -225px -336px;
-  background-color: transparent;
-  border: none;
-  color: #fff;
-  text-transform: uppercase;
-  margin: 17px 0 0;
-  float: right;
-  padding: 0 38px 0 0;
-  height: 20px;
-  width: auto;
-}
-
-#js-nav-button:after {
-  content: "MENU";
-}
-
-/* =styles/_nav-main.less
- *  extends jquery.nav-main.js
------------------------------------------------ */
-
-.nav-main__content {
-  width: 66%;
-  margin-bottom: 70px;
-  -webkit-transition: width 0.3s ease;
-     -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-       -o-transition: width 0.3s ease;
-          transition: width 0.3s ease;
-}
-
-.nav-main__nav {
-  width: 34%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
-}
-
-.nav-main__header {
-  width: 66%;
-  -webkit-transition: width 0.3s ease;
-     -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-       -o-transition: width 0.3s ease;
-          transition: width 0.3s ease;
-}
-
-.is-expand {
-  width: 100%;
-  -webkit-transition: width 0.3s ease;
-     -moz-transition: width 0.3s ease;
-      -ms-transition: width 0.3s ease;
-       -o-transition: width 0.3s ease;
-          transition: width 0.3s ease;
-}
-
-.is-nav-inactive {
-  right: -34%;
-  -webkit-transition: right 0.3s ease;
-     -moz-transition: right 0.3s ease;
-      -ms-transition: right 0.3s ease;
-       -o-transition: right 0.3s ease;
-          transition: right 0.3s ease;
 }
 
  .sf-menu ul {
@@ -2852,40 +2728,10 @@ object {
 }
 
 /**
- * Responsive large (1024) iPad landscape
- */
-
-@media screen and (max-width: 1024px) {
-
-  #js-nav-button:after {
-    content: " ";
-  }
-
-  #js-nav-button {
-    background-image: url(images/new_sprite.png);
-    background-repeat: no-repeat;
-    background-position: -266px -336px;
-    background-color: transparent;
-  }
-
-}
-
-/**
  * Responsive Middle (768) iPad portraite
  */
 
 @media screen and (max-width: 768px) {
-
-  #js-nav-button:after {
-    content: " ";
-  }
-
-  #js-nav-button {
-    background-image: url(images/new_sprite.png);
-    background-repeat: no-repeat;
-    background-position: -266px -336px;
-    background-color: transparent;
-  }
 
   #search {
   display: none;
@@ -2970,44 +2816,12 @@ object {
     background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
    }
 
-  .nav-main__nav {
-    width: 100%;
-    padding-top: 60px;
-  }
-
-  .is-nav-inactive {
-    right: -100%;
-  }
-
-  .nav-main__header {
-    width: 100%;
-  }
-
-  .sub-menu li {
-    margin: 0;
-  }
-
-   .children li {
-    margin: 0;
-  }
-
   #twitter {
     display: none;
   }
 
   #facebook {
     display: none;
-  }
-
-  #js-nav-button:after {
-    content: " ";
-  }
-
-  #js-nav-button {
-    background-image: url(images/new_sprite.png);
-    background-repeat: no-repeat;
-    background-position: -266px -336px;
-    background-color: transparent;
   }
 
    button.search {
@@ -3035,14 +2849,6 @@ object {
     display: block;
     padding: 0;
     margin: 0;
-  }
-
-  .nav-main ul {
-    font-size: 120%;
-  }
-
-  .nav-main ul.children {
-    font-size: 80%;
   }
 
 }
@@ -3074,11 +2880,6 @@ object {
   }
   #tm-logo {
     background-position: 0 -539px
-  }
-
-  #js-nav-button {
-      background-position: -266px -336px;
-      background-color: transparent;
   }
 
   button.prev,
