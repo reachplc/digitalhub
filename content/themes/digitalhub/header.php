@@ -45,7 +45,7 @@
 		<header class="header__main nav-main__header is-expand cf" id="masthead" role="banner">
 			<div class="wrapper">
 				<div id="search-slide">
-					<form action="?php bloginfo('url'); ?" method="get">
+					<form action="<?php echo home_url( '/' ); ?>" method="get">
 					<div id="search-left"><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
@@ -61,7 +61,7 @@
 				<a href="http://www.facebook.com"><div id="facebook" class="sprite"></div></a>
 				<a href="http://www.twitter.com"><div id="twitter" class="sprite"></div></a>
 				<div id="search">
-					<form id="searchform" action="?php bloginfo('url'); ?" method="get">
+					<form id="searchform" action="<?php echo home_url( '/' ); ?>" method="get">
 					<div><input id="s" class="text" type="text" name="s" placeholder="Search" />
 					<input class="submit button" type="submit" name="submit" value=""/>
 					</div>
