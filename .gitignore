@@ -9,3 +9,7 @@ npm_logs.txt
 /local-config.php
 /wp-config.php
 /shared
+
+#  System
+
+error_log
