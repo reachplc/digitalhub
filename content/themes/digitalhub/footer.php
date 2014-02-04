@@ -57,33 +57,28 @@ $(document).ready(function(e) {
 </script>
 
 <script>
-
 ;(function( $ ){
 
   function goToScrollDiv(link){
     // Reove "link" from the ID
     var href = link;
-
     //link = link.remove("#", "");
     $('html,body').animate({
-      scrollTop: $(href).offset().top-100},
-      'slow');
+      scrollTop: $(href).offset().top-110}
+      , 800);;
     }
 
     $("#reg__map-wrap map area").click(function(e) {
           // Prevent a page reload when a link is pressed
-
+          e.preventDefault();
         var link = $(this).attr('href');
-
           // Call the scroll function
         goToScrollDiv(link);
-
     });
-
 })( jQuery );
 
-;(function( $ ){
 
+;(function( $ ){
 $(window).scroll(function(){
     if ($(this).scrollTop() > 120) {
        $('#area__tags-wrap').addClass('fadeInDown');
@@ -92,9 +87,40 @@ $(window).scroll(function(){
        
     }
 });
-
 })( jQuery );
+</script>
 
+<script>
+<?php if( $page == 'regions' ) {?>
+;(function( $ ){
+
+$(document).ready(function(){
+
+  // hide #back-top first
+  $("#back-map").hide();
+  
+  // fade in #back-top
+  $(function () {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 550) {
+        $('#back-map').fadeIn();
+      } else {
+        $('#back-map').fadeOut();
+      }
+    });
+
+    // scroll body to 0px on click
+    $('#back-map a').click(function () {
+      $('html, body').animate({
+        scrollTop: $("#map").offset().top-140
+    }, 800);
+      return false;
+    });
+  });
+
+});
+})( jQuery );
+<?php } ?>
 </script>
 
 </body>
