@@ -38,6 +38,8 @@ get_header(); ?>
 <!-- #primary -->
 
 </div>
+
+<div id ="back-map"><a href="#map">Back to Map</a></div>
 <!--/ wrapper_sub  -->
 
 <?php get_footer(); ?>
