@@ -17,6 +17,12 @@ function additional_active_item_classes($classes = array(), $menu_item = false){
         $classes[] = 'current-menu-item';
     }
 
+    // Packages
+    // TODO: Find a replacement for using the id as the post name
+
+    if ( $menu_item->post_name == '87' && is_tax('packages') ){
+      $classes[] = 'current-menu-item';
+    }
 
     return $classes;
 }
