@@ -8,6 +8,7 @@ npm_logs.txt
 .htaccess
 /local-config.php
 /wp-config.php
+/content/uploads
 /shared
 
 #  System
