@@ -41,6 +41,8 @@
 
       <section class="gallery cf">
 
+        <?php get_template_part( 'nav', 'taxonomies-packages' ); ?>
+
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', 'adverts' ); ?>
