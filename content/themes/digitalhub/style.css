@@ -861,6 +861,13 @@ textarea {
   margin-left: 0.5em;
 }
 
+.icon__overlay {
+  position: absolute;
+  /* @TODO: temp solution. need to position in the middle of the parent elemetn */
+  top: 40px;
+  left: 40px;
+}
+
 /**
  * 3.0 Styles
  */
@@ -1395,21 +1402,38 @@ button.build {
 /* Example Preview Images */
 
 .example__preview {
-  margin-bottom: 2em;
+  /* width of the grid gutter */
+  margin-bottom: 29px;
+  /* Reset align from .example--app/video */
   text-align: left;
 }
 
-.example__preview--image {
-  border: 1px solid #2ac2e3;
-}
+  .example__preview li {
+    /* Allows the icon to be positioned inside this element */
+    position: relative;
+    /* width of the grid gutter */
+    margin-left: 29px;
+    /* Background colour to show through transparent image */
+    background: rgb(37,37,37);
+    cursor: pointer;
+  }
 
-.example__preview li {
-  padding-left: 0.5em;
-}
+  .example__preview li:first-child {
+    margin-left: 0;
+  }
 
-.example__preview li:first-child {
-  padding-left: 0;
-}
+  .example__preview--image {
+    border: 1px solid #2ac2e3;
+    cursor: pointer;
+  }
+
+    /* Style the currently playing video's preview icon */
+    .example__preview--selected img {
+      filter: alpha(opacity=60);
+      opacity: .6;
+      cursor: default;
+    }
+
 
  button.search {
   width: 24px;
@@ -1849,6 +1873,12 @@ text-align: center;
     width: 21px;
     height: 21px;
     top: -2px;
+  }
+
+  .sprite--play {
+    background-position: 0px -650px;
+    width: 24px;
+    height: 24px;
   }
 
 /**
