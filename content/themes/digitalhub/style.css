@@ -2877,7 +2877,9 @@ object {
 
   button.search.clicked {
     background: url(images/close_x2.png) no-repeat 0 0 transparent;
+    background-size: 24px 24px;
   }
+
   #tm-logo {
     background-position: 0 -539px
   }
