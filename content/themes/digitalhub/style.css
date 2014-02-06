@@ -691,7 +691,7 @@ textarea {
 
 .btn {
   display: inline-block;
-  padding: 0.5em;
+  padding: 0.5em 0.7em;
   border: none;
   line-height: 1em;
   cursor: pointer;
@@ -1845,7 +1845,7 @@ text-align: center;
   }
 
   .sprite--back {
-    background-position: -200px -382px;
+    background-position: -5px -593px;
     width: 21px;
     height: 21px;
     top: -2px;
