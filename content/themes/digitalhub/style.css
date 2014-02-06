@@ -203,6 +203,7 @@ h2, .beta {
 h3, .gamma {
   margin: 0;
   padding: 0;
+  font-size: 1.35em;
 }
 
 h4, .delta {
@@ -1299,6 +1300,15 @@ button.build {
 /**
  * 3.6 Content
  */
+
+.intro {
+  margin-bottom: 4em;
+}
+
+.intro__content {
+  margin-bottom: 0.75em;
+  color: rgb(113,113,113);
+}
 
 .sticky {
 
