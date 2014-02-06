@@ -2113,7 +2113,7 @@ object {
 
 .wrapper__sub {
   margin: 0 auto;
-  max-width: 95%;
+  max-width: 1024px;
 }
 
 /**
