@@ -40,12 +40,12 @@
     <?php if ( have_posts() ) : ?>
 
       <?php get_template_part( 'nav', 'taxonomies' ); ?>
-
+      <section class="gallery cf">
       <?php /* The loop */ ?>
       <?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', 'formats'); ?>
       <?php endwhile; ?>
-
+      </section>
     <?php else : ?>
       <?php get_template_part( 'content', 'none' ); ?>
     <?php endif; ?>
