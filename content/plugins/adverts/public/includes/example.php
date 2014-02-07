@@ -34,7 +34,11 @@ function get_example_preview($custom) {
 
       $_example_preview = urldecode( $custom['_example_' . $i . '_url_preview'][0] );
 
-    echo '<li><img class="example__preview--image js-example-preview" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
+    echo '<li class="js-example-preview';
+    if ($i == 1){echo ' example__preview--selected';}
+    echo '"><span class="sprite sprite--play icon icon__overlay';
+    if ($i == 1){echo ' hidden';}
+    echo '"></span><img class="example__preview--image" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
     }
 
   }
