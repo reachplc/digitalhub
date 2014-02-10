@@ -890,6 +890,44 @@ textarea {
   margin-bottom: 0;
 }
 
+.ie #titles {
+  right: 20px;
+}
+
+#titles {
+  position: absolute;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation: slide 1s forwards;
+  -moz-animation-delay: 0.5s;
+  -moz-animation-timing-function: ease-out;
+  -o-animation: slide 1s forwards;
+  -o-animation-delay: 0.5s;
+  -o-animation-timing-function: ease-out;  
+  animation: slide 1s forwards;
+  animatuon-delay: 0.5s;
+  animation-timing-function: ease-out;
+  right: -600px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes slide {
+    100% { right: 20px; }
+}
+
+@-moz-keyframes slide {
+    100% { right: 20px; }
+}
+
+@-o-keyframes slide {
+    100% { right: 20px; }
+}
+
+@keyframes slide {
+    100% { right: 20px; }
+}
+
 .site-title {
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -923,11 +961,13 @@ textarea {
 }
 
 #strip {
-  margin: 70px auto 0;
+  margin: 0 auto;
   width: 100%;
   min-height: 60px;
   text-align: center;
   background: url(images/white-sides.png) no-repeat center top transparent;
+  position: absolute;
+  top: 320px;
 }
 
 #search-slide {
