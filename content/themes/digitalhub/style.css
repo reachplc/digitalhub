@@ -864,8 +864,8 @@ textarea {
 .icon__overlay {
   position: absolute;
   /* @TODO: temp solution. need to position in the middle of the parent elemetn */
-  top: 30px;
-  left: 30px;
+  top: 27px;
+  left: 27px;
 }
 
 /**
