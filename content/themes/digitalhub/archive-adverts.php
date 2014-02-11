@@ -11,6 +11,9 @@
  * @link      http://trinitymirror.github.io
  * @copyright 2013 Trinity Mirror Creative
  */
+global $post;
+$categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
+
 ?>
 
 <?php get_header(); ?>
@@ -38,30 +41,37 @@
         </aside>
       </section>
 
+
     <?php if ( have_posts() ) : ?>
 
-      <?php get_template_part( 'nav', 'taxonomies' ); ?>
+    <?php get_template_part( 'nav', 'taxonomies' ); ?>
 
-      <section class="gallery cf">
-      <?php /* The loop */ ?>
-      <?php while ( have_posts() ) : the_post(); ?>
-        <?php get_template_part( 'content', 'adverts' ); ?>
-      <?php endwhile; ?>
-      </section>
-      <section class="pagination">
-      <?php
-      global $wp_query;
+      <?php foreach( $categories as $category ): ?>
 
-      $big = 999999999; // need an unlikely integer
+        <section class="gallery cf">
+          <header>
+            <h2><?php echo $category->name;?></h2>
+          </header>
 
-      echo paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'current' => max( 1, get_query_var('paged') ),
-        'total' => $wp_query->max_num_pages
-      ) );
-      ?>
-      </section>
+        <?php $myposts = get_posts(array(
+                'post_type' => 'adverts',
+                'taxonomy' => $category->taxonomy,
+                'term' => $category->slug,
+                'nopaging' => true
+              ));?>
+
+        <?php /*  Loop  */ ?>
+        <?php  foreach( $myposts as $post ):?>
+          <? setup_postdata($post); ?>
+
+          <?php get_template_part( 'content', 'adverts' ); ?>
+
+        <?php endforeach;?>
+        <?php wp_reset_postdata(); ?>
+
+        </section>
+      <?php  endforeach; ?>
+
     <?php else : ?>
       <?php get_template_part( 'content', 'none' ); ?>
     <?php endif; ?>
