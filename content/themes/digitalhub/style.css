@@ -1885,9 +1885,9 @@ text-align: center;
   }
 
   .sprite--back {
-    background-position: -5px -593px;
-    width: 21px;
-    height: 21px;
+    background-position: 0 -599px;
+    width: 8px;
+    height: 12px;
     top: -2px;
   }
 
