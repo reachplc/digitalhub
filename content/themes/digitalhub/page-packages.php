@@ -17,8 +17,7 @@ $current_package = 0;
 $alt = true;
 
 function package_aside(){ ?>
-  <aside class="packages-image">
-  <img class="image__responsive" src="<?php the_package_image(); ?>" alt="">
+  <aside class="packages-image packages-image--<?php the_package_class(); ?>">
   </aside>
 <?php }
 
