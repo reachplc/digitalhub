@@ -1434,6 +1434,7 @@ button.build {
     transition: all 0.3s ease-in-out;
   }
 
+   .example__preview--selected .example__preview--image,
    .example__preview--image:hover {
     filter: none;
     -webkit-filter: grayscale(0%);
@@ -1441,8 +1442,6 @@ button.build {
 
     /* Style the currently playing video's preview icon */
     .example__preview--selected img {
-      filter: alpha(opacity=60);
-      opacity: .6;
       cursor: default;
     }
 
