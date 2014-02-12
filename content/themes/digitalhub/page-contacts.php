@@ -52,7 +52,7 @@ get_header(); ?>
           </div></div>
 
            <div id="men-media-and-trinity-mirror-huddersfield" class ="contacts-map-wrap cf">
-          <h3 >MEN Media &amp; Trinity Mirror Huddersfield</h3>
+          <h3 >MEN Media &amp; Trinity Mirror Huddersfield<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmmh-canvas"></div>
           <div class="contacts-address">
           <h4>Manchester</h4>
@@ -73,7 +73,7 @@ get_header(); ?>
           </div></div>
 
           <div id="trinity-mirror-north-west" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror North West &amp; North Wales</h3>
+          <h3>Trinity Mirror North West &amp; North Wales<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmnw-canvas"></div>
           <div class="contacts-address">
           <h4>Liverpool</h4>
@@ -106,7 +106,7 @@ get_header(); ?>
         </div>
 
         <div id="nasa" class="contacts-map-wrap cf">
-          <h3>NASA (National Advertising Sales Agency)</h3>
+          <h3>NASA (National Advertising Sales Agency)<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-nasa-canvas"></div>
           <div class="contacts-address">
           <h4>NASA</h4>
@@ -117,7 +117,7 @@ get_header(); ?>
         </div></div>
 
         <div id="trinity-mirror-north-east" class="contacts-map-wrap cf">
-          <h3>Trinity Mirror North East</h3>
+          <h3>Trinity Mirror North East<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmne-canvas"></div>
           <div class="contacts-address">
           <h4>NCJ Media</h4>
@@ -135,7 +135,7 @@ get_header(); ?>
         </div>
 
         <div id="trinity-mirror-midlands" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror Midlands</h3>
+          <h3>Trinity Mirror Midlands<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmm-canvas"></div>
           <div class="contacts-address">
           <h4>BPM Media</h4>
@@ -153,7 +153,7 @@ get_header(); ?>
         </div>
 
         <div id="trinity-mirror-scotland" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror Scotland</h3>
+          <h3>Trinity Mirror Scotland<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmscot-canvas"></div>
           <div class="contacts-address">
           <h4>Media Scotland</h4>
@@ -171,7 +171,7 @@ get_header(); ?>
         </div>
 
         <div id="trinity-mirror-wales" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror Wales</h3>
+          <h3>Trinity Mirror Wales<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmw-canvas"></div>
           <div class="contacts-address">
           <h4>Media Wales</h4>
@@ -182,7 +182,7 @@ get_header(); ?>
         </div>
 
         <div id="trinity-mirror-south" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror South</h3>
+          <h3>Trinity Mirror South<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tms-canvas"></div>
           <div class="contacts-address">
           <h4>Reading</h4>
