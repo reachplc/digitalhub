@@ -881,7 +881,7 @@ textarea {
  */
 
 .site-branding {
-  padding: 5px;
+  padding: 5px 0.75em;
   background: url(images/black.gif) repeat-x 0 -140px transparent;
   min-height: 80px;
  }
@@ -1077,7 +1077,7 @@ textarea {
 }
 
 .site-info {
-  padding: 17px 0 0 0;
+  padding: 17px 0.75em 0;
 }
 
 #copy-credit {
