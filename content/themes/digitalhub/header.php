@@ -8,7 +8,10 @@
  */
 ?>
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+
+<!--[if IE 8]>    <html class="lt-ie9" <?php language_attributes(); ?>> <![endif]-->
+<!--[if gt IE 8]><!--> <html <?php language_attributes(); ?>> <!--<![endif]-->
+
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
