@@ -29,11 +29,11 @@ get_header(); ?>
         <div class="contacts-menu">
         <ul>
           <li><a class="contacts-menu-active" href="#trinity-mirror-plc">Trinity Mirror PLC</a></li>
+          <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
+          <li><a href="#trinity-mirror-midlands">Trinity Mirror Midlands</a></li>
           <li><a href="#men-media-and-trinity-mirror-huddersfield" >MEN Media &amp; Trinity Mirror Huddersfield</a></li>
           <li><a href="#trinity-mirror-north-west" >Trinity Mirror North West &amp; North Wales</a></li>
-          <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
           <li><a href="#trinity-mirror-north-east" >Trinity Mirror North East</a></li>
-          <li><a href="#trinity-mirror-midlands">Trinity Mirror Midlands</a></li>
           <li><a href="#trinity-mirror-scotland" >Trinity Mirror Scotland</a></li>
           <li><a href="#trinity-mirror-wales" >Trinity Mirror Wales</a></li>
           <li><a href="#trinity-mirror-south" >Trinity Mirror South</a></li>
@@ -41,17 +41,47 @@ get_header(); ?>
         </div>
         </div>
         <aside class="contacts-map-col">
-          <div id="trinity-mirror-plc" class="contacts-map-wrap cf">
-          <h3>Trinity Mirror PLC</h3>
+          <article id="trinity-mirror-plc" class="contacts-map-wrap box separator--horizontal cf">
+          <h2>Trinity Mirror PLC</h2>
           <div id="map-tmplc-canvas"></div>
           <div class="contacts-address">
           <h4>Trinity Mirror PLC</h4>
           Canada Square<br>
           London<br>
           E14 5AP
-          </div></div>
+          </div>
+          </article>
 
-           <div id="men-media-and-trinity-mirror-huddersfield" class ="contacts-map-wrap cf">
+          <div id="nasa" class="contacts-map-wrap box separator--horizontal cf">
+          <h3>NASA (National Advertising Sales Agency)<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
+          <div id="map-nasa-canvas"></div>
+          <div class="contacts-address">
+          <h4>NASA</h4>
+          Brookmount House<br>
+          62-65 Chandos Place<br>
+          London<br>
+          WC2N 3LP
+        </div></div>
+
+          <div id="trinity-mirror-midlands" class="contacts-map-wrap box separator--horizontal cf">
+          <h3>Trinity Mirror Midlands<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
+          <div id="map-tmm-canvas"></div>
+          <div class="contacts-address">
+          <h4>BPM Media</h4>
+          Floor 6<br>
+          Fort Dunlop<br>
+          Fort Parkway<br>
+          B24 9FF
+          </div>
+          <div class="contacts-address">
+          <h4>Coventry Newspapers Ltd</h4>
+          Corporation Street<br>
+          Coventry<br>
+          CV1 1FP
+          </div>
+        </div>
+
+           <div id="men-media-and-trinity-mirror-huddersfield" class="contacts-map-wrap box separator--horizontal cf">
           <h3 >MEN Media &amp; Trinity Mirror Huddersfield<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmmh-canvas"></div>
           <div class="contacts-address">
@@ -72,7 +102,7 @@ get_header(); ?>
           HD2 1GQ
           </div></div>
 
-          <div id="trinity-mirror-north-west" class ="contacts-map-wrap cf">
+          <div id="trinity-mirror-north-west" class="contacts-map-wrap box separator--horizontal cf">
           <h3>Trinity Mirror North West &amp; North Wales<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmnw-canvas"></div>
           <div class="contacts-address">
@@ -105,18 +135,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div id="nasa" class="contacts-map-wrap cf">
-          <h3>NASA (National Advertising Sales Agency)<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
-          <div id="map-nasa-canvas"></div>
-          <div class="contacts-address">
-          <h4>NASA</h4>
-          Brookmount House<br>
-          62-65 Chandos Place<br>
-          London<br>
-          WC2N 3LP
-        </div></div>
-
-        <div id="trinity-mirror-north-east" class="contacts-map-wrap cf">
+        <div id="trinity-mirror-north-east" class="contacts-map-wrap box separator--horizontal cf">
           <h3>Trinity Mirror North East<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmne-canvas"></div>
           <div class="contacts-address">
@@ -134,25 +153,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div id="trinity-mirror-midlands" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror Midlands<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
-          <div id="map-tmm-canvas"></div>
-          <div class="contacts-address">
-          <h4>BPM Media</h4>
-          Birmingham Post and Mail<br>
-          Fort Dunlop<br>
-          Fort Parkway<br>
-          B24 9FF
-          </div>
-          <div class="contacts-address">
-          <h4>Coventry Newspapers Ltd</h4>
-          Corporation Street<br>
-          Coventry<br>
-          CV1 1FP
-          </div>
-        </div>
-
-        <div id="trinity-mirror-scotland" class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-scotland" class="contacts-map-wrap box separator--horizontal cf">
           <h3>Trinity Mirror Scotland<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmscot-canvas"></div>
           <div class="contacts-address">
@@ -170,7 +171,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div id="trinity-mirror-wales" class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-wales" class="contacts-map-wrap box separator--horizontal cf">
           <h3>Trinity Mirror Wales<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmw-canvas"></div>
           <div class="contacts-address">
@@ -181,7 +182,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div id="trinity-mirror-south" class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-south" class="contacts-map-wrap box separator--horizontal cf">
           <h3>Trinity Mirror South<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tms-canvas"></div>
           <div class="contacts-address">

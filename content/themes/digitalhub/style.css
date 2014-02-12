@@ -1984,7 +1984,9 @@ text-align: center;
 
 .contacts-address{ width:30%;float:left; padding-right:10px;}
 
-.contacts-map-wrap{width:100%; border-bottom: solid 1px #ccc; padding-bottom:29px; margin-bottom:29px;}
+.contacts-map-wrap{
+  width:100%;
+}
 
 .contacts-menu-col{width:33%;float:left; position:relative;}
 .contacts-menu ul{list-style-type:none ; margin:0; padding: 0;}
