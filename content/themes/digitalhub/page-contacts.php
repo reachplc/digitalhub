@@ -68,7 +68,7 @@ get_header(); ?>
           <div id="map-tmm-canvas"></div>
           <div class="contacts-address">
           <h4>BPM Media</h4>
-          Birmingham Post and Mail<br>
+          Floor 6<br>
           Fort Dunlop<br>
           Fort Parkway<br>
           B24 9FF
