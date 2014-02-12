@@ -121,12 +121,21 @@ add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_adverts' );
 
   function digitalhub_scripts_map() {
   global $page;
-  if( $page == 'regions' || $page == 'contacts') {
+  if( $page == 'regions') {
     wp_enqueue_script( 'digitalhub-rwdImageMaps', get_template_directory_uri() . '/js/lib/jquery.rwdImageMaps.js', array('jquery'), '20140124', true );
   }
 }
 
 add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_map' );
+
+  function digitalhub_scripts_contacts() {
+  global $page;
+  if( $page == 'contacts') {
+    wp_enqueue_script( 'digitalhub-contactMaps', get_template_directory_uri() . '/js/contact-maps.js', array('jquery'), '20140211', true );
+  }
+}
+
+add_action( 'wp_enqueue_scripts', 'digitalhub_scripts_contacts' );
 
 /**
  * Add custom web fonts

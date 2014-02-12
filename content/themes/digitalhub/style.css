@@ -1982,9 +1982,42 @@ text-align: center;
   padding-left:14.5px;
 }
 
-.contact-address{ width:30%;float:left; padding-right:10px;}
+.contacts-address{ width:30%;float:left; padding-right:10px;}
 
-.contact-map{ width:70%;float:left;}
+.contacts-map-wrap{
+  width:100%;
+}
+
+.contacts-menu-col{width:33%;float:left; position:relative;}
+.contacts-menu ul{list-style-type:none ; margin:0; padding: 0;}
+.contacts-menu ul li{margin:0; padding-bottom: 5px;}
+.contacts-menu ul li a{color:#000;}
+.contacts-menu-active{color:#2ac2e3 !important; font-weight:700; position: relative;
+}
+
+.contacts-menu-active:before{content: ""; width: 10px; height: 11px;background-image: url(images/contacts-menu-active.png); background-repeat: no-repeat; position: absolute; top: 5px; left: -15px;}
+
+.contacts-menu a:hover{color:#2ac2e3;}
+
+.contacts-map-col{width:66%;float:left;}
+.contacts-address{width:25%;float:left;padding-right:10px;}
+
+#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0px;}
+
+@media screen and (max-width: 767px) {
+  .contacts-menu{padding-left:10px;}
+.contacts-menu-col{width:100%;}
+.contacts-map-col{width:100%}
+}
+
+.contact-wrap-inside{
+  width:100%;
+  padding-left:0;
+  padding-right:0;
+  margin-bottom:20px;
+}
+
+}
 
 @media screen and (max-width: 900px) {
 

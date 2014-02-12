@@ -68,13 +68,16 @@ $(document).ready(function(e) {
       , 800);;
     }
 
-    $("#reg__map-wrap map area").click(function(e) {
+    $("#reg__map-wrap map area, .contacts-menu ul li a").click(function(e) {
           // Prevent a page reload when a link is pressed
           e.preventDefault();
         var link = $(this).attr('href');
           // Call the scroll function
         goToScrollDiv(link);
     });
+
+  
+
 })( jQuery );
 
 
