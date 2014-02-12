@@ -44,7 +44,7 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
 
     <?php if ( have_posts() ) : ?>
 
-    <?php get_template_part( 'nav', 'taxonomies' ); ?>
+    <?php get_template_part( 'nav', 'taxonomies-adverts' ); ?>
 
       <?php foreach( $categories as $category ): ?>
 
