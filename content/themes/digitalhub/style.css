@@ -1717,6 +1717,43 @@ button.build {
     margin-top: 0;
   }
 
+  .packages-image--essential {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--professional {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--bespoke {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--whats-on {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--buy-sell {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--sponsored-tweet {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+
 }
 
 /**
