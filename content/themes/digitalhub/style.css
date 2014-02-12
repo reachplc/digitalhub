@@ -1607,27 +1607,51 @@ button.build {
  */
 
 .packages-image--essential {
-
+  width: 55%;
+  background: url(images/essential.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 .packages-image--professional {
-
+  width: 55%;
+  background: url(images/professional.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 .packages-image--bespoke {
-
+  width: 55%;
+  background: url(images/bespoke.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 .packages-image--whats-on {
-
+  width: 55%;
+  background: url(images/whats-on.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 .packages-image--buy-sell {
-
+  width: 55%;
+  background: url(images/buy-sell.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 .packages-image--sponsored-tweet {
-
+  width: 55%;
+  background: url(images/sponsored-tweet.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
 }
 
 @media screen and (max-width: 700px) {
@@ -2965,6 +2989,10 @@ object {
 
   button.search {
   display: inline;
+  }
+
+  .packages-text {
+    font-size: 90%;
   }
 
 }
