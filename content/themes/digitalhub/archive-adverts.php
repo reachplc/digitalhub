@@ -48,9 +48,9 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
 
       <?php foreach( $categories as $category ): ?>
 
-        <section class="gallery cf">
-          <header>
-            <h2><?php echo $category->name;?></h2>
+        <section class="gallery box separator--horizontal cf">
+          <header class="gallery--header grid ss__1-4 ms__1-6 ls__1-12 xls__1-18">
+            <h2 id="<?php echo $category->slug; ?>"><?php echo $category->name;?><a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h2>
           </header>
 
         <?php $myposts = get_posts(array(
