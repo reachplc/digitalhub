@@ -29,11 +29,11 @@ get_header(); ?>
         <div class="contacts-menu">
         <ul>
           <li><a class="contacts-menu-active" href="#trinity-mirror-plc">Trinity Mirror PLC</a></li>
+          <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
+          <li><a href="#trinity-mirror-midlands">Trinity Mirror Midlands</a></li>
           <li><a href="#men-media-and-trinity-mirror-huddersfield" >MEN Media &amp; Trinity Mirror Huddersfield</a></li>
           <li><a href="#trinity-mirror-north-west" >Trinity Mirror North West &amp; North Wales</a></li>
-          <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
           <li><a href="#trinity-mirror-north-east" >Trinity Mirror North East</a></li>
-          <li><a href="#trinity-mirror-midlands">Trinity Mirror Midlands</a></li>
           <li><a href="#trinity-mirror-scotland" >Trinity Mirror Scotland</a></li>
           <li><a href="#trinity-mirror-wales" >Trinity Mirror Wales</a></li>
           <li><a href="#trinity-mirror-south" >Trinity Mirror South</a></li>
@@ -50,6 +50,35 @@ get_header(); ?>
           London<br>
           E14 5AP
           </div></div>
+
+          <div id="nasa" class="contacts-map-wrap cf">
+          <h3>NASA (National Advertising Sales Agency)<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
+          <div id="map-nasa-canvas"></div>
+          <div class="contacts-address">
+          <h4>NASA</h4>
+          Brookmount House<br>
+          62-65 Chandos Place<br>
+          London<br>
+          WC2N 3LP
+        </div></div>
+
+          <div id="trinity-mirror-midlands" class ="contacts-map-wrap cf">
+          <h3>Trinity Mirror Midlands<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
+          <div id="map-tmm-canvas"></div>
+          <div class="contacts-address">
+          <h4>BPM Media</h4>
+          Birmingham Post and Mail<br>
+          Fort Dunlop<br>
+          Fort Parkway<br>
+          B24 9FF
+          </div>
+          <div class="contacts-address">
+          <h4>Coventry Newspapers Ltd</h4>
+          Corporation Street<br>
+          Coventry<br>
+          CV1 1FP
+          </div>
+        </div>
 
            <div id="men-media-and-trinity-mirror-huddersfield" class ="contacts-map-wrap cf">
           <h3 >MEN Media &amp; Trinity Mirror Huddersfield<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
@@ -105,17 +134,6 @@ get_header(); ?>
           </div>
         </div>
 
-        <div id="nasa" class="contacts-map-wrap cf">
-          <h3>NASA (National Advertising Sales Agency)<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
-          <div id="map-nasa-canvas"></div>
-          <div class="contacts-address">
-          <h4>NASA</h4>
-          Brookmount House<br>
-          62-65 Chandos Place<br>
-          London<br>
-          WC2N 3LP
-        </div></div>
-
         <div id="trinity-mirror-north-east" class="contacts-map-wrap cf">
           <h3>Trinity Mirror North East<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
           <div id="map-tmne-canvas"></div>
@@ -131,24 +149,6 @@ get_header(); ?>
           Borough Road<br>
           Middlesborough<br>
           TS1 3AZ
-          </div>
-        </div>
-
-        <div id="trinity-mirror-midlands" class ="contacts-map-wrap cf">
-          <h3>Trinity Mirror Midlands<a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h3>
-          <div id="map-tmm-canvas"></div>
-          <div class="contacts-address">
-          <h4>BPM Media</h4>
-          Birmingham Post and Mail<br>
-          Fort Dunlop<br>
-          Fort Parkway<br>
-          B24 9FF
-          </div>
-          <div class="contacts-address">
-          <h4>Coventry Newspapers Ltd</h4>
-          Corporation Street<br>
-          Coventry<br>
-          CV1 1FP
           </div>
         </div>
 
