@@ -445,4 +445,13 @@ markerTMS = new google.maps.Marker({
 google.maps.event.addDomListener(window, 'load', initialize);
 
 
+;(function( $ ){
 
+    $('.contacts-menu ul li a').click(function(){
+    $('.contacts-menu ul li a').removeClass("contacts-menu-active");
+    $(this).addClass("contacts-menu-active");
+
+});
+
+
+})( jQuery );

@@ -1,7 +1,7 @@
 <?php
 
 /*
-Template Name: Regions
+Template Name: Contacts
 */
 
 
@@ -25,23 +25,23 @@ get_header(); ?>
 
 
 <section class="contacts cf">
-      <div class= "contacts-menu-col">
-        <div class= "contacts-menu">
+      <div class="contacts-menu-col">
+        <div class="contacts-menu">
         <ul>
-          <li><a class = "contacts-menu-active" href = "#" >Trinity Mirror PLC</a></li>
-          <li><a href = "#MEN" >MEN Media &amp; Trinity Miror Huddersfield</a></li>
-          <li><a href = "#" >Trinity Mirror North West &amp; North Wales</a></li>
-          <li><a href = "#" >NASA (National Advertising Sales Agency)</a></li>
-          <li><a href = "#" >Trinity Mirror North East</a></li>
-          <li><a href = "#" >Trinity Mirror Midlands</a></li>
-          <li><a href = "#" >Trinity Mirror Scotland</a></li>
-          <li><a href = "#" >Trinity Mirror Wales</a></li>
-          <li><a href = "#" >Trinity Mirror South</a></li>
+          <li><a class="contacts-menu-active" href = "#" >Trinity Mirror PLC</a></li>
+          <li><a href="#men-media-and-trinity-mirror-huddersfield" >MEN Media &amp; Trinity Mirror Huddersfield</a></li>
+          <li><a href="#trinity-mirror-north-west" >Trinity Mirror North West &amp; North Wales</a></li>
+          <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
+          <li><a href="#trinity-mirror-north-east" >Trinity Mirror North East</a></li>
+          <li><a href="#trinity-mirror-midlands">Trinity Mirror Midlands</a></li>
+          <li><a href="#trinity-mirror-scotland" >Trinity Mirror Scotland</a></li>
+          <li><a href="#trinity-mirror-wales" >Trinity Mirror Wales</a></li>
+          <li><a href="#trinity-mirror-south" >Trinity Mirror South</a></li>
         </ul>
         </div>
         </div>
         <aside class="contacts-map-col">
-          <div class ="contacts-map-wrap cf">
+          <div id="trinity-mirror-plc" class="contacts-map-wrap cf">
           <h3>Trinity Mirror PLC</h3>
           <div id="map-tmplc-canvas"></div>
           <div class="contacts-address">
@@ -50,8 +50,8 @@ get_header(); ?>
           London<br>
           E14 5AP
           </div></div>
-          
-           <div id="MEN" class ="contacts-map-wrap cf">
+
+           <div id="men-media-and-trinity-mirror-huddersfield" class ="contacts-map-wrap cf">
           <h3 >MEN Media &amp; Trinity Mirror Huddersfield</h3>
           <div id="map-tmmh-canvas"></div>
           <div class="contacts-address">
@@ -72,7 +72,7 @@ get_header(); ?>
           HD2 1GQ
           </div></div>
 
-          <div class ="contacts-map-wrap cf">
+          <div id="trinity-mirror-north-west" class ="contacts-map-wrap cf">
           <h3>Trinity Mirror North West &amp; North Wales</h3>
           <div id="map-tmnw-canvas"></div>
           <div class="contacts-address">
@@ -105,7 +105,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="nasa" class="contacts-map-wrap cf">
           <h3>NASA (National Advertising Sales Agency)</h3>
           <div id="map-nasa-canvas"></div>
           <div class="contacts-address">
@@ -116,13 +116,13 @@ get_header(); ?>
           WC2N 3LP
         </div></div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-north-east" class="contacts-map-wrap cf">
           <h3>Trinity Mirror North East</h3>
           <div id="map-tmne-canvas"></div>
           <div class="contacts-address">
           <h4>NCJ Media</h4>
           Groat Market<br>
-          Tyne & Wear<br>
+          Tyne &amp; Wear<br>
           NE1 1ED
           </div>
           <div class="contacts-address">
@@ -134,7 +134,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-midlands" class ="contacts-map-wrap cf">
           <h3>Trinity Mirror Midlands</h3>
           <div id="map-tmm-canvas"></div>
           <div class="contacts-address">
@@ -152,7 +152,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-scotland" class ="contacts-map-wrap cf">
           <h3>Trinity Mirror Scotland</h3>
           <div id="map-tmscot-canvas"></div>
           <div class="contacts-address">
@@ -170,7 +170,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-wales" class ="contacts-map-wrap cf">
           <h3>Trinity Mirror Wales</h3>
           <div id="map-tmw-canvas"></div>
           <div class="contacts-address">
@@ -181,7 +181,7 @@ get_header(); ?>
           </div>
         </div>
 
-        <div class ="contacts-map-wrap cf">
+        <div id="trinity-mirror-south" class ="contacts-map-wrap cf">
           <h3>Trinity Mirror South</h3>
           <div id="map-tms-canvas"></div>
           <div class="contacts-address">
@@ -211,7 +211,7 @@ get_header(); ?>
         </div>
 
 
-          
+
         </aside>
       </section>
 
@@ -220,16 +220,5 @@ get_header(); ?>
 
 </div><!--/ wrapper_sub  -->
 
- <script>
-;(function( $ ){
-
-    $('.contacts-menu ul li a').click(function(){
-    $('.contacts-menu ul li a').removeClass("contacts-menu-active");
-    $(this).addClass("contacts-menu-active");
-});
-
-
-})( jQuery );
-        </script>
 
 <?php get_footer(); ?>
