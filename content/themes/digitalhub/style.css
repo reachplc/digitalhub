@@ -770,6 +770,10 @@ textarea {
   width: 100%;
 }
 
+.gallery--header {
+  margin-bottom: 29px;
+}
+
 .gallery--image img {
   width: 100%;
 }
@@ -849,7 +853,6 @@ textarea {
   z-index: 1;
   position: relative;
   zoom: 1;
-  margin-right: 0.5em;
   vertical-align: middle;
   line-height: 1;
 }
@@ -1305,9 +1308,34 @@ button.build {
   text-shadow: 0 1px 0 #c8124e;
 }
 
+.back-to-top {
+  float: right;
+}
+
 /**
  * 3.6 Content
  */
+
+/* Add a margin the width of the grid gutter
+ * to the bottom of the element
+ */
+
+.box {
+  margin-bottom: 29px;
+}
+
+  /* Add a margin the width of twice the grid gutter
+   * to the bottom of the element
+   */
+  .box__large {
+    margin-bottom: 58px;
+  }
+
+/* Add a horizontal line to the bottom of the element */
+.separator--horizontal {
+  padding-bottom: 29px;
+  border-bottom: 1px solid rgb(220,220,200);
+}
 
 .intro {
   margin-bottom: 4em;
@@ -1884,6 +1912,20 @@ text-align: center;
     height: 30px;
   }
 
+  .sprite--top {
+    background-position: 0 -381px;
+    width: 22px;
+    height: 23px;
+    top: -2px;
+  }
+
+  .sprite--top-blue {
+    background-position: 0 -467px;
+    width: 22px;
+    height: 23px;
+    top: -2px;
+  }
+
   .sprite--back {
     background-position: 0 -599px;
     width: 8px;
@@ -2074,9 +2116,6 @@ body {
 }
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0;
-}
-.site-main .gallery {
-  margin-bottom: 1.5em;
 }
 
 /* Make sure embeds and iframes fit their containers */
