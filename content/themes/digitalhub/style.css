@@ -1360,15 +1360,6 @@ button.build {
 .group-blog .byline {
   display: inline;
 }
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5em 0 1em;
-}
-
-.entry-meta {
-  margin-bottom: 1em;
-}
 
 .page-links {
   clear: both;

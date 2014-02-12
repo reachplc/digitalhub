@@ -49,17 +49,17 @@ $terms = get_the_terms( $post->ID, 'formats' );
             </header>
 
             <?php if ( is_search() ) : // Only display Excerpts for Search ?>
-            <div class="entry-summary">
+            <div class="entry-summary box">
                 <?php the_excerpt(); ?>
               </div><!-- .entry-summary -->
               <?php else : ?>
-              <div class="entry-content">
+              <div class="entry-content box separator--horizontal">
                 <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
                 <?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
             </div><!-- .entry-content -->
             <?php endif; ?>
 
-            <div class="entry-meta">
+            <div class="entry-meta box">
               <?php if ( is_buildGuide() ) :?>
                 <p>
                   <a class="btn btn--primary" href="
@@ -70,15 +70,15 @@ $terms = get_the_terms( $post->ID, 'formats' );
 
             <?php if ( is_example() ) : // Only display if examples exist ?>
 
-            <footer class="example__preview">
+            <footer class="example__preview box">
 
-              <section class="entry-meta">
+              <section class="entry-meta box">
                 <ul class="list list__inline">
                   <?php get_example_preview($custom); ?>
                 </ul>
               </section>
 
-              <section class="entry-meta">
+              <section class="entry-meta box">
               <?php
                 $url = wp_get_referer();
                 $path_parts = pathinfo($url);
