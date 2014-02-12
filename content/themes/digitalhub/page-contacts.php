@@ -28,7 +28,7 @@ get_header(); ?>
       <div class="contacts-menu-col">
         <div class="contacts-menu">
         <ul>
-          <li><a class="contacts-menu-active" href = "#" >Trinity Mirror PLC</a></li>
+          <li><a class="contacts-menu-active" href="#trinity-mirror-plc">Trinity Mirror PLC</a></li>
           <li><a href="#men-media-and-trinity-mirror-huddersfield" >MEN Media &amp; Trinity Mirror Huddersfield</a></li>
           <li><a href="#trinity-mirror-north-west" >Trinity Mirror North West &amp; North Wales</a></li>
           <li><a href="#nasa" >NASA (National Advertising Sales Agency)</a></li>
