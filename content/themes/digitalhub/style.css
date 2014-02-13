@@ -971,16 +971,6 @@ textarea {
   margin-right: 8px;
 }
 
-#strip {
-  margin: 0 auto;
-  width: 100%;
-  min-height: 60px;
-  text-align: center;
-  background: url(images/white-sides.png) no-repeat center top transparent;
-  position: absolute;
-  top: 320px;
-}
-
 #search-slide {
   display: none;
   width: 100%;
@@ -1112,10 +1102,18 @@ textarea {
  */
 
 #bgimg {
+  position: relative;
   min-height: 350px;
   background-size: cover;
   width: auto;
-  margin-bottom: 30px;
+}
+
+@media screen and (min-width: 480px) {
+
+  #bgimg {
+    margin-bottom: 29px;
+  }
+
 }
 
 /**
@@ -1180,6 +1178,20 @@ textarea {
   right: 0;
   bottom: 0;
   left: 0;
+}
+
+/**
+ * Secondary Menu
+ */
+
+/* Secondary Menu Background */
+.strip {
+  position: absolute;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  background: url(images/white-sides.png) no-repeat center top transparent;
+  text-align: center;
 }
 
 .secondary-menu {
@@ -1405,9 +1417,7 @@ button.build {
 .sticky {
 
 }
-.hentry {
-  margin: 0 0 29px;
-}
+
 .byline,
 .updated {
   display: none;
@@ -1659,7 +1669,16 @@ button.build {
 
 .adverts {
   position: relative;
-  overflow: hidden
+  margin-bottom: 58px;
+}
+
+@media screen and (min-width: 481px) {
+
+  .adverts {
+    overflow: hidden;
+    margin-bottom: 29px;
+  }
+
 }
 
 .adverts a:hover {
@@ -2943,9 +2962,6 @@ object {
   font-size: 1.5em;
  }
 
- #strip {
-  margin: 96px auto 0;
- }
 }
 
 /**
@@ -2963,12 +2979,6 @@ object {
     width: 25%;
     margin: 0;
     float: left;
-  }
-
-  #strip {
-    margin: 60px auto 0;
-    background: transparent; /* TODO */
-    min-height: 28px;
   }
 
   .mega {
