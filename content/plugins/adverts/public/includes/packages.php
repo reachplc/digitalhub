@@ -64,6 +64,17 @@ function the_package_link() {
 
 }
 
+function the_package_class() {
+
+  global $terms;
+  global $current_package;
+
+  $slug = $terms[$current_package]->slug;
+
+  echo $slug;
+
+}
+
 function the_package_image() {
 
   global $terms;

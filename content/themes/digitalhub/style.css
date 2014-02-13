@@ -1563,7 +1563,7 @@ button.build {
 }
 
 .packages__img {
-  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
   padding: 30px 0 0;
 }
 
@@ -1589,6 +1589,8 @@ button.build {
   margin-top: 15px;
 }
 
+/* Packages Images */
+
 .packages-image {
   width: 55%;
 }
@@ -1597,6 +1599,60 @@ button.build {
   text-align: right;
 }
 
+/**
+ * Individual images
+ *
+ * each package returned from the database has its slug appended to the
+ * `package-image` class
+ */
+
+.packages-image--essential {
+  width: 55%;
+  background: url(images/essential.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
+
+.packages-image--professional {
+  width: 55%;
+  background: url(images/professional.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
+
+.packages-image--bespoke {
+  width: 55%;
+  background: url(images/bespoke.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
+
+.packages-image--whats-on {
+  width: 55%;
+  background: url(images/whats-on.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
+
+.packages-image--buy-sell {
+  width: 55%;
+  background: url(images/buy-sell.png) no-repeat right bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
+
+.packages-image--sponsored-tweet {
+  width: 55%;
+  background: url(images/sponsored-tweet.png) no-repeat left bottom transparent;
+  height: 410px;
+  margin-top: -100px;
+  background-size: 100%;
+}
 
 @media screen and (max-width: 700px) {
 
@@ -1660,6 +1716,43 @@ button.build {
   .packages__img img {
     margin-top: 0;
   }
+
+  .packages-image--essential {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--professional {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--bespoke {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--whats-on {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--buy-sell {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
+  .packages-image--sponsored-tweet {
+    width: auto;
+    height: 230px;
+    margin-top: 0;
+  }
+
 
 }
 
@@ -2933,6 +3026,10 @@ object {
 
   button.search {
   display: inline;
+  }
+
+  .packages-text {
+    font-size: 90%;
   }
 
 }
