@@ -2819,7 +2819,7 @@ object {
  }
 
  #strip {
-  margin: 96px auto 0;
+  top: 288px;
  }
 }
 
@@ -2841,9 +2841,9 @@ object {
   }
 
   #strip {
-    margin: 60px auto 0;
     background: transparent; /* TODO */
     min-height: 28px;
+    top: 230px;
   }
 
   .mega {
