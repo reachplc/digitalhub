@@ -901,7 +901,7 @@ textarea {
   margin-bottom: 0;
 }
 
-.ie #titles {
+.lt-ie9 #titles {
   right: 20px;
 }
 
@@ -915,7 +915,7 @@ textarea {
   -moz-animation-timing-function: ease-out;
   -o-animation: slide 1s forwards;
   -o-animation-delay: 0.5s;
-  -o-animation-timing-function: ease-out;  
+  -o-animation-timing-function: ease-out;
   animation: slide 1s forwards;
   animatuon-delay: 0.5s;
   animation-timing-function: ease-out;
@@ -1015,10 +1015,26 @@ textarea {
   margin-right: 20px;
 }
 
+#search ::-webkit-input-placeholder {
+  color: rgb(27,196,229);
+}
+
+#search :-moz-placeholder {
+  color: rgb(27,196,229);
+}
+
+#search ::-moz-placeholder {
+  color: rgb(27,196,229);
+}
+
+#search :-ms-input-placeholder {
+  color: rgb(27,196,229);
+}
+
 #search-slide input,
 #search input {
   background: #363737;
-  color: #666666;
+  color: rgb(27,196,229);
   border: 0;
   padding-left: 5px;
 }
