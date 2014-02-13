@@ -228,8 +228,6 @@ h6, .zeta {
 
 .mega {
   padding: 5px 15px;
-  margin-top: 120px;
-  text-align: right;
   background: #fff;
   font-weight: 300;
   text-transform: uppercase;
@@ -896,47 +894,30 @@ textarea {
  * Header Styles
  */
 
-#titles h1 {
-  border-bottom: 0;
+.title--main {
+  overflow: hidden;
+  position: absolute;
+  right: -600px;
+  margin-top: 120px;
   margin-bottom: 0;
+  text-align: right;
 }
 
-.lt-ie9 #titles {
+.title--secondary {
+  overflow: hidden;
+  position: absolute;
+  top: 188px;
+  right: -600px;
+}
+
+
+.lt-ie9 .title--main,
+.lt-ie9 .title--secondary {
   right: 20px;
 }
 
 #titles {
-  position: absolute;
-  -webkit-animation: slide 1s forwards;
-  -webkit-animation-delay: 0.5s;
-  -webkit-animation-timing-function: ease-out;
-  -moz-animation: slide 1s forwards;
-  -moz-animation-delay: 0.5s;
-  -moz-animation-timing-function: ease-out;
-  -o-animation: slide 1s forwards;
-  -o-animation-delay: 0.5s;
-  -o-animation-timing-function: ease-out;
-  animation: slide 1s forwards;
-  animatuon-delay: 0.5s;
-  animation-timing-function: ease-out;
-  right: -600px;
   overflow: hidden;
-}
-
-@-webkit-keyframes slide {
-    100% { right: 20px; }
-}
-
-@-moz-keyframes slide {
-    100% { right: 20px; }
-}
-
-@-o-keyframes slide {
-    100% { right: 20px; }
-}
-
-@keyframes slide {
-    100% { right: 20px; }
 }
 
 .site-title {
@@ -2968,6 +2949,72 @@ object {
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown;
+}
+
+.slide {
+  -webkit-animation: slide 1s forwards;
+     -moz-animation: slide 1s forwards;
+      -ms-animation: slide 1s forwards;
+       -o-animation: slide 1s forwards;
+          animation: slide 1s forwards;
+  -webkit-animation-timing-function: ease-out;
+     -moz-animation-timing-function: ease-out;
+      -ms-animation-timing-function: ease-out;
+       -o-animation-timing-function: ease-out;
+          animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes slide {
+  100% {
+    right: 20px;
+  }
+}
+
+@-moz-keyframes slide {
+  100% {
+    right: 20px;
+  }
+}
+
+@-ms-keyframes slide {
+  100% {
+    right: 20px;
+  }
+}
+
+@-o-keyframes slide {
+  100% {
+    right: 20px;
+  }
+}
+
+@keyframes slide {
+  100% {
+    right: 20px;
+  }
+}
+
+/**
+ * Delays the animation of this element by a .X of a second
+ * Example:
+     <h1 class="slide delay-05">Heading</h1>
+ *
+ */
+
+.delay-05 {
+  -webkit-animation-delay: 0.5s;
+     -moz-animation-delay: 0.5s;
+      -ms-animation-delay: 0.5s;
+       -o-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.delay-08 {
+  -webkit-animation-delay: 0.8s;
+     -moz-animation-delay: 0.8s;
+      -ms-animation-delay: 0.8s;
+       -o-animation-delay: 0.8s;
+          animation-delay: 0.8s;
 }
 
 /**
