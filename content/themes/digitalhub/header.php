@@ -69,8 +69,8 @@
 
 	</header><!-- #s-header -->
 	<div id="titles">
-	<h1 class="mega">Trinity Mirror Digital Hub</h1><br />
-	<h2 class="kilo">Inspiring advertising to maximise impact</h2>
+	<h1 class="mega title--main slide delay-05">Trinity Mirror Digital Hub</h1><br />
+	<h2 class="kilo title--secondary slide delay-08">Inspiring advertising to maximise impact</h2>
 </div>
 	<div class="strip">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'menu_class' => 'secondary-menu') ); ?>
