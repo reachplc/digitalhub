@@ -72,7 +72,7 @@
 	<h1 class="mega">Trinity Mirror Digital Hub</h1><br />
 	<h2 class="kilo">Inspiring advertising to maximise impact</h2>
 </div>
-	<div id="strip">
+	<div class="strip">
 		<?php wp_nav_menu( array( 'theme_location' => 'secondary-menu', 'menu_class' => 'secondary-menu') ); ?>
 	</div>
 	</div>
