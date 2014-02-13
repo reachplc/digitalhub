@@ -1671,7 +1671,14 @@ button.build {
 
 .adverts {
   position: relative;
-  overflow: hidden
+}
+
+@media screen and (min-width: 481px) {
+
+  .adverts {
+    overflow: hidden
+  }
+
 }
 
 .adverts a:hover {
