@@ -901,12 +901,38 @@ textarea {
   margin-bottom: 0;
 }
 
-.lt-ie9 #titles {
+.lt-ie9 .kilo,
+.ly-ie9 .mega {
   right: 20px;
 }
 
 #titles {
+  overflow: hidden;
+}
+
+.kilo {
   position: absolute;
+  right: -600px;
+  overflow: hidden;
+  top: 188px;
+  -webkit-animation: slide 1s forwards;
+  -webkit-animation-delay: 0.8s;
+  -webkit-animation-timing-function: ease-out;
+  -moz-animation: slide 1s forwards;
+  -moz-animation-delay: 0.8s;
+  -moz-animation-timing-function: ease-out;
+  -o-animation: slide 1s forwards;
+  -o-animation-delay: 0.8s;
+  -o-animation-timing-function: ease-out;
+  animation: slide 1s forwards;
+  animatuon-delay: 0.8s;
+  animation-timing-function: ease-out;
+}
+
+.mega {
+  position: absolute;
+  right: -600px;
+  overflow: hidden;
   -webkit-animation: slide 1s forwards;
   -webkit-animation-delay: 0.5s;
   -webkit-animation-timing-function: ease-out;
@@ -919,8 +945,6 @@ textarea {
   animation: slide 1s forwards;
   animatuon-delay: 0.5s;
   animation-timing-function: ease-out;
-  right: -600px;
-  overflow: hidden;
 }
 
 @-webkit-keyframes slide {
