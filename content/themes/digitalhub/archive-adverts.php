@@ -43,16 +43,17 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
 
 
     <?php if ( have_posts() ) : ?>
-
+    <section class="cf">
     <?php get_template_part( 'nav', 'taxonomies-adverts' ); ?>
-
+    </section>
       <?php foreach( $categories as $category ): ?>
 
         <section class="gallery box separator--horizontal cf">
-          <header class="gallery--header grid ss__1-4 ms__1-6 ls__1-12 xls__1-18">
+        <div class="cf">
+          <header class="gallery--header grid ss__1-4 ms__1-6 ls__1-12 xls__1-18 cf">
             <h2 id="<?php echo $category->slug; ?>"><?php echo $category->name;?><a class="back-to-top" href="#page" title="back to top"><span class="icon icon__append sprite sprite--top-blue"></span></a></h2>
           </header>
-
+        </div>
         <?php $myposts = get_posts(array(
                 'post_type' => 'adverts',
                 'taxonomy' => $category->taxonomy,

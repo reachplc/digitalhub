@@ -16,7 +16,7 @@ $count = count($terms);
 
 ?>
 
-<section class="adverts__nav box separator--horizontal grid ss__1-4 ms__1-6 ls__1-12 xls__1-18">
+<section class="adverts__nav box separator--horizontal grid ss__1-4 ms__1-6 ls__1-12 xls__1-18 cf">
 <?php
 
   if ( $count > 0 ){

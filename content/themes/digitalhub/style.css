@@ -1417,9 +1417,7 @@ button.build {
 .sticky {
 
 }
-.hentry {
-  margin: 0 0 29px;
-}
+
 .byline,
 .updated {
   display: none;
@@ -1671,12 +1669,14 @@ button.build {
 
 .adverts {
   position: relative;
+  margin-bottom: 58px;
 }
 
 @media screen and (min-width: 481px) {
 
   .adverts {
-    overflow: hidden
+    overflow: hidden;
+    margin-bottom: 29px;
   }
 
 }
