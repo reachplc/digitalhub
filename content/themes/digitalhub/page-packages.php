@@ -37,7 +37,7 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-    <header class="intro">
+    <header class="intro box separator--horizontal">
 
     <h1 class="packages__title">Welcome to the TM Digital Hub.</h1>
 
