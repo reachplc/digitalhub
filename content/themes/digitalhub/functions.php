@@ -221,3 +221,17 @@ function add_ie_html5_shim () {
     echo '<![endif]-->';
 }
 add_action('wp_head', 'add_ie_html5_shim');
+
+/**
+ * Respond
+ * A fast & lightweight polyfill for min/max-width CSS3 Media Queries
+ * (for IE 6-8, and more).
+ */
+
+// add ie conditional respond to header
+function add_ie_respond () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="'. get_stylesheet_directory_uri() .'/js/lib/respond.min.js"></script>';
+    echo '<![endif]-->';
+}
+add_action('wp_head', 'add_ie_respond');
