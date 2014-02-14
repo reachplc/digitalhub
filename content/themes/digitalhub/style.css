@@ -1428,6 +1428,12 @@ button.build {
   min-height: 480px;
 }
 
+/* Remove background image as no support for `background-size` */
+.lt-ie9 .example--desktop,
+.lt-ie9 .example--app {
+  background: none;
+}
+
 .example--app video {
   width: 210px;
   height: 315px;
