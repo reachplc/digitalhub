@@ -40,7 +40,7 @@ To update the version of wordpress:
 cd system
 git checkout master
 git fetch origin --tags
-git checkout -b x.x.x origin/x.x.x
+git checkout -b x.x.x
 cd ..
 git add system
 git commit -m "Updates WordPress to x.x.x"
