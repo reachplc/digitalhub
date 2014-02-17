@@ -86,7 +86,7 @@ function get_example_video($custom) {
         echo '<!-- ' . $_example_flv . '-->';
       };
 
-      echo '<p>Unable to show video.</p>';
+      echo '<div class="alert alert--message alert--info"><p><strong>Video Not Available.</strong> The browser you are using does not support HTML5 video. Please try viewing this page in an updated browser.</p></div>';
       echo '</video>';
       echo '</div>';
 

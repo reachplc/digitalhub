@@ -32,6 +32,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   2.1 - Button
  *   2.2 - List
  *   2.5 - Icon
+ *   2.6 - Alerts
  * 3.0 - Styles
  *   3.1  - Header
  *   3.2  - Hero
@@ -868,6 +869,35 @@ textarea {
   /* @TODO: temp solution. need to position in the middle of the parent elemetn */
   top: 27px;
   left: 27px;
+}
+
+/**
+ * 2.6 Alerts
+ */
+
+.alert {
+  background: #ccc;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid #666;
+  }
+
+/* Position the close button */
+.alert__close {
+
+}
+
+/**
+ * Alert Message
+ * Example:
+    <section class="alert alert--message alert--type">
+      <a class="alert__close" href="#">×</a>
+      <p><strong>Ooops</strong> We need to notify you about an issue.</p>
+    </section>
+ *
+ */
+
+.alert--message {
+  padding: 0.5em;
 }
 
 /**
@@ -2079,6 +2109,15 @@ text-align: center;
 
 .contact-map img{float:right;}
 
+}
+
+/**
+ * 3.13 Alerts
+ */
+
+.alert--info {
+  border-color: rgb(18,217,165);
+  background-color: rgb(160,240,219);
 }
 
 
