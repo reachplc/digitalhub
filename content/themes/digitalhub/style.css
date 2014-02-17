@@ -32,6 +32,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   2.1 - Button
  *   2.2 - List
  *   2.5 - Icon
+ *   2.6 - Alerts
  * 3.0 - Styles
  *   3.1  - Header
  *   3.2  - Hero
@@ -871,6 +872,35 @@ textarea {
 }
 
 /**
+ * 2.6 Alerts
+ */
+
+.alert {
+  background: #ccc;
+  background: rgba(0,0,0,0.25);
+  border: 1px solid #666;
+  }
+
+/* Position the close button */
+.alert__close {
+
+}
+
+/**
+ * Alert Message
+ * Example:
+    <section class="alert alert--message alert--type">
+      <a class="alert__close" href="#">×</a>
+      <p><strong>Ooops</strong> We need to notify you about an issue.</p>
+    </section>
+ *
+ */
+
+.alert--message {
+  padding: 0.5em;
+}
+
+/**
  * 3.0 Styles
  */
 
@@ -1428,6 +1458,12 @@ button.build {
   min-height: 480px;
 }
 
+/* Remove background image as no support for `background-size` */
+.lt-ie9 .example--desktop,
+.lt-ie9 .example--app {
+  background: none;
+}
+
 .example--app video {
   width: 210px;
   height: 315px;
@@ -1537,48 +1573,68 @@ button.build {
 
 .packages__title {
   border-bottom: 0;
-  font-weight: 300;
-  font-size: 250%;
   margin-bottom: 20px;
   margin-top: 15px;
 }
 
+  @media screen and (min-width: 769px) {
+
+    .packages-text {
+      /* Add extra space to move the text away
+       * from the section above
+       */
+      padding-top: 29px;
+    }
+
+  }
+
 .packages__img {
   border-bottom: 1px solid #dcdcdc;
-  padding: 30px 0 0;
 }
 
-.packages__img img {
-  margin-top: -49px;
+.packages__img:nth-child(2n+1) > .packages-text {
+  float: right;
 }
-
-.packages-image,
-.packages-text {
-  float: left;
-}
-
-.packages-text .hide {
-  display: none;
-}
-
-
-.packages-text {
-  width: 45%;
-}
-
-.packages-text .btn {
-  margin-top: 15px;
-}
-
-/* Packages Images */
 
 .packages-image {
-  width: 55%;
+  /* Gives the empty element height */
+  height: 250px;
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 100%;
+
 }
 
-.packages-image:nth-child(even) {
-  text-align: right;
+.lt-ie9 .packages-image {
+  background-position: left bottom;
 }
+
+  @media screen and (min-width: 481px) {
+
+    .packages-image {
+      height: 325px;
+      /* Overlap the section above */
+      margin-top: -50px;
+    }
+
+    /* Removes negative margin until we can sort
+     * out the image sizing fir IE
+     */
+    .lt-ie9 .packages-image {
+      margin-top: 0;
+    }
+
+  }
+
+  @media screen and (min-width: 769px) {
+
+    .packages-image {
+      height: 410px;
+      /* Overlap the section above */
+      margin-top: -100px;
+    }
+
+  }
 
 /**
  * Individual images
@@ -1588,153 +1644,32 @@ button.build {
  */
 
 .packages-image--essential {
-  width: 55%;
-  background: url(images/essential.png) no-repeat right bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/essential.png);
 }
 
 .packages-image--professional {
-  width: 55%;
-  background: url(images/professional.png) no-repeat left bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/professional.png);
 }
 
 .packages-image--bespoke {
-  width: 55%;
-  background: url(images/bespoke.png) no-repeat right bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/bespoke.png);
 }
 
 .packages-image--whats-on {
-  width: 55%;
-  background: url(images/whats-on.png) no-repeat left bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/whats-on.png);
 }
 
 .packages-image--buy-sell {
-  width: 55%;
-  background: url(images/buy-sell.png) no-repeat right bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/buy-sell.png);
 }
 
 .packages-image--sponsored-tweet {
-  width: 55%;
-  background: url(images/sponsored-tweet.png) no-repeat left bottom transparent;
-  height: 410px;
-  margin-top: -100px;
-  background-size: 100%;
+  background-image: url(images/sponsored-tweet.png);
 }
 
-@media screen and (max-width: 700px) {
-
-
-.packages__img {
-  padding: 0;
-}
-
-.packages__img img {
-  margin-top: -19px;
-  vertical-align:bottom;
-}
-
-.packages-image {
-  width: 50%;
-}
-
-.packages-text {
-  width: 50%;
-  font-size: 85%
-}
-
-.pack-button {
-  font-size: 90%;
-  background: url(images/new_sprite.png) no-repeat 144px -85px #1BC4E5;
-  font-weight: 600;
-}
-
-.pack-button:hover {
-  background: url(images/new_sprite.png) no-repeat 144px -85px #ed145b;
-}
-
-}
-
-/* Small Screen */
-
-@media screen and (max-width: 481px) {
-
-  .packages-image,
-  .packages-text {
-    width: auto;
-    float: none;
-  }
-
-  .packages-image {
-    display: none;
-  }
-
-  .packages-text .hide {
-    display: block;
-  }
-
-  .packages__img {
-    padding: 20px 0 0;
-  }
-
-  .packages__img:nth-child(1) {
-    border-top: 0;
-  }
-
-  .packages__img img {
-    margin-top: 0;
-  }
-
-  .packages-image--essential {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-  .packages-image--professional {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-  .packages-image--bespoke {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-  .packages-image--whats-on {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-  .packages-image--buy-sell {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-  .packages-image--sponsored-tweet {
-    width: auto;
-    height: 230px;
-    margin-top: 0;
-  }
-
-
+/* Align background images to the left */
+.packages__img:nth-child(2n+1) > .packages-image {
+  background-position: left bottom;
 }
 
 /**
@@ -2174,6 +2109,15 @@ text-align: center;
 
 .contact-map img{float:right;}
 
+}
+
+/**
+ * 3.13 Alerts
+ */
+
+.alert--info {
+  border-color: rgb(18,217,165);
+  background-color: rgb(160,240,219);
 }
 
 

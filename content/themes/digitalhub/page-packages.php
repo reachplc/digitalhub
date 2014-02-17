@@ -14,21 +14,6 @@ $posts = get_categories('taxonomy=' . $taxonomy_type . '&type=adverts');
 $terms = get_terms($taxonomy_type, array( 'orderby' => 'menu_order' ));
 
 $current_package = 0;
-$alt = true;
-
-function package_aside(){ ?>
-  <aside class="packages-image packages-image--<?php the_package_class(); ?>">
-  </aside>
-<?php }
-
-function package_section(){?>
-  <section class="packages-text">
-    <h1 class="packages__title"><?php the_package_title(); ?></h1>
-    <p><?php the_package_description();?></p>
-    <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
-    <aside class="packages-image--<?php the_package_class(); ?> hide">
-  </section>
-<?php }
 
 get_header(); ?>
 
@@ -37,7 +22,7 @@ get_header(); ?>
   <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
 
-    <header class="intro box separator--horizontal">
+    <header class="intro box separator--horizontal grid ss__1-4">
 
     <h1 class="packages__title">Welcome to the TM Digital Hub.</h1>
 
@@ -51,7 +36,16 @@ get_header(); ?>
       <?php while ( have_packages() ) : ?>
 
       <article id="" class="cf packages__img">
-        <?php echo (($alt = !$alt)?package_aside() . package_section():package_section() . package_aside());?>
+
+        <section class="packages-text grid ss__1-4 ms__1-3 ls__1-6">
+          <h1 class="packages__title"><?php the_package_title(); ?></h1>
+          <p><?php the_package_description();?></p>
+          <p><a class="btn btn--primary" href="<?php the_package_link();?>">View Available Formats<span class="sprite sprite--plus icon icon__append"></span></a></p>
+        </section>
+
+        <aside class="packages-image packages-image--<?php the_package_class(); ?> grid ss__1-4 ms__4-6 ls__7-12">
+        </aside>
+
       </article>
 
 

@@ -207,3 +207,31 @@ function per_category_basis($query) {
 }
 
 add_filter('pre_get_posts', 'per_category_basis');
+
+/**
+ * HTML5 Shiv
+ * Enables use of HTML5 sectioning elements in legacy Internet
+ * Explorer and provides basic HTML5 styling for Internet Explorer 6-9
+ */
+
+// add ie conditional html5 shim to header
+function add_ie_html5_shim () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="'. get_stylesheet_directory_uri() .'/js/lib/html5shiv-printshiv.js"></script>';
+    echo '<![endif]-->';
+}
+add_action('wp_head', 'add_ie_html5_shim');
+
+/**
+ * Respond
+ * A fast & lightweight polyfill for min/max-width CSS3 Media Queries
+ * (for IE 6-8, and more).
+ */
+
+// add ie conditional respond to header
+function add_ie_respond () {
+    echo '<!--[if lt IE 9]>';
+    echo '<script src="'. get_stylesheet_directory_uri() .'/js/lib/respond.min.js"></script>';
+    echo '<![endif]-->';
+}
+add_action('wp_head', 'add_ie_respond');

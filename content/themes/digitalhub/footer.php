@@ -76,7 +76,7 @@ $(document).ready(function(e) {
         goToScrollDiv(link);
     });
 
-  
+
 
 })( jQuery );
 
