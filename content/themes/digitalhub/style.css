@@ -1122,7 +1122,7 @@ textarea {
 @media screen and (min-width: 480px) {
 
   #bgimg {
-    margin-bottom: 29px;
+    margin-bottom: 60px;
   }
 
 }
@@ -1515,7 +1515,7 @@ button.build {
     /* Allows the icon to be positioned inside this element */
     position: relative;
     /* width of the grid gutter */
-    margin-left: 29px;
+    margin-left: 20px;
     /* Background colour to show through transparent image */
     background: rgb(37,37,37);
     cursor: pointer;
