@@ -63,7 +63,7 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
 
         <?php /*  Loop  */ ?>
         <?php  foreach( $myposts as $post ):?>
-          <? setup_postdata($post); ?>
+          <?php setup_postdata($post); ?>
 
           <?php get_template_part( 'content', 'adverts' ); ?>
 

@@ -1809,6 +1809,7 @@ button.build {
 
 .region__preview li img{
   width:100%;
+  height: auto;
 }
 
 
