@@ -190,7 +190,7 @@ a:focus {
  */
 
 h1, .alpha {
-  margin: 0;
+  margin: 0 0 29px 0;
   padding: 0;
   font-size: 250%;
   font-weight: 300;
@@ -1573,7 +1573,6 @@ button.build {
 
 .packages__title {
   border-bottom: 0;
-  margin-bottom: 20px;
   margin-top: 15px;
 }
 

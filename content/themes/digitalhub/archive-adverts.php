@@ -27,8 +27,8 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
       <section class="adverts__intro cf">
         <article class="grid ss__1-4 ms__1-6 ls__1-6 xls__1-10">
 
-      <header class="archive-header">
-        <h1 class="archive-title">Adverts</h1>
+      <header class="adverts--header">
+        <h1>Adverts</h1>
       </header><!-- .archive-header -->
 
           <div class="entry-content">
