@@ -194,7 +194,7 @@ get_header(); ?>
           </div>
 
           <div class="contacts-address">
-          <h4>Guilford</h4>
+          <h4>Guildford</h4>
           Stoke Mill<br>
           Woking Road<br>
           Guildford<br>
