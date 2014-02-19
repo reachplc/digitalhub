@@ -135,7 +135,7 @@ body {
  *  Hyperlinks
  */
 
-/**
+/** 
  * Addresses `outline` inconsistency between Chrome and other browsers
  */
 
@@ -1690,7 +1690,7 @@ button.build {
 
 }
 
-.adverts a:hover {
+.adverts a:hover .adverts__header .adverts__title {
   color: rgb(255,255,255);
 }
 
@@ -1712,6 +1712,7 @@ button.build {
 
   .adverts__title {
     font-size: 1.25em;
+    font-weight: 600;
   }
 
   .adverts:hover .adverts__title {
