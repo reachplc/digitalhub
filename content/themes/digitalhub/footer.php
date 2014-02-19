@@ -36,25 +36,28 @@
 
   });
 })( jQuery );
-<?php if( !empty($post_type) == 'adverts' ) {?>
+</script>
+
+<?php if( $post_type == 'adverts' ) {?>
+<script>
 ;(function( $ ){
   $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
     $(".example").fitVids();
   });
 })( jQuery );
-<?php } ?>
 </script>
+<?php } ?>
 
+<?php if( $page == 'regions') {?>
 <script>
-<?php if( !empty($page) == 'regions') {?>
 ;(function( $ ){
 $(document).ready(function(e) {
   $('img[usemap]').rwdImageMaps();
 });
 })( jQuery );
-<?php } ?>
 </script>
+<?php } ?>
 
 <script>
 ;(function( $ ){
@@ -93,8 +96,8 @@ $(window).scroll(function(){
 })( jQuery );
 </script>
 
+<?php if( $page == 'regions' ) {?>
 <script>
-<?php if( !empty($page) == 'regions' ) {?>
 ;(function( $ ){
 
 $(document).ready(function(){
@@ -123,8 +126,8 @@ $(document).ready(function(){
 
 });
 })( jQuery );
-<?php } ?>
 </script>
+<?php } ?>
 
 </body>
 </html>
