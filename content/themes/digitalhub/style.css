@@ -1665,6 +1665,7 @@ button.build {
 
 .packages-image--sponsored-tweet {
   background-image: url(images/sponsored-tweet.png);
+  padding-top: -50px;
 }
 
 /* Align background images to the left */
