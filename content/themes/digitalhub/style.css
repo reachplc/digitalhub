@@ -1712,10 +1712,7 @@ button.build {
 
   .adverts__title {
     font-size: 1.25em;
-  }
-
-  .adverts:hover .adverts__title {
-    color: rgb(237,20,91);
+    font-weight: 600;
   }
 
 @media screen and (min-width: 481px) {
