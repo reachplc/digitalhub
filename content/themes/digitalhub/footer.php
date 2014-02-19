@@ -36,7 +36,7 @@
 
   });
 })( jQuery );
-<?php if( $post_type == 'adverts' ) {?>
+<?php if( !empty($post_type) == 'adverts' ) {?>
 ;(function( $ ){
   $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
@@ -47,7 +47,7 @@
 </script>
 
 <script>
-<?php if( $page == 'regions') {?>
+<?php if( !empty($page) == 'regions') {?>
 ;(function( $ ){
 $(document).ready(function(e) {
   $('img[usemap]').rwdImageMaps();
@@ -94,7 +94,7 @@ $(window).scroll(function(){
 </script>
 
 <script>
-<?php if( $page == 'regions' ) {?>
+<?php if( !empty($page) == 'regions' ) {?>
 ;(function( $ ){
 
 $(document).ready(function(){
