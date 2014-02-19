@@ -1131,32 +1131,52 @@ textarea {
  * 3.3 Footer
  */
 
-#colophon {
-  height: 55px;
+.footer__main {
   background: #171717;
   color: #ababab;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
+}
+
+@media screen and (min-width: 480px) {
+  .footer__main {
+    padding-bottom: 1em;
+  }
 }
 
 .site-info {
   padding: 17px 0.75em 0;
 }
 
-#copy-credit {
-  float: right;
+.copy-credit {
+  display: block;
+  padding-bottom: 0.25em;
 }
 
-#tm-logo {
-  background-repeat: no-repeat;
-  background-position: 0 -539px;
-  background-color: transparent;
-  height: 24px;
+@media screen and (min-width: 769px) {
+  /* Position the copyright to the right of the `.tm-logo` */
+  .copy-credit {
+    float: right;
+  }
+}
+
+.tm-logo {
+  display: block;
   width: 200px;
-  float: left;
-  display: inline;
+  height: 24px;
+  background-position: 0 -539px;
+}
+
+@media screen and (min-width: 768px) {
+  /* Position the logo to the left of the `.copy-credit` */
+  .tm-logo {
+    float: left;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+
+  .tm-logo {
+    background-position: 0 -539px
+  }
 }
 
 #credit {
@@ -1175,20 +1195,13 @@ textarea {
   padding-top: 1em;
 }
 
-.header__main,
-.footer__main {
+.header__main {
   position: fixed;
   z-index: 5;
 }
 
 .header__main {
   width: 100%;
-}
-
-.footer__main {
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 /**
@@ -3099,20 +3112,11 @@ object {
     display: inline;
   }
 
-  #tm-logo {
-    float: none;
-    display: block;
-  }
+
 
   #copy-credit {
     display: block;
     float: none;
-  }
-
-  #colophon {
-    height: 80px;
-    padding: 0 10px;
-    position: relative;
   }
 
   #credit {
@@ -3149,10 +3153,6 @@ object {
   button.search.clicked {
     background: url(images/close_x2.png) no-repeat 0 0 transparent;
     background-size: 24px 24px;
-  }
-
-  #tm-logo {
-    background-position: 0 -539px
   }
 
   button.prev,

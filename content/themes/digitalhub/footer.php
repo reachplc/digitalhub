@@ -14,11 +14,12 @@
 
 </div><!-- #end of wrapper -->
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
+        <footer id="colophon" class="footer__main cf" role="contentinfo">
                 <div class="site-info wrapper__sub">
                         <?php do_action( 'digitalhub_credits' ); ?>
-                        <a href="http://www.trinitymirror.com/"><div id="tm-logo" class="sprite"></div></a>
-                        <div id="copy-credit">Copyright © Trinity Mirror plc 2014 <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
+                        <a href="http://www.trinitymirror.com/">
+                        <div class="tm-logo sprite"></div></a>
+                        <div class="copy-credit">Copyright &copy; Trinity Mirror plc 2014 <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
                 </div><!-- .site-info -->
         </footer><!-- #colophon -->
 </div><!-- #page -->
@@ -38,7 +39,7 @@
 })( jQuery );
 </script>
 
-<?php if( $post_type == 'adverts' ) {?>
+<?php if( !empty($post_type) == 'adverts' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function(){
@@ -49,7 +50,7 @@
 </script>
 <?php } ?>
 
-<?php if( $page == 'regions') {?>
+<?php if( !empty($page) == 'regions') {?>
 <script>
 ;(function( $ ){
 $(document).ready(function(e) {
@@ -96,7 +97,7 @@ $(window).scroll(function(){
 })( jQuery );
 </script>
 
-<?php if( $page == 'regions' ) {?>
+<?php if( !empty($page) == 'regions') {?>
 <script>
 ;(function( $ ){
 
