@@ -30,7 +30,7 @@ var randomHero = randomHero || {};
     var _images = randomHero.config.images,
         _randomNumber = Math.floor(Math.random()*(_images.length));
 
-    $('#bgimg').css("background-image", "url("+randomHero.config.path+_images[_randomNumber]+")");
+    $(randomHero.config.parent).css("background-image", "url("+randomHero.config.path+_images[_randomNumber]+")");
 
     // If you need to check the image being outputted.
     // Remove the comments from the line below:
