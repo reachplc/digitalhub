@@ -130,5 +130,12 @@ $(document).ready(function(){
 </script>
 <?php } ?>
 
+<script>
+
+var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
+
+
+</script>
+
 </body>
 </html>
