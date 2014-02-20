@@ -861,7 +861,7 @@ textarea {
 }
 
 .icon__append {
-  margin-left: 0.5em;
+  margin-left: 0.6em;
 }
 
 .icon__overlay {
@@ -1990,7 +1990,7 @@ text-align: center;
     background-position: 0 -90px;
     width: 14px;
     height: 12px;
-    top: -3px;
+    top: -2px;
   }
 
   .sprite--plus-blue {
