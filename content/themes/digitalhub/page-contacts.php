@@ -74,7 +74,7 @@ get_header(); ?>
           B24 9FF
           </div>
           <div class="contacts-address">
-          <h4>Coventry Newspapers Ltd</h4>
+          <h4>Coventry Newspapers</h4>
           Corporation Street<br>
           Coventry<br>
           CV1 1FP
