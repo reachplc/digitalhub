@@ -1531,14 +1531,15 @@ button.build {
     /* Allows the icon to be positioned inside this element */
     position: relative;
     /* width of the grid gutter */
-    margin-left: 20px;
+    margin-right: 20px;
     /* Background colour to show through transparent image */
     background: rgb(37,37,37);
     cursor: pointer;
+    margin-bottom: 20px;
   }
 
-  .example__preview li:first-child {
-    margin-left: 0;
+  .example__preview li:last-child {
+    margin-right: 0;
   }
 
   .example__preview--image {
