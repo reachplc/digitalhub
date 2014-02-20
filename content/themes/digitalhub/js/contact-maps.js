@@ -16,6 +16,13 @@
     var markerTMW;
     var markerTMS;
 
+   pathArray = window.location;
+ var protocol = 'http://'
+var host = pathArray[1];
+ var url = pathArray[0];
+
+
+
     var MEN = new google.maps.LatLng(53.521218, -2.149808);
     var HUD = new google.maps.LatLng(53.680195, -1.762001);
     var LIV = new google.maps.LatLng(53.406399, -2.975554);
@@ -35,6 +42,8 @@
     var UX = new google.maps.LatLng(51.546791, -0.478835);
 
 function initialize() {
+
+  console.log = pathArray[0];
 
   // Create an array of styles.
   var styles =   [
@@ -247,7 +256,7 @@ function initialize() {
 
 
 
-var iconBase = 'http://bpm-digitaldev-01/dev/digitalhub/';
+//var iconBase = url;
   // To add the marker to the map, use the 'map' property
 markerTMPLC = new google.maps.Marker({
     position: myLatlng,

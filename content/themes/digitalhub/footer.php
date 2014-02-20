@@ -40,7 +40,7 @@
 ;(function( $ ){
   $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
-    $(".example").fitVids();
+    $(".row").fitVids();
   });
 })( jQuery );
 <?php } ?>
@@ -124,6 +124,13 @@ $(document).ready(function(){
 });
 })( jQuery );
 <?php } ?>
+</script>
+
+<script>
+
+var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
+
+
 </script>
 
 </body>
