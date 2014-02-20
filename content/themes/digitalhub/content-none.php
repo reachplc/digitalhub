@@ -8,7 +8,7 @@
  */
 ?>
 
-<section class="no-results not-found">
+<section class="no-results not-found box separator--horizontal grid ss__1-4 ms__1-6 ls__1-12 xls__1-18 cf">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'digitalhub' ); ?></h1>
 	</header><!-- .page-header -->
