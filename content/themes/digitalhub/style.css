@@ -1138,7 +1138,7 @@ textarea {
   position: fixed;
   width: 100%;
   bottom: 0;
-  z-index: 1;
+  z-index: 4;
 }
 
 .site-info {
@@ -1584,6 +1584,8 @@ button.build {
        * from the section above
        */
       padding-top: 29px;
+      position: relative;
+      z-index: 3;
     }
 
   }
@@ -3018,6 +3020,8 @@ object {
 
   .packages-text {
     font-size: 90%;
+    position: relative;
+    z-index: 3;
   }
 
 }
