@@ -1150,9 +1150,12 @@ textarea {
 }
 
 @media screen and (min-width: 480px) {
+
   .footer__main {
     padding-bottom: 1em;
+    z-index: 4;
   }
+
 }
 
 .site-info {
@@ -1609,6 +1612,8 @@ button.build {
        * from the section above
        */
       padding-top: 29px;
+      position: relative;
+      z-index: 3;
     }
 
   }
@@ -3045,6 +3050,8 @@ object {
 
   .packages-text {
     font-size: 90%;
+    position: relative;
+    z-index: 3;
   }
 
 }
