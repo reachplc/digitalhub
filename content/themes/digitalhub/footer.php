@@ -40,7 +40,7 @@
 ;(function( $ ){
   $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
-    $(".row").fitVids();
+    $(".example").fitVids();
   });
 })( jQuery );
 <?php } ?>

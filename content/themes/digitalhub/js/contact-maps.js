@@ -16,12 +16,6 @@
     var markerTMW;
     var markerTMS;
 
-   pathArray = window.location;
- var protocol = 'http://'
-var host = pathArray[1];
- var url = pathArray[0];
-
-
 
     var MEN = new google.maps.LatLng(53.521218, -2.149808);
     var HUD = new google.maps.LatLng(53.680195, -1.762001);
@@ -42,8 +36,6 @@ var host = pathArray[1];
     var UX = new google.maps.LatLng(51.546791, -0.478835);
 
 function initialize() {
-
-  console.log = pathArray[0];
 
   // Create an array of styles.
   var styles =   [
