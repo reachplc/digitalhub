@@ -940,6 +940,12 @@ textarea {
   right: -600px;
 }
 
+@media screen and (max-width: 481px) {
+  .title--secondary {
+    top: 158px;
+  }
+}
+
 
 .lt-ie9 .title--main,
 .lt-ie9 .title--secondary {
@@ -3059,6 +3065,10 @@ object {
 
  .kilo {
   font-size: 1.5em;
+ }
+
+ .title--secondary {
+  top: 175px;
  }
 
 }
