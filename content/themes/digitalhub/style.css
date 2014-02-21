@@ -755,10 +755,6 @@ textarea {
  * 2.2 List
  */
 
-/*  objects/_list.less
- *
- */
-
 /*
  * 1. Removes bullets
  * 2. Removes default margin for ul
@@ -890,7 +886,7 @@ textarea {
 
 .icon__overlay {
   position: absolute;
-  /* @TODO: temp solution. need to position in the middle of the parent elemetn */
+  /* @TODO: temp solution. need to position in the middle of the parent element */
   top: 27px;
   left: 27px;
 }
@@ -905,10 +901,10 @@ textarea {
   border: 1px solid #666;
   }
 
-/* Position the close button */
+/* Position the close button
 .alert__close {
 
-}
+}*/
 
 /**
  * Alert Message
@@ -960,22 +956,21 @@ textarea {
 .title--secondary {
   overflow: hidden;
   position: absolute;
-  top: 188px;
+  top: 158px;
   right: -600px;
 }
 
-@media screen and (max-width: 769px) {
-   .title--secondary {
-  top: 175px;
- }
-
-@media screen and (max-width: 481px) {
-  .title--secondary {
-    top: 158px;
+  @media screen and (min-width: 481px) {
+    .title--secondary {
+      top: 175px;
+    }
   }
-}
 
-}
+  @media screen and (min-width: 769px) {
+    .title--secondary {
+      top: 188px;
+    }
+  }
 
 
 .lt-ie9 .title--main,
@@ -1882,18 +1877,16 @@ button.build {
 }
 
 .region__preview li {
-  -moz-transition:width 1s;
-  -o-transition:width 1s;
-  -transition:width 1s;
-  -webkit-transition:width 1s;
-
   padding-right: 0.5em;
   margin-bottom:0.5em;
   width:16.66666666%;
   float:left;
+  -webkit-transition: width 1s;
+     -moz-transition: width 1s;
+      -ms-transition: width 1s;
+       -o-transition: width 1s;
+          transition: width 1s;
 }
-
-
 
 .region__preview li img{
   width:100%;
@@ -1907,8 +1900,8 @@ button.build {
 }
 .region-img{
   max-width: 100%;
-max-height: 476px;
-text-align: center;
+  max-height: 476px;
+  text-align: center;
 }
 
 .region__map{
@@ -2169,17 +2162,17 @@ text-align: center;
 #map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0;}
 
 @media screen and (max-width: 767px) {
-  .contacts-menu{padding-left:10px;}
-.contacts-menu-col{width:100%;}
-.contacts-map-col{width:100%}
-}
 
-.contact-wrap-inside{
-  width:100%;
-  padding-left:0;
-  padding-right:0;
-  margin-bottom:20px;
-}
+  .contacts-menu{padding-left:10px;}
+  .contacts-menu-col{width:100%;}
+  .contacts-map-col{width:100%}
+
+  .contact-wrap-inside{
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:20px;
+  }
 
 }
 
@@ -2254,14 +2247,7 @@ body {
 .main-navigation ul ul a {
   width: 200px;
 }
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
+
 .main-navigation ul li:hover > ul {
   display: block;
 }
@@ -2355,8 +2341,6 @@ object {
 
 .comment-content a {
   word-wrap: break-word;
-}
-.bypostauthor {
 }
 
 
@@ -3188,15 +3172,8 @@ object {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-  button.prev,
-  button.next,
-  button.build,
-  button.category,
   button.search,
-  button,
-  #search .submit,
-  .site-title,
-  .pack-button {
+  #search .submit {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
     background-size: 300px 800px;
@@ -3205,15 +3182,6 @@ object {
   button.search.clicked {
     background: url(images/close_x2.png) no-repeat 0 0 transparent;
     background-size: 24px 24px;
-  }
-
-  button.prev,
-  button.next,
-  button.build,
-  button.category,
-  button,
-  .pack-button {
-    background-color: #2ac2e3;
   }
 
 }
