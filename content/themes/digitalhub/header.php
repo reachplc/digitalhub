@@ -37,7 +37,7 @@
 		<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'digitalhub' ); ?></a>
 
 		<?php do_action( 'before' ); ?>
-		<div id="bgimg">
+		<div class="hero">
 		<header class="header__main cf" id="masthead" role="banner">
 			<div class="wrapper">
 				<div id="search-slide">

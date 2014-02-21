@@ -33,7 +33,7 @@
     // pass a object as an argument for the init function
     // eg. randomHero.init({ images: 'image01.jpg', 'image02.jpg' });
 
-    randomHero.init( { parent: '#bgimg', path: '<?php echo get_template_directory_uri(); ?>/images/hero/', images: ['hero_001.jpg', 'hero_002.jpg', 'hero_003.jpg', 'hero_004.jpg', 'hero_005.jpg', 'hero_007.jpg', 'hero_008.jpg', 'hero_009.jpg', 'hero_010.jpg'] });
+    randomHero.init( { parent: '.hero', path: '<?php echo get_template_directory_uri(); ?>/images/hero/', images: ['hero_001.jpg', 'hero_002.jpg', 'hero_003.jpg', 'hero_004.jpg', 'hero_005.jpg', 'hero_007.jpg', 'hero_008.jpg', 'hero_009.jpg', 'hero_010.jpg'] });
 
   });
 })( jQuery );
