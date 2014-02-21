@@ -229,21 +229,45 @@ h6, .zeta {
 
 .mega {
   padding: 5px 15px;
-  background: #fff;
+  background: rgb(255,255,255);
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 300%;
+  font-size: 1.46em;
   display: inline-block;
 }
+
+  @media screen and (min-width: 481px) {
+    .mega {
+      font-size: 2.3em;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .mega {
+      font-size: 3em;
+    }
+  }
 
 .kilo {
   display: inline-block;
   padding: 5px 15px;
   background: rgb(27,196,229);
   color: rgb(255,255,255);
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 600;
 }
+
+  @media screen and (min-width: 481px) {
+    .kilo {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .kilo {
+      font-size: 2em;
+    }
+  }
 
 /**
 /* For use on text that needs to be smaller than body copy
@@ -3122,14 +3146,6 @@ object {
   float: left;
  }
 
- .mega {
-  font-size: 230%;
- }
-
- .kilo {
-  font-size: 1.5em;
- }
-
 }
 
 /**
@@ -3149,13 +3165,7 @@ object {
     float: left;
   }
 
-  .mega {
-    font-size: 145%;
-  }
 
-  .kilo {
-    font-size: 1em;
-  }
 
   #bgimg {
     min-height: 260px;
