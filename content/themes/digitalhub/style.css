@@ -995,30 +995,6 @@ textarea {
   height: 62px;
 }
 
-#facebook {
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-position:  -275px -126px;
-  background-color: transparent;
-  display: inline;
-  margin-top: 15px;
-  float: right;
-  margin-right: 8px;
-}
-
-#twitter {
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-position: -275px -90px;
-  background-color: transparent;
-  display: inline;
-  margin-top: 15px;
-  float: right;
-  margin-right: 8px;
-}
-
 #search-slide {
   display: none;
   width: 100%;
@@ -3183,14 +3159,6 @@ object {
   .secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
     background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
    }
-
-  #twitter {
-    display: none;
-  }
-
-  #facebook {
-    display: none;
-  }
 
    button.search {
     display: inline;
