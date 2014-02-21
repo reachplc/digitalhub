@@ -2098,7 +2098,7 @@ text-align: center;
   }
 
   .sprite--play {
-    background-position: 0px -650px;
+    background-position: 0 -650px;
     width: 48px;
     height: 48px;
   }
@@ -2166,7 +2166,7 @@ text-align: center;
 .contacts-map-col{width:66%;float:left;}
 .contacts-address{width:25%;float:left;padding-right:10px;}
 
-#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0px;}
+#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0;}
 
 @media screen and (max-width: 767px) {
   .contacts-menu{padding-left:10px;}
@@ -2193,7 +2193,7 @@ text-align: center;
 }
 
 .contact-wrap > .last{
-  padding-left:0px;
+  padding-left: 0;
 }
 
 .contact-map img{float:right;}
