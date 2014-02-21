@@ -39,7 +39,7 @@
 })( jQuery );
 </script>
 
-<?php if( !empty($post_type) == 'adverts' || 'packages' ) {?>
+<?php if( $post_type == 'adverts' || $post_type == 'packages' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function() {
@@ -56,7 +56,7 @@
 <?php } ?>
 
 <script>
-<?php if( !empty($post_type) == 'adverts' ) {?>
+<?php if( $post_type == 'adverts' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function(){
@@ -67,7 +67,7 @@
 </script>
 <?php } ?>
 
-<?php if( !empty($page) == 'regions') {?>
+<?php if( is_page( 'regions') ) {?>
 <script>
 ;(function( $ ){
 $(document).ready(function(e) {
@@ -75,7 +75,6 @@ $(document).ready(function(e) {
 });
 })( jQuery );
 </script>
-<?php } ?>
 
 <script>
 ;(function( $ ){
@@ -114,7 +113,7 @@ $(window).scroll(function(){
 })( jQuery );
 </script>
 
-<?php if( !empty($page) == 'regions') {?>
+
 <script>
 ;(function( $ ){
 
