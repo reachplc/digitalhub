@@ -33,13 +33,13 @@
     // pass a object as an argument for the init function
     // eg. randomHero.init({ images: 'image01.jpg', 'image02.jpg' });
 
-    randomHero.init( { parent: '#bgimg', path: '<?php echo get_template_directory_uri(); ?>/images/hero/', images: ['hero_001.jpg', 'hero_002.jpg', 'hero_003.jpg', 'hero_004.jpg', 'hero_005.jpg', 'hero_007.jpg', 'hero_008.jpg', 'hero_009.jpg', 'hero_010.jpg'] });
+    randomHero.init( { parent: '.hero', path: '<?php echo get_template_directory_uri(); ?>/images/hero/', images: ['hero_001.jpg', 'hero_002.jpg', 'hero_003.jpg', 'hero_004.jpg', 'hero_005.jpg', 'hero_007.jpg', 'hero_008.jpg', 'hero_009.jpg', 'hero_010.jpg'] });
 
   });
 })( jQuery );
 </script>
 
-<?php if( !empty($post_type) == 'adverts' || 'packages' ) {?>
+<?php if( $post_type == 'adverts' || $post_type == 'packages' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function() {
@@ -56,7 +56,7 @@
 <?php } ?>
 
 <script>
-<?php if( !empty($post_type) == 'adverts' ) {?>
+<?php if( $post_type == 'adverts' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function(){
@@ -67,7 +67,7 @@
 </script>
 <?php } ?>
 
-<?php if( !empty($page) == 'regions') {?>
+<?php if( is_page( 'regions') ) {?>
 <script>
 ;(function( $ ){
 $(document).ready(function(e) {
@@ -75,7 +75,6 @@ $(document).ready(function(e) {
 });
 })( jQuery );
 </script>
-<?php } ?>
 
 <script>
 ;(function( $ ){
@@ -114,7 +113,7 @@ $(window).scroll(function(){
 })( jQuery );
 </script>
 
-<?php if( !empty($page) == 'regions') {?>
+
 <script>
 ;(function( $ ){
 

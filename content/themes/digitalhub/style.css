@@ -31,6 +31,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 2.0 - Objects
  *   2.1 - Button
  *   2.2 - List
+ *   2.3 - Gallery
+ *   2.4 - Pagination
  *   2.5 - Icon
  *   2.6 - Alerts
  * 3.0 - Styles
@@ -40,12 +42,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.4  - Navigation
  *   3.5  - Button
  *   3.6  - Content
+ *   3.7  - Examples
  *   3.8  - Package
  *   3.9  - Adverts
  *   3.10 - Pagination
  *   3.11 - Regions
  *   3.12 - Sprite
  *   3.13 - Contacts
+ *   3.14 - Alerts
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -229,21 +233,45 @@ h6, .zeta {
 
 .mega {
   padding: 5px 15px;
-  background: #fff;
+  background: rgb(255,255,255);
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 300%;
+  font-size: 1.46em;
   display: inline-block;
 }
+
+  @media screen and (min-width: 481px) {
+    .mega {
+      font-size: 2.3em;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .mega {
+      font-size: 3em;
+    }
+  }
 
 .kilo {
   display: inline-block;
   padding: 5px 15px;
   background: rgb(27,196,229);
   color: rgb(255,255,255);
-  font-size: 2em;
+  font-size: 1em;
   font-weight: 600;
 }
+
+  @media screen and (min-width: 481px) {
+    .kilo {
+      font-size: 1.5em;
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .kilo {
+      font-size: 2em;
+    }
+  }
 
 /**
 /* For use on text that needs to be smaller than body copy
@@ -731,10 +759,6 @@ textarea {
  * 2.2 List
  */
 
-/*  objects/_list.less
- *
- */
-
 /*
  * 1. Removes bullets
  * 2. Removes default margin for ul
@@ -866,7 +890,7 @@ textarea {
 
 .icon__overlay {
   position: absolute;
-  /* @TODO: temp solution. need to position in the middle of the parent elemetn */
+  /* @TODO: temp solution. need to position in the middle of the parent element */
   top: 27px;
   left: 27px;
 }
@@ -881,10 +905,10 @@ textarea {
   border: 1px solid #666;
   }
 
-/* Position the close button */
+/* Position the close button
 .alert__close {
 
-}
+}*/
 
 /**
  * Alert Message
@@ -936,22 +960,21 @@ textarea {
 .title--secondary {
   overflow: hidden;
   position: absolute;
-  top: 188px;
+  top: 158px;
   right: -600px;
 }
 
-@media screen and (max-width: 769px) {
-   .title--secondary {
-  top: 175px;
- }
-
-@media screen and (max-width: 481px) {
-  .title--secondary {
-    top: 158px;
+  @media screen and (min-width: 481px) {
+    .title--secondary {
+      top: 175px;
+    }
   }
-}
 
-}
+  @media screen and (min-width: 769px) {
+    .title--secondary {
+      top: 188px;
+    }
+  }
 
 
 .lt-ie9 .title--main,
@@ -969,30 +992,6 @@ textarea {
   background-color: transparent;
   width: 221px;
   height: 62px;
-}
-
-#facebook {
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-position:  -275px -126px;
-  background-color: transparent;
-  display: inline;
-  margin-top: 15px;
-  float: right;
-  margin-right: 8px;
-}
-
-#twitter {
-  width: 25px;
-  height: 25px;
-  background-repeat: no-repeat;
-  background-position: -275px -90px;
-  background-color: transparent;
-  display: inline;
-  margin-top: 15px;
-  float: right;
-  margin-right: 8px;
 }
 
 #search-slide {
@@ -1123,19 +1122,30 @@ textarea {
 
 /**
  * 3.2 Hero
+ *
+ * The objects displays a large background image across the width
+ * of the page and can contain objects such as a tag lines or call
+ * to actions
+ *
+ * Example
+    <section class="hero">
+      <h1 class="mega">Trinity Mirror Digital Hub</h1>
+    </section>
+ *
  */
 
-#bgimg {
+.hero {
   position: relative;
-  min-height: 350px;
+  min-height: 260px;
   background-size: cover;
   width: auto;
 }
 
 @media screen and (min-width: 480px) {
 
-  #bgimg {
+  .hero {
     margin-bottom: 60px;
+    min-height: 360px;
   }
 
 }
@@ -1344,77 +1354,6 @@ textarea {
   .btn__large:focus {
     background-position: 0 -2em;
   }
-
- button {
-  border: 0;
-  background: url(images/new_sprite.png) no-repeat 180px -84px #2ac2e3;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 5px 25px 5px 5px;
-  width: 200px;
-  text-align: left;
-  margin: 10px 0;
-  font-weight: 600;
- }
-
- button:hover {
-  background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
- }
-
- button.category {
-  background: url(images/new_sprite.png) no-repeat 180px -287px #2ac2e3;
-  text-shadow: 0 1px 0 #198eb9;
- }
-
-  button.category:hover {
-  background: url(images/new_sprite.png) no-repeat 180px -287px #ed145b;
- }
-
-button.build {
-  background: url(images/new_sprite.png) no-repeat -105px -163px #2ac2e3;
-  text-shadow: 0 1px 0 #198eb9;
- }
-
- button.build:hover {
-  background: url(images/new_sprite.png) no-repeat -105px -163px #ed145b;
- }
-
- button.next {
-  width: 50px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat 18px -215px #2ac2e3;
- }
-
- button.next:hover {
-  background: url(images/new_sprite.png) no-repeat 18px -215px #ed145b;
- }
-
- button.prev {
-  width: 50px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
- }
-
-  button.prev:hover {
-  background-color: #ed145b;
- }
-
-.pack-button {
-  border: 0;
-  background: url(images/new_sprite.png) no-repeat 180px -82px #2ac2e3;
-  color: #fff !important;
-  text-transform: uppercase;
-  padding: 5px 35px 5px 8px;
-  width: 205px;
-  text-align: left;
-  margin: 25px 0;
-  display: inline-block;
-}
-
-.pack-button:hover {
-  background:  rgb(237,20,91);
-  text-shadow: 0 1px 0 #c8124e;
-}
 
 .back-to-top {
   float: right;
@@ -1871,18 +1810,16 @@ button.build {
 }
 
 .region__preview li {
-  -moz-transition:width 1s;
-  -o-transition:width 1s;
-  -transition:width 1s;
-  -webkit-transition:width 1s;
-
   padding-right: 0.5em;
   margin-bottom:0.5em;
   width:16.66666666%;
   float:left;
+  -webkit-transition: width 1s;
+     -moz-transition: width 1s;
+      -ms-transition: width 1s;
+       -o-transition: width 1s;
+          transition: width 1s;
 }
-
-
 
 .region__preview li img{
   width:100%;
@@ -1896,8 +1833,8 @@ button.build {
 }
 .region-img{
   max-width: 100%;
-max-height: 476px;
-text-align: center;
+  max-height: 476px;
+  text-align: center;
 }
 
 .region__map{
@@ -2087,7 +2024,7 @@ text-align: center;
   }
 
   .sprite--play {
-    background-position: 0px -650px;
+    background-position: 0 -650px;
     width: 48px;
     height: 48px;
   }
@@ -2155,20 +2092,20 @@ text-align: center;
 .contacts-map-col{width:66%;float:left;}
 .contacts-address{width:25%;float:left;padding-right:10px;}
 
-#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0px;}
+#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0;}
 
 @media screen and (max-width: 767px) {
-  .contacts-menu{padding-left:10px;}
-.contacts-menu-col{width:100%;}
-.contacts-map-col{width:100%}
-}
 
-.contact-wrap-inside{
-  width:100%;
-  padding-left:0;
-  padding-right:0;
-  margin-bottom:20px;
-}
+  .contacts-menu{padding-left:10px;}
+  .contacts-menu-col{width:100%;}
+  .contacts-map-col{width:100%}
+
+  .contact-wrap-inside{
+    width:100%;
+    padding-left:0;
+    padding-right:0;
+    margin-bottom:20px;
+  }
 
 }
 
@@ -2182,7 +2119,7 @@ text-align: center;
 }
 
 .contact-wrap > .last{
-  padding-left:0px;
+  padding-left: 0;
 }
 
 .contact-map img{float:right;}
@@ -2190,7 +2127,7 @@ text-align: center;
 }
 
 /**
- * 3.13 Alerts
+ * 3.14 Alerts
  */
 
 .alert--info {
@@ -2243,19 +2180,9 @@ body {
 .main-navigation ul ul a {
   width: 200px;
 }
-.main-navigation ul ul li {
-}
-.main-navigation li:hover > a {
-}
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
+
 .main-navigation ul li:hover > ul {
   display: block;
-}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
 }
 
 /* Small menu */
@@ -2344,8 +2271,6 @@ object {
 
 .comment-content a {
   word-wrap: break-word;
-}
-.bypostauthor {
 }
 
 
@@ -2911,17 +2836,6 @@ object {
 /*  Core  */
 
 /*  -- Animations -- */
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
 
 @keyframes fadeIn {
   0% {
@@ -2935,7 +2849,10 @@ object {
 
 .fadeIn {
   -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+     -moz-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+       -o-animation-name: fadeIn;
+          animation-name: fadeIn;
 }
 
 @-webkit-keyframes fadeInDown {
@@ -2970,7 +2887,10 @@ object {
 
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+     -moz-animation-name: fadeInDown;
+      -ms-animation-name: fadeInDown;
+       -o-animation-name: fadeInDown;
+          animation-name: fadeInDown;
 }
 
 .slide {
@@ -3004,16 +2924,31 @@ object {
   }
 }
 
-@-o-keyframes slide {
+/*@-o-keyframes slide {
   100% {
     right: 20px;
   }
-}
+}*/
 
 @keyframes slide {
   100% {
     right: 20px;
   }
+}
+
+/**
+ * Sets the duration of the animation to .X seconds
+ * Example:
+     <h1 class="slide duration-1">Heading</h1>
+ *
+ */
+
+.duration-01 {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 /**
@@ -3037,6 +2972,14 @@ object {
       -ms-animation-delay: 0.8s;
        -o-animation-delay: 0.8s;
           animation-delay: 0.8s;
+}
+
+.fill-mode-both {
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-anmimation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 /**
@@ -3122,14 +3065,6 @@ object {
   float: left;
  }
 
- .mega {
-  font-size: 230%;
- }
-
- .kilo {
-  font-size: 1.5em;
- }
-
 }
 
 /**
@@ -3149,18 +3084,6 @@ object {
     float: left;
   }
 
-  .mega {
-    font-size: 145%;
-  }
-
-  .kilo {
-    font-size: 1em;
-  }
-
-  #bgimg {
-    min-height: 260px;
-  }
-
   #search {
     display: none;
   }
@@ -3168,14 +3091,6 @@ object {
   .secondary-menu li.current-menu-item, .secondary-menu li.current_page_item {
     background: url(images/arrow-strip-small.gif) no-repeat top center transparent;
    }
-
-  #twitter {
-    display: none;
-  }
-
-  #facebook {
-    display: none;
-  }
 
    button.search {
     display: inline;
@@ -3205,15 +3120,8 @@ object {
 (-webkit-min-device-pixel-ratio: 2),
 (min-resolution: 192dpi) {
 
-  button.prev,
-  button.next,
-  button.build,
-  button.category,
   button.search,
-  button,
-  #search .submit,
-  .site-title,
-  .pack-button {
+  #search .submit {
     background-image: url(images/sprite_x2.png);
     background-repeat: no-repeat;
     background-size: 300px 800px;
@@ -3222,15 +3130,6 @@ object {
   button.search.clicked {
     background: url(images/close_x2.png) no-repeat 0 0 transparent;
     background-size: 24px 24px;
-  }
-
-  button.prev,
-  button.next,
-  button.build,
-  button.category,
-  button,
-  .pack-button {
-    background-color: #2ac2e3;
   }
 
 }
