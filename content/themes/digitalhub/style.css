@@ -190,7 +190,7 @@ a:focus {
  */
 
 h1, .alpha {
-  margin: 0;
+  margin: 0 0 29px 0;
   padding: 0;
   font-size: 250%;
   font-weight: 300;
@@ -857,11 +857,11 @@ textarea {
 }
 
 .icon__prepend {
-  margin-right: 0.5em;
+  margin-right: 0.7em;
 }
 
 .icon__append {
-  margin-left: 0.5em;
+  margin-left: 0.7em;
 }
 
 .icon__overlay {
@@ -938,6 +938,19 @@ textarea {
   position: absolute;
   top: 188px;
   right: -600px;
+}
+
+@media screen and (max-width: 769px) {
+   .title--secondary {
+  top: 175px;
+ }
+
+@media screen and (max-width: 481px) {
+  .title--secondary {
+    top: 158px;
+  }
+}
+
 }
 
 
@@ -1131,32 +1144,55 @@ textarea {
  * 3.3 Footer
  */
 
-#colophon {
-  height: 55px;
+.footer__main {
   background: #171717;
   color: #ababab;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  z-index: 1;
+}
+
+@media screen and (min-width: 480px) {
+
+  .footer__main {
+    padding-bottom: 1em;
+    z-index: 4;
+  }
+
 }
 
 .site-info {
   padding: 17px 0.75em 0;
 }
 
-#copy-credit {
-  float: right;
+.copy-credit {
+  display: block;
+  padding-bottom: 0.25em;
 }
 
-#tm-logo {
-  background-repeat: no-repeat;
-  background-position: 0 -539px;
-  background-color: transparent;
-  height: 24px;
+@media screen and (min-width: 769px) {
+  /* Position the copyright to the right of the `.tm-logo` */
+  .copy-credit {
+    float: right;
+  }
+}
+
+.tm-logo {
+  display: block;
   width: 200px;
-  float: left;
-  display: inline;
+  height: 24px;
+  background-position: 0 -539px;
+}
+
+@media screen and (min-width: 768px) {
+  /* Position the logo to the left of the `.copy-credit` */
+  .tm-logo {
+    float: left;
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2),(min-resolution: 192dpi) {
+
+  .tm-logo {
+    background-position: 0 -539px
+  }
 }
 
 #credit {
@@ -1175,20 +1211,13 @@ textarea {
   padding-top: 1em;
 }
 
-.header__main,
-.footer__main {
+.header__main {
   position: fixed;
   z-index: 5;
 }
 
 .header__main {
   width: 100%;
-}
-
-.footer__main {
-  right: 0;
-  bottom: 0;
-  left: 0;
 }
 
 /**
@@ -1515,14 +1544,15 @@ button.build {
     /* Allows the icon to be positioned inside this element */
     position: relative;
     /* width of the grid gutter */
-    margin-left: 20px;
+    margin-right: 20px;
     /* Background colour to show through transparent image */
     background: rgb(37,37,37);
     cursor: pointer;
+    margin-bottom: 20px;
   }
 
-  .example__preview li:first-child {
-    margin-left: 0;
+  .example__preview li:last-child {
+    margin-right: 0;
   }
 
   .example__preview--image {
@@ -1573,7 +1603,6 @@ button.build {
 
 .packages__title {
   border-bottom: 0;
-  margin-bottom: 20px;
   margin-top: 15px;
 }
 
@@ -1584,6 +1613,8 @@ button.build {
        * from the section above
        */
       padding-top: 29px;
+      position: relative;
+      z-index: 3;
     }
 
   }
@@ -1982,7 +2013,7 @@ text-align: center;
     background-position: 0 -90px;
     width: 14px;
     height: 12px;
-    top: -3px;
+    top: -2px;
   }
 
   .sprite--plus-blue {
@@ -3043,6 +3074,8 @@ object {
 
   .packages-text {
     font-size: 90%;
+    position: relative;
+    z-index: 3;
   }
 
 }
@@ -3123,20 +3156,11 @@ object {
     display: inline;
   }
 
-  #tm-logo {
-    float: none;
-    display: block;
-  }
+
 
   #copy-credit {
     display: block;
     float: none;
-  }
-
-  #colophon {
-    height: 80px;
-    padding: 0 10px;
-    position: relative;
   }
 
   #credit {
@@ -3173,10 +3197,6 @@ object {
   button.search.clicked {
     background: url(images/close_x2.png) no-repeat 0 0 transparent;
     background-size: 24px 24px;
-  }
-
-  #tm-logo {
-    background-position: 0 -539px
   }
 
   button.prev,

@@ -14,11 +14,12 @@
 
 </div><!-- #end of wrapper -->
 
-        <footer id="colophon" class="site-footer" role="contentinfo">
+        <footer id="colophon" class="footer__main cf" role="contentinfo">
                 <div class="site-info wrapper__sub">
                         <?php do_action( 'digitalhub_credits' ); ?>
-                        <a href="http://www.trinitymirror.com/"><div id="tm-logo" class="sprite"></div></a>
-                        <div id="copy-credit">Copyright © Trinity Mirror plc 2014 <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
+                        <a href="http://www.trinitymirror.com/">
+                        <div class="tm-logo sprite"></div></a>
+                        <div class="copy-credit">Copyright &copy; Trinity Mirror plc 2014 <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
                 </div><!-- .site-info -->
         </footer><!-- #colophon -->
 </div><!-- #page -->
@@ -38,7 +39,7 @@
 })( jQuery );
 </script>
 
-<?php if( 'adverts' || 'packages' == $post_type ) {?>
+<?php if( !empty($post_type) == 'adverts' || 'packages' ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function() {
@@ -55,25 +56,26 @@
 <?php } ?>
 
 <script>
-<?php if( $post_type == 'adverts' ) {?>
+<?php if( !empty($post_type) == 'adverts' ) {?>
+<script>
 ;(function( $ ){
   $(document).ready(function(){
     // Target your .container, .wrapper, .post, etc.
     $(".example").fitVids();
   });
 })( jQuery );
-<?php } ?>
 </script>
+<?php } ?>
 
+<?php if( !empty($page) == 'regions') {?>
 <script>
-<?php if( $page == 'regions') {?>
 ;(function( $ ){
 $(document).ready(function(e) {
   $('img[usemap]').rwdImageMaps();
 });
 })( jQuery );
-<?php } ?>
 </script>
+<?php } ?>
 
 <script>
 ;(function( $ ){
@@ -112,8 +114,8 @@ $(window).scroll(function(){
 })( jQuery );
 </script>
 
+<?php if( !empty($page) == 'regions') {?>
 <script>
-<?php if( $page == 'regions' ) {?>
 ;(function( $ ){
 
 $(document).ready(function(){
@@ -142,7 +144,14 @@ $(document).ready(function(){
 
 });
 })( jQuery );
+</script>
 <?php } ?>
+
+<script>
+
+var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
+
+
 </script>
 
 </body>
