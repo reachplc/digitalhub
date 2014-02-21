@@ -1792,7 +1792,7 @@ button.build {
 
     .adverts__nav li:before {
       content: '';
-      border-left: 1px solid rgb(37,37,37);
+      border-left: 1px solid rgb(220,220,220);
     }
 
     .adverts__nav li:first-child:before {
