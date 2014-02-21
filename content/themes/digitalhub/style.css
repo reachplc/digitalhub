@@ -1791,6 +1791,34 @@ button.build {
       margin-left: 0;
     }
 
+/*
+ * Format Image relatied to random intro image on adverts
+ * and packages page.
+ */
+
+.format-image {
+  height: 300px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.lt-ie9 .format-image {
+  /* Adds line for lt-ie9 to stop image from appearing to float */
+  border-bottom: 1px solid rgb(220,220,220);
+}
+
+@media screen and (min-width: 481px) {
+  .format-image {
+    height: 450px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .format-image {
+    height: 330px;
+  }
+}
+
 /**
  * 3.10 Pagination
  */
