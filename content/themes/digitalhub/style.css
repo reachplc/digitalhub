@@ -31,6 +31,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
  * 2.0 - Objects
  *   2.1 - Button
  *   2.2 - List
+ *   2.3 - Gallery
+ *   2.4 - Pagination
  *   2.5 - Icon
  *   2.6 - Alerts
  * 3.0 - Styles
@@ -40,12 +42,14 @@ Use it to make something cool, have fun, and share what you've learned with othe
  *   3.4  - Navigation
  *   3.5  - Button
  *   3.6  - Content
+ *   3.7  - Examples
  *   3.8  - Package
  *   3.9  - Adverts
  *   3.10 - Pagination
  *   3.11 - Regions
  *   3.12 - Sprite
  *   3.13 - Contacts
+ *   3.14 - Alerts
  * 98.0 - Grid
  * 99.0 - Core
  *
@@ -1351,77 +1355,6 @@ textarea {
     background-position: 0 -2em;
   }
 
- button {
-  border: 0;
-  background: url(images/new_sprite.png) no-repeat 180px -84px #2ac2e3;
-  color: #fff;
-  text-transform: uppercase;
-  padding: 5px 25px 5px 5px;
-  width: 200px;
-  text-align: left;
-  margin: 10px 0;
-  font-weight: 600;
- }
-
- button:hover {
-  background: url(images/new_sprite.png) no-repeat 180px -84px #ed145b;
- }
-
- button.category {
-  background: url(images/new_sprite.png) no-repeat 180px -287px #2ac2e3;
-  text-shadow: 0 1px 0 #198eb9;
- }
-
-  button.category:hover {
-  background: url(images/new_sprite.png) no-repeat 180px -287px #ed145b;
- }
-
-button.build {
-  background: url(images/new_sprite.png) no-repeat -105px -163px #2ac2e3;
-  text-shadow: 0 1px 0 #198eb9;
- }
-
- button.build:hover {
-  background: url(images/new_sprite.png) no-repeat -105px -163px #ed145b;
- }
-
- button.next {
-  width: 50px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat 18px -215px #2ac2e3;
- }
-
- button.next:hover {
-  background: url(images/new_sprite.png) no-repeat 18px -215px #ed145b;
- }
-
- button.prev {
-  width: 50px;
-  height: 50px;
-  background: url(images/new_sprite.png) no-repeat 14px -156px #2ac2e3;
- }
-
-  button.prev:hover {
-  background-color: #ed145b;
- }
-
-.pack-button {
-  border: 0;
-  background: url(images/new_sprite.png) no-repeat 180px -82px #2ac2e3;
-  color: #fff !important;
-  text-transform: uppercase;
-  padding: 5px 35px 5px 8px;
-  width: 205px;
-  text-align: left;
-  margin: 25px 0;
-  display: inline-block;
-}
-
-.pack-button:hover {
-  background:  rgb(237,20,91);
-  text-shadow: 0 1px 0 #c8124e;
-}
-
 .back-to-top {
   float: right;
 }
@@ -2194,7 +2127,7 @@ button.build {
 }
 
 /**
- * 3.13 Alerts
+ * 3.14 Alerts
  */
 
 .alert--info {
@@ -2250,9 +2183,6 @@ body {
 
 .main-navigation ul li:hover > ul {
   display: block;
-}
-.main-navigation .current_page_item a,
-.main-navigation .current-menu-item a {
 }
 
 /* Small menu */
@@ -2906,17 +2836,6 @@ object {
 /*  Core  */
 
 /*  -- Animations -- */
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-}
-
-.animated.hinge {
-  -webkit-animation-duration: 2s;
-  animation-duration: 2s;
-}
 
 @keyframes fadeIn {
   0% {
@@ -2930,7 +2849,10 @@ object {
 
 .fadeIn {
   -webkit-animation-name: fadeIn;
-  animation-name: fadeIn;
+     -moz-animation-name: fadeIn;
+      -ms-animation-name: fadeIn;
+       -o-animation-name: fadeIn;
+          animation-name: fadeIn;
 }
 
 @-webkit-keyframes fadeInDown {
@@ -2965,7 +2887,10 @@ object {
 
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
-  animation-name: fadeInDown;
+     -moz-animation-name: fadeInDown;
+      -ms-animation-name: fadeInDown;
+       -o-animation-name: fadeInDown;
+          animation-name: fadeInDown;
 }
 
 .slide {
@@ -2999,16 +2924,31 @@ object {
   }
 }
 
-@-o-keyframes slide {
+/*@-o-keyframes slide {
   100% {
     right: 20px;
   }
-}
+}*/
 
 @keyframes slide {
   100% {
     right: 20px;
   }
+}
+
+/**
+ * Sets the duration of the animation to .X seconds
+ * Example:
+     <h1 class="slide duration-1">Heading</h1>
+ *
+ */
+
+.duration-01 {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+      -ms-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
 }
 
 /**
@@ -3032,6 +2972,14 @@ object {
       -ms-animation-delay: 0.8s;
        -o-animation-delay: 0.8s;
           animation-delay: 0.8s;
+}
+
+.fill-mode-both {
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+      -ms-animation-fill-mode: both;
+      -o-anmimation-fill-mode: both;
+          animation-fill-mode: both;
 }
 
 /**
