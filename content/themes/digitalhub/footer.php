@@ -39,6 +39,23 @@
 })( jQuery );
 </script>
 
+<?php if( !empty($post_type) == 'adverts' || 'packages' ) {?>
+<script>
+;(function( $ ){
+  $(document).ready(function() {
+
+    // To extend the default config settings
+    // pass a object as an argument for the init function
+    // eg. randomHero.init({ images: 'image01.jpg', 'image02.jpg' });
+
+    randomHero.init( { parent: '#js-format-image', path: '<?php echo get_template_directory_uri(); ?>/images/formats/', images: ['format_header_01.png', 'format_header_02.png', 'format_header_03.png', 'format_header_04.png', 'format_header_05.png'] });
+
+  });
+})( jQuery );
+</script>
+<?php } ?>
+
+<script>
 <?php if( !empty($post_type) == 'adverts' ) {?>
 <script>
 ;(function( $ ){

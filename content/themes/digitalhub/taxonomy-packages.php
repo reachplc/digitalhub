@@ -34,8 +34,7 @@
             <?php echo $taxomnomy->description; ?>
           </div>
         </article>
-        <aside class="grid ss__1-4 ms__1-6 ls__7-12 xls__11-18">
-          <img class="image__responsive" src="<?php echo get_stylesheet_directory_uri(); ?>/images/format_header.png" alt="">
+        <aside id="js-format-image"class="grid ss__1-4 ms__1-6 ls__7-12 xls__11-18 format-image">
         </aside>
       </section>
 
