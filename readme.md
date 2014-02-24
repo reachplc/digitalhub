@@ -30,6 +30,22 @@ chmod 777 -r shared/content/uploads
 
 Navigate to the home page, eg `http://localhost/digitalhub/`, and follow the default WordPress instructions.
 
+### Updating WordPress
+
+To make this less complicated we include WordPress as a submodule.
+
+To update the version of wordpress:
+
+```
+cd system
+git checkout master
+git fetch origin --tags
+git checkout -b x.x.x
+cd ..
+git add system
+git commit -m "Updates WordPress to x.x.x"
+```
+
 ## Documentation
 
 During the Alpha/Beta stages, due to constant changes, documentation
