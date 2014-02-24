@@ -20,7 +20,7 @@
 define( 'WP_LOCAL_DEV', false );
 define( 'DB_NAME', 'tmdh_live' );
 define( 'DB_USER', 'tmdh' );
-define( 'DB_PASSWORD', '' );
+define( 'DB_PASSWORD', 'QIeNQbVCzvff' );
 define( 'DB_HOST', 'localhost' ); // Probably 'localhost'
 
 /** Database Charset to use in creating database tables. */

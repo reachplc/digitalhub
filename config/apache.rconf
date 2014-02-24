@@ -1,4 +1,4 @@
-<VirtualHost *:8000>
+<VirtualHost *:80>
 	ServerName <%= branch == "master" ? "digitalhub" : branch  %>.<%= base_domain %>
 	DocumentRoot <%= current_path %>
 
