@@ -1,0 +1,8 @@
+<VirtualHost *:8000>
+	ServerName <%= branch == "master" ? "digitalhub" : branch  %>.<%= base_domain %>
+	DocumentRoot <%= current_path %>
+
+	<Directory "<%= current_path %>">
+		AllowOverride All
+	</Directory>
+</VirtualHost>

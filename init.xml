@@ -1,0 +1,40 @@
+<!--
+     vim: ts=4 et st=4 sts=4
+-->
+<project name="Project init" default="target-required" basedir=".">
+    <property name="application.name" value="tmdh" />
+
+    <target name="development">
+        <property name="application.env-value" value="development" />
+    	<property name="wordpress.upload-path" value="/media/shared/${application.name}/uploads" />
+        <antcall target="common" inheritAll="true" />
+    </target>
+
+    <target name="staging">
+        <property name="application.env-value" value="staging" />
+        <property name="wordpress.upload-path" value="${shared-path}/uploads" />
+        <antcall target="common" inheritAll="true" />
+    </target>
+
+    <target name="master">
+        <property name="application.env-value" value="master" />
+    	<property name="wordpress.upload-path" value="${shared-path}/uploads" />
+        <antcall target="common" inheritAll="true" />
+    </target>
+
+    <target name="common">
+        <!-- create uploads symlink -->
+        <exec executable="ln">
+            <arg value="-snf" />
+            <arg value="${wordpress.upload-path}" />
+            <arg value="${basedir}/content/uploads" />
+        </exec>
+
+        <!-- copy settings file for environment -->
+        <copy file="${basedir}/config/${application.env-value}.wp-config.php" tofile="${basedir}/wp-config.php" failonerror="true" />
+    </target>
+
+    <target name="target-required">
+        <fail message="Please specify either development, staging or master" />
+    </target>
+</project>
