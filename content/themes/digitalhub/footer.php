@@ -55,7 +55,6 @@
 </script>
 <?php } ?>
 
-<script>
 <?php if( $post_type == 'adverts' ) {?>
 <script>
 ;(function( $ ){
@@ -73,7 +72,7 @@
  * Image path for Google Maps marker
  */
 
- var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
+ var iconBase = '<?php echo get_bloginfo("template_url") . "/images/"; ?>';
 
 /**
  * Scrolls to link on href click
@@ -169,11 +168,6 @@ $(document).ready(function(){
 })( jQuery );
 </script>
 <?php } ?>
-
-<script>
-
-
-</script>
 
 </body>
 </html>
