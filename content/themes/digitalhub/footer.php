@@ -39,7 +39,7 @@
 })( jQuery );
 </script>
 
-<?php if( $post_type == 'adverts' || $post_type == 'packages' ) {?>
+<?php if( $post_type == 'adverts' || is_tax('packages') ) {?>
 <script>
 ;(function( $ ){
   $(document).ready(function() {
@@ -67,16 +67,18 @@
 </script>
 <?php } ?>
 
-<?php if( is_page( 'regions') ) {?>
+<?php if( is_page( 'regions' ) || is_page( 'contacts' ) ){ ?>
 <script>
-;(function( $ ){
-$(document).ready(function(e) {
-  $('img[usemap]').rwdImageMaps();
-});
-})( jQuery );
-</script>
+/**
+ * Image path for Google Maps marker
+ */
 
-<script>
+ var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
+
+/**
+ * Scrolls to link on href click
+ */
+
 ;(function( $ ){
 
   function goToScrollDiv(link){
@@ -96,11 +98,29 @@ $(document).ready(function(e) {
         goToScrollDiv(link);
     });
 
-
-
 })( jQuery );
+</script>
+
+<?php } ?>
 
 
+<?php if( is_page( 'regions' ) ) {?>
+<script>
+/**
+ * Makes image map responsive
+ */
+;(function( $ ){
+$(document).ready(function(e) {
+  $('img[usemap]').rwdImageMaps();
+});
+})( jQuery );
+</script>
+
+<script>
+
+/**
+ * Animates region tag
+ */
 ;(function( $ ){
 $(window).scroll(function(){
     if ($(this).scrollTop() > 120) {
@@ -115,6 +135,10 @@ $(window).scroll(function(){
 
 
 <script>
+/**
+ * Back to top link on regions map
+ */
+
 ;(function( $ ){
 
 $(document).ready(function(){
@@ -147,8 +171,6 @@ $(document).ready(function(){
 <?php } ?>
 
 <script>
-
-var iconBase = '<?= get_bloginfo("template_url") . '/images/'; ?>';
 
 
 </script>
