@@ -5,7 +5,6 @@ npm_logs.txt
 
 #  WordPress
 
-.htaccess
 /local-config.php
 /wp-config.php
 /content/uploads
