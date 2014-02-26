@@ -1694,6 +1694,8 @@ textarea {
 }
 
   .adverts__title {
+    /* Corrects the default `h1` margin */
+    margin-bottom: 0;
     border-bottom: none;
   }
 
