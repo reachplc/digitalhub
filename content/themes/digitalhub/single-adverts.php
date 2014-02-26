@@ -92,7 +92,7 @@ $terms = get_the_terms( $post->ID, 'formats' );
 
           </section>
           <aside class="grid ss__1-4 ms__1-6 ls__6-12 xls__8-18 example<?php
-          if(has_term( 'app', 'formats')) {
+          if(has_term( 'app', 'formats') || has_term( 'responsive', 'formats')) {
             echo ' example--app';
           } else {
             echo ' example--desktop';
