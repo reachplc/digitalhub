@@ -32,6 +32,7 @@
 
         <!-- copy settings file for environment -->
         <copy file="${basedir}/config/${application.env-value}.wp-config.php" tofile="${basedir}/wp-config.php" failonerror="true" />
+        <copy file="${basedir}/config/${application.env-value}.htaccess" tofile="${basedir}/.htaccess" failonerror="true" />
     </target>
 
     <target name="target-required">

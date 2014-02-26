@@ -7,6 +7,7 @@ npm_logs.txt
 
 /local-config.php
 /wp-config.php
+/.htaccess
 /content/uploads
 /shared
 
