@@ -798,6 +798,11 @@ textarea {
 }
 
 .gallery--image img {
+  max-width: 100%;
+  height: inherit;
+}
+
+.lt-ie9 .gallery--image img {
   width: 100%;
 }
 
@@ -809,11 +814,6 @@ textarea {
     width: 50%;
     padding-left: 14.5px;
     padding-right: 14.5px;
-  }
-
-  .gallery--image img {
-    max-width: 100%;
-    height: auto;
   }
 
 }
