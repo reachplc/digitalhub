@@ -194,9 +194,9 @@ a:focus {
  */
 
 h1, .alpha {
-  margin: 0 0 29px 0;
+  margin: 0 0 0.4em 0;
   padding: 0;
-  font-size: 250%;
+  font-size: 2.5em;
   font-weight: 300;
 }
 
@@ -1385,8 +1385,14 @@ textarea {
 }
 
 .intro {
-  margin-bottom: 4em;
+  margin-bottom: 0;
 }
+
+  @media screen and (min-width: 769px) {
+    .intro {
+      margin-bottom: 29px;
+    }
+  }
 
 .intro__content {
   margin-bottom: 0.75em;
