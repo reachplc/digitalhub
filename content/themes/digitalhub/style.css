@@ -1770,7 +1770,25 @@ textarea {
 
 @media screen and (min-width: 481px) {
   .format-image {
-    height: 450px;
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  .format-image {
+    height: 400px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  .format-image {
+    height: 430px;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .format-image {
+    height: 530px;
   }
 }
 
