@@ -82,7 +82,11 @@ $terms = get_the_terms( $post->ID, 'formats' );
               <?php
                 $url = wp_get_referer();
                 $path_parts = pathinfo($url);
-                echo '<a class="btn btn--primary" href="' . $url . '"><span class="sprite sprite--back icon icon__prepend"></span>'. 'Back to '. $path_parts['filename'] .'</a>';
+
+                // Check for referrer page
+                if( !empty($url) ) {
+                  echo '<a class="btn btn--primary" href="' . $url . '"><span class="sprite sprite--back icon icon__prepend"></span>'. 'Back to '. $path_parts['filename'] .'</a>';
+                }
               ?>
               </section>
 
