@@ -194,17 +194,11 @@ a:focus {
  */
 
 h1, .alpha {
-  margin: 0 0 0.5em 0;
+  margin: 0 0 0.4em 0;
   padding: 0;
-  font-size: 250%;
+  font-size: 2.5em;
   font-weight: 300;
 }
-
-  @media screen and (min-width: 769px) {
-    h1, .alpha {
-      margin-bottom: 0.7em;
-    }
-  }
 
 h2, .beta {
   margin: 0;
