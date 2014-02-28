@@ -55,7 +55,7 @@ switch ($method) {
 
   default:
   if($_SESSION['isLoggedIn']) {
-    include 'request-form.html';
+    include 'request-form.php';
   } else {
     include 'login.html';
   }
