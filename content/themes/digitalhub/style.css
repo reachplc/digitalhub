@@ -518,17 +518,22 @@ figure {
 /*
  * Corrects `inline-block` display not defined in IE 8/9 and Firefox 3.
  */
+.video-wrap{position:relative; height:auto;}
 
-audio,
-canvas,
-video {
-  display: inline-block;
+
+video, canvas {
+top: 0;
+left: 0;
+width: 100%;
+max-width: 100%;
+height: auto;
 }
 
 video {
-  /* Adds for compatibility with FitVids.js */
-  width: 100%;
-  height: auto;
+height: 100%;
+position: absolute;
+top: 0;
+left: 0;
 }
 
 /*
@@ -1474,6 +1479,9 @@ textarea {
   /* Centre's video inside parent element */
   text-align: center;
   padding-top: 70px;
+  margin: 0 auto;
+  position: relative;
+  width: 210px;
 }
 
 /* Example Preview Images */
@@ -1896,8 +1904,6 @@ textarea {
   font-size:16px;
   font-weight:200;
   line-height:18px;
-
-
 }
 
 #back-map a:hover {

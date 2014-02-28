@@ -67,6 +67,9 @@ function get_example_video($custom) {
       };
       echo '" data-example="' . $i . '">';
       $_example_video = urldecode( $custom['_example_' . $i . '_url_video'][0] );
+      echo '<div class="video-wrap">';
+
+      echo '<canvas width="634" height="355"></canvas>';
       echo '<video poster="' . $_example_video . '" controls>';
 
       // Return each video if available
@@ -88,6 +91,7 @@ function get_example_video($custom) {
 
       echo '<div class="alert alert--message alert--info"><p><strong>Video Not Available.</strong> The browser you are using does not support HTML5 video. Please try viewing this page in an updated browser.</p></div>';
       echo '</video>';
+      echo '</div>';
       echo '</div>';
 
     }
