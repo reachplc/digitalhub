@@ -2,6 +2,8 @@
 session_start();
 
 
+
+
 function do_login ($username, $password){
 
     $_salt = "NUj6eU%9EExnMe";
@@ -19,7 +21,7 @@ function do_login ($username, $password){
     $_SESSION['username'] = $username;
     $_SESSION['isLoggedIn'] = true;
     //$_SESSION['userid'] = $users['userid'];
-    header('Location: request-form.php');
+    header('Location: index.php?');
   }
 } // do_Login()
 
