@@ -68,6 +68,11 @@ $sentYes = '<html lang="en">
   <div class="form-wrap">
     <h1>Digital Visual Request</h1>
     <h2 class="alpha">Thank you, your Digital Request has now been emailed to the admin team.</h2>
+    <div class="grid_16">
+       <a href="request-form.php"><button type="button">
+        Add another request
+        </button></a>
+      </div>
     </div>
     </div>
 <footer class="home-foot">
