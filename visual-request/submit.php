@@ -1,5 +1,15 @@
 <?php
 
+// Inialize session
+session_start();
+
+// Check, if username session is NOT set then this page will jump to login page
+if (!isset($_SESSION['username'])) {
+header('Location: index.php');
+}
+
+
+
 ####
 #
 #
@@ -16,7 +26,7 @@
 ####
 
 if (!isset($_POST['submit'])){
-header ('Location:index.html');
+header ('Location:index.php');
 exit();
 }else{
 
@@ -103,8 +113,6 @@ $sentNo = '<html lang="en">
   </div>
 </footer>';
 
-
-
 //Sales Excutive Details
 $firstname = $_POST['firstname']; 
 $lastname = $_POST['lastname']; 
@@ -137,7 +145,7 @@ if ($instructions == NULL){
 
 if( $firstname == true ) {
 
-  $recipient = 'jonathan.masters@trinitymirror.com, daniel.richardson@trinitymirror.com';
+  $recipient = 'ae-in.trinity.tm@affinityexpress.com, menstudio@men-news.co.uk, jonathan.masters@trinitymirror.com, daniel.richardson@trinitymirror.com';
   $subject =  'Digital Booking: ' . $clientsName;  //  Editorial Email
   $message = 'Sales Executive: ' . $firstname . ' ' . $lastname . "\r\n";
   $message .= 'Sales Executive Email: ' . $repEmail . "\r\n";
@@ -191,7 +199,6 @@ $mime_boundary="==Multipart_Boundary_x".md5(mt_rand())."x";
   if( mail( $recipient, $subject, $message, $headers)) {
 
     echo $sentYes;
-
    
   } else {
 
