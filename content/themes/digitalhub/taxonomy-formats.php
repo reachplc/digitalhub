@@ -12,8 +12,11 @@
  * @copyright 2013 Trinity Mirror Creative
  */
 ?>
-<?php $taxomnomy = $wp_query->get_queried_object();?>
-
+<?php
+$taxomnomy = $wp_query->get_queried_object();
+global $query_string;
+query_posts( $query_string . '&posts_per_page=99999' );
+?>
 <?php get_header(); ?>
 
   <div class="wrapper__sub">
