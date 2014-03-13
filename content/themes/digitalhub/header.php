@@ -26,8 +26,6 @@
   <link rel="apple-touch-icon" sizes="72x72" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-76x76-precomposed.png">
   <link rel="apple-touch-icon" href="<?php echo get_stylesheet_directory_uri(); ?>/images/apple-touch-icon-60x60-precomposed.png">
 
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
-
 <?php wp_head(); ?>
 </head>
 
