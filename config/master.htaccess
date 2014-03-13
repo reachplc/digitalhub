@@ -47,6 +47,7 @@ RewriteRule . /index.php [L]
                                       image/x-icon \
                                       text/css \
                                       text/html \
+                                      text/javascript \
                                       text/plain \
                                       text/x-component \
                                       text/xml
