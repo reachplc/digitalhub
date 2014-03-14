@@ -76,8 +76,8 @@ class Adverts {
     add_action( 'wpmu_new_blog', array( $this, 'activate_new_site' ) );
 
     // Load public-facing style sheet and JavaScript.
-    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
-    add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+    //add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_styles' ) );
+    //add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 
     // Define custom functionality.
     add_action( 'init', array( $this, 'adverts_cpt' ) );
