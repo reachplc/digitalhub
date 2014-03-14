@@ -4,7 +4,7 @@
  *
  *  Made by Jon Masters
  *  Under MIT License
- */   
+ */
 
     var markerTMPLC;
     var markerTMMH;
@@ -16,14 +16,14 @@
     var markerTMW;
     var markerTMS;
 
-
+//  Coordinates for markers
     var MEN = new google.maps.LatLng(53.521218, -2.149808);
     var HUD = new google.maps.LatLng(53.680195, -1.762001);
     var LIV = new google.maps.LatLng(53.406399, -2.975554);
     var SOUTHPORT = new google.maps.LatLng(53.645979, -3.00339);
     var CHESHIRE = new google.maps.LatLng(53.195012, -2.92123);
     var LANDU = new google.maps.LatLng(53.28497, -3.814801);
-    var NASA = new google.maps.LatLng(51.507715, -0.124026);
+    var NASA = new google.maps.LatLng(51.505431, -0.023533);
     var NCJ = new google.maps.LatLng(54.970348, -1.613606);
     var GMC = new google.maps.LatLng(54.575852, -1.244942);
     var BPM = new google.maps.LatLng(52.510018, -1.811315);
@@ -118,12 +118,12 @@ function initialize() {
     {name: 'Styled Map'});
 
   // Create a map object, and include the MapTypeId to add
-  
-  // variable for position
+
+  // variable for position of map centre
   var myLatlng = new google.maps.LatLng(51.505431, -0.023533);
   var tmmhLatlng = new google.maps.LatLng(53.599752, -1.930075);
   var tmnwLatlng = new google.maps.LatLng(53.456257, -3.144086);
-  var nasaLatlng = new google.maps.LatLng(51.507715, -0.124026);
+  var nasaLatlng = new google.maps.LatLng(51.505431, -0.023533);
   var tmneLatlng = new google.maps.LatLng(54.784853, -1.3515);
   var tmmLatlng = new google.maps.LatLng(52.438655, -1.647762);
   var tmscotLatlng = new google.maps.LatLng(55.820982, -4.167891);
@@ -131,7 +131,7 @@ function initialize() {
   var tmsLatlng = new google.maps.LatLng(51.417588, -0.670146);
 
 
-  
+
 
 
   // to the map type control.
@@ -217,8 +217,8 @@ function initialize() {
   };
 
 
-  
-  
+
+
   var maptmplc = new google.maps.Map(document.getElementById('map-tmplc-canvas'),
     mapOptions);
 
@@ -318,6 +318,7 @@ markerTMNW = new google.maps.Marker({
     title:"North Wales"
     });
 
+//  NASA
 
 markerNASA = new google.maps.Marker({
     position: NASA,
@@ -327,6 +328,8 @@ markerNASA = new google.maps.Marker({
     map: mapnasa,
     title:"NASA"
     });
+
+// Trinity Mirror North East
 
 markerTMNE = new google.maps.Marker({
     position: NCJ,
