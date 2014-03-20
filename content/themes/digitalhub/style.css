@@ -2106,6 +2106,10 @@ textarea {
 
 .contacts-address{ width:30%;float:left; padding-right:10px;}
 
+.contacts-address a {
+  word-break: break-word;
+}
+
 .contacts-map-wrap{
   width:100%;
 }
