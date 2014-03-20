@@ -28,8 +28,8 @@
     var GMC = new google.maps.LatLng(54.575852, -1.244942);
     var BPM = new google.maps.LatLng(52.510018, -1.811315);
     var COV = new google.maps.LatLng(52.412218, -1.510776);
+    // Media Scotland
     var MEDSCOT = new google.maps.LatLng(55.857071, -4.272572);
-    var PRESSCOT = new google.maps.LatLng(55.774445, -4.037563);
     var TMW = new google.maps.LatLng(51.477238, -3.181018);
     var READ = new google.maps.LatLng(51.463622, -0.984264);
     var GUILD = new google.maps.LatLng(51.249651, -0.571036);
@@ -246,7 +246,9 @@ function initialize() {
   var maptms = new google.maps.Map(document.getElementById('map-tms-canvas'),
     tmsOptions);
 
-
+/**
+ * Marker Animation
+ */
 
 //var iconBase = url;
   // To add the marker to the map, use the 'map' property
@@ -374,15 +376,6 @@ markerTMSCOT = new google.maps.Marker({
     animation: google.maps.Animation.DROP,
     map: maptmscot,
     title:"Media Scotland"
-    });
-
-markerTMSCOT = new google.maps.Marker({
-    position: PRESSCOT,
-  icon: iconBase + 'trinity_mirror_plc_tag.png',
-    draggable: false,
-    animation: google.maps.Animation.DROP,
-    map: maptmscot,
-    title:"Scottish and Universal"
     });
 
 markerTMW = new google.maps.Marker({
