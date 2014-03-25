@@ -2114,9 +2114,14 @@ textarea {
     }
 
   }
-.contacts-address a {
-  word-break: break-word;
-}
+
+  @media screen and (min-width: 769px) {
+
+    .contacts-address a {
+      word-break: break-word;
+    }
+
+  }
 
 .contacts-map-wrap{
   width:100%;
