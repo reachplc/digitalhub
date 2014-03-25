@@ -2105,8 +2105,15 @@ textarea {
   padding-left:14.5px;
 }
 
-.contacts-address{ width:30%;float:left; padding-right:10px;}
+  @media screen and (min-width: 769px) {
+  /* Split the addresses into columms for large screens */
+    .contacts-address {
+      float:left;
+      padding-right:10px;
+      width:25%;
+    }
 
+  }
 .contacts-address a {
   word-break: break-word;
 }
@@ -2127,7 +2134,6 @@ textarea {
 .contacts-menu a:hover{color:#2ac2e3;}
 
 .contacts-map-col{width:66%;float:left;}
-.contacts-address{width:25%;float:left;padding-right:10px;}
 
 #map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0;}
 
