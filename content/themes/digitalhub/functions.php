@@ -241,3 +241,5 @@ function add_ie_respond () {
     echo '<![endif]-->';
 }
 add_action('wp_head', 'add_ie_respond');
+
+remove_action('wp_head', 'wp_generator');
