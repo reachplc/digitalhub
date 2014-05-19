@@ -1,7 +1,7 @@
 [submodule "system"]
 	path = system
     url = https://github.com/WordPress/WordPress.git
-    branch = 3.9.1
+    branch = 3.9
 [submodule "content/plugins/google-analytics-for-wordpress"]
 	path = content/plugins/google-analytics-for-wordpress
 	url = https://github.com/Yoast/google-analytics-for-wordpress.git
