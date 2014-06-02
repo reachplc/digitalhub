@@ -6,6 +6,7 @@
  *  Under MIT License
  */
 
+//  Regions with offices
     var markerTMPLC;
     var markerTMMH;
     var markerTMNW;
@@ -16,7 +17,7 @@
     var markerTMW;
     var markerTMS;
 
-//  Coordinates for markers
+//  Coordinates for office markers
     var MEN = new google.maps.LatLng(53.521218, -2.149808);
     var HUD = new google.maps.LatLng(53.680195, -1.762001);
     var LIV = new google.maps.LatLng(53.406399, -2.975554);
@@ -33,7 +34,6 @@
     var TMW = new google.maps.LatLng(51.477238, -3.181018);
     var READ = new google.maps.LatLng(51.463622, -0.984264);
     var GUILD = new google.maps.LatLng(51.249651, -0.571036);
-    var UX = new google.maps.LatLng(51.546791, -0.478835);
 
 function initialize() {
 
@@ -387,6 +387,8 @@ markerTMW = new google.maps.Marker({
     title:"Media Wales"
     });
 
+// Trinity Mirror South
+
 markerTMS = new google.maps.Marker({
     position: READ,
   icon: iconBase + 'trinity_mirror_plc_tag.png',
@@ -403,15 +405,6 @@ markerTMS = new google.maps.Marker({
     animation: google.maps.Animation.DROP,
     map: maptms,
     title:"Reading"
-    });
-
-markerTMS = new google.maps.Marker({
-    position: UX,
-  icon: iconBase + 'trinity_mirror_plc_tag.png',
-    draggable: false,
-    animation: google.maps.Animation.DROP,
-    map: maptms,
-    title:"Uxbridge"
     });
 
 
