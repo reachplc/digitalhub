@@ -26,12 +26,17 @@
 	<!-- @TODO: Provide markup for your options page here. -->
 
   <form method="post" action="options.php">
-
+  <?php
+    settings_fields( 'adverts-settings' );
+    do_settings_sections( __FILE__ );
+    // Get any stored settings
+    $options = get_option( 'adverts-settings' );
+  ?>
   <p>
-    <input id="advert-upload" name="advert-submit" class="button" type="button" value="Add Image">
+    <input id="advert-upload" name="advert-submit" class="button" type="button" value="Add Build Guide">
   </p>
   <p id="new-setting">
-  <input id="file-id" type="text" name="fileid">
+  <input id="file-id" type="text" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
   </p>
 
 

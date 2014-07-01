@@ -58,6 +58,12 @@ class Adverts_Admin {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
+    // Register the options page settings.
+    add_action( 'admin_init', array( $this, 'register_plugin_admin_settings' ) );
+    // Add the error and success messages
+    add_action( 'admin_notices', array( $this, 'plugin_admin_notices' ) );
+
+
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
@@ -184,6 +190,25 @@ class Adverts_Admin {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
+
+  /**
+   * Register the settings
+   *
+   * @since   0.2.0
+   */
+  function register_plugin_admin_settings() {
+      //this will save the option in the wp_options table as 'wpse61431_settings'
+      //the third parameter is a function that will validate your input values
+      register_setting('adverts-settings', 'adverts-settings');
+  }
+
+  /**
+   * Display the validation errors and update message
+   */
+
+    function plugin_admin_notices() {
+      settings_errors();
+    }
 
 	/**
 	 * Add settings action link to the plugins page.
