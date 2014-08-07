@@ -29,8 +29,8 @@
         //When a file is selected, grab the URL and set it as the text field's value
         custom_uploader.on('select', function() {
             var attachment = custom_uploader.state().get('selection').first().toJSON();
-            //console.log(attachment);
-            $('#new-setting #file-id').val(attachment.id);
+            console.log(attachment);
+            $('#new-setting').html('<img src="' + attachment.icon + '" alt="' + attachment.description + '">');
         });
 
         //Open the uploader dialog
