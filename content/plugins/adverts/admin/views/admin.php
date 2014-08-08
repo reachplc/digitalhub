@@ -26,28 +26,40 @@
 	<!-- @TODO: Provide markup for your options page here. -->
 
   <form method="post" action="options.php">
-  <?php
-    settings_fields( 'adverts-settings' );
-    do_settings_sections( __FILE__ );
-    // Get any stored settings
-    $options = get_option( 'adverts-settings' );
-  ?>
-  <p>
-    <input id="advert-upload" name="advert-submit" class="button" type="button" value="Add Build Guide">
-  </p>
-  <p id="new-setting">
-  <?php
 
-$attachment_id = (int) $options['build_guide'];
+  <div class="inside">
 
-$image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+    <h2>Build Guide</h2>
 
-echo $image_attributes;
-?>
-  <input id="file-id" type="hidden" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
-  </p>
+    <?php
+      settings_fields( 'adverts-settings' );
+      do_settings_sections( __FILE__ );
+      // Get any stored settings
+      $options = get_option( 'adverts-settings' );
+    ?>
 
+    <p id="new-setting">
+    <?php
 
+      if( !empty( $options['build_guide'] ) ) {
+        $attachment_id = (int) $options['build_guide'];
+        $image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+        echo $image_attributes;
+      }
+
+      ?>
+
+    <input id="file-id" type="hidden" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
+    </p>
+
+    <?php
+      echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
+      if( !empty($build_guide) ) {
+        echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
+      }
+      echo '</p>';
+    ?>
+  </div>
   <?php submit_button(); ?>
 
   </form>
