@@ -11,13 +11,20 @@ function is_buildGuide() {
   global $post;
 
   $key = 'document_file_id';
-  $buildGuide = get_post_meta($post->ID, $key, TRUE);
+  $options = get_option( 'adverts-settings' );
 
-  if($buildGuide != '') {
-  return true;
-  } else {
-    return false;
+  // Test for local build guide (added to post)
+  if( get_post_meta($post->ID, $key, TRUE) != '' ) {
+    return true;
   }
+
+  // Test for global guide (added to settings)
+  if( $options['build_guide'] && $options['build_guide'] != '' ) {
+    return true;
+  }
+
+  // No build guide found
+  return false;
 
 }
 
@@ -29,9 +36,22 @@ function is_buildGuide() {
 function the_buildGuide() {
 
   global $post;
-  $key = 'document_file_id';
-  $buildGuide = get_post_meta($post->ID, $key, TRUE);
 
-  echo wp_get_attachment_url($buildGuide);
+  $key = 'document_file_id';
+  $options = get_option( 'adverts-settings' );
+
+  // Return local build guide (added to post)
+  if( get_post_meta($post->ID, $key, TRUE) != '' ) {
+    echo wp_get_attachment_url( get_post_meta($post->ID, $key, TRUE) );
+    return;
+  }
+
+  // Return global guide (added to settings)
+  if( $options['build_guide'] && $options['build_guide'] != '' ) {
+
+    $attachment_id = (int) $options['build_guide'];
+    echo wp_get_attachment_url( $attachment_id );
+    return;
+  }
 
 }
