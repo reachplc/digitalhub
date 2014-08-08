@@ -36,7 +36,15 @@
     <input id="advert-upload" name="advert-submit" class="button" type="button" value="Add Build Guide">
   </p>
   <p id="new-setting">
-  <input id="file-id" type="text" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
+  <?php
+
+$attachment_id = (int) $options['build_guide'];
+
+$image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+
+echo $image_attributes;
+?>
+  <input id="file-id" type="hidden" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
   </p>
 
 
