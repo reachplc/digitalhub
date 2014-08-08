@@ -10,7 +10,7 @@ function is_buildGuide() {
 
   global $post;
 
-  $key = 'document_file_id';
+  $key = '_build_guide';
   $disabled = get_post_meta($post->ID, '_build_guide_disabled', TRUE);
   $options = get_option( 'adverts-settings' );
 
@@ -43,7 +43,7 @@ function the_buildGuide() {
 
   global $post;
 
-  $key = 'document_file_id';
+  $key = '_build_guide';
   $options = get_option( 'adverts-settings' );
 
   // Return local build guide (added to post)
