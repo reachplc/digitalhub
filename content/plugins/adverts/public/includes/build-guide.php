@@ -11,7 +11,13 @@ function is_buildGuide() {
   global $post;
 
   $key = 'document_file_id';
+  $disabled = get_post_meta($post->ID, '_build_guide_disabled', TRUE);
   $options = get_option( 'adverts-settings' );
+
+  // Test for build guide disabled in advert option
+  if ( $disabled == true ) {
+    return false;
+  }
 
   // Test for local build guide (added to post)
   if( get_post_meta($post->ID, $key, TRUE) != '' ) {
