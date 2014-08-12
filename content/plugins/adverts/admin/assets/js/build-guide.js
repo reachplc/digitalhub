@@ -58,8 +58,6 @@
 
     $('.inside').on('click', '#build-guide-remove', function(e) {
 
-      console.log("clicked");
-
       e.preventDefault();
 
       // Remove value from hidden input field
