@@ -54,7 +54,7 @@
 
     <?php
       echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
-      if( !empty($build_guide) ) {
+      if( !empty( $options['build_guide'] ) ) {
         echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
       }
       echo '</p>';
