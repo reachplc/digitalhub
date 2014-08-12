@@ -149,7 +149,8 @@ class Adverts_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+      wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
 
       wp_enqueue_script('uploads');
       if ( function_exists('wp_enqueue_media') ) {
