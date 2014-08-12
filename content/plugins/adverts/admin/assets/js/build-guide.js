@@ -45,7 +45,9 @@
           // Add preview and hidden filed
           $('#new-setting').html( preview + hidden );
           // Add remove button
-          $('#js-build-guide-controls').append( remove );
+          if( !$( '#js-build-guide-controls' ).children( '#build-guide-remove' ).length > 0  ) {
+            $('#js-build-guide-controls').append( remove );
+          }
 
       });
 
