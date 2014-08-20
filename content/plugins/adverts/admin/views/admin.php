@@ -15,7 +15,7 @@
 
 <div class="wrap">
 
-	<h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
+  <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
 <?php // Check tthat the user is allowed to update options
   if (!current_user_can('manage_options')) {
@@ -23,13 +23,11 @@
   }
 ?>
 
-	<!-- @TODO: Provide markup for your options page here. -->
-
   <form method="post" action="options.php">
 
   <div class="inside">
 
-    <h2>Build Guide</h2>
+    <h3>Build Guide</h3>
 
     <?php
       settings_fields( 'adverts-settings' );
@@ -41,25 +39,27 @@
     <p id="new-setting">
     <?php
 
-      if( !empty( $options['build_guide'] ) ) {
-        $attachment_id = (int) $options['build_guide'];
+      if( !empty( $options['_build_guide'] ) ) {
+        $attachment_id = (int) $options['_build_guide'];
         $image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
         echo $image_attributes;
       }
 
-      ?>
+    ?>
 
-    <input id="file-id" type="hidden" name="adverts-settings[build_guide]" value="<?php echo (isset($options['build_guide']) && $options['build_guide'] != '') ? $options['build_guide'] : ''; ?>">
+    <input id="file-id" type="hidden" name="adverts-settings[_build_guide]" value="<?php echo (isset($options['_build_guide']) && $options['_build_guide'] != '') ? $options['_build_guide'] : ''; ?>">
     </p>
 
     <?php
       echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
-      if( !empty( $options['build_guide'] ) ) {
+      if( !empty( $options['_build_guide'] ) ) {
         echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
       }
       echo '</p>';
     ?>
   </div>
+
+
   <?php submit_button(); ?>
 
   </form>

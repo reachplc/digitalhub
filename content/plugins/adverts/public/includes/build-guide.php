@@ -25,7 +25,7 @@ function is_buildGuide() {
   }
 
   // Test for global guide (added to settings)
-  if( $options['build_guide'] && $options['build_guide'] != '' ) {
+  if( $options['_build_guide'] && $options['_build_guide'] != '' ) {
     return true;
   }
 
@@ -53,9 +53,9 @@ function the_buildGuide() {
   }
 
   // Return global guide (added to settings)
-  if( $options['build_guide'] && $options['build_guide'] != '' ) {
+  if( $options['_build_guide'] && $options['_build_guide'] != '' ) {
 
-    $attachment_id = (int) $options['build_guide'];
+    $attachment_id = (int) $options['_build_guide'];
     echo wp_get_attachment_url( $attachment_id );
     return;
   }

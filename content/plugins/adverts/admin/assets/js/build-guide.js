@@ -42,8 +42,12 @@
               hidden = '<input id="file-id" type="hidden" name="_build_guide" value="' + attachment.id + '">',
               remove = '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
 
-          // Add preview and hidden filed
-          $('#new-setting').html( preview + hidden );
+          // Remove old preview image
+          $('#new-setting').find( 'img' ).remove();
+          // Add preview image
+          $('#new-setting').prepend( preview );
+          // Add hidden filed
+          $('.inside #file-id').val( attachment.id );
           // Add remove button
           if( !$( '#js-build-guide-controls' ).children( '#build-guide-remove' ).length > 0  ) {
             $('#js-build-guide-controls').append( remove );
