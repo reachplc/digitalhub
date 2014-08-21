@@ -33,13 +33,15 @@
 
         function attach_url () {
           if( typeof attachment.sizes !== 'undefined' ) {
-            return attachment.sizes.thumbnail.url;
+            if( typeof attachment.sizes.thumbnail !== 'undefined' ) {
+              return attachment.sizes.thumbnail.url;
+            }
+            return attachment.sizes.full.url;
           };
           return attachment.icon;
           };
 
           var preview = '<img src="' + attach_url() + '" alt="' + attachment.description + '">',
-              hidden = '<input id="file-id" type="hidden" name="_build_guide" value="' + attachment.id + '">',
               remove = '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
 
           // Remove old preview image
