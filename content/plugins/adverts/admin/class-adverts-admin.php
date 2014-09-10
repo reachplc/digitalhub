@@ -58,6 +58,12 @@ class Adverts_Admin {
 
 		// Add the options page and menu item.
 		add_action( 'admin_menu', array( $this, 'add_plugin_admin_menu' ) );
+    // Register the options page settings.
+    add_action( 'admin_init', array( $this, 'register_plugin_admin_settings' ) );
+    // Add the error and success messages
+    add_action( 'admin_notices', array( $this, 'plugin_admin_notices' ) );
+
+
 
 		// Add an action link pointing to the options page.
 		$plugin_basename = plugin_basename( plugin_dir_path( __DIR__ ) . $this->plugin_slug . '.php' );
@@ -127,7 +133,15 @@ class Adverts_Admin {
 	 *
 	 * @return    null    Return early if no settings page is registered.
 	 */
-	public function enqueue_admin_scripts() {
+	public function enqueue_admin_scripts( $hook ) {
+
+    global $post;
+
+    if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
+        if ( 'adverts' === $post->post_type ) {
+          wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+        }
+    }
 
 		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
 			return;
@@ -135,7 +149,15 @@ class Adverts_Admin {
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+      wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+
+      wp_enqueue_script('uploads');
+      if ( function_exists('wp_enqueue_media') ) {
+      // this enqueues all the media upload stuff
+        wp_enqueue_media();
+      }
+
 		}
 
 	}
@@ -177,6 +199,25 @@ class Adverts_Admin {
 	public function display_plugin_admin_page() {
 		include_once( 'views/admin.php' );
 	}
+
+  /**
+   * Register the settings
+   *
+   * @since   0.2.0
+   */
+  function register_plugin_admin_settings() {
+      //this will save the option in the wp_options table as 'wpse61431_settings'
+      //the third parameter is a function that will validate your input values
+      register_setting('adverts-settings', 'adverts-settings');
+  }
+
+  /**
+   * Display the validation errors and update message
+   */
+
+    function plugin_admin_notices() {
+      settings_errors();
+    }
 
 	/**
 	 * Add settings action link to the plugins page.
@@ -231,16 +272,44 @@ class Adverts_Admin {
 		global $post;
 
     $custom         = get_post_custom($post->ID);
-    $download_id    = get_post_meta($post->ID, 'document_file_id', true);
+    $build_guide    = get_post_meta($post->ID, '_build_guide', true);
 
-    echo '<p><label for="document_file">Upload document:</label><br />';
-    echo '<input type="file" name="document_file" id="document_file" /></p>';
+    echo '<p id="new-setting">';
+
+    if( !empty($build_guide) ) {
+      $attachment_id = (int) $build_guide;
+      $image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+      echo $image_attributes;
+    }
+
+    echo '<input id="file-id" type="hidden" name="_build_guide" value="' . $build_guide . '">';
     echo '</p>';
 
-    if(!empty($download_id) && $download_id != '0') {
-        echo '<p><a href="' . wp_get_attachment_url($download_id) . '">
-            View document</a></p>';
+    echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
+    if( !empty($build_guide) ) {
+      echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
     }
+    echo '</p>';
+
+    /**
+     *
+     */
+
+    $build_guide_disabled = get_post_meta($post->ID, '_build_guide_disabled', true);
+
+    function isDisabled( $build_guide_disabled ) {
+
+      if( $build_guide_disabled != true ) {
+        return;
+      }
+
+      return "checked";
+
+    }
+
+    echo '<p><label for="_build_guide_disabled">Disable build guides for this advert: </label>';
+    echo '<input type="checkbox" name="_build_guide_disabled" id="_build_guide_disabled" value="true" ' . isDisabled( $build_guide_disabled ) . ' /></p>';
+    echo '</p>';
 
   }
 
@@ -266,33 +335,45 @@ class Adverts_Admin {
 	        }
 	    }
 
-	    if(!empty($_FILES['document_file'])) {
-	        $file   = $_FILES['document_file'];
-	        $upload = wp_handle_upload($file, array('test_form' => false));
-	        if(!isset($upload['error']) && isset($upload['file'])) {
-	            $filetype   = wp_check_filetype(basename($upload['file']), null);
-	            $title      = $file['name'];
-	            $ext        = strrchr($title, '.');
-	            $title      = ($ext !== false) ? substr($title, 0, -strlen($ext)) : $title;
-	            $attachment = array(
-	                'post_mime_type'    => $filetype['type'],
-	                'post_title'        => addslashes($title),
-	                'post_content'      => '',
-	                'post_status'       => 'inherit',
-	                'post_parent'       => $post->ID
-	            );
+	    // Save local Build Guide
+      $new_build_guide = ( isset( $_POST[ '_build_guide' ] ) ? $_POST[ '_build_guide' ] : '' );
 
-	            $attach_key = 'document_file_id';
-	            $attach_id  = wp_insert_attachment($attachment, $upload['file']);
-	            $existing_download = (int) get_post_meta($post->ID, $attach_key, true);
+      $key_build_guide = '_build_guide';
 
-	            if(is_numeric($existing_download)) {
-	                wp_delete_attachment($existing_download);
-	            }
+      $value_build_guide = get_post_meta( $post_id, $key_build_guide, true );
 
-	            update_post_meta($post->ID, $attach_key, $attach_id);
-	        }
-	    }
+      /* If a new meta value was added and there was no previous value, add it. */
+      if ( $new_build_guide && '' == $value_build_guide ) {
+        add_post_meta( $post_id, $key_build_guide, $new_build_guide, true );
+      }
+      /* If the new meta value does not match the old value, update it. */
+      elseif ( $new_build_guide && $new_build_guide != $value_build_guide ) {
+        update_post_meta( $post_id, $key_build_guide, $new_build_guide );
+      }
+      /* If there is no new meta value but an old value exists, delete it. */
+      elseif ( '' == $new_build_guide && $value_build_guide ) {
+        delete_post_meta( $post_id, $key_build_guide, $value_build_guide );
+      }
+
+      // Save Build Guide disabled option
+      $new_build_guide_option = ( isset( $_POST[ '_build_guide_disabled' ] ) ? $_POST[ '_build_guide_disabled' ] : '' );
+
+      $key_build_guide_option = '_build_guide_disabled';
+
+      $value_build_guide_option = get_post_meta( $post_id, $key_build_guide_option, true );
+
+      /* If a new meta value was added and there was no previous value, add it. */
+      if ( $new_build_guide_option && '' == $value_build_guide_option ) {
+        add_post_meta( $post_id, $key_build_guide_option, $new_build_guide_option, true );
+      }
+      /* If the new meta value does not match the old value, update it. */
+      elseif ( $new_build_guide_option && $new_build_guide_option != $value_build_guide_option ) {
+        update_post_meta( $post_id, $key_build_guide_option, $new_build_guide_option );
+      }
+      /* If there is no new meta value but an old value exists, delete it. */
+      elseif ( '' == $new_build_guide_option && $value_build_guide_option ) {
+        delete_post_meta( $post_id, $key_build_guide_option, $value_build_guide_option );
+      }
 
 	}
 
