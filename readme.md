@@ -38,9 +38,9 @@ To update the version of wordpress:
 
 ```
 cd system
-git checkout master
 git fetch origin --tags
-git checkout -b x.x.x
+# Due to issues we need to checkout the SHA of the latest tag
+git checkout #SHA
 cd ..
 git add system
 git commit -m "Updates WordPress to x.x.x"
