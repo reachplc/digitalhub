@@ -53,7 +53,7 @@ function get_example_video($custom) {
 
   global $post;
   $_example_limit = 3;
-  $_formats = array('mp4', 'webm', 'ogg');
+  $_formats = array( 'mp4', 'webm' );
 
   // Build each example
   for ($i = 1; $i <= $_example_limit; $i++) {
@@ -82,12 +82,6 @@ function get_example_video($custom) {
       };
 
       unset($value);
-
-      // Output Flash
-      if(!empty($custom['_example_' . $i . '_url_flv'][0])) {
-        $_example_flv = urldecode( $custom['_example_' . $i . '_url_flv'][0] );
-        echo '<!-- ' . $_example_flv . '-->';
-      };
 
       echo '<div class="alert alert--message alert--info"><p><strong>Video Not Available.</strong> The browser you are using does not support HTML5 video. Please try viewing this page in an updated browser.</p></div>';
       echo '</video>';

@@ -412,7 +412,7 @@ class Adverts_Admin {
     global $post;
     $example_limit = 3;
     /* Formats allowed */
-    $_formats = array('mp4', 'webm', 'ogg', 'flv');
+    $_formats = array( 'mp4', 'webm' );
     $custom         = get_post_custom($post->ID);
 
 
@@ -481,7 +481,7 @@ class Adverts_Admin {
     for ($i = 1; $i <= $example_limit; $i++) {
 
       /* Formats allowed */
-      $_formats = array('mp4', 'webm', 'ogg', 'flv');
+      $_formats = array( 'mp4', 'webm' );
 
       // Preview image
 
