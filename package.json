@@ -1,6 +1,6 @@
 {
   "name": "digitalhub",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "description": "Site for the Trinity Mirror Digital Hub site.",
   "author": "Trinity Mirror Creative",
@@ -14,13 +14,38 @@
   "scripts": {
     "dev": "grunt dev",
     "test": "grunt test --verbose"
-  },
-  "devDependencies": {
+  }
+ ,"devDependencies": {
     "grunt": "0.4.x",
     "grunt-contrib-less": "0.7.x",
     "grunt-contrib-watch": "0.5.x",
     "grunt-contrib-jshint": "0.6.x",
     "grunt-contrib-csslint": "0.1.x",
     "grunt-htmlhint": "0.4.x"
+  }
+ ,"main": "gruntfile.js"
+ ,"dependencies": {
+    "grunt": "0.4.x"
+  }
+ ,"devDependencies": {
+    "grunt-contrib-watch": "0.6.x"
+   ,"grunt-contrib-less": "0.11.x"
+   ,"grunt-autoprefixer": "1.0.x"
+   ,"grunt-contrib-imagemin": "0.8.x"
+   ,"grunt-contrib-csslint": "0.3.x"
+   ,"grunt-contrib-jshint": "0.10.x"
+   ,"grunt-htmlhint": "0.4.x"
+   ,"grunt-css-metrics": "0.1.x"
+   ,"grunt-phplint": "0.0.x"
+  }
+ ,"scripts": {
+    "test": "grunt test"
+  }
+ ,"repository": {
+    "type": "git"
+   ,"url": "https://github.com/trinitymirror/digitalhub.git"
+  }
+ ,"bugs": {
+    "url": "https://github.com/trinitymirror/digitalhub/issues"
   }
 }
