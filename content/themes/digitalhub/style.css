@@ -1653,6 +1653,11 @@ textarea {
   margin-top: -50px;
 }
 
+.packages-image--pinpoint {
+  background-image: url(images/pinpoint.png);
+  margin-top: -60px;
+}
+
 /* Align background images to the left */
 .packages__img:nth-child(2n+1) > .packages-image {
   background-position: left bottom;
