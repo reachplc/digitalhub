@@ -138,14 +138,11 @@ class Adverts_Admin {
     global $post;
 
     if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
-        if ( 'adverts' === $post->post_type ) {
-          wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
-        }
+      if ( 'adverts' === $post->post_type ) {
+        wp_enqueue_script( $this->plugin_slug . '-examples-script', plugins_url( 'assets/js/examples.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+        wp_enqueue_script( $this->plugin_slug . '-build-guide-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
+      }
     }
-
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
 
 		$screen = get_current_screen();
 		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
@@ -159,6 +156,10 @@ class Adverts_Admin {
       }
 
 		}
+
+    if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
+      return;
+    }
 
 	}
 
@@ -407,47 +408,7 @@ class Adverts_Admin {
    */
   public function adverts_inner_example_box( $post ) {
 
-    wp_nonce_field( 'example_inner_build_guide_box', 'example_inner_build_guide_box_nonce' );
-
-    global $post;
-    $example_limit = 3;
-    /* Formats allowed */
-    $_formats = array( 'mp4', 'webm' );
-    $custom         = get_post_custom($post->ID);
-
-
-
-    for ($i = 1; $i <= $example_limit; $i++) {
-
-      $example_preview = get_post_meta($post->ID, '_example_' . $i .'_url_preview', true);
-      $example_video = get_post_meta($post->ID, '_example_' . $i .'_url_video', true);
-
-      echo '<fieldset>';
-      echo '<legend>Example ' . $i .' URL:</legend>';
-
-      //  Add preview image field
-      echo '<p>';
-      echo '<label for="_example_' . $i .'_url_preview">Preview: </label><br>';
-      echo '<input type="text" name="_example_' . $i .'_url_preview" placeholder="http://example.net/preview-image.png" value="' . urldecode($example_preview) . '">';
-      echo '</p>';
-      echo '<p>';
-      echo '<label for="_example_' . $i .'_url_video">Video Placeholder: </label><br>';
-      echo '<input type="text" name="_example_' . $i .'_url_video" placeholder="http://example.net/video-image.png" value="' . urldecode($example_video) . '">';
-      echo '</p>';
-
-      foreach ($_formats as $value) {
-        // Get current value
-        $example_value    = get_post_meta($post->ID, '_example_'. $i . '_url_' . $value, true);
-        echo '<p>';
-        echo '<label for="_example_' . $i .'_url_' . $value . '">'. $value .'</label><br>';
-        echo '<input type="text" name="_example_' . $i .'_url_' . $value . '" id="example_' . $i .'_url_' . $value . '" placeholder="http://example.net/video.' . $value . '" value="' . urldecode($example_value) . '">';
-        echo '</p>';
-      }
-
-      unset($value);
-
-      echo '</fieldset>';
-    }
+    require_once plugin_dir_path( __FILE__ ) . 'includes/adverts_example_meta_display.php' ;
 
   }
 
@@ -478,13 +439,33 @@ class Adverts_Admin {
       }
     }
 
+    // Add place holder image to the database
+    $thumbnail_meta_check = ( isset( $_POST[ '_example_thumbnail'] ) ? urlencode( $_POST[ '_example_thumbnail'] ) : '' );
+
+    $thumbnail_meta_key = '_example_thumbnail' ;
+
+    $thumbnail_meta_value = get_post_meta( $post_id, $thumbnail_meta_key, true );
+
+    /* If a new meta value was added and there was no previous value, add it. */
+    if ( $thumbnail_meta_check && '' == $thumbnail_meta_value ) {
+      add_post_meta( $post_id, $thumbnail_meta_key, $thumbnail_meta_check, true );
+    }
+    /* If the new meta value does not match the old value, update it. */
+    elseif ( $thumbnail_meta_check && $thumbnail_meta_check != $thumbnail_meta_value ) {
+      update_post_meta( $post_id, $thumbnail_meta_key, $thumbnail_meta_check );
+    }
+    /* If there is no new meta value but an old value exists, delete it. */
+    elseif ( '' == $thumbnail_meta_check && $thumbnail_meta_value ) {
+      delete_post_meta( $post_id, $thumbnail_meta_key, $thumbnail_meta_check );
+    }
+
     for ($i = 1; $i <= $example_limit; $i++) {
 
       /* Formats allowed */
       $_formats = array( 'mp4', 'webm' );
 
       // Preview image
-
+      // To be depreciated in 0.3.0
       $placeholder_meta_value = ( isset( $_POST[ '_example_' . $i .'_url_preview' ] ) ? urlencode( $_POST[ '_example_' . $i .'_url_preview' ] ) : '' );
 
         $meta_key = '_example_' . $i .'_url_preview' ;

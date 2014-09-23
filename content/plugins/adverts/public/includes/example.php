@@ -66,7 +66,15 @@ function get_example_video($custom) {
         echo' hidden';
       };
       echo '" data-example="' . $i . '">';
-      $_example_video = urldecode( $custom['_example_' . $i . '_url_video'][0] );
+      // This makes our thumbnail image backwards compatible with 0.1.0
+      if( !isset( $custom['_example_thumbnail'][0] ) ) {
+        $_example_video = urldecode( $custom['_example_' . $i . '_url_video'][0] );
+      } else {
+      // Version 0.2.0
+        $_example_video = wp_get_attachment_url( $custom['_example_thumbnail'][0] );
+      }
+
+
       echo '<div class="video-wrap">';
 
       echo '<canvas width="634" height="355"></canvas>';
