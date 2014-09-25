@@ -60,12 +60,12 @@
 
       echo '<p>';
       echo '<label for="_example_' . $i .'_url_preview">Preview: </label><br>';
-      echo '<input type="text" name="_example_' . $i .'_url_preview" placeholder="http://example.net/preview-image.png" value="' . urldecode($example_preview) . '">';
+      echo '<input type="text" name="_example_' . $i .'_url_preview" placeholder="http://example.net/preview-image.png" value="' . urldecode($example_preview) . '" disabled>';
       echo '</p>';
       // To be depreciated in 0.3.0
       echo '<p>';
       echo '<label for="_example_' . $i .'_url_video">Video Placeholder: </label><br>';
-      echo '<input type="text" name="_example_' . $i .'_url_video" placeholder="http://example.net/video-image.png" value="' . urldecode($example_video) . '">';
+      echo '<input type="text" name="_example_' . $i .'_url_video" placeholder="http://example.net/video-image.png" value="' . urldecode($example_video) . '" disabled>';
       echo '</p>';
 
       foreach ($_formats as $value) {
@@ -73,7 +73,7 @@
         $example_value    = get_post_meta($post->ID, '_example_'. $i . '_url_' . $value, true);
         echo '<p>';
         echo '<label for="_example_' . $i .'_url_' . $value . '">'. $value .'</label><br>';
-        echo '<input type="text" name="_example_' . $i .'_url_' . $value . '" id="example_' . $i .'_url_' . $value . '" placeholder="http://example.net/video.' . $value . '" value="' . urldecode($example_value) . '">';
+        echo '<input type="text" name="_example_' . $i .'_url_' . $value . '" id="example_' . $i .'_url_' . $value . '" placeholder="http://example.net/video.' . $value . '" value="' . urldecode($example_value) . '" disabled>';
         echo '</p>';
       }
 
