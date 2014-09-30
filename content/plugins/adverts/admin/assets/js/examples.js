@@ -78,7 +78,7 @@ if ( undefined !== file_frame ) {
               })
               .appendTo( $( output ).closest('.js-example-item').find( '.js-preview-thumbnail' ) );
 
-    if ( output == 'thumbnail') {
+    if ( $(output).is( '.js-data-thumbnail' ) ) {
     // Next, hide the anchor responsible for allowing the user to select an image
     $( '#js-add-thumbnail' )
         .hide();
@@ -87,7 +87,7 @@ if ( undefined !== file_frame ) {
         .show();
     }
 
-    if ( output.is( '#js-data-item' ) ) {
+    if ( $(output).is( '#js-data-item' ) ) {
 
         var $_container = output.closest('.js-example-item');
 
@@ -166,7 +166,7 @@ function addVideo ( $ ) {
       // Stop the default behaviour
       e.preventDefault();
       // Display the media uploader
-      renderMediaUploader( $, '#js-add-thumbnail' );
+      renderMediaUploader( $, '.js-data-thumbnail' );
     });
 
     $( '#js-example-holder' ).on( 'click', '#js-add-image', function( e ){
@@ -183,7 +183,7 @@ function addVideo ( $ ) {
       // Stop the default behaviour
       e.preventDefault();
       // Remove image
-      $( '#js-preview-thumbnail' )
+      $( '.js-preview-thumbnail' )
         .children( 'img' )
             .remove();
       // Remove id from hidden field

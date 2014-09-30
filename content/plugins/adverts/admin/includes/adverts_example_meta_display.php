@@ -27,7 +27,7 @@
     }
 
     echo '</div>'
-        .'<input id="js-data-thumbnail" name="_example_thumbnail" type="hidden">';
+        .'<input id="js-data-thumbnail" class="js-data-thumbnail" name="_example_thumbnail" type="hidden">';
 
     if( !empty( $example_thumbnail ) ) {
 
