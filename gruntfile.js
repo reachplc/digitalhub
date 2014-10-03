@@ -95,29 +95,43 @@ module.exports = function(grunt) {
 
    ,jshint: {
       options: {
-        browser: true
-       ,curly: true
+        curly: true
        ,eqeqeq: true
        ,eqnull: true
-       ,indent: 2
-       ,laxbreak: true
-       ,laxcomma: true
+       ,expr: true
+       ,immed: true
+       ,noarg: true
        ,quotmark: 'single'
+       ,smarttabs: true
        ,trailing: true
        ,undef: true
+       ,unused: true
+
+       ,browser: true
        ,globals: {
           console: true
-         ,module: true
-         ,jQuery: true
+         ,jQuery: false
          ,'wp': false
         }
-      },
-      src: ['gruntfile.js','<%= dir.theme %>/**/*.js']
+      }
+     ,src: ['<%= dir.theme %>/js/*.js']
+     ,grunt: {
+        options: {
+          indent: 2
+         ,laxbreak: true
+         ,laxcomma: true
+         ,globals: {
+            module: true
+           ,node: true
+          }
+        }
+       ,src: ['gruntfile.js']
+     }
     }
 
    ,phplint: {
-      theme: ['<%= dir.theme %>/**/*.php']
-  //   ,plugin: ['<%= dir.plugin %>/**/*.php']
+      themes: ['<%= dir.theme %>/**/*.php']
+     ,plugins: ['<%= dir.plugin %>/**/*.php']
     }
 
   // Optimise
