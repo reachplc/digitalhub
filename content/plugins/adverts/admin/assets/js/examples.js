@@ -164,7 +164,7 @@ function addImage ( $ ) {
                     + '<button id="js-remove-image" class="button-secondary" style="display: none;">Remove Image</button>'
                     + '<div class="js-preview-thumbnail"></div>'
                     + '</fieldset></div>';
-  $( '#js-example-holder' ).append( imageTemplate );
+  $( '.js-example-holder' ).append( imageTemplate );
 }
 
 // Video
@@ -172,9 +172,9 @@ function addImage ( $ ) {
 function addVideo ( $ ) {
   var imageTemplate = '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Item</h4>'
                     + '<button class="js-example-remove">Remove Example</button>'
-                    + '<input class="js-data-placeholder" name="_example_item[][placeholder]" type="text">'
-                    + '<input class="js-data-mp4" name="_example_item[][mp4]" type="text">'
-                    + '<input class="js-data-webm" name="_example_item[][webm]" type="text">'
+                    + '<input class="js-data-placeholder" name="_example_item[][video][placeholder]" type="text">'
+                    + '<input class="js-data-mp4" name="_example_item[][video][mp4]" type="text">'
+                    + '<input class="js-data-webm" name="_example_item[][video][webm]" type="text">'
                     + '<div class="js-preview-thumbnail"></div>'
                     + '<p><button class="js-add-placeholder button-secondary">Add Placeholder</button>'
                     + '<button class="js-remove-placeholder button-secondary" style="display: none;">Remove Placeholder</button>'
@@ -184,16 +184,89 @@ function addVideo ( $ ) {
                     + '<button class="js-remove-webm button-secondary" style="display: none;">Remove WebM</button>'
                     + '</p>'
                     + '</fieldset></div>';
-  $( '#js-example-holder' ).append( imageTemplate );
+  $( '.js-example-holder' ).append( imageTemplate );
 }
 
-/* Logic */
+
 
 (function ( $ ) {
   "use strict";
 
-  jQuery( document ).ready( function( $ ) {
+  function sortExamples(container) {
 
+    // Loop through all items
+    $( '.js-example-holder' ).find('.js-example-item').each(function( index ) {
+
+      var _entryCounter = index,
+          _entry = $(this).find('input').each(function( index ) {
+
+            // Update the inputs name with the example number
+
+            if( $(this).is('[name$="][video][placeholder]"]') ) {
+              $(this).attr('name', '_example_item['+ _entryCounter +'][video][placeholder]');
+              return;
+            }
+
+            if( $(this).is('[name$="][video][mp4]"]') ) {
+              $(this).attr('name', '_example_item['+ _entryCounter +'][video][mp4]');
+              return;
+            }
+
+            if( $(this).is('[name$="][video][webm]"]') ) {
+              $(this).attr('name', '_example_item['+ _entryCounter +'][video][webm]');
+              return;
+            }
+
+            if( $(this).is('[name$="][image][placeholder]"]') ) {
+              $(this).attr('name', '_example_item['+ _entryCounter +'][image][placeholder]');
+              return;
+            }
+
+          });
+
+
+    });
+
+    //console.log('list', list);
+
+
+    //console.log(  );
+    // Loop through all `tr`'s inside table
+    /*$(table + ' tr').each(function(index) {
+
+      var _entry = $(this).children('td');
+
+      // Find `input` fields inside `td`
+      _entry.find('input').each(function() {
+
+        var _input = $(this);
+
+        // Add index number to this entry's input
+        if( _input.hasClass("customTitle") ) {
+          var updateName = _input.attr('name', '_custom-meta[' + index + '][title]');
+        }
+
+      });
+
+      // Find `textarea` fields inside `td`
+      _entry.find('textarea').each(function() {
+
+        var _textarea = $(this);
+
+        // Add index number to this entry's textarea
+        if( _textarea.hasClass("customContent") ) {
+          var updateName = _textarea.attr('name', '_custom-meta[' + index + '][content]');
+        }
+
+      });
+
+    });*/
+
+  }
+
+/* Logic */
+
+  jQuery( document ).ready( function( $ ) {
     // Add event listener to call media uploader
     $( '#js-add-thumbnail' ).on( 'click', function( e ){
       // Stop the default behaviour
@@ -202,7 +275,7 @@ function addVideo ( $ ) {
       renderMediaUploader( $, '.js-data-thumbnail' );
     });
 
-    $( '#js-example-holder' ).on( 'click', '#js-add-image', function( e ){
+    $( '.js-example-holder' ).on( 'click', '#js-add-image', function( e ){
       // Stop the default behaviour
       e.preventDefault();
       var field = $(this).closest('.js-example-item')
@@ -233,17 +306,17 @@ function addVideo ( $ ) {
     });
 
     // Add event listener to remove example
-    $( '#js-example-holder' ).on( 'click', '.js-example-remove', function( e ) {
+    $( '.js-example-holder' ).on( 'click', '.js-example-remove', function( e ) {
 
       e.preventDefault();
 
       var $_container = $(this).closest('.js-example-item');
       $_container.remove();
-
+      sortExamples( '.js-example-holder' );
     });
 
     // Add event listener to remove image
-    $( '#js-example-holder' ).on( 'click', '#js-remove-image', function( e ){
+    $( '.js-example-holder' ).on( 'click', '#js-remove-image', function( e ){
       // Stop the default behaviour
       e.preventDefault();
 
@@ -253,12 +326,13 @@ function addVideo ( $ ) {
       $_container.find( 'img' ).remove();
       $_container.find('#js-remove-image').hide();
       $_container.find('#js-add-image').show();
+      sortExamples( '.js-example-holder' );
 
     });
 
     // Add event listener for video placeholder
 
-    $( '#js-example-holder' ).on( 'click', '.js-add-placeholder', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-add-placeholder', function( e ){
       // Stop the default behaviour
       e.preventDefault();
       // Get the input field to add the media id
@@ -270,7 +344,7 @@ function addVideo ( $ ) {
     });
 
     // Add event listener to remove image
-    $( '#js-example-holder' ).on( 'click', '.js-remove-placeholder', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-remove-placeholder', function( e ){
       // Stop the default behaviour
       e.preventDefault();
 
@@ -285,7 +359,7 @@ function addVideo ( $ ) {
 
     // Add event listener for mp4
 
-    $( '#js-example-holder' ).on( 'click', '.js-add-mp4', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-add-mp4', function( e ){
       // Stop the default behaviour
       e.preventDefault();
       // Get the input field to add the media id
@@ -297,7 +371,7 @@ function addVideo ( $ ) {
     });
 
     // Add event listener to remove mp4
-    $( '#js-example-holder' ).on( 'click', '.js-remove-mp4', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-remove-mp4', function( e ){
       // Stop the default behaviour
       e.preventDefault();
 
@@ -311,7 +385,7 @@ function addVideo ( $ ) {
 
     // Add event listener for webm
 
-    $( '#js-example-holder' ).on( 'click', '.js-add-webm', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-add-webm', function( e ){
       // Stop the default behaviour
       e.preventDefault();
       // Get the input field to add the media id
@@ -323,7 +397,7 @@ function addVideo ( $ ) {
     });
 
     // Add event listener to remove webm
-    $( '#js-example-holder' ).on( 'click', '.js-remove-webm', function( e ){
+    $( '.js-example-holder' ).on( 'click', '.js-remove-webm', function( e ){
       // Stop the default behaviour
       e.preventDefault();
 
@@ -342,11 +416,13 @@ function addVideo ( $ ) {
     $( '#js-new-image' ).on( 'click', function( e ) {
       e.preventDefault( );
       addImage( $ );
+      sortExamples( '.js-example-holder' );
     });
 
     $( '#js-new-video' ).on( 'click', function( e ) {
       e.preventDefault( );
       addVideo( $ );
+      sortExamples( '.js-example-holder' );
     });
 
   });

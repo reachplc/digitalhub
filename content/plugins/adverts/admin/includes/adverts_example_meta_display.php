@@ -16,7 +16,8 @@
     // Get thumbnail meta data
     $example_thumbnail = get_post_meta($post->ID, '_example_thumbnail', true);
 
-    echo '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Thumbnail</h4>'
+    echo '<div class="example">'
+        .'<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Thumbnail</h4>'
         .'<div><p>Add a thumbnail image. This will be the first image displayed for the advert.</p></div>'
         .'<div class="js-preview-thumbnail">';
 
@@ -44,13 +45,7 @@
     echo '<button id="js-new-video">New Video</button>';
 
     // container for all examples
-    echo '<div id="js-example-holder"></div>';
-
-    echo '<div><h4>Image</h4><button>Add Image</button></div>';
-
-    echo '<div><h4>Video</h4>';
-
-    echo '</div>';
+    echo '<div class="js-example-holder"></div>';
 
 
     for ($i = 1; $i <= $example_limit; $i++) {
@@ -84,3 +79,5 @@
 
       echo '</fieldset>';
     }
+
+    echo '</div>';
