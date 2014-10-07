@@ -15,6 +15,8 @@
 
     // Get thumbnail meta data
     $example_thumbnail = get_post_meta($post->ID, '_example_thumbnail', true);
+    // Get item meta data
+    $example_item = json_decode( get_post_meta($post->ID, '_example_item', true) );
 
     echo '<div class="example">'
         .'<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Thumbnail</h4>'
@@ -45,8 +47,86 @@
     echo '<button id="js-new-video">New Video</button>';
 
     // container for all examples
-    echo '<div class="js-example-holder"></div>';
+    echo '<div class="js-example-holder">';
 
+    if( isset( $example_item ) ){
+
+      foreach ( $example_item as $key=>$item ) {
+
+        // Fill video template
+        if( isset( $item->video ) ){
+          echo '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Item</h4>';
+          echo '<button class="js-example-remove">Remove Example</button>';
+          echo '<input class="js-data-placeholder" name="_example_item['. $key .'][video][placeholder]" type="hidden" value="' . $item->video->placeholder . '">';
+          echo '<input class="js-data-mp4" name="_example_item['. $key .'][video][mp4]" type="hidden" value="' . $item->video->mp4 . '">';
+          echo '<input class="js-data-webm" name="_example_item['. $key .'][video][webm]" type="hidden" value="' . $item->video->webm . '">';
+          echo '<div class="js-preview-thumbnail">';
+          if( !empty( $item->video->placeholder ) ) {
+            $attachment_id = (int) $item->video->placeholder;
+            $image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+            echo $image_attributes;
+          }
+          echo '</div>';
+
+          // Check for placeholder
+
+          echo '<p>';
+          echo '<button class="js-add-placeholder button-secondary"';
+          if( !empty( $item->video->placeholder ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Add Placeholder</button>';
+          echo '<button class="js-remove-placeholder button-secondary"';
+          if( empty( $item->video->placeholder ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Remove Placeholder</button>';
+          echo '<button class="js-add-mp4 button-secondary"';
+          if( !empty( $item->video->mp4 ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Add MP4</button>';
+          echo '<button class="js-remove-mp4 button-secondary"';
+          if( empty( $item->video->mp4 ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Remove MP4</button>';
+          echo '<button class="js-add-webm button-secondary"';
+          if( !empty( $item->video->webm ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Add WebM</button>';
+          echo '<button class="js-remove-webm button-secondary"';
+          if( empty( $item->video->webm ) ){
+            echo ' style="display: none;"';
+          }
+          echo '>Remove WebM</button>';
+          echo '</p>';
+          echo '</fieldset></div>';
+        }
+        // Fill image template
+        else if ( isset( $item->image ) ){
+          echo '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Item</h4>';
+          echo '<button class="js-example-remove">Remove Example</button>';
+          echo '<input id="js-data-item" class="js-data-image" name="_example_item['. $key .'][image][placeholder]" type="hidden" value="' . $item->image->placeholder . '">';
+          echo '<p><button id="js-add-image" class="button-secondary" style="display: none;">Add Image</button>';
+          echo '<button id="js-remove-image" class="button-secondary">Remove Image</button>';
+          echo '<div class="js-preview-thumbnail">';
+          if( !empty( $item->image->placeholder ) ) {
+            $attachment_id = (int) $item->image->placeholder;
+            $image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
+            echo $image_attributes;
+          }
+          echo '</div>';
+          echo '</fieldset></div>';
+        }
+
+      }
+
+
+      echo '</div>';
+
+    }
 
     for ($i = 1; $i <= $example_limit; $i++) {
 
