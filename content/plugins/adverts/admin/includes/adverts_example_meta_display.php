@@ -30,8 +30,7 @@
     }
 
     echo '</div>'
-        .'<input id="js-data-thumbnail" class="js-data-thumbnail" name="_example_thumbnail" type="hidden">';
-
+        .'<input id="js-data-thumbnail" class="js-data-thumbnail" name="_example_thumbnail" type="hidden" value="' . $example_thumbnail . '">';
     if( !empty( $example_thumbnail ) ) {
 
       echo '<p><button id="js-add-thumbnail" class="button-secondary" style="display: none;">Add Thumbnail</button>'
