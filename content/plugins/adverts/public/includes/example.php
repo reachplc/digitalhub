@@ -8,7 +8,23 @@
 
 function is_example() {
 
-  return true;
+  global $post;
+  // Get item meta data
+  $example_item = json_decode( get_post_meta($post->ID, '_example_item', TRUE ) );
+  $old_example_items = get_post_meta( $post->ID, '_example_1_url_video', TRUE );
+
+  // Test for examples
+  if ( isset( $example_item ) ) {
+    return true;
+  }
+
+  // Test for old examples
+  if ( isset( $old_example_items ) ) {
+    return true;
+  }
+
+  // No build guide found
+  return false;
 
 }
 
@@ -23,24 +39,61 @@ function is_example() {
  * Get all preview images
  */
 
-function get_example_preview($custom) {
+function get_example_preview() {
 
+  global $post;
   $_example_limit = 3;
+  $custom = get_post_custom( $post->ID );
+  // Get item meta data
+  $example_item = json_decode( get_post_meta($post->ID, '_example_item', TRUE ) );
+  $old_example_items = get_post_meta( $post->ID, '_example_1_url_video', TRUE );
 
-  // Build each example
-  for ($i = 1; $i <= $_example_limit; $i++) {
+  if ( isset( $example_item ) ) {
+    //print_r($example_item);
 
-    if(!empty($custom['_example_' . $i . '_url_preview']) && $custom['_example_' . $i . '_url_preview'][0] != '0') {
+    // Loop all examples
+    foreach ( $example_item as $key=>$item ) {
 
-      $_example_preview = urldecode( $custom['_example_' . $i . '_url_preview'][0] );
 
-    echo '<li class="js-example-preview';
-    if ($i == 1){echo ' example__preview--selected';}
-    echo '"><span class="sprite sprite--play icon icon__overlay';
-    if ($i == 1){echo ' hidden';}
-    echo '"></span><img class="example__preview--image" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
+      if( !empty( $item->image->placeholder ) ) {
+        echo '<li class="js-example-preview';
+        if ($key == 0){echo ' example__preview--selected';}
+        echo '"><span class="sprite sprite--play icon icon__overlay';
+        if ($key == 0){echo ' hidden';}
+        echo '"></span>';
+        echo '<img class="example__preview--image" data-example="' . $key . '" src="' . wp_get_attachment_url( $item->image->placeholder ) . '">';
+        echo '</li>';
+      }
+
+      if( !empty( $item->video->placeholder ) ) {
+        echo '<li class="js-example-preview';
+        if ($key == 0){echo ' example__preview--selected';}
+        echo '"><span class="sprite sprite--play icon icon__overlay';
+        if ($key == 0){echo ' hidden';}
+        echo '"></span>';
+        echo '<img class="example__preview--image" data-example="' . $key . '" src="' . wp_get_attachment_url( $item->video->placeholder ) . '">';
+        echo '</li>';
+      }
+
     }
+  }
 
+  if ( isset( $old_example_items ) ) {
+    // Build each old example
+    for ($i = 1; $i <= $_example_limit; $i++) {
+
+      if(!empty($custom['_example_' . $i . '_url_preview']) && $custom['_example_' . $i . '_url_preview'][0] != '0') {
+
+        $_example_preview = urldecode( $custom['_example_' . $i . '_url_preview'][0] );
+
+      echo '<li class="js-example-preview';
+      if ($i == 1){echo ' example__preview--selected';}
+      echo '"><span class="sprite sprite--play icon icon__overlay';
+      if ($i == 1){echo ' hidden';}
+      echo '"></span><img class="example__preview--image" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
+      }
+
+    }
   }
 
 }
