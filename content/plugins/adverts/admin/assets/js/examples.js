@@ -100,6 +100,12 @@ if ( undefined !== file_frame ) {
 
     }
 
+    if( $(output).is( '.js-data-image-thumbnail' ) ) {
+      var $_container = output.closest('.js-example-item');
+      $_container.find('#js-remove-image-thumbnail').show();
+      $_container.find('#js-add-image-thumbnail').hide();
+    }
+
     if( $(output).is( '.js-data-placeholder' ) ) {
       // Get url to use for preview
       // Build image
@@ -159,9 +165,13 @@ function attach_url ( data ) {
 function addImage ( $ ) {
   var imageTemplate = '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Item</h4>'
                     + '<button class="js-example-remove">Remove Example</button>'
-                    + '<input id="js-data-item" class="js-data-image" name="_example_item[][image][placeholder]" type="text" value="">'
-                    + '<p><button id="js-add-image" class="button-secondary">Add Image</button>'
+                    + '<input id="js-data-item" class="js-data-image" name="_example_item[][image][placeholder]" type="hidden" value="">'
+                    + '<input class="js-data-image-thumbnail" name="_example_item[][image][thumbnail]" type="hidden" value="">'
+                    + '<p>'
+                    + '<button id="js-add-image" class="button-secondary">Add Placeholder</button>'
                     + '<button id="js-remove-image" class="button-secondary" style="display: none;">Remove Image</button>'
+                    + '<button id="js-add-image-thumbnail" class="button-secondary">Add Image</button>'
+                    + '<button id="js-remove-image-thumbnail" class="button-secondary" style="display: none;">Remove Image</button>'
                     + '<div class="js-preview-thumbnail"></div>'
                     + '</fieldset></div>';
   $( '.js-example-holder' ).append( imageTemplate );
@@ -219,6 +229,11 @@ function addVideo ( $ ) {
 
             if( $(this).is('[name$="][image][placeholder]"]') ) {
               $(this).attr('name', '_example_item['+ _entryCounter +'][image][placeholder]');
+              return;
+            }
+
+            if( $(this).is('[name$="][image][thumbnail]"]') ) {
+              $(this).attr('name', '_example_item['+ _entryCounter +'][image][thumbnail]');
               return;
             }
 
@@ -282,6 +297,29 @@ function addVideo ( $ ) {
           .find( '#js-data-item' );
       // Display the media uploader
       renderMediaUploader( $, field );
+    });
+
+    // Add event listener for image thumbnail
+    $( '.js-example-holder' ).on( 'click', '#js-add-image-thumbnail', function( e ){
+      // Stop the default behaviour
+      e.preventDefault();
+      var field = $(this).closest('.js-example-item')
+                         .find( '.js-data-image-thumbnail' );
+      // Display the media uploader
+      renderMediaUploader( $, field );
+      sortExamples( '.js-example-holder' );
+    });
+
+    // Add event listener to remove image thumbnail
+    $( '.js-example-holder' ).on( 'click', '#js-remove-image-thumbnail', function( e ){
+      // Stop the default behaviour
+      e.preventDefault();
+      var $_container = $(this).closest('.js-example-item');
+      $_container.find( '.js-data-image-thumbnail' )
+                 .val( '' );
+      $_container.find('#js-remove-image-thumbnail').hide();
+      $_container.find('#js-add-image-thumbnail').show();
+      sortExamples( '.js-example-holder' );
     });
 
     // Add event listener to remove thumbnail image

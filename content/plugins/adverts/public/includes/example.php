@@ -42,7 +42,7 @@ function is_example() {
 function get_example_preview() {
 
   global $post;
-  $_example_limit = 3;
+  $_example_limit = 2;
   $custom = get_post_custom( $post->ID );
   // Get item meta data
   $example_item = json_decode( get_post_meta($post->ID, '_example_item', TRUE ) );
@@ -79,19 +79,20 @@ function get_example_preview() {
 
   if ( isset( $old_example_items ) ) {
     // Build each old example
-    for ($i = 1; $i <= $_example_limit; $i++) {
+    for ( $i = 0; $i <= $_example_limit; $i++ ) {
 
-      if(!empty($custom['_example_' . $i . '_url_preview']) && $custom['_example_' . $i . '_url_preview'][0] != '0') {
+      $_temp = ($i + 1);
 
-        $_example_preview = urldecode( $custom['_example_' . $i . '_url_preview'][0] );
+      if( !empty( $custom['_example_' . $_temp . '_url_preview'] ) ) {
+
+      $_example_preview = urldecode( $custom['_example_' . $_temp . '_url_preview'][0] );
 
       echo '<li class="js-example-preview';
-      if ($i == 1){echo ' example__preview--selected';}
+      if ($i == 0){echo ' example__preview--selected';}
       echo '"><span class="sprite sprite--play icon icon__overlay';
-      if ($i == 1){echo ' hidden';}
+      if ($i == 0){echo ' hidden';}
       echo '"></span><img class="example__preview--image" data-example="' . $i . '" src="' .$_example_preview . '"></li>';
       }
-
     }
   }
 
@@ -115,13 +116,13 @@ function get_example_video() {
 
     foreach ( $example_item as $key=>$item ) {
 
-      if( !empty( $item->image ) ) {
+      if( !empty( $item->image->placeholder ) ) {
         echo '<div class="example__video';
         if($key != 0){
           echo' hidden';
         };
         echo '" data-example="' . $key . '">';
-
+        echo '<img class="image__responsive" src="' . wp_get_attachment_url( $item->image->thumbnail ) . '">';
         echo '</div>';
       }
 
@@ -158,25 +159,28 @@ function get_example_video() {
   /* To be depreciated in 0.3.0 */
 
   $old_example_items = get_post_meta( $post->ID, '_example_1_url_video', TRUE );
-  $_example_limit = 3;
+  $_example_limit = 2;
   $_formats = array( 'mp4', 'webm' );
 
   if ( isset( $old_example_items ) ) {
 
     // Build each example
-    for ($i = 1; $i <= $_example_limit; $i++) {
+    for ($i = 0; $i <= $_example_limit; $i++) {
+
+      $_temp = ($i + 1);
+
 
       // Build each video
-      if(!empty($custom['_example_' . $i . '_url_video']) && $custom['_example_' . $i . '_url_video'][0] != '0') {
+      if(!empty($custom['_example_' . $_temp . '_url_video']) && $custom['_example_' . $_temp . '_url_video'][0] != '0') {
 
         echo '<div class="example__video';
-        if($i != 1){
+        if($i != 0){
           echo' hidden';
         };
         echo '" data-example="' . $i . '">';
         // This makes our thumbnail image backwards compatible with 0.1.0
         if( !isset( $custom['_example_thumbnail'][0] ) ) {
-          $_example_video = urldecode( $custom['_example_' . $i . '_url_video'][0] );
+          $_example_video = urldecode( $custom['_example_' . $_temp . '_url_video'][0] );
         } else {
         // Version 0.2.0
           $_example_video = wp_get_attachment_url( $custom['_example_thumbnail'][0] );
@@ -190,8 +194,8 @@ function get_example_video() {
 
         // Return each video if available
         foreach ($_formats as $value) {
-          if(!empty($custom['_example_' . $i . '_url_'.$value][0])) {
-            $_format_type = urldecode( $custom['_example_' . $i . '_url_'.$value][0] );
+          if(!empty($custom['_example_' . $_temp . '_url_'.$value][0])) {
+            $_format_type = urldecode( $custom['_example_' . $_temp . '_url_'.$value][0] );
             echo '<source src="' . $_format_type . '">';
           };
 

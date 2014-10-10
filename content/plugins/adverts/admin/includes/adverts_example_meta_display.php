@@ -105,11 +105,40 @@
         }
         // Fill image template
         else if ( isset( $item->image ) ){
+
           echo '<div class="js-example-item" style="margin-bottom: 2em; padding-bottom: 1em; border-bottom: 1px solid #dedede"><fieldset><h4>Item</h4>';
           echo '<button class="js-example-remove">Remove Example</button>';
-          echo '<input id="js-data-item" class="js-data-image" name="_example_item['. $key .'][image][placeholder]" type="hidden" value="' . $item->image->placeholder . '">';
-          echo '<p><button id="js-add-image" class="button-secondary" style="display: none;">Add Image</button>';
-          echo '<button id="js-remove-image" class="button-secondary">Remove Image</button>';
+          echo '<input id="js-data-item" class="js-data-image" name="_example_item['. $key .'][image][placeholder]" type="hidden" value="';
+          if( !empty( $item->image->placeholder ) ) {
+            echo $item->image->placeholder;
+          }
+          echo '">';
+          echo '<input class="js-data-image-thumbnail" name="_example_item['. $key .'][image][thumbnail]" type="hidden" value="';
+          if( !empty( $item->image->thumbnail ) ) {
+            echo $item->image->thumbnail;
+          }
+          echo '">';
+          echo '<p>';
+          echo '<button id="js-add-image" class="button-secondary"';
+          if( !empty( $item->image->placeholder ) ) {
+            echo ' style="display: none;"';
+          }
+          echo '>Add Placeholder</button>';
+          echo '<button id="js-remove-image" class="button-secondary"';
+          if( empty( $item->image->placeholder ) ) {
+            echo ' style="display: none;"';
+          }
+          echo '>Remove Image</button>';
+          echo '<button id="js-add-image-thumbnail" class="button-secondary"';
+          if( !empty( $item->image->thumbnail ) ) {
+            echo ' style="display: none;"';
+          }
+          echo '>Add Image</button>';
+          echo '<button id="js-remove-image-thumbnail" class="button-secondary"';
+          if( empty( $item->image->thumbnail ) ) {
+            echo ' style="display: none;"';
+          }
+          echo '>Remove Image</button>';
           echo '<div class="js-preview-thumbnail">';
           if( !empty( $item->image->placeholder ) ) {
             $attachment_id = (int) $item->image->placeholder;
