@@ -12,7 +12,7 @@
  * @copyright 2013 Trinity Mirror Creative
  */
 
-  $custom         = get_post_custom();
+	$custom         = get_post_custom();
 
 ?>
 
@@ -21,14 +21,14 @@
   <div id="primary" class="content-area">
     <div id="content" class="site-content" role="main">
 
-      <?php /* The loop */ ?>
-      <?php while ( have_posts() ) : the_post(); ?>
+		<?php /* The loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <header class="entry-header">
     <?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
     <div class="entry-thumbnail">
-      <?php the_post_thumbnail('full'); ?>
+		<?php the_post_thumbnail( 'full' ); ?>
     </div>
     <?php endif; ?>
 
@@ -50,32 +50,32 @@
     <?php endif; ?>
 
 
-      <?php get_example_video($custom); ?>
+		<?php get_example_video( $custom ); ?>
 
-      <?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'twentythirteen' ), '<span class="edit-link">', '</span>' ); ?>
     </div><!-- .entry-meta -->
   </header><!-- .entry-header -->
 
-  <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+	<?php if ( is_search() ) : // Only display Excerpts for Search ?>
   <div class="entry-summary">
     <?php the_excerpt(); ?>
   </div><!-- .entry-summary -->
-  <?php else : ?>
+	<?php else : ?>
   <div class="entry-content">
     <?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentythirteen' ) ); ?>
     <?php wp_link_pages( array( 'before' => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'twentythirteen' ) . '</span>', 'after' => '</div>', 'link_before' => '<span>', 'link_after' => '</span>' ) ); ?>
   </div><!-- .entry-content -->
-  <?php endif; ?>
+	<?php endif; ?>
 
   <footer class="entry-meta">
 
-  <?php if ( is_example() ) : // Only display if examples exist ?>
+	<?php if ( is_example() ) : // Only display if examples exist ?>
     <div class="example__preview">
       <ul class="list list__inline">
-        <?php get_example_preview($custom); ?>
+        <?php get_example_preview( $custom ); ?>
       </ul>
     </div>
-  <?php endif; ?>
+	<?php endif; ?>
 
     <?php if ( comments_open() && ! is_single() ) : ?>
       <div class="comments-link">
@@ -84,13 +84,13 @@
     <?php endif; // comments_open() ?>
 
     <?php if ( is_single() && get_the_author_meta( 'description' ) && is_multi_author() ) : ?>
-      <?php get_template_part( 'author-bio' ); ?>
+		<?php get_template_part( 'author-bio' ); ?>
     <?php endif; ?>
   </footer><!-- .entry-meta -->
 </article><!-- #post -->
-      <?php comments_template(); ?>
+		<?php comments_template(); ?>
 
-      <?php endwhile; ?>
+		<?php endwhile; ?>
 
     </div><!-- #content -->
   </div><!-- #primary -->

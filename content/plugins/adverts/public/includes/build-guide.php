@@ -8,29 +8,29 @@
 
 function is_buildGuide() {
 
-  global $post;
+	global $post;
 
-  $key = '_build_guide';
-  $disabled = get_post_meta($post->ID, '_build_guide_disabled', TRUE);
-  $options = get_option( 'adverts-settings' );
+	$key = '_build_guide';
+	$disabled = get_post_meta( $post->ID, '_build_guide_disabled', true );
+	$options = get_option( 'adverts-settings' );
 
-  // Test for build guide disabled in advert option
-  if ( $disabled == true ) {
-    return false;
-  }
+	// Test for build guide disabled in advert option
+	if ( $disabled == true ) {
+		return false;
+	}
 
-  // Test for local build guide (added to post)
-  if( get_post_meta($post->ID, $key, TRUE) != '' ) {
-    return true;
-  }
+	// Test for local build guide (added to post)
+	if ( get_post_meta( $post->ID, $key, true ) != '' ) {
+		return true;
+	}
 
-  // Test for global guide (added to settings)
-  if( $options['_build_guide'] && $options['_build_guide'] != '' ) {
-    return true;
-  }
+	// Test for global guide (added to settings)
+	if ( $options['_build_guide'] && $options['_build_guide'] != '' ) {
+		return true;
+	}
 
-  // No build guide found
-  return false;
+	// No build guide found
+	return false;
 
 }
 
@@ -41,23 +41,23 @@ function is_buildGuide() {
 
 function the_buildGuide() {
 
-  global $post;
+	global $post;
 
-  $key = '_build_guide';
-  $options = get_option( 'adverts-settings' );
+	$key = '_build_guide';
+	$options = get_option( 'adverts-settings' );
 
-  // Return local build guide (added to post)
-  if( get_post_meta($post->ID, $key, TRUE) != '' ) {
-    echo wp_get_attachment_url( get_post_meta($post->ID, $key, TRUE) );
-    return;
-  }
+	// Return local build guide (added to post)
+	if ( get_post_meta( $post->ID, $key, true ) != '' ) {
+		echo wp_get_attachment_url( get_post_meta( $post->ID, $key, true ) );
+		return;
+	}
 
-  // Return global guide (added to settings)
-  if( $options['_build_guide'] && $options['_build_guide'] != '' ) {
+	// Return global guide (added to settings)
+	if ( $options['_build_guide'] && $options['_build_guide'] != '' ) {
 
-    $attachment_id = (int) $options['_build_guide'];
-    echo wp_get_attachment_url( $attachment_id );
-    return;
-  }
+		$attachment_id = (int) $options['_build_guide'];
+		echo wp_get_attachment_url( $attachment_id );
+		return;
+	}
 
 }
