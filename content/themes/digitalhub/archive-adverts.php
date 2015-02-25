@@ -33,6 +33,7 @@ $categories = get_terms('formats', array( 'orderby' => 'menu_order' ));
 
           <div class="entry-content">
             <p>Trinity Mirror has a wide range of display advertising formats designed to deliver your message across all platforms and create experiences enabling you to engage with our audience of 33 million.</p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/XLtW0JiWHNY" frameborder="0" allowfullscreen></iframe>
           </div>
         </article>
         <aside id="js-format-image"class="grid ss__1-4 ms__1-6 ls__7-12 xls__11-18 format-image">
