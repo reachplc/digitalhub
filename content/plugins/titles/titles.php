@@ -22,7 +22,7 @@
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {
-  die;
+	die;
 }
 
 /*-------------------------------------------------------------------*
@@ -63,7 +63,7 @@ add_action( 'plugins_loaded', array( 'Titles', 'get_instance' ) );
  */
 if ( is_admin() && ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
 
-  require_once( plugin_dir_path( __FILE__ ) . 'admin/class-titles-admin.php' );
-  add_action( 'plugins_loaded', array( 'Titles_Admin', 'get_instance' ) );
+	require_once( plugin_dir_path( __FILE__ ) . 'admin/class-titles-admin.php' );
+	add_action( 'plugins_loaded', array( 'Titles_Admin', 'get_instance' ) );
 
 }

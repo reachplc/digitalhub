@@ -8,16 +8,16 @@
 
 function have_link() {
 
-  global $post;
+	global $post;
 
-  $_key = '_link';
-  $_link = get_post_meta($post->ID, $_key, TRUE);
+	$_key = '_link';
+	$_link = get_post_meta( $post->ID, $_key, true );
 
-  if(!empty($_link)) {
-  return true;
-  } else {
-    return false;
-  }
+	if ( ! empty($_link) ) {
+		return true;
+	} else {
+		return false;
+	}
 
 }
 
@@ -27,10 +27,10 @@ function have_link() {
 
 function the_link() {
 
-  global $post;
-  $_key = '_link';
-  $_link = get_post_meta($post->ID, $_key, TRUE);
+	global $post;
+	$_key = '_link';
+	$_link = get_post_meta( $post->ID, $_key, true );
 
-  echo urldecode($_link);
+	echo urldecode( $_link );
 
 }
