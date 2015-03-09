@@ -14,19 +14,21 @@ The Digital Hub website is a central repository for showing customers our full, 
 
 ### Install
 
-Copy the `./_scripts/local-config.sample.php` file to the `digitalhub` folder and rename it `local-config.php`. Do the same with the `./_scripts/wp-config.sample.php` file renaming it to `wp-config.php`.
-
-Fill in the `local-config.php` with your local MySQL database details.
-
-Symlink the uploads folder to your local shared folder:
-
+Clone repo.
 ```
-mkdir shared shared/content shared/content/uploads
-cd content
-ln -s ../shared/content/uploads uploads
-cd ../
-chmod 777 -r shared/content/uploads
+git clone https://github.com/trinitymirror/digitalhub.git digitalhub
+cd digitalhub
 ```
+
+Activate the sub module.
+```
+git submodule update --init system/
+git submodule update --init content/plugins/google-analytics-for-wordpress/
+```
+
+Copy the `scripts/sample.wp-config.php` file to the `web/` folder and rename it `wp-config.php`. Repeat the process with `scripts/sample.htaccess` file renaming it to `.htaccess`.
+
+Fill in the `wp-config.php` with your local MySQL database details.
 
 Navigate to the home page, eg `http://localhost/digitalhub/`, and follow the default WordPress instructions.
 
@@ -34,16 +36,15 @@ Navigate to the home page, eg `http://localhost/digitalhub/`, and follow the def
 
 To make this less complicated we include WordPress as a submodule.
 
-To update the version of wordpress:
+To update the version of WordPress:
 
 ```
 cd system
 git fetch origin --tags
-# Due to issues we need to checkout the SHA of the latest tag
-git checkout #SHA
-cd ..
+git checkout SHA
+cd ../
 git add system
-git commit -m "Updates WordPress to x.x.x"
+git commit -m "Update WordPress to x.x.x"
 ```
 
 ## Documentation
