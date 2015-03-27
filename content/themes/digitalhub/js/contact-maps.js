@@ -16,6 +16,7 @@
     var markerTMSCOT;
     var markerTMW;
     var markerTMS;
+    var markerIRE;
 
 //  Coordinates for office markers
     var MEN = new google.maps.LatLng(53.521218, -2.149808);
@@ -34,6 +35,9 @@
     var TMW = new google.maps.LatLng(51.477238, -3.181018);
     var READ = new google.maps.LatLng(51.463622, -0.984264);
     var GUILD = new google.maps.LatLng(51.249651, -0.571036);
+    // Mirror Media Ireland
+    var belfast = new google.maps.LatLng(54.61158, -5.86445);
+    var dublin  = new google.maps.LatLng(53.35244, -6.29773);
 
 function initialize() {
 
@@ -111,7 +115,7 @@ function initialize() {
             }
         ]
     }
-]
+];
   // Create a new StyledMapType object, passing it the array of styles,
   // as well as the name to be displayed on the map type control.
   var styledMap = new google.maps.StyledMapType(styles,
@@ -129,6 +133,7 @@ function initialize() {
   var tmscotLatlng = new google.maps.LatLng(55.820982, -4.167891);
   var tmwLatlng = new google.maps.LatLng(51.477238, -3.181018);
   var tmsLatlng = new google.maps.LatLng(51.417588, -0.670146);
+  var ireLatlng = new google.maps.LatLng(0, 0);
 
 
 
@@ -216,6 +221,14 @@ function initialize() {
     }
   };
 
+  var ireOptions = {
+    zoom: 5,
+    center: ireLatlng,
+    mapTypeControlOptions: {
+      mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'],
+      position: google.maps.ControlPosition.BOTTOM_CENTER
+    }
+  };
 
 
 
@@ -245,6 +258,10 @@ function initialize() {
 
   var maptms = new google.maps.Map(document.getElementById('map-tms-canvas'),
     tmsOptions);
+
+  var mapire = new google.maps.Map(document.getElementById('map-tmire-canvas'),
+    ireOptions
+  );
 
 /**
  * Marker Animation
@@ -407,6 +424,25 @@ markerTMS = new google.maps.Marker({
     title:"Reading"
     });
 
+// Ireland
+
+markerIRE = new google.maps.Marker({
+    position: belfast,
+    icon: iconBase + 'trinity_mirror_plc_tag.png',
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    map: mapire,
+    title:"Belfast"
+    });
+
+markerIRE = new google.maps.Marker({
+    position: dublin,
+    icon: iconBase + 'trinity_mirror_plc_tag.png',
+    draggable: false,
+    animation: google.maps.Animation.DROP,
+    map: mapire,
+    title:"Dublin"
+    });
 
   //Associate the styled map with the MapTypeId and set it to display.
   maptmplc.mapTypes.set('map_style', styledMap);
@@ -427,6 +463,8 @@ markerTMS = new google.maps.Marker({
   maptmw.setMapTypeId('map_style');
   maptms.mapTypes.set('map_style', styledMap);
   maptms.setMapTypeId('map_style');
+  mapire.mapTypes.set('map_style', styledMap);
+  mapire.setMapTypeId('map_style');
 }
 
 

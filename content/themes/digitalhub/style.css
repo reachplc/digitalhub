@@ -2145,7 +2145,19 @@ textarea {
 
 .contacts-map-col{width:66%;float:left;}
 
-#map-tmplc-canvas, #map-tmmh-canvas, #map-tmnw-canvas, #map-nasa-canvas, #map-tmne-canvas, #map-tmm-canvas, #map-tmscot-canvas, #map-tmw-canvas, #map-tms-canvas{height:300px; margin:29px 0;}
+#map-tmplc-canvas,
+#map-tmmh-canvas,
+#map-tmnw-canvas,
+#map-nasa-canvas,
+#map-tmne-canvas,
+#map-tmm-canvas,
+#map-tmscot-canvas,
+#map-tmw-canvas,
+#map-tms-canvas,
+#map-ire-canvas {
+  margin:29px 0;
+  height:300px;
+}
 
 @media screen and (max-width: 767px) {
 
