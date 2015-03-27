@@ -133,7 +133,7 @@ function initialize() {
   var tmscotLatlng = new google.maps.LatLng(55.820982, -4.167891);
   var tmwLatlng = new google.maps.LatLng(51.477238, -3.181018);
   var tmsLatlng = new google.maps.LatLng(51.417588, -0.670146);
-  var ireLatlng = new google.maps.LatLng(0, 0);
+  var ireLatlng = new google.maps.LatLng(53.966571, -6.426121);
 
 
 
@@ -222,7 +222,7 @@ function initialize() {
   };
 
   var ireOptions = {
-    zoom: 5,
+    zoom: 7,
     center: ireLatlng,
     mapTypeControlOptions: {
       mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style'],
