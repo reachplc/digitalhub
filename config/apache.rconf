@@ -1,5 +1,7 @@
 <VirtualHost *:80>
 	ServerName <%= branch == "master" ? "digitalhub" : branch  %>.<%= base_domain %>
+	ServerAlias <%= branch  %>.tmdh.apps.awsripple.com
+
 	DocumentRoot <%= current_path %>
 
 	<Directory "<%= current_path %>">
