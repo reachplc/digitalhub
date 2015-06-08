@@ -30,7 +30,7 @@ class Adverts {
    *
    * @var     string
    */
-  const VERSION = '0.1.0';
+  const VERSION = '0.2.0';
 
   /**
    * @TODO - Rename "adverts" to the name your your plugin

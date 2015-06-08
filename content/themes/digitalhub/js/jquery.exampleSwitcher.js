@@ -40,16 +40,17 @@ var exampleSwitch = exampleSwitch || {};
 
     for ( var i = 0; i < _children.length; i++ ) {
 
-        var _current = i+1;
+        var _current = i;
+
 
         if( _selected === _current ) {
-          exampleSwitch.video(_current, 'play');
           $('.example__video[data-example=' + _current + ']').removeClass('hidden');
+            exampleSwitch.video( _current, 'play' );
         }
 
         if( _selected !== _current ) {
-          exampleSwitch.video(_current, 'pause');
           $('.example__video[data-example=' + _current + ']').addClass('hidden');
+            exampleSwitch.video( _current, 'pause' );
         }
 
     }
@@ -84,26 +85,26 @@ var exampleSwitch = exampleSwitch || {};
       var _video = $('.example__video[data-example="' + video + '"] video').get(0),
           _action = action;
 
-        //console.log(_video, _action);
-
-        switch ( action ) {
-          case 'play':
-            if (_video.paused) {
-              _video.play();
-            }
-            if(_video.play){
-
-            }
-            break;
-          case 'pause':
-            if (_video.play) {
-              _video.pause();
-            }
-            if (_video.pause) {
-
-            }
-            break;
-        }
+      switch ( _action ) {
+        case 'play':
+          if ( _video.paused ) {
+            _video.play();
+            return;
+          }
+          if( _video.play ){
+            return;
+          }
+          break;
+        case 'pause':
+          if ( _video.play ) {
+            _video.pause();
+            return;
+          }
+          if ( _video.pause ) {
+            return;
+          }
+          break;
+      }
 
     };
 
