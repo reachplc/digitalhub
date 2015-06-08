@@ -8,17 +8,17 @@
 
 function have_packages() {
 
-  global $taxonomy_type;
-  global $current_package;
-  global $posts;
+	global $taxonomy_type;
+	global $current_package;
+	global $posts;
 
-  $package_count = count($posts);
+	$package_count = count( $posts );
 
-  if ( $current_package+1 <= $package_count ) {
-    return true;
-  } else {
-    return false;
-  }
+	if ( $current_package + 1 <= $package_count ) {
+		return true;
+	} else {
+		return false;
+	}
 
 }
 
@@ -32,56 +32,56 @@ function have_packages() {
 
 
 function the_packages() {
-  global $current_package;
-  $current_package++;
+	global $current_package;
+	$current_package++;
 }
 
 function the_package_title() {
 
-  global $terms;
-  global $current_package;
+	global $terms;
+	global $current_package;
 
-  echo $terms[$current_package]->name;
+	echo $terms[$current_package]->name;
 
 }
 
 function the_package_description() {
 
-  global $terms;
-  global $current_package;
+	global $terms;
+	global $current_package;
 
-  echo $terms[$current_package]->description;
+	echo $terms[$current_package]->description;
 
 }
 
 function the_package_link() {
 
-  global $terms;
-  global $current_package;
+	global $terms;
+	global $current_package;
 
-  $slug = $terms[$current_package]->slug;
-  echo trailingslashit(home_url()) . trailingslashit('packages') . trailingslashit($slug);
+	$slug = $terms[$current_package]->slug;
+	echo trailingslashit( home_url() ) . trailingslashit( 'packages' ) . trailingslashit( $slug );
 
 }
 
 function the_package_class() {
 
-  global $terms;
-  global $current_package;
+	global $terms;
+	global $current_package;
 
-  $slug = $terms[$current_package]->slug;
+	$slug = $terms[$current_package]->slug;
 
-  echo $slug;
+	echo $slug;
 
 }
 
 function the_package_image() {
 
-  global $terms;
-  global $current_package;
+	global $terms;
+	global $current_package;
 
-  $slug = $terms[$current_package]->slug;
+	$slug = $terms[$current_package]->slug;
 
-  echo get_stylesheet_directory_uri() . '/images/' . $slug . '.png';
+	echo get_stylesheet_directory_uri() . '/images/' . $slug . '.png';
 
 }
