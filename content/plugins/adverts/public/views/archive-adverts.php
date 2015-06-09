@@ -24,26 +24,26 @@ get_header(); ?>
         <h1 class="archive-title">Adverts</h1>
       </header><!-- .archive-header -->
 
-      <?php /* The loop */ ?>
-      <?php while ( have_posts() ) : the_post(); ?>
+		<?php /* The loop */ ?>
+		<?php while ( have_posts() ) : the_post(); ?>
         <?php get_template_part( 'content', get_post_format() ); ?>
-      <?php endwhile; ?>
+		<?php endwhile; ?>
 
-      <?php
-      global $wp_query;
+		<?php
+		global $wp_query;
 
-      $big = 999999999; // need an unlikely integer
+		$big = 999999999; // need an unlikely integer
 
-      echo paginate_links( array(
-        'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-        'format' => '?paged=%#%',
-        'current' => max( 1, get_query_var('paged') ),
-        'total' => $wp_query->max_num_pages
-      ) );
-      ?>
+		echo paginate_links( array(
+			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+			'format' => '?paged=%#%',
+			'current' => max( 1, get_query_var( 'paged' ) ),
+			'total' => $wp_query->max_num_pages
+		) );
+		?>
 
     <?php else : ?>
-      <?php get_template_part( 'content', 'none' ); ?>
+		<?php get_template_part( 'content', 'none' ); ?>
     <?php endif; ?>
 
     </div><!-- #content -->
