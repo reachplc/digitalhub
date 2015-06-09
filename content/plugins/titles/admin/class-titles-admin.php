@@ -275,7 +275,11 @@ class Titles_Admin {
 
 		/* Save Our Data */
 
-		$new_meta_value = ( isset( $_POST['_link'] ) ? urlencode( $_POST['_link']  : '' );
+		if( "" == trim( $_POST['_link'] ) ) {
+	    $new_meta_value = urlencode( $_POST['_link']) ;
+		} else {
+			$new_meta_value = '';
+		}
 
 		$meta_key = '_link';
 
