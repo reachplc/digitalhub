@@ -235,7 +235,6 @@ class Titles_Admin {
 
 		global $post;
 		$_value = get_post_meta( $post->ID, '_link', true );
-
 		//  Add preview image field
 		echo '<p>';
 		echo '<label for="_link">URL for Title: </label><br>';
@@ -256,6 +255,8 @@ class Titles_Admin {
 
 		global $post;
 
+
+
 		/* Verify the nonce before proceeding. */
 		if ( ! isset( $_POST['titles_inner_link_box_nonce'] ) || ! wp_verify_nonce( $_POST['titles_inner_link_box_nonce'],'titles_inner_link_box' ) ) {
 			return $post_id;
@@ -275,8 +276,8 @@ class Titles_Admin {
 
 		/* Save Our Data */
 
-		if( "" == trim( $_POST['_link'] ) ) {
-	    $new_meta_value = urlencode( $_POST['_link']) ;
+		if( ! empty( $_POST['_link'] ) ) {
+	    $new_meta_value = urlencode( $_POST['_link'] ) ;
 		} else {
 			$new_meta_value = '';
 		}
