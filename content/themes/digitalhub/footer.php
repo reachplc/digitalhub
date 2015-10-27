@@ -72,7 +72,7 @@
  * Image path for Google Maps marker
  */
 
- var iconBase = '<?php echo get_bloginfo("template_url") . "/images/"; ?>';
+ var iconBase = '<?php echo get_template_directory_uri() . "/images/"; ?>';
 
 /**
  * Scrolls to link on href click
