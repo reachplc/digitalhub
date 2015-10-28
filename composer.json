@@ -1,0 +1,73 @@
+{
+  "name": "trinitymirror/digitalhub",
+  "type": "project",
+  "license": "MIT",
+  "description": "A WordPress project starter kit",
+  "homepage": "http://digitalhub.trinitymirror.com/",
+  "authors": [
+    {
+      "name": "Michael Bragg",
+      "email": "michael@michaelbragg.net",
+      "homepage": "http://www.michaelbragg.net"
+    }
+  ],
+  "keywords": [
+    "wordpress",
+    "composer",
+    "wp"
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/trinitymirror/Term-Menu-Order.git"
+    }
+  ],
+  "type": "wordpress-core",
+  "require": {
+      "johnpbloch/wordpress-core-installer": "0.2.x"
+  },
+  "require": {
+    "php": ">=5.4",
+    "johnpbloch/wordpress": "4.3.x",
+    "vlucas/phpdotenv": "2.0.x",
+    "composer/installers": "1.0.x",
+    "wpackagist-plugin/google-analytics-for-wordpress": "5.4.x",
+    "wpackagist-plugin/wp-google-analytics": "1.4.x",
+    "wpackagist-plugin/google-sitemap-generator": "4.0.x",
+    "wpackagist-plugin/wp-robots-txt": "1.1",
+    "wpackagist-plugin/wp-security-audit-log": "2.1.x",
+    "wpackagist-plugin/brute-force-login-protection": "1.5.x",
+    "wpackagist-plugin/safe-redirect-manager": "1.7.x",
+    "wpackagist-plugin/backwpup": "3.2.x",
+    "wpackagist-plugin/post-type-archive-links": "1.3.x",
+    "wpackagist-plugin/admin-menu-manager": "1.0.x",
+    "trinitymirror/Term-Menu-Order": "dev-develop"
+
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "~2.3",
+    "wp-coding-standards/wpcs": "2014-12-11",
+    "wpackagist-plugin/wordpress-importer": "0.6.x",
+    "wpackagist-plugin/debug-bar": "0.8.x",
+    "wpackagist-plugin/debug-objects": "2.2.x",
+    "wpackagist-plugin/debug-queries": "1.0.x",
+    "wpackagist-plugin/query-monitor": "2.8.x",
+    "wpackagist-plugin/log-deprecated-notices": "0.3.x",
+    "wpackagist-plugin/p3-profiler": "1.5.x",
+    "wpackagist-plugin/theme-check": "20150818.1",
+    "wpackagist-plugin/user-switching": "1.0.x",
+    "wpackagist-plugin/rewrite-rules-inspector": "1.2.x"
+  },
+  "extra": {
+    "wordpress-install-dir": "system",
+    "installer-paths": {
+      "content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "content/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
+}

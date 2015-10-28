@@ -1,0 +1,16 @@
+{
+  "name": "trinitymirror/Term-Menu-Order",
+  "description": "Adds a menu_order field to terms, allowing theme and plugin developers to sort term by menu_order (similar to pages).",
+  "keywords"   : ["wordpress"],
+  "type": "wordpress-plugin",
+  "require": {
+    "composer/installers": "^1.0"
+  },
+  "license": "GPL-2.0+",
+  "authors": [
+    {
+      "name": "James Lafferty",
+      "email": "james@nearlysensical.com"
+    }
+  ]
+}
