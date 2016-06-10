@@ -1,7 +1,7 @@
 <?php
 
-class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInterface {
-    
+class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInterface
+{
     protected $connection;
 
     /**
@@ -23,7 +23,7 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
 
     public function GetModel()
     {
-        return new WSAL_Models_ActiveRecord(); 
+        return new WSAL_Models_ActiveRecord();
     }
     
     /**
@@ -60,10 +60,10 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
     {
         $model = $this->GetModel();
         
-        if(!isset($this->_column_cache)){
+        if (!isset($this->_column_cache)) {
             $this->_column_cache = array();
-            foreach(array_keys(get_object_vars($model)) as $col)
-                if(trim($col) && $col[0] != '_')
+            foreach (array_keys(get_object_vars($model)) as $col)
+                if (trim($col) && $col[0] != '_')
                     $this->_column_cache[] = $col;
         }
         return $this->_column_cache;
@@ -113,16 +113,20 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
     public function Save($activeRecord)
     {
         //global $wpdb;
-        $_wpdb = $this->connection; 
+        $_wpdb = $this->connection;
         $copy = $activeRecord;
         $data = array();
         $format = array();
-        foreach ($this->GetColumns() as $key) {
+
+        foreach ($this->GetColumns() as $index => $key) {
+            if ($key == $this->_idkey) {
+                $_idIndex = $index;
+            }
 
             $val = $copy->$key;
             $deffmt = '%s';
             if (is_int($copy->$key)) {
-              $deffmt = '%d';
+                $deffmt = '%d';
             }
             if (is_float($copy->$key)) {
                 $deffmt = '%f';
@@ -134,6 +138,12 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
             }
             $format[] = $deffmt;
         }
+        
+        if (isset($data[$this->_idkey]) && empty($data[$this->_idkey])) {
+            unset($data[$this->_idkey]);
+            unset($format[$_idIndex]);
+        }
+
         $result = $_wpdb->replace($this->GetTable(), $data, $format);
             
         if ($result !== false) {
@@ -166,7 +176,7 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
         $_wpdb = $this->connection;
         $result = array();
         $sql = $_wpdb->prepare('SELECT * FROM '.$this->GetTable().' WHERE '. $cond, $args);
-        foreach ($_wpdb->get_results($sql, ARRAY_A) as $data) { 
+        foreach ($_wpdb->get_results($sql, ARRAY_A) as $data) {
             $result[] = $this->getModel()->LoadData($data);
         }
         return $result;
@@ -346,14 +356,15 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
     /**
      * @return string Must return SQL for removing table (at a minimum, it should be ` 'DROP TABLE ' . $this->_table `).
      */
-    protected function _GetUninstallQuery(){
+    protected function _GetUninstallQuery()
+    {
         return  'DROP TABLE ' . $this->GetTable();
     }
 
     /**
      * Function used in WSAL reporting extension
      */
-    public function GetReporting($_siteId, $_userId, $_roleName, $_alertCode, $_startTimestamp, $_endTimestamp)
+    public function GetReporting($_siteId, $_userId, $_roleName, $_alertCode, $_startTimestamp, $_endTimestamp, $_nextDate = null, $_limit = 0)
     {
         global $wpdb;
         $tableUsers = $wpdb->users;
@@ -375,19 +386,20 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
             }
             $user_names = implode(', ', $aUsers);
         }
-        
+        $conditionDate = !empty($_nextDate) ? ' AND occ.created_on < '.$_nextDate : '';
+
         $sql = "SELECT DISTINCT
             occ.id, 
             occ.alert_id, 
             occ.site_id, 
             occ.created_on,
             replace(replace(replace((
-                SELECT t1.value FROM $tableMeta AS t1 WHERE t1.name = 'CurrentUserRoles' AND t1.occurrence_id = occ.id), '[', ''), ']', ''), '\\'', '') AS roles,
-            (SELECT replace(t2.value, '\"','') FROM $tableMeta as t2 WHERE t2.name = 'ClientIP' AND t2.occurrence_id = occ.id) AS ip,
-            (SELECT replace(t3.value, '\"', '') FROM $tableMeta as t3 WHERE t3.name = 'UserAgent' AND t3.occurrence_id = occ.id) AS ua,
+                SELECT t1.value FROM $tableMeta AS t1 WHERE t1.name = 'CurrentUserRoles' AND t1.occurrence_id = occ.id LIMIT 1), '[', ''), ']', ''), '\\'', '') AS roles,
+            (SELECT replace(t2.value, '\"','') FROM $tableMeta as t2 WHERE t2.name = 'ClientIP' AND t2.occurrence_id = occ.id LIMIT 1) AS ip,
+            (SELECT replace(t3.value, '\"', '') FROM $tableMeta as t3 WHERE t3.name = 'UserAgent' AND t3.occurrence_id = occ.id LIMIT 1) AS ua,
             COALESCE(
-                (SELECT replace(t4.value, '\"', '') FROM $tableMeta as t4 WHERE t4.name = 'Username' AND t4.occurrence_id = occ.id),
-                (SELECT replace(t5.value, '\"', '') FROM $tableMeta as t5 WHERE t5.name = 'CurrentUserID' AND t5.occurrence_id = occ.id)
+                (SELECT replace(t4.value, '\"', '') FROM $tableMeta as t4 WHERE t4.name = 'Username' AND t4.occurrence_id = occ.id LIMIT 1),
+                (SELECT replace(t5.value, '\"', '') FROM $tableMeta as t5 WHERE t5.name = 'CurrentUserID' AND t5.occurrence_id = occ.id LIMIT 1)
             ) as user_id
             FROM $tableOcc AS occ
             JOIN $tableMeta AS meta ON meta.occurrence_id = occ.id
@@ -403,15 +415,21 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
                 AND (@alertCode is NULL OR find_in_set(occ.alert_id, @alertCode) > 0)
                 AND (@startTimestamp is NULL OR occ.created_on >= @startTimestamp)
                 AND (@endTimestamp is NULL OR occ.created_on <= @endTimestamp)
+                {$conditionDate}
             ORDER BY
-                site_id, created_on DESC
+                created_on DESC
         ";
+
         $_wpdb->query("SET @siteId = $_siteId");
         $_wpdb->query("SET @userId = $_userId");
         $_wpdb->query("SET @roleName = $_roleName");
         $_wpdb->query("SET @alertCode = $_alertCode");
         $_wpdb->query("SET @startTimestamp = $_startTimestamp");
         $_wpdb->query("SET @endTimestamp = $_endTimestamp");
+
+        if (!empty($_limit)) {
+            $sql .= " LIMIT {$_limit}";
+        }
         $results = $_wpdb->get_results($sql);
 
         foreach ($results as $row) {
@@ -422,53 +440,9 @@ class WSAL_Adapters_MySQL_ActiveRecord implements WSAL_Adapters_ActiveRecordInte
                 $userId = $wpdb->get_var($sql);
             }
             $row->user_id = $userId;
+            $results['lastDate'] = $row->created_on;
         }
+        
         return $results;
-        /*
-        $query = <<<query
-SELECT DISTINCT
-    occ.id,
-    occ.alert_id,
-    occ.site_id,
-    occ.created_on,
-    replace(replace(replace(replace((select t1.value from $tableMeta as t1 where t1.name = 'CurrentUserRoles' and t1.occurrence_id = occ.id), '[', ''), ']', ''), '"', ''), '\\'', '') as roles,
-    (select replace(t2.value, '"','') from $tableMeta as t2 where t2.name = 'ClientIP' and t2.occurrence_id = occ.id) as ip,
-    (select replace(t3.value, '"', '') from $tableMeta as t3 where t3.name = 'UserAgent' and t3.occurrence_id = occ.id) as ua,
-
-    COALESCE(
-        (select t6.ID from $tableUsers as t6 where t6.user_login = (select replace(t7.value, '"', '') from $tableMeta as t7 where t7.name = 'Username' and t7.occurrence_id = occ.id)),
-        (select t4.ID from $tableUsers as t4 where t4.ID = (select t5.value from $tableMeta as t5 where t5.name = 'CurrentUserID' and t5.occurrence_id = occ.id))
-    ) as user_id
-FROM
-    $tableOcc as occ
-JOIN
-    $tableMeta as meta on meta.occurrence_id = occ.id
-WHERE
-    (@siteId is null or find_in_set(occ.site_id, @siteId) > 0)
-    and (@userId is null or (
-            (meta.name = 'CurrentUserID' and find_in_set(meta.value, @userId) > 0)
-         or (meta.name = 'Username' and replace(meta.value, '"', '') in (select user_login from $tableUsers where find_in_set(ID, @userId) > 0))
-    ))
-    and (@roleName is null or (meta.name = 'CurrentUserRoles'
-        and replace(replace(replace(replace(meta.value, '"', ''), ']', ''), '[', ''), '\\'', '') REGEXP @roleName
-    ))
-    and (@alertCode is null or find_in_set(occ.alert_id, @alertCode) > 0)
-    and (@startTimestamp is null or occ.created_on >= @startTimestamp)
-    and (@endTimestamp is null or occ.created_on <= @endTimestamp)
-order by
-    site_id, created_on DESC;
-query;
-        //#! Set variables first
-        $_wpdb->query("SET @siteId = $_siteId");
-        $_wpdb->query("SET @userId = $_userId");
-        $_wpdb->query("SET @roleName = $_roleName");
-        $_wpdb->query("SET @alertCode = $_alertCode");
-        $_wpdb->query("SET @startTimestamp = $_startTimestamp");
-        $_wpdb->query("SET @endTimestamp = $_endTimestamp");
-
-        //#! Then run query
-        return $_wpdb->get_results($query);
-         */
     }
-
 }

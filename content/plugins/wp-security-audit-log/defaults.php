@@ -10,7 +10,8 @@ defined('E_RECOVERABLE_ERROR') || define('E_RECOVERABLE_ERROR', 'E_RECOVERABLE_E
 defined('E_DEPRECATED') || define('E_DEPRECATED', 'E_DEPRECATED');
 defined('E_USER_DEPRECATED') || define('E_USER_DEPRECATED', 'E_USER_DEPRECATED');
 
-function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
+function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal)
+{
     $wsal->constants->UseConstants(array(
             // default PHP constants
             array('name' => 'E_ERROR', 'description' => __('Fatal run-time error.', 'wp-security-audit-log')),
@@ -32,13 +33,15 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
             array('name' => 'E_CRITICAL', 'description' => __('Critical, high-impact messages.', 'wp-security-audit-log')),
             array('name' => 'E_DEBUG', 'description' => __('Debug informational messages.', 'wp-security-audit-log')),
         ));
-    // create list of default alerts 
+    // create list of default alerts
     $wsal->alerts->RegisterGroup(array(
             __('Other User Activity', 'wp-security-audit-log') => array(
                 array(1000, E_NOTICE, __('User logs in', 'wp-security-audit-log'), __('Successfully logged in', 'wp-security-audit-log')),
                 array(1001, E_NOTICE, __('User logs out', 'wp-security-audit-log'), __('Successfully logged out', 'wp-security-audit-log')),
                 array(1002, E_WARNING, __('Login failed', 'wp-security-audit-log'), __('%Attempts% failed login(s) detected', 'wp-security-audit-log')),
                 array(1003, E_WARNING, __('Login failed  / non existing user', 'wp-security-audit-log'), __('%Attempts% failed login(s) detected using non existing user.', 'wp-security-audit-log')),
+                array(1004, E_WARNING, __('Login blocked', 'wp-security-audit-log'), __('Blocked from logging in because another user is logged in from %ClientIP%', 'wp-security-audit-log')),
+                array(1005, E_WARNING, __('User logs in with existing session(s)', 'wp-security-audit-log'), __('Successfully logged in. Other session(s) from %IPAddress% for this username already exists', 'wp-security-audit-log')),
                 array(2010, E_NOTICE, __('User uploaded file from Uploads directory', 'wp-security-audit-log'), __('Uploaded the file %FileName% in %FilePath%', 'wp-security-audit-log')),
                 array(2011, E_WARNING, __('User deleted file from Uploads directory', 'wp-security-audit-log'), __('Deleted the file %FileName% from %FilePath%', 'wp-security-audit-log')),
                 array(2046, E_CRITICAL, __('User changed a file using the theme editor', 'wp-security-audit-log'), __('Modified %File% with the Theme Editor', 'wp-security-audit-log')),
@@ -67,10 +70,12 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(2054, E_NOTICE, __('User updates a custom field value for a post', 'wp-security-audit-log'), __('Modified the value of custom field %MetaKey% from %MetaValueOld% to %MetaValueNew% in post %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2055, E_NOTICE, __('User deletes a custom field from a post', 'wp-security-audit-log'), __('Deleted custom field %MetaKey% with id %MetaID% from post %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2062, E_NOTICE, __('User updates a custom field name for a post', 'wp-security-audit-log'), __('Changed the custom field name from %MetaKeyOld% to %MetaKeyNew% in post %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
-                array(2065, E_WARNING, __('User modifies content for a published post', 'wp-security-audit-log'), __('Modified the content of published post %PostTitle%', 'wp-security-audit-log')),
-                array(2068, E_NOTICE, __('User modifies content for a draft post', 'wp-security-audit-log'), __('Modified the content of draft post %PostTitle%', 'wp-security-audit-log')),
-                array(2072, E_NOTICE, __('User modifies content of a post', 'wp-security-audit-log'), __('Modified the content of post %PostTitle% which is submitted for review', 'wp-security-audit-log')),
+                array(2065, E_WARNING, __('User modifies content for a published post', 'wp-security-audit-log'), __('Modified the content of published post %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2068, E_NOTICE, __('User modifies content for a draft post', 'wp-security-audit-log'), __('Modified the content of draft post %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2072, E_NOTICE, __('User modifies content of a post', 'wp-security-audit-log'), __('Modified the content of post %PostTitle% which is submitted for review.'.'%RevisionLink%', 'wp-security-audit-log')),
                 array(2073, E_NOTICE, __('User submitted a post for review', 'wp-security-audit-log'), __('Submitted blog post %PostTitle% for review. Blog post ID is %PostID%', 'wp-security-audit-log')),
+                array(2074, E_NOTICE, __('User scheduled a post', 'wp-security-audit-log'), __('Scheduled the post %PostTitle% to be published %PublishingDate%', 'wp-security-audit-log')),
+                array(2086, E_NOTICE, __('User changed title of a post', 'wp-security-audit-log'), __('Changed the title of post %OldTitle% to %NewTitle%', 'wp-security-audit-log'))
             ),
             __('Pages', 'wp-security-audit-log') => array(
                 array(2004, E_NOTICE, __('User created a new WordPress page and saved it as draft', 'wp-security-audit-log'), __('Created a new page called %PostTitle%. Page ID is %PostID%', 'wp-security-audit-log')),
@@ -91,8 +96,10 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(2060, E_NOTICE, __('User updates a custom field value for a page', 'wp-security-audit-log'), __('Modified the value of custom field %MetaKey% from %MetaValueOld% to %MetaValueNew% in page %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2061, E_NOTICE, __('User deletes a custom field from a page', 'wp-security-audit-log'), __('Deleted custom field %MetaKey% with id %MetaID% from page %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2064, E_NOTICE, __('User updates a custom field name for a page', 'wp-security-audit-log'), __('Changed the custom field name from %MetaKeyOld% to %MetaKeyNew% in page %PostTitle%'.'%MetaLink%', 'wp-security-audit-log')),
-                array(2066, E_WARNING, __('User modifies content for a published page', 'wp-security-audit-log'), __('Modified the content of published page %PostTitle%', 'wp-security-audit-log')),
-                array(2069, E_NOTICE, __('User modifies content for a draft page', 'wp-security-audit-log'), __('Modified the content of draft page %PostTitle%', 'wp-security-audit-log')),
+                array(2066, E_WARNING, __('User modifies content for a published page', 'wp-security-audit-log'), __('Modified the content of published page %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2069, E_NOTICE, __('User modifies content for a draft page', 'wp-security-audit-log'), __('Modified the content of draft page %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2075, E_NOTICE, __('User scheduled a page', 'wp-security-audit-log'), __('Scheduled the page %PostTitle% to be published %PublishingDate%', 'wp-security-audit-log')),
+                array(2087, E_NOTICE, __('User changed title of a page', 'wp-security-audit-log'), __('Changed the title of page %OldTitle% to %NewTitle%', 'wp-security-audit-log'))
             ),
             __('Custom Posts', 'wp-security-audit-log') => array(
                 array(2029, E_NOTICE, __('User created a new post with custom post type and saved it as draft', 'wp-security-audit-log'), __('Created a new custom post called %PostTitle% of type %PostType%. Post ID is %PostID%', 'wp-security-audit-log')),
@@ -112,8 +119,10 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(2057, E_NOTICE, __('User updates a custom field for a custom post', 'wp-security-audit-log'), __('Modified the value of custom field %MetaKey% from %MetaValueOld% to %MetaValueNew% in custom post %PostTitle% of type %PostType%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2058, E_NOTICE, __('User deletes a custom field from a custom post', 'wp-security-audit-log'), __('Deleted custom field %MetaKey% with id %MetaID% from custom post %PostTitle% of type %PostType%'.'%MetaLink%', 'wp-security-audit-log')),
                 array(2063, E_NOTICE, __('User updates a custom field name for a custom post', 'wp-security-audit-log'), __('Changed the custom field name from %MetaKeyOld% to %MetaKeyNew% in custom post %PostTitle% of type %PostType%'.'%MetaLink%', 'wp-security-audit-log')),
-                array(2067, E_WARNING, __('User modifies content for a published custom post', 'wp-security-audit-log'), __('Modified the content of published custom post type %PostTitle%', 'wp-security-audit-log')),
-                array(2070, E_NOTICE, __('User modifies content for a draft custom post', 'wp-security-audit-log'), __('Modified the content of draft custom post type %PostTitle%', 'wp-security-audit-log')),
+                array(2067, E_WARNING, __('User modifies content for a published custom post', 'wp-security-audit-log'), __('Modified the content of published custom post type %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2070, E_NOTICE, __('User modifies content for a draft custom post', 'wp-security-audit-log'), __('Modified the content of draft custom post type %PostTitle%.'.'%RevisionLink%', 'wp-security-audit-log')),
+                array(2076, E_NOTICE, __('User scheduled a custom post type', 'wp-security-audit-log'), __('Scheduled the custom post type %PostTitle% to be published %PublishingDate%', 'wp-security-audit-log')),
+                array(2088, E_NOTICE, __('User changed title of a custom post', 'wp-security-audit-log'), __('Changed the title of custom post %OldTitle% to %NewTitle%', 'wp-security-audit-log'))
             ),
             __('Widgets', 'wp-security-audit-log') => array(
                 array(2042, E_CRITICAL, __('User added a new widget', 'wp-security-audit-log'), __('Added a new %WidgetName% widget in  %Sidebar%', 'wp-security-audit-log')),
@@ -131,6 +140,7 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(4005, E_NOTICE, __('User changed his or her email address', 'wp-security-audit-log'), __('Changed the email address from %OldEmail% to %NewEmail%', 'wp-security-audit-log')),
                 array(4006, E_NOTICE, __('A user changed another user\'s email address', 'wp-security-audit-log'), __('Changed the email address of user account %TargetUsername% from %OldEmail% to %NewEmail%', 'wp-security-audit-log')),
                 array(4007, E_CRITICAL, __('A user was deleted by another user', 'wp-security-audit-log'), __('Deleted User %TargetUserData->Username% with the role of %TargetUserData->Roles%', 'wp-security-audit-log')),
+                array(4013, E_CRITICAL, __('The forum role of a user was changed by another WordPress user', 'wp-security-audit-log'), __('The forum role of user %TargetUsername% was changed from %OldRole% to %NewRole% by %UserChanger%', 'wp-security-audit-log')),
             ),
             __('Plugins & Themes', 'wp-security-audit-log') => array(
                 array(5000, E_CRITICAL, __('User installed a plugin', 'wp-security-audit-log'), __('Installed the plugin %Plugin->Name% in %Plugin->plugin_dir_path%', 'wp-security-audit-log')),
@@ -155,6 +165,8 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(6003, E_CRITICAL, __('WordPress Administrator Notification email changed', 'wp-security-audit-log'), __('Changed the WordPress administrator notifications email address from %OldEmail% to %NewEmail%', 'wp-security-audit-log')),
                 array(6004, E_CRITICAL, __('WordPress was updated', 'wp-security-audit-log'), __('Updated WordPress from version %OldVersion% to %NewVersion%', 'wp-security-audit-log')),
                 array(6005, E_CRITICAL, __('User changes the WordPress Permalinks', 'wp-security-audit-log'), __('Changed the WordPress permalinks from %OldPattern% to %NewPattern%', 'wp-security-audit-log')),
+                array(6007, E_CRITICAL, __('User requests non-existing pages (404 Error Pages)', 'wp-security-audit-log'), __(' Is requesting non-existing pages (404 Error Pages)', 'wp-security-audit-log')),
+                array(9999, E_CRITICAL, __('Advertising Add-ons.', 'wp-security-audit-log'), __('%PromoMessage%', 'wp-security-audit-log')),
             ),
             __('MultiSite', 'wp-security-audit-log') => array(
                 array(4008, E_CRITICAL, __('User granted Super Admin privileges', 'wp-security-audit-log'), __('Granted Super Admin privileges to %TargetUsername%', 'wp-security-audit-log')),
@@ -182,7 +194,46 @@ function wsaldefaults_wsal_init(WpSecurityAuditLog $wsal){
                 array(5017, E_CRITICAL, __('Unknown component modified tables structure', 'wp-security-audit-log'), __('An unknown component modified the structure of these database tables: %TableNames%', 'wp-security-audit-log')),
                 array(5018, E_CRITICAL, __('Unknown component deleted tables', 'wp-security-audit-log'), __('An unknown component deleted the following tables from the database: %TableNames%', 'wp-security-audit-log')),
             ),
+            __('BBPress Forum', 'wp-security-audit-log') => array(
+                array(8000, E_CRITICAL, __('User created new forum', 'wp-security-audit-log'), __('Created new forum %ForumName%. Forum URL is %ForumURL%', 'wp-security-audit-log')),
+                array(8001, E_NOTICE, __('User changed status of a forum', 'wp-security-audit-log'), __('Changed the status of forum %ForumName% from %OldStatus% to %NewStatus%', 'wp-security-audit-log')),
+                array(8002, E_NOTICE, __('User changed visibility of a forum', 'wp-security-audit-log'), __('Changed the visibility of forum %ForumName% from %OldVisibility% to %NewVisibility%', 'wp-security-audit-log')),
+                array(8003, E_CRITICAL, __('User changed the URL of a forum', 'wp-security-audit-log'), __('Changed the URL of forum %ForumName% from %OldUrl% to %NewUrl%', 'wp-security-audit-log')),
+                array(8004, E_NOTICE, __('User changed order of a forum', 'wp-security-audit-log'), __('Changed the order of forum %ForumName% from %OldOrder% to %NewOrder%', 'wp-security-audit-log')),
+                array(8005, E_CRITICAL, __('User moved forum to trash', 'wp-security-audit-log'), __('Moved forum %ForumName% to trash. Forum ID is %ForumID%', 'wp-security-audit-log')),
+                array(8006, E_WARNING, __('User permanently deleted forum', 'wp-security-audit-log'), __('Permanently deleted forum %ForumName%', 'wp-security-audit-log')),
+                array(8007, E_WARNING, __('User restored forum from trash', 'wp-security-audit-log'), __('Restored forum %ForumName% from trash', 'wp-security-audit-log')),
+                array(8008, E_NOTICE, __('User changed the parent of a forum', 'wp-security-audit-log'), __('Changed parent of forum %ForumName% from %OldParent% to %NewParent%', 'wp-security-audit-log')),
+                array(8009, E_WARNING, __('User changed forum\'s role', 'wp-security-audit-log'), __('Changed the forum\'s auto role from %OldRole% to %NewRole%', 'wp-security-audit-log')),
+                array(8010, E_WARNING, __('User changed option of a forum', 'wp-security-audit-log'), __('%Status% the option for anonymous posting on forum', 'wp-security-audit-log')),
+                array(8011, E_NOTICE, __('User changed type of a forum', 'wp-security-audit-log'), __('Changed the type of forum %ForumName% from %OldType% to %NewType%', 'wp-security-audit-log')),
+                array(8012, E_NOTICE, __('User changed time to disallow post editing', 'wp-security-audit-log'), __('Changed the time to disallow post editing from %OldTime% to %NewTime% minutes', 'wp-security-audit-log')),
+                array(8013, E_WARNING, __('User changed the forum setting posting throttle time', 'wp-security-audit-log'), __('Changed the forum setting posting throttle time from %OldTime% to %NewTime% seconds', 'wp-security-audit-log')),
+                array(8014, E_NOTICE, __('User created new topic', 'wp-security-audit-log'), __('Created new topic %TopicName%. Topic URL is %TopicURL%', 'wp-security-audit-log')),
+                array(8015, E_NOTICE, __('User changed status of a topic', 'wp-security-audit-log'), __('Changed the status of topic %TopicName% from %OldStatus% to %NewStatus%', 'wp-security-audit-log')),
+                array(8016, E_NOTICE, __('User changed type of a topic', 'wp-security-audit-log'), __('Changed the type of topic %TopicName% from %OldType% to %NewType%', 'wp-security-audit-log')),
+                array(8017, E_CRITICAL, __('User changed URL of a topic', 'wp-security-audit-log'), __('Changed the URL of topic %TopicName% from %OldUrl% to %NewUrl%', 'wp-security-audit-log')),
+                array(8018, E_NOTICE, __('User changed the forum of a topic', 'wp-security-audit-log'), __('Changed the forum of topic %TopicName% from %OldForum% to %NewForum%', 'wp-security-audit-log')),
+                array(8019, E_CRITICAL, __('User moved topic to trash', 'wp-security-audit-log'), __('Moved forum %TopicName% to trash. Topic ID is %TopicID%', 'wp-security-audit-log')),
+                array(8020, E_WARNING, __('User permanently deleted topic', 'wp-security-audit-log'), __('Permanently deleted topic %TopicName%', 'wp-security-audit-log')),
+                array(8021, E_WARNING, __('User restored topic from trash', 'wp-security-audit-log'), __('Restored topic %TopicName% from trash', 'wp-security-audit-log')),
+                array(8022, E_NOTICE, __('User changed visibility of a topic', 'wp-security-audit-log'), __('Changed the visibility of topic %TopicName% from %OldVisibility% to %NewVisibility%', 'wp-security-audit-log')),
+            ),
+            __('Menus', 'wp-security-audit-log') => array(
+                array(2078, E_NOTICE, __('User created new menu', 'wp-security-audit-log'), __('Created a new menu called %MenuName%', 'wp-security-audit-log')),
+                array(2079, E_WARNING, __('User added content to a menu', 'wp-security-audit-log'), __('Added the %ContentType% called %ContentName% to menu %MenuName%', 'wp-security-audit-log')),
+                array(2080, E_WARNING, __('User removed content from a menu', 'wp-security-audit-log'), __('Removed the %ContentType% called %ContentName% from the menu %MenuName%', 'wp-security-audit-log')),
+                array(2081, E_CRITICAL, __('User deleted menu', 'wp-security-audit-log'), __('Deleted the menu %MenuName%', 'wp-security-audit-log')),
+                array(2082, E_WARNING, __('User changed menu setting', 'wp-security-audit-log'), __('%Status% the menu setting %MenuSetting% in %MenuName%', 'wp-security-audit-log')),
+                array(2083, E_NOTICE, __('User modified content in a menu', 'wp-security-audit-log'), __('Modified the %ContentType% called %ContentName% in menu %MenuName%', 'wp-security-audit-log')),
+                array(2084, E_WARNING, __('User changed name of a menu', 'wp-security-audit-log'), __('Changed the name of menu %OldMenuName% to %NewMenuName%', 'wp-security-audit-log')),
+                array(2085, E_NOTICE, __('User changed order of the objects in a menu', 'wp-security-audit-log'), __('Changed the order of the objects in menu %MenuName%', 'wp-security-audit-log'))
+            ),
+            __('Custom Alerts', 'wp-security-audit-log') => array(
+                array(2222, E_CRITICAL, __('Custom critical Alert', 'wp-security-audit-log'), __('%CustomAlertText%', 'wp-security-audit-log')),
+                array(3333, E_WARNING, __('Custom warning Alert', 'wp-security-audit-log'), __('%CustomAlertText%', 'wp-security-audit-log')),
+                array(4444, E_NOTICE, __('Custom notice Alert', 'wp-security-audit-log'), __('%CustomAlertText%', 'wp-security-audit-log'))
+            )
         ));
 }
 add_action('wsal_init', 'wsaldefaults_wsal_init');
-

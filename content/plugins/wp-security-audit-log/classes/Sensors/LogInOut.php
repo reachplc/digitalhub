@@ -1,13 +1,16 @@
 <?php
 
-class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
+class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor
+{
 
-    public function HookEvents() {
+    public function HookEvents()
+    {
         add_action('wp_login', array($this, 'EventLogin'), 10, 2);
         add_action('wp_logout', array($this, 'EventLogout'));
         add_action('password_reset', array($this, 'EventPasswordReset'), 10, 2);
         add_action('wp_login_failed', array($this, 'EventLoginFailure'));
         add_action('clear_auth_cookie', array($this, 'GetCurrentUser'), 10);
+        add_filter('wp_login_blocked', array($this, 'EventLoginBlocked'), 10, 1);
     }
     
     protected $_current_user = null;
@@ -23,7 +26,9 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
             $user = get_user_by('login', $user_login);
         }
         $userRoles = $this->plugin->settings->GetCurrentUserRoles($user->roles);
-        if ( $this->plugin->settings->IsLoginSuperAdmin($user_login) ) $userRoles[] = 'superadmin';
+        if ($this->plugin->settings->IsLoginSuperAdmin($user_login)) {
+            $userRoles[] = 'superadmin';
+        }
         $this->plugin->alerts->Trigger(1000, array(
             'Username' => $user_login,
             'CurrentUserRoles' => $userRoles,
@@ -32,20 +37,12 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
     
     public function EventLogout()
     {
-        if($this->_current_user->ID != 0){
+        if ($this->_current_user->ID != 0) {
             $this->plugin->alerts->Trigger(1001, array(
                 'CurrentUserID' => $this->_current_user->ID,
                 'CurrentUserRoles' => $this->plugin->settings->GetCurrentUserRoles($this->_current_user->roles),
             ), true);
         }
-    }
-
-    /**
-     * @return boolean Whether we are running on multisite or not.
-     */
-    public function IsMultisite()
-    {
-        return function_exists('is_multisite') && is_multisite();
     }
     
     const TRANSIENT_FAILEDLOGINS = 'wsal-failedlogins-known';
@@ -79,41 +76,55 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
         $set_fn = $this->IsMultisite() ? 'set_site_transient' : 'set_transient';
         if ($user) {
             $dataKnown = $get_fn(self::TRANSIENT_FAILEDLOGINS);
-            if(!$dataKnown)$dataKnown = array();
-            if(!isset($dataKnown[$site_id.":".$user->ID.":".$ip]))$dataKnown[$site_id.":".$user->ID.":".$ip] = 1;
+            if (!$dataKnown) {
+                $dataKnown = array();
+            }
+            if (!isset($dataKnown[$site_id.":".$user->ID.":".$ip])) {
+                $dataKnown[$site_id.":".$user->ID.":".$ip] = 1;
+            }
             $dataKnown[$site_id.":".$user->ID.":".$ip]++;
             $set_fn(self::TRANSIENT_FAILEDLOGINS, $dataKnown, $this->GetLoginFailureExpiration());
         } else {
             $dataUnknown = $get_fn(self::TRANSIENT_FAILEDLOGINS_UNKNOWN);
-            if(!$dataUnknown)$dataUnknown = array();
-            if(!isset($dataUnknown[$site_id.":".$ip]))$dataUnknown[$site_id.":".$ip] = 1;
+            if (!$dataUnknown) {
+                $dataUnknown = array();
+            }
+            if (!isset($dataUnknown[$site_id.":".$ip])) {
+                $dataUnknown[$site_id.":".$ip] = 1;
+            }
             $dataUnknown[$site_id.":".$ip]++;
             $set_fn(self::TRANSIENT_FAILEDLOGINS_UNKNOWN, $dataUnknown, $this->GetLoginFailureExpiration());
         }
     }
     
-    public function EventLoginFailure($username){
-        
+    public function EventLoginFailure($username)
+    {
         list($y, $m, $d) = explode('-', date('Y-m-d'));
         
         $ip = $this->plugin->settings->GetMainClientIP();
         
-        $username = $_POST["log"];
+        $username = array_key_exists('log', $_POST) ? $_POST["log"] : $username;
         $newAlertCode = 1003;
         $user = get_user_by('login', $username);
         $site_id = (function_exists('get_current_blog_id') ? get_current_blog_id() : 0);
         if ($user) {
             $newAlertCode = 1002;
             $userRoles = $this->plugin->settings->GetCurrentUserRoles($user->roles);
-            if ( $this->plugin->settings->IsLoginSuperAdmin($username) ) $userRoles[] = 'superadmin';
+            if ($this->plugin->settings->IsLoginSuperAdmin($username)) {
+                $userRoles[] = 'superadmin';
+            }
         }
 
-        if($this->IsPastLoginFailureLimit($ip, $site_id, $user))return;
+        if ($this->IsPastLoginFailureLimit($ip, $site_id, $user)) {
+            return;
+        }
 
         $objOcc = new  WSAL_Models_Occurrence();
         
         if ($newAlertCode == 1002) {
-            if (!$this->plugin->alerts->CheckEnableUserRoles($username, $userRoles))return;
+            if (!$this->plugin->alerts->CheckEnableUserRoles($username, $userRoles)) {
+                return;
+            }
             $occ = $objOcc->CheckKnownUsers(
                 array(
                     $ip,
@@ -131,9 +142,9 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
                 $this->IncrementLoginFailure($ip, $site_id, $user);
                 $new = $occ->GetMetaValue('Attempts', 0) + 1;
                 
-                if ($new > $this->GetLoginFailureLogLimit())
+                if ($new > $this->GetLoginFailureLogLimit()) {
                     $new = $this->GetLoginFailureLogLimit() . '+';
-                
+                }
                 $occ->UpdateMetaValue('Attempts', $new);
                 $occ->UpdateMetaValue('Username', $username);
                 //$occ->SetMetaValue('CurrentUserRoles', $userRoles);
@@ -164,9 +175,9 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
                 $this->IncrementLoginFailure($ip, $site_id, false);
                 $new = $occUnknown->GetMetaValue('Attempts', 0) + 1;
                 
-                if ($new > $this->GetLoginFailureLogLimit())
+                if ($new > $this->GetLoginFailureLogLimit()) {
                     $new = $this->GetLoginFailureLogLimit() . '+';
-                
+                }
                 $occUnknown->UpdateMetaValue('Attempts', $new);
                 $occUnknown->created_on = null;
                 $occUnknown->Save();
@@ -183,8 +194,22 @@ class WSAL_Sensors_LogInOut extends WSAL_AbstractSensor {
             $userRoles = $this->plugin->settings->GetCurrentUserRoles($user->roles);
             $this->plugin->alerts->Trigger(4003, array(
                 'Username' => $user->user_login,
-                'CurrentUserRoles' => $userRoles,
+                'CurrentUserRoles' => $userRoles
             ), true);
         }
+    }
+
+    public function EventLoginBlocked($username)
+    {
+        $user = get_user_by('login', $username);
+        $userRoles = $this->plugin->settings->GetCurrentUserRoles($user->roles);
+
+        if ($this->plugin->settings->IsLoginSuperAdmin($username)) {
+            $userRoles[] = 'superadmin';
+        }
+        $this->plugin->alerts->Trigger(1004, array(
+            'Username' => $username,
+            'CurrentUserRoles' => $userRoles
+        ), true);
     }
 }
