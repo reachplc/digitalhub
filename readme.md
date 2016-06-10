@@ -66,6 +66,8 @@ coding style.
 
 ## Contact
 
+[tmcreative@trinitymirror.com](mailto:tmcreative@trinitymirror.com)
+
 ## Copyright
 
 Unless otherwise stated © Trinity Mirror
