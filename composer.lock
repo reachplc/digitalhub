@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "033d0f2aab184a014866cbcdb4b59925",
+    "hash": "8dd22bd68c718bff1ee628c444cf7966",
     "packages": [
         {
             "name": "composer/installers",
@@ -108,16 +108,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.3.4",
+            "version": "4.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "eff27f2ac1e13cf7bc48545647a8cf1d99bb5a3d"
+                "reference": "e992d00a34ea84d55c80023d27d5bcb839069add"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/eff27f2ac1e13cf7bc48545647a8cf1d99bb5a3d",
-                "reference": "eff27f2ac1e13cf7bc48545647a8cf1d99bb5a3d",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/e992d00a34ea84d55c80023d27d5bcb839069add",
+                "reference": "e992d00a34ea84d55c80023d27d5bcb839069add",
                 "shasum": ""
             },
             "require": {
@@ -141,7 +141,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-05-06 18:16:11"
+            "time": "2016-05-06 18:16:20"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
