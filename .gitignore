@@ -1,6 +1,7 @@
-# Composer
+# PHP
 
 /vendor
+composer.lock
 
 #  NodeJS
 
