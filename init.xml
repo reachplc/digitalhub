@@ -32,8 +32,13 @@
 
         <!-- copy settings file for environment -->
         <copy file="${basedir}/config/${application.env-value}.wp-config.php" tofile="${basedir}/wp-config.php" failonerror="true" />
-        <copy file="${basedir}/config/${application.env-value}.htaccess" tofile="${basedir}/.htaccess" failonerror="true" />
-    </target>
+				<copy file="${basedir}/config/${application.env-value}.htaccess" tofile="${basedir}/.htaccess" failonerror="true" />
+					<exec executable="sudo">
+						<arg value="chown"/>
+						<arg value="apache:ci"/>
+						<arg value="${basedir}/.htaccess"/>
+					</exec>
+				</target>
 
     <target name="target-required">
         <fail message="Please specify either development, staging or master" />
