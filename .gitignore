@@ -16,6 +16,26 @@ npm_logs.txt
 /content/uploads
 /shared
 
+content/db.php
+content/plugins/debug-bar/
+content/plugins/debug-objects/
+content/plugins/debug-queries/
+content/plugins/log-deprecated-notices/
+content/plugins/p3-profiler/
+content/plugins/query-monitor/
+content/plugins/rewrite-rules-inspector/
+content/plugins/theme-check/
+content/plugins/user-switching/
+content/plugins/vip-scanner/
+content/plugins/wa11y/
+content/plugins/wordpress-importer/
+content/plugins/wp-crontrol/
+
+content/mu-plugins/p3-profiler.php
+
+content/themes/twentysixteen/
+
+
 #  System
 
 error_log
