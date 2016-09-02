@@ -49,6 +49,10 @@
           "url": "https://github.com/humanmade/hm-gtm/archive/master.zip"
         }
       }
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/thoughtsideas/ti-environment-notification.git"
     }
   ],
   "type": "wordpress-core",
@@ -81,6 +85,7 @@
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "*",
+    "thoughtsideas/ti-environment-notification": "dev-master",
     "wp-coding-standards/wpcs": "dev-master",
     "wpackagist-plugin/debug-bar": "*",
     "wpackagist-plugin/debug-objects": "*",
@@ -102,6 +107,7 @@
     "installer-paths": {
       "content/mu-plugins/{$name}/": [
         "type:wordpress-muplugin",
+        "thoughtsideas/ti-environment-notification",
         "webdevstudios/cmb2",
         "webdevstudios/cmb2-attached-posts",
         "wpackagist-plugin/force-strong-passwords"

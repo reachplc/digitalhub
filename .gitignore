@@ -32,6 +32,8 @@ content/plugins/wordpress-importer/
 content/plugins/wp-crontrol/
 
 content/mu-plugins/p3-profiler.php
+content/mu-plugins/ti-environment-notification.php
+content/mu-plugins/ti-environment-notification/
 
 content/themes/twentysixteen/
 
