@@ -238,7 +238,7 @@ class Titles_Admin {
 		//  Add preview image field
 		echo '<p>';
 		echo '<label for="_link">URL for Title: </label><br>';
-		echo '<input type="text" name="_link" placeholder="http://example.net" value="'. urldecode( $_value ) .'">';
+		echo '<input type="url" name="_link" size="50" placeholder="http://example.com" value="'. esc_url( urldecode( $_value ) ) .'">';
 		echo '</p>';
 		echo '</fieldset>';
 
