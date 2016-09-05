@@ -62,8 +62,8 @@ $terms = get_the_terms( $post->ID, 'formats' );
             <div class="entry-meta box">
               <?php if ( is_buildGuide() ) :?>
                 <p>
-                  <a class="btn btn--primary" href="
-                  <?php the_buildGuide(); ?>">Download Build Guide <span class="sprite sprite--download icon icon__append"></span></a>
+                  <a class="btn btn--primary" target="_blank" href="
+                  <?php the_buildGuide(); ?>">View Build Guide <span class="sprite sprite--download icon icon__append"></span></a>
                 </p>
               <?php endif; ?>
             </div>

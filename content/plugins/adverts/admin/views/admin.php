@@ -34,29 +34,13 @@ if ( ! current_user_can( 'manage_options' ) ) {
 	  do_settings_sections( __FILE__ );
 	  // Get any stored settings
 	  $options = get_option( 'adverts-settings' );
-	?>
+		?>
 
-    <p id="new-setting">
-    <?php
+		<p>
+			<label for="adverts-settings[_build_guide]">Build Guide Link</label><br>
+			<input type="url" name="adverts-settings[_build_guide]"  size="50" placeholder="eg, http://www.trinitymirror-adspecs.co.uk" value="<?php echo (isset($options['_build_guide']) && $options['_build_guide'] != '') ? $options['_build_guide'] : ''; ?>">
+		</p>
 
-	if ( ! empty( $options['_build_guide'] ) ) {
-		$attachment_id = (int) $options['_build_guide'];
-		$image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
-		echo $image_attributes;
-	}
-
-	?>
-
-    <input id="file-id" type="hidden" name="adverts-settings[_build_guide]" value="<?php echo (isset($options['_build_guide']) && $options['_build_guide'] != '') ? $options['_build_guide'] : ''; ?>">
-    </p>
-
-    <?php
-	  echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
-	if ( ! empty( $options['_build_guide'] ) ) {
-		echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
-	}
-	  echo '</p>';
-	?>
   </div>
 
 

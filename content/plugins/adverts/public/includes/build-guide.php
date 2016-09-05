@@ -48,15 +48,13 @@ function the_buildGuide() {
 
 	// Return local build guide (added to post)
 	if ( get_post_meta( $post->ID, $key, true ) != '' ) {
-		echo wp_get_attachment_url( get_post_meta( $post->ID, $key, true ) );
+		echo esc_url( get_post_meta( $post->ID, $key, true ) );
 		return;
 	}
 
 	// Return global guide (added to settings)
 	if ( $options['_build_guide'] && $options['_build_guide'] != '' ) {
-
-		$attachment_id = (int) $options['_build_guide'];
-		echo wp_get_attachment_url( $attachment_id );
+		echo esc_url( $options['_build_guide'] );
 		return;
 	}
 

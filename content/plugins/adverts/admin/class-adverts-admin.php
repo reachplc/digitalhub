@@ -135,28 +135,6 @@ class Adverts_Admin {
 
 		global $post;
 
-		if ( $hook == 'post-new.php' || $hook == 'post.php' ) {
-			if ( 'adverts' === $post->post_type ) {
-				wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
-			}
-		}
-
-		if ( ! isset( $this->plugin_screen_hook_suffix ) ) {
-			return;
-		}
-
-		$screen = get_current_screen();
-		if ( $this->plugin_screen_hook_suffix == $screen->id ) {
-			//wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/admin.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
-			wp_enqueue_script( $this->plugin_slug . '-admin-script', plugins_url( 'assets/js/build-guide.js', __FILE__ ), array( 'jquery' ), Adverts::VERSION );
-
-			wp_enqueue_script( 'uploads' );
-			if ( function_exists( 'wp_enqueue_media' ) ) {
-				// this enqueues all the media upload stuff
-				wp_enqueue_media();
-			}
-		}
-
 	}
 
 	/**
@@ -269,22 +247,10 @@ class Adverts_Admin {
 		$custom         = get_post_custom( $post->ID );
 		$build_guide    = get_post_meta( $post->ID, '_build_guide', true );
 
-		echo '<p id="new-setting">';
-
-		if ( ! empty($build_guide) ) {
-			$attachment_id = (int) $build_guide;
-			$image_attributes = wp_get_attachment_image( $attachment_id, 'thumbnail', 1 ); // returns an array
-			echo $image_attributes;
-		}
-
-		echo '<input id="file-id" type="hidden" name="_build_guide" value="' . $build_guide . '">';
-		echo '</p>';
-
-		echo '<p id="js-build-guide-controls"><input id="build-guide-upload" name="build-guide-submit" class="button" type="button" value="Add Build Guide"> ';
-		if ( ! empty($build_guide) ) {
-			echo '<input id="build-guide-remove" name="build-guide-remove" class="button" type="button" value="Remove Build Guide">';
-		}
-		echo '</p>';
+		echo '<p>'
+			 . '<label for="_build_guide">Build Guide Link</label><br>'
+			 . '<input type="url" name="_build_guide" size="50" placeholder="eg, http://www.trinitymirror-adspecs.co.uk" value="' . $build_guide . '">'
+		   . '</p>';
 
 		/**
 	 *
@@ -585,11 +551,19 @@ class Adverts_Admin {
 				echo get_the_term_list( $post->ID, 'packages', '', ', ','' );
 			  break;
 			case 'build_guide':
-				$download_id = get_post_meta( $post->ID, 'document_file_id', true );
-				if ( empty( $download_id) || $download_id == '0' ) {
-					echo __( 'N/A' );
-				} else {
-					echo '<a href="' . wp_get_attachment_url( $download_id ) . '">' . '@TODO: File Name' .'</a>';
+				if ( get_post_meta( $post->ID, '_build_guide_disabled', true ) ) {
+					echo 'Disabled';
+					break;
+				};
+				$build_guide = get_post_meta( $post->ID, '_build_guide', true );
+				if ( ! empty( $build_guide ) ) {
+					printf( '<a target="_blank" href="%1$s">%1$s</a>', $build_guide );
+					break;
+				}
+				$options = get_option( 'adverts-settings' );
+				if( isset( $options['_build_guide'] ) && $options['_build_guide'] != '' ){
+					printf( '<a target="_blank" href="%1$s">%1$s</a>', $options['_build_guide'] );
+					break;
 				}
 			  break;
 		}
