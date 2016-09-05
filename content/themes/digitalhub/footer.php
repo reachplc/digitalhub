@@ -19,7 +19,7 @@
                         <?php do_action( 'digitalhub_credits' ); ?>
                         <a href="http://www.trinitymirror.com/">
                         <div class="tm-logo sprite"></div></a>
-                        <div class="copy-credit">Copyright &copy; Trinity Mirror plc 2014 <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
+                        <div class="copy-credit">Copyright &copy; Trinity Mirror plc <?php echo date( 'Y' ); ?> <a href="<?php echo home_url( '' ); ?>/tmcreative/" id="credit">Trinity Mirror Creative</a></div>
                 </div><!-- .site-info -->
         </footer><!-- #colophon -->
 </div><!-- #page -->
