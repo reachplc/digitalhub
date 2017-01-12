@@ -29,7 +29,7 @@ class WSAL_Settings {
      * @return boolean If option is enabled or not.
      */
     public function IsDevOptionEnabled($option){
-        if(is_null($this->_devoption)){
+        if (is_null($this->_devoption)) {
             $this->_devoption = $this->_plugin->GetGlobalOption(
                 'dev-options',
                 implode(',', $this->GetDefaultDevOptions())
@@ -53,11 +53,13 @@ class WSAL_Settings {
         // make sure options have been loaded
         $this->IsDevOptionEnabled('');
         // remove option if it exists
-        while(($p = array_search($option, $this->_devoption)) !== false)
+        while (($p = array_search($option, $this->_devoption)) !== false) {
             unset($this->_devoption[$p]);
+        }
         // add option if callee wants it enabled
-        if($enabled)
+        if ($enabled) {
             $this->_devoption[] = $option;
+        }
         // commit option
         $this->_plugin->SetGlobalOption(
             'dev-options',
@@ -146,10 +148,11 @@ class WSAL_Settings {
      * @return string The current pruning date.
      */
     public function GetPruningDate(){
-        if(!$this->_pruning){
+        if (!$this->_pruning) {
             $this->_pruning = $this->_plugin->GetGlobalOption('pruning-date');
-            if(!strtotime($this->_pruning))
+            if (!strtotime($this->_pruning)) {
                 $this->_pruning = $this->GetDefaultPruningDate();
+            }
         }
         return $this->_pruning;
     }
@@ -157,7 +160,7 @@ class WSAL_Settings {
      * @param string $newvalue The new pruning date.
      */
     public function SetPruningDate($newvalue){
-        if(strtotime($newvalue)){
+        if (strtotime($newvalue)) {
             $this->_plugin->SetGlobalOption('pruning-date', $newvalue);
             $this->_pruning = $newvalue;
         }
@@ -188,6 +191,7 @@ class WSAL_Settings {
     public function IsPruningLimitEnabled(){
         return $this->_plugin->GetGlobalOption('pruning-limit-e');
     }
+
     public function IsRestrictAdmins(){
         return $this->_plugin->GetGlobalOption('restrict-admins', false);
     }
@@ -211,7 +215,7 @@ class WSAL_Settings {
      * @return array IDs of disabled alerts.
      */
     public function GetDisabledAlerts(){
-        if(!$this->_disabled){
+        if (!$this->_disabled) {
             $this->_disabled = implode(',', $this->GetDefaultDisabledAlerts());
             $this->_disabled = $this->_plugin->GetGlobalOption('disabled-alerts', $this->_disabled);
             $this->_disabled = ($this->_disabled == '') ? array() : explode(',', $this->_disabled);
@@ -231,6 +235,17 @@ class WSAL_Settings {
     }
     public function SetIncognito($enabled){
         return $this->_plugin->SetGlobalOption('hide-plugin', $enabled);
+    }
+
+    /**
+     * Checking if Logging is enabled.
+     */
+    public function IsLoggingDisabled(){
+        return $this->_plugin->GetGlobalOption('disable-logging');
+    }
+
+    public function SetLoggingDisabled($disabled){
+        return $this->_plugin->SetGlobalOption('disable-logging', $disabled);
     }
     
     /**
@@ -252,7 +267,7 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('plugin-viewers', implode(',', $this->_viewers));
     }
     public function GetAllowedPluginViewers(){
-        if(is_null($this->_viewers)){
+        if (is_null($this->_viewers)) {
             $this->_viewers = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('plugin-viewers'))));
         }
         return $this->_viewers;
@@ -263,7 +278,7 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('plugin-editors', implode(',', $this->_editors));
     }
     public function GetAllowedPluginEditors(){
-        if(is_null($this->_editors)){
+        if (is_null($this->_editors)) {
             $this->_editors = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('plugin-editors'))));
         }
         return $this->_editors;
@@ -274,8 +289,8 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('items-per-page', $this->_perpage);
     }
     public function GetViewPerPage(){
-        if(is_null($this->_perpage)){ 
-            $this->_perpage = (int)$this->_plugin->GetGlobalOption('items-per-page', 10); 
+        if (is_null($this->_perpage)) {
+            $this->_perpage = (int)$this->_plugin->GetGlobalOption('items-per-page', 10);
         }
         return $this->_perpage;
     }
@@ -296,7 +311,7 @@ class WSAL_Settings {
      * @return string[] List of admin usernames.
      */
     protected function GetAdmins(){
-        if($this->_plugin->IsMultisite()){
+        if ($this->_plugin->IsMultisite()) {
             // see: https://gist.github.com/1508426/65785a15b8638d43a9905effb59e4d97319ef8f8
             global $wpdb;
             $cap = $wpdb->prefix."capabilities";
@@ -306,7 +321,7 @@ class WSAL_Settings {
                 . " WHERE $wpdb->usermeta.meta_key = '$cap'"
                 . " AND CAST($wpdb->usermeta.meta_value AS CHAR) LIKE  '%\"administrator\"%'";
             return $wpdb->get_col($sql);
-        }else{
+        } else {
             $result = array();
             $query = 'role=administrator&fields[]=user_login';
             foreach (get_users($query) as $user) $result[] = $user->user_login;
@@ -318,9 +333,9 @@ class WSAL_Settings {
      * @param string $action Type of action.
      * @return string[] List of tokens (usernames, roles etc).
      */
-    public function GetAccessTokens($action){
+    public function GetAccessTokens($action) {
         $allowed = array();
-        switch($action){
+        switch ($action) {
             case 'view':
                 $allowed = $this->GetAllowedPluginViewers();
                 $allowed = array_merge($allowed, $this->GetAllowedPluginEditors());
@@ -332,18 +347,16 @@ class WSAL_Settings {
             case 'edit':
                 $allowed = $this->GetAllowedPluginEditors();
                 if (!$this->IsRestrictAdmins()) {
-                    $allowed = array_merge($allowed, $this->_plugin->IsMultisite() ?
-                            $this->GetSuperAdmins() : $this->GetAdmins()
-                        );
+                    $allowed = array_merge($allowed, $this->_plugin->IsMultisite() ? $this->GetSuperAdmins() : $this->GetAdmins());
                 }
                 break;
             default:
                 throw new Exception('Unknown action "'.$action.'".');
         }
         if (!$this->IsRestrictAdmins()) {
-            if(is_multisite()){
+            if (is_multisite()) {
                 $allowed = array_merge($allowed, get_super_admins());
-            }else{
+            } else {
                 $allowed[] = 'administrator';
             }
         }
@@ -354,15 +367,14 @@ class WSAL_Settings {
      * @param string $action Type of action, either 'view' or 'edit'.
      * @return boolean If user has access or not.
      */
-    public function UserCan($user, $action){
-        if(is_int($user))$user = get_userdata($user);
+    public function UserCan($user, $action) {
+        if (is_int($user)) {
+            $user = get_userdata($user);
+        }
         $allowed = $this->GetAccessTokens($action);
-        $check = array_merge(
-            $user->roles,
-            array($user->user_login)
-        );
-        foreach($check as $item){
-            if(in_array($item, $allowed)){
+        $check = array_merge($user->roles, array($user->user_login));
+        foreach ($check as $item) {
+            if (in_array($item, $allowed)) {
                 return true;
             }
         }
@@ -376,7 +388,7 @@ class WSAL_Settings {
 
     public function IsLoginSuperAdmin($username){ 
         $userId = username_exists($username);
-        if ( function_exists('is_super_admin') && is_super_admin($userId) ) return true;
+        if (function_exists('is_super_admin') && is_super_admin($userId) ) return true;
         else return false;
     }
     
@@ -425,11 +437,10 @@ class WSAL_Settings {
         $this->SetLicenses($data);
     }
     public function ClearLicenses(){
-        $this->SetLicenses(array()); 
+        $this->SetLicenses(array());
     }
     
     // </editor-fold>
-    
     // <editor-fold desc="Client IP Retrieval">
     
     public function IsMainIPFromProxy(){
@@ -467,9 +478,11 @@ class WSAL_Settings {
         foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key) {
             if (isset($_SERVER[$key])) {
                 $ips[$key] = array();
-                foreach (explode(',', $_SERVER[$key]) as $ip)
-                    if ($this->ValidateIP($ip = $this->NormalizeIP($ip)))
+                foreach (explode(',', $_SERVER[$key]) as $ip) {
+                    if ($this->ValidateIP($ip = $this->NormalizeIP($ip))) {
                         $ips[$key][] = $ip;
+                    }
+                }
             }
         }
         return $ips;
@@ -477,11 +490,11 @@ class WSAL_Settings {
     
     protected function NormalizeIP($ip){
         $ip = trim($ip);
-        if(strpos($ip, ':') !== false && substr_count($ip, '.') == 3 && strpos($ip, '[') === false){
+        if (strpos($ip, ':') !== false && substr_count($ip, '.') == 3 && strpos($ip, '[') === false) {
             // IPv4 with a port (eg: 11.22.33.44:80)
             $ip = explode(':', $ip);
             $ip = $ip[0];
-        }else{
+        } else {
             // IPv6 with a port (eg: [::1]:80)
             $ip = explode(']', $ip);
             $ip = ltrim($ip[0], '[');
@@ -498,8 +511,9 @@ class WSAL_Settings {
             if (preg_match("/^(([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5]).){3}([1-9]?[0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/", $ip)) return $ip;
             //Regex IPV6
             elseif (preg_match("/^\s*((([0-9A-Fa-f]{1,4}:){7}([0-9A-Fa-f]{1,4}|:))|(([0-9A-Fa-f]{1,4}:){6}(:[0-9A-Fa-f]{1,4}|((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){5}(((:[0-9A-Fa-f]{1,4}){1,2})|:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3})|:))|(([0-9A-Fa-f]{1,4}:){4}(((:[0-9A-Fa-f]{1,4}){1,3})|((:[0-9A-Fa-f]{1,4})?:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){3}(((:[0-9A-Fa-f]{1,4}){1,4})|((:[0-9A-Fa-f]{1,4}){0,2}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){2}(((:[0-9A-Fa-f]{1,4}){1,5})|((:[0-9A-Fa-f]{1,4}){0,3}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(([0-9A-Fa-f]{1,4}:){1}(((:[0-9A-Fa-f]{1,4}){1,6})|((:[0-9A-Fa-f]{1,4}){0,4}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:))|(:(((:[0-9A-Fa-f]{1,4}){1,7})|((:[0-9A-Fa-f]{1,4}){0,5}:((25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d\d|[1-9]?\d)){3}))|:)))(%.+)?\s*$/", $ip)) return $ip;
-
-            error_log("Invalid IP in ValidateIP function: ".$ip);
+            if (!$this->IsLoggingDisabled) {
+                error_log("Invalid IP in ValidateIP function: ".$ip);
+            }
             return false;
         } else {
             return $filteredIP;
@@ -517,7 +531,7 @@ class WSAL_Settings {
     }
     public function GetExcludedMonitoringUsers()
     {
-        if(empty($this->_excluded_users)){
+        if (empty($this->_excluded_users)) {
             $this->_excluded_users = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('excluded-users'))));
         }
         return $this->_excluded_users;
@@ -532,7 +546,7 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('excluded-roles', esc_html(implode(',', $this->_excluded_roles)));
     }
     public function GetExcludedMonitoringRoles(){
-        if(empty($this->_excluded_roles)){
+        if (empty($this->_excluded_roles)) {
             $this->_excluded_roles = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('excluded-roles'))));
         }
         return $this->_excluded_roles;
@@ -547,7 +561,7 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('excluded-custom', esc_html(implode(',', $this->_excluded_custom)));
     }
     public function GetExcludedMonitoringCustom(){
-        if(empty($this->_excluded_custom)){
+        if (empty($this->_excluded_custom)) {
             $this->_excluded_custom = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('excluded-custom'))));
             asort($this->_excluded_custom);
         }
@@ -563,22 +577,51 @@ class WSAL_Settings {
         $this->_plugin->SetGlobalOption('excluded-ip', esc_html(implode(',', $this->_excluded_ip)));
     }
     public function GetExcludedMonitoringIP(){
-        if(empty($this->_excluded_ip)){
+        if (empty($this->_excluded_ip)) {
             $this->_excluded_ip = array_unique(array_filter(explode(',', $this->_plugin->GetGlobalOption('excluded-ip'))));
         }
         return $this->_excluded_ip;
     }
 
     /**
-     * Datetime format.
-     * 24 hours or AM/PM
+     * Datetime used in the Alerts.
      */
-    public function GetDatetimeFormat(){
-        return $this->_plugin->GetGlobalOption('datetime-format', 0);
+    public function GetDatetimeFormat($lineBreak = true) {
+        if ($lineBreak) {
+            $date_time_format = $this->GetDateFormat() . '<\b\r>' . $this->GetTimeFormat();
+        } else {
+            $date_time_format = $this->GetDateFormat() . ' ' . $this->GetTimeFormat();
+        }
+
+        $wp_time_format = get_option('time_format');
+        if (stripos($wp_time_format, 'A') !== false) {
+            $date_time_format .= '.$$$&\n\b\s\p;A';
+        } else {
+            $date_time_format .= '.$$$';
+        }
+        return $date_time_format;
     }
 
-    public function SetDatetimeFormat($newvalue){
-        return $this->_plugin->SetGlobalOption('datetime-format', $newvalue);
+    /**
+     * Date Format from WordPress General Settings.
+     */
+    public function GetDateFormat() {
+        $wp_date_format = get_option('date_format');
+        $search = array('F', 'M', 'n', 'j', ' ', '/', 'y', 'S', ',', 'l', 'D');
+        $replace = array('m', 'm', 'm', 'd', '-', '-', 'Y', '', '', '', '');
+        $date_format = str_replace($search, $replace, $wp_date_format);
+        return $date_format;
+    }
+
+    /**
+     * Time Format from WordPress General Settings.
+     */
+    public function GetTimeFormat() {
+        $wp_time_format = get_option('time_format');
+        $search = array('a', 'A', 'T', ' ');
+        $replace = array('', '', '', '');
+        $time_format = str_replace($search, $replace, $wp_time_format);
+        return $time_format;
     }
 
     /**
@@ -650,6 +693,37 @@ class WSAL_Settings {
 
     public function GetDisplayName(){
         return $this->_plugin->GetGlobalOption('display-name');
+    }
+
+    public function Set404LogLimit($value){
+        return $this->_plugin->SetGlobalOption('log-404-limit', abs($value));
+    }
+
+    public function Get404LogLimit(){
+        return $this->_plugin->GetGlobalOption('log-404-limit', 99);
+    }
+
+/*============================== Support Archive Database ==============================*/
+
+    public function IsArchivingEnabled(){
+        return $this->_plugin->GetGlobalOption('archiving-e');
+    }
+
+    /**
+     * Switch to Archive DB if is enabled
+     */
+    public function SwitchToArchiveDB()
+    {
+        if ($this->IsArchivingEnabled()) {
+            $archiveType = $this->_plugin->GetGlobalOption('archive-type');
+            $archiveUser = $this->_plugin->GetGlobalOption('archive-user');
+            $password = $this->_plugin->GetGlobalOption('archive-password');
+            $archiveName = $this->_plugin->GetGlobalOption('archive-name');
+            $archiveHostname = $this->_plugin->GetGlobalOption('archive-hostname');
+            $archiveBasePrefix = $this->_plugin->GetGlobalOption('archive-base-prefix');
+            $config = WSAL_Connector_ConnectorFactory::GetConfigArray($archiveType, $archiveUser, $password, $archiveName, $archiveHostname, $archiveBasePrefix);
+            $this->_plugin->getConnector($config)->getAdapter('Occurrence');
+        }
     }
     // </editor-fold>
 }

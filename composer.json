@@ -63,7 +63,7 @@
     "php": ">=5.4",
     "composer/installers": "1.0.x",
     "humanmade/hm-gtm": "1.0",
-    "johnpbloch/wordpress": "4.6.x",
+    "johnpbloch/wordpress": "4.7.*",
     "trinitymirror/Term-Menu-Order": "dev-develop",
     "vlucas/phpdotenv": "2.0.x",
     "webdevstudios/cmb2": "2.2.x",
@@ -76,11 +76,11 @@
     "wpackagist-plugin/google-sitemap-generator": "4.0.x",
     "wpackagist-plugin/post-type-archive-links": "1.3.x",
     "wpackagist-plugin/safe-redirect-manager": "1.7.x",
-    "wpackagist-plugin/wordpress-seo": "3.4.x",
+    "wpackagist-plugin/wordpress-seo": "4.0.*",
     "wpackagist-plugin/wp-google-analytics": "1.4.x",
-    "wpackagist-plugin/wp-mail-smtp": "0.9.x",
-    "wpackagist-plugin/wp-robots-txt": "1.1",
-    "wpackagist-plugin/wp-security-audit-log": "2.5.x"
+    "wpackagist-plugin/wp-mail-smtp": "0.10.*",
+    "wpackagist-plugin/wp-robots-txt": "1.1.*",
+    "wpackagist-plugin/wp-security-audit-log": "2.5.*"
 
   },
   "require-dev": {
