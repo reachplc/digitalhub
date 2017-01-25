@@ -1,747 +1,823 @@
-# Translation of Stable (latest release) in English (UK)
-# This file is distributed under the same license as the Stable (latest release) package.
+# Translation of Plugins - Query Monitor - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Query Monitor - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-07-13 17:58:56+0000\n"
+"PO-Revision-Date: 2016-09-24 21:21:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
-"Project-Id-Version: Stable (latest release)\n"
+"X-Generator: GlotPress/2.3.0-alpha\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - Query Monitor - Stable (latest release)\n"
 
-#. translators: Undefined PHP constant
-#: classes/Collector.php:84
-msgid "undefined"
-msgstr "undefined"
+#: output/html/theme.php:63
+msgid "Template Hierarchy"
+msgstr "Template Hierarchy"
+
+#: output/html/rewrites.php:34
+msgid "Rule"
+msgstr "Rule"
+
+#. translators: %s: Number of deprecated PHP errors
+#: output/html/php_errors.php:150
+msgctxt "PHP error level"
+msgid "Deprecated (%s)"
+msgstr "Deprecated (%s)"
+
+#. translators: %s: Number of strict PHP errors
+#: output/html/php_errors.php:148
+msgctxt "PHP error level"
+msgid "Stricts (%s)"
+msgstr "Stricts (%s)"
+
+#. translators: %s: Number of PHP notices
+#: output/html/php_errors.php:146
+msgctxt "PHP error level"
+msgid "Notices (%s)"
+msgstr "Notices (%s)"
+
+#. translators: %s: Number of PHP warnings
+#: output/html/php_errors.php:144
+msgctxt "PHP error level"
+msgid "Warnings (%s)"
+msgstr "Warnings (%s)"
+
+#: output/html/php_errors.php:55
+msgctxt "Suppressed PHP error level"
+msgid "Deprecated (Suppressed)"
+msgstr "Deprecated (Suppressed)"
+
+#: output/html/php_errors.php:54
+msgctxt "Suppressed PHP error level"
+msgid "Strict (Suppressed)"
+msgstr "Strict (Suppressed)"
+
+#: output/html/php_errors.php:53
+msgctxt "Suppressed PHP error level"
+msgid "Notice (Suppressed)"
+msgstr "Notice (Suppressed)"
+
+#: output/html/php_errors.php:52
+msgctxt "Suppressed PHP error level"
+msgid "Warning (Suppressed)"
+msgstr "Warning (Suppressed)"
+
+#. translators: %s: Memory usage in kilobytes
+#: output/html/overview.php:155
+msgctxt "Memory usage"
+msgid "%s kB"
+msgstr "%s kB"
+
+#. translators: %s: Page load time in seconds
+#: output/html/overview.php:150
+msgctxt "Page load time"
+msgid "%s S"
+msgstr "%s S"
+
+#: output/html/overview.php:125
+msgid "External object cache not in use"
+msgstr "External object cache not in use"
+
+#. translators: %s: Number of database queries
+#: output/html/db_queries.php:419
+msgctxt "Query count"
+msgid "%s Q"
+msgstr "%s Q"
+
+#. translators: %s: Database query time in seconds
+#: output/html/db_queries.php:413
+msgctxt "Query time"
+msgid "%s S"
+msgstr "%s S"
+
+#: output/html/assets.php:60
+msgid "Position"
+msgstr "Position"
+
+#: output/html/assets.php:48
+msgid "Style"
+msgstr "Style"
+
+#: output/html/assets.php:44
+msgid "Script"
+msgstr "Script"
+
+#: output/html/assets.php:39
+msgid "Footer"
+msgstr "Footer"
+
+#: output/html/assets.php:38
+msgid "Header"
+msgstr "Header"
+
+#: output/html/assets.php:36
+msgid "Missing"
+msgstr "Missing"
+
+#: output/html/admin.php:39 output/html/environment.php:36
+#: output/html/environment.php:119 output/html/environment.php:205
+#: output/html/environment.php:229 output/html/request.php:34
+#: output/html/theme.php:38
+msgid "Value"
+msgstr "Value"
+
+#: output/html/admin.php:38 output/html/environment.php:35
+#: output/html/environment.php:118 output/html/environment.php:204
+#: output/html/environment.php:228 output/html/request.php:33
+msgid "Property"
+msgstr "Property"
+
+#: output/html/admin.php:37 output/html/theme.php:37
+msgid "Data"
+msgstr "Data"
+
+#. translators: 1: Post type name, 2: Post ID
+#: collectors/request.php:106
+msgid "Single %1$s: #%2$d"
+msgstr "Single %1$s: #%2$d"
+
+#. translators: %s: Cache hit rate percentage
+#: output/html/overview.php:119
+msgid "%s%% hit rate"
+msgstr "%s%% hit rate"
+
+#. translators: Button for sorting table columns in descending order
+#: output/Html.php:114
+msgid "Descending"
+msgstr "Descending"
+
+#. translators: Button for sorting table columns in ascending order
+#: output/Html.php:112
+msgid "Ascending"
+msgstr "Ascending"
+
+#. translators: 1: Site ID
+#: collectors/request.php:46
+msgid "Current site: #%d"
+msgstr "Current site: #%d"
+
+#. translators: 1: Blog ID
+#: collectors/request.php:35
+msgid "Current blog: #%d"
+msgstr "Current blog: #%d"
+
+#: output/html/theme.php:96
+msgid "Timber Files"
+msgstr "Timber Files"
+
+#: output/html/php_errors.php:51
+msgctxt "PHP error level"
+msgid "Deprecated"
+msgstr "Deprecated"
+
+#: output/html/php_errors.php:50
+msgctxt "PHP error level"
+msgid "Strict"
+msgstr "Strict"
+
+#: output/html/php_errors.php:49
+msgctxt "PHP error level"
+msgid "Notice"
+msgstr "Notice"
+
+#: output/html/php_errors.php:48
+msgctxt "PHP error level"
+msgid "Warning"
+msgstr "Warning"
+
+#. translators: A non-blocking HTTP API request. %s: Relevant argument name
+#: output/html/http.php:103
+msgid "(Non-blocking request: %s)"
+msgstr "(Non-blocking request: %s)"
 
 #. translators: %s: Hook name
 #: collectors/http.php:138
 msgid "Request not executed due to a filter on %s"
 msgstr "Request not executed due to a filter on %s"
 
-#: output/html/assets.php:38
-msgid "Missing Scripts"
-msgstr "Missing Scripts"
-
-#: output/html/assets.php:40
-msgid "Header Scripts"
-msgstr "Header Scripts"
-
-#: output/html/assets.php:41
-msgid "Footer Scripts"
-msgstr "Footer Scripts"
-
-#: output/html/assets.php:44
-msgid "Missing Styles"
-msgstr "Missing Styles"
-
-#: output/html/assets.php:46
-msgid "Header Styles"
-msgstr "Header Styles"
-
-#: output/html/assets.php:47
-msgid "Footer Styles"
-msgstr "Footer Styles"
-
-#. translators: %s: Database query time in seconds
-#: output/html/db_queries.php:416
-msgctxt "Query time"
-msgid "%s<small>S</small>"
-msgstr "%s<small>S</small>"
-
-#. translators: %s: Number of database queries
-#: output/html/db_queries.php:422
-msgctxt "Query count"
-msgid "%s<small>Q</small>"
-msgstr "%s<small>Q</small>"
-
-#. translators: A non-blocking HTTP API request. %s: Relevant argument name
-#: output/html/http.php:101
-msgid "(Non-blocking request: %s)"
-msgstr "(Non-blocking request: %s)"
-
-#: output/html/php_errors.php:47
-msgctxt "PHP error level"
-msgid "Warning"
-msgstr "Warning"
-
-#: output/html/php_errors.php:48
-msgctxt "PHP error level"
-msgid "Notice"
-msgstr "Notice"
-
-#: output/html/php_errors.php:49
-msgctxt "PHP error level"
-msgid "Strict"
-msgstr "Strict"
-
-#: output/html/php_errors.php:50
-msgctxt "PHP error level"
-msgid "Deprecated"
-msgstr "Deprecated"
-
-#: output/html/theme.php:88
-msgid "Timber Files"
-msgstr "Timber Files"
-
-#: collectors/cache.php:22
-msgid "Cache"
-msgstr "Cache"
-
-#. translators: An HTTP API request has disabled certificate verification. 1:
-#. Relevant argument name
-#: output/html/http.php:112
-msgid "(Certificate verification disabled: %s)"
-msgstr "(Certificate verification disabled: %s)"
-
-#: output/html/overview.php:61
-msgid "Object cache"
-msgstr "Object cache"
-
-#. translators: %s: External object cache status
-#: output/html/overview.php:121
-msgid "External object cache: %s"
-msgstr "External object cache: %s"
-
-#: output/html/theme.php:56 output/html/theme.php:79
-msgid "Template Parts"
-msgstr "Template Parts"
+#. translators: Undefined PHP constant
+#: classes/Collector.php:84
+msgid "undefined"
+msgstr "undefined"
 
 #. Plugin URI of the plugin/theme
 msgid "https://github.com/johnbillion/query-monitor"
 msgstr "https://github.com/johnbillion/query-monitor"
 
-#. translators: %s: Plugin name
-#: classes/Util.php:112
-msgid "MU Plugin: %s"
-msgstr "MU Plugin: %s"
+#: output/html/theme.php:70
+msgid "Template Parts"
+msgstr "Template Parts"
 
-#: collectors/db_dupes.php:22
-msgid "Duplicate Queries"
-msgstr "Duplicate Queries"
+#: output/html/overview.php:124
+msgid "External object cache in use"
+msgstr "External object cache in use"
 
-#: output/html/db_dupes.php:44
-msgid "Callers"
-msgstr "Callers"
+#: output/html/overview.php:61
+msgid "Object cache"
+msgstr "Object cache"
 
-#: output/html/db_dupes.php:46
-msgid "Components"
-msgstr "Components"
+#. translators: An HTTP API request has disabled certificate verification. 1:
+#. Relevant argument name
+#: output/html/http.php:114
+msgid "(Certificate verification disabled: %s)"
+msgstr "(Certificate verification disabled: %s)"
 
-#: output/html/db_dupes.php:48
-msgid "Potential Troublemakers"
-msgstr "Potential Troublemakers"
+#: collectors/cache.php:22
+msgid "Cache"
+msgstr "Cache"
+
+#. translators: %s: Number of duplicate database queries
+#: output/html/db_dupes.php:129
+msgid "Duplicate Queries (%s)"
+msgstr "Duplicate Queries (%s)"
 
 #. translators: %s: Number of calls to a PHP function
-#: output/html/db_dupes.php:56
+#: output/html/db_dupes.php:54
 msgid "%s call"
 msgid_plural "%s calls"
 msgstr[0] "%s call"
 msgstr[1] "%s calls"
 
-#. translators: %s: Number of duplicate database queries
-#: output/html/db_dupes.php:131
-msgid "Duplicate Queries (%s)"
-msgstr "Duplicate Queries (%s)"
+#: output/html/db_dupes.php:46
+msgid "Potential Troublemakers"
+msgstr "Potential Troublemakers"
 
-#: output/html/php_errors.php:89
+#: output/html/db_dupes.php:44
+msgid "Components"
+msgstr "Components"
+
+#: output/html/db_dupes.php:42
+msgid "Callers"
+msgstr "Callers"
+
+#: collectors/db_dupes.php:22
+msgid "Duplicate Queries"
+msgstr "Duplicate Queries"
+
+#. translators: %s: Plugin name
+#: classes/Util.php:123
+msgid "MU Plugin: %s"
+msgstr "MU Plugin: %s"
+
+#: output/html/php_errors.php:94
 msgid "Unknown location"
 msgstr "Unknown location"
 
-#: output/html/rewrites.php:33
-msgid "Matching Rewrite Rules"
-msgstr "Matching Rewrite Rules"
-
-#: output/html/rewrites.php:57 output/html/theme.php:80
+#: output/html/rewrites.php:59 output/html/theme.php:89
 msgid "None"
 msgstr "None"
+
+#: output/html/rewrites.php:31
+msgid "Matching Rewrite Rules"
+msgstr "Matching Rewrite Rules"
 
 #: collectors/rewrites.php:22
 msgid "Rewrite Rules"
 msgstr "Rewrite Rules"
 
-#: classes/Util.php:219
-msgid "Unable to determine source of lambda function"
-msgstr "Unable to determine source of lambda function"
+#: output/html/languages.php:70
+msgid "Not Found"
+msgstr "Not Found"
+
+#: output/html/languages.php:45
+msgid "MO File"
+msgstr "MO File"
+
+#: output/html/languages.php:43
+msgid "Text Domain"
+msgstr "Text Domain"
+
+#. translators: %s: Name of current language
+#: output/html/languages.php:38
+msgid "Language Setting: %s"
+msgstr "Language Setting: %s"
+
+#: output/html/environment.php:258
+msgid "host"
+msgstr "host"
+
+#: output/html/environment.php:249
+msgid "address"
+msgstr "address"
+
+#: output/html/environment.php:240
+msgid "version"
+msgstr "version"
+
+#: output/html/environment.php:235
+msgid "software"
+msgstr "software"
+
+#. translators: %s: Name of database controller
+#: output/html/environment.php:110
+msgid "Database: %s"
+msgstr "Database: %s"
+
+#: output/html/environment.php:107
+msgid "Database"
+msgstr "Database"
+
+#. translators: %s: Name of database controller
+#: output/html/db_queries.php:477
+msgid "Queries - %s"
+msgstr "Queries - %s"
+
+#. translators: 1: Name of PHP constant, 2: Value of PHP constant
+#: output/html/db_queries.php:60
+msgid "No database queries were logged because the %1$s constant is set to %2$s"
+msgstr "No database queries were logged because the %1$s constant is set to %2$s"
+
+#: collectors/languages.php:22
+msgid "Languages"
+msgstr "Languages"
 
 #. translators: %s: Name of a Debug Bar panel
 #: collectors/debug_bar.php:29
 msgid "Debug Bar: %s"
 msgstr "Debug Bar: %s"
 
-#: collectors/languages.php:22
-msgid "Languages"
-msgstr "Languages"
+#: classes/Util.php:230
+msgid "Unable to determine source of lambda function"
+msgstr "Unable to determine source of lambda function"
 
-#. translators: 1: Name of PHP constant, 2: Value of PHP constant
-#: output/html/db_queries.php:64
-msgid "No database queries were logged because the %s constant is set to %s"
-msgstr "No database queries were logged because the %s constant is set to %s"
+#. Author URI of the plugin/theme
+msgid "https://johnblackbourn.com/"
+msgstr "https://johnblackbourn.com/"
 
-#. translators: %s: Name of database controller
-#: output/html/db_queries.php:475
-msgid "Queries - %s"
-msgstr "Queries - %s"
+#. Author of the plugin/theme
+msgid "John Blackbourn"
+msgstr "John Blackbourn"
 
-#: output/html/environment.php:105
-msgid "Database"
-msgstr "Database"
-
-#. translators: %s: Name of database controller
-#: output/html/environment.php:108
-msgid "Database: %s"
-msgstr "Database: %s"
-
-#: output/html/environment.php:227
-msgid "software"
-msgstr "software"
-
-#: output/html/environment.php:232
-msgid "version"
-msgstr "version"
-
-#: output/html/environment.php:241
-msgid "address"
-msgstr "address"
-
-#: output/html/environment.php:250
-msgid "host"
-msgstr "host"
-
-#. translators: %s: Name of current language
-#: output/html/languages.php:40
-msgid "Language Setting: %s"
-msgstr "Language Setting: %s"
-
-#: output/html/languages.php:45
-msgid "Text Domain"
-msgstr "Text Domain"
-
-#: output/html/languages.php:47
-msgid "MO File"
-msgstr "MO File"
-
-#: output/html/languages.php:72
-msgid "Not Found"
-msgstr "Not Found"
-
-#: output/html/request.php:35
-msgid "Matched Query"
-msgstr "Matched Query"
-
-#: output/html/request.php:36
-msgid "Query String"
-msgstr "Query String"
-
-#: output/html/request.php:62
-msgid "Query Vars"
-msgstr "Query Vars"
-
-#: output/html/request.php:127
-msgid "Multisite"
-msgstr "Multisite"
-
-#: output/html/request.php:104
-msgid "Queried Object"
-msgstr "Queried Object"
-
-#. translators: %s: Number of additional query variables
-#: output/html/request.php:169
-msgid "Request (+%s)"
-msgstr "Request (+%s)"
-
-#: output/html/theme.php:37
-msgid "Template File"
-msgstr "Template File"
-
-#: output/html/theme.php:125
-msgid "Body Classes"
-msgstr "Body Classes"
-
-#. translators: %s: Template file name
-#: output/html/theme.php:157
-msgid "Template: %s"
-msgstr "Template: %s"
-
-#: output/html/transients.php:32
-msgid "Transient Set"
-msgstr "Transient Set"
-
-#: output/html/transients.php:34
-msgid "Type"
-msgstr "Type"
-
-#: output/html/transients.php:37
-msgid "Expiration"
-msgstr "Expiration"
-
-#: output/html/transients.php:126
-msgid "Transients Set"
-msgstr "Transients Set"
-
-#. translators: %s: Number of transient values that were set
-#: output/html/transients.php:128
-msgid "Transients Set (%s)"
-msgstr "Transients Set (%s)"
+#. Description of the plugin/theme
+msgid "Monitoring of database queries, hooks, conditionals and more."
+msgstr "Monitoring of database queries, hooks, conditionals and more."
 
 #. translators: %s: Symlink file location
 #: classes/QueryMonitor.php:62
 msgid "The symlink at %s is no longer pointing to the correct location. Please remove the symlink, then deactivate and reactivate Query Monitor."
 msgstr "The symlink at %s is no longer pointing to the correct location. Please remove the symlink, then deactivate and reactivate Query Monitor."
 
-#. Description of the plugin/theme
-msgid "Monitoring of database queries, hooks, conditionals and more."
-msgstr "Monitoring of database queries, hooks, conditionals and more."
+#. translators: %s: Number of transient values that were set
+#: output/html/transients.php:137
+msgid "Transients Set (%s)"
+msgstr "Transients Set (%s)"
 
-#. Author of the plugin/theme
-msgid "John Blackbourn"
-msgstr "John Blackbourn"
+#: output/html/transients.php:112 output/html/transients.php:135
+msgid "Transients Set"
+msgstr "Transients Set"
 
-#. Author URI of the plugin/theme
-msgid "https://johnblackbourn.com/"
-msgstr "https://johnblackbourn.com/"
+#: output/html/transients.php:42
+msgid "Expiration"
+msgstr "Expiration"
 
-#. translators: %s: Plugin name
-#: classes/Util.php:115
-msgid "Plugin: %s"
-msgstr "Plugin: %s"
+#: output/html/transients.php:39
+msgid "Type"
+msgstr "Type"
 
-#. translators: %s: Plugin name
-#: classes/Util.php:130
-msgid "VIP Plugin: %s"
-msgstr "VIP Plugin: %s"
+#: output/html/transients.php:37
+msgid "Transient Set"
+msgstr "Transient Set"
 
-#: classes/Util.php:135 output/html/theme.php:108
-msgid "Child Theme"
-msgstr "Child Theme"
+#. translators: %s: Template file name
+#: output/html/theme.php:151
+msgid "Template: %s"
+msgstr "Template: %s"
 
-#: classes/Util.php:137 collectors/theme.php:22 output/html/theme.php:110
-msgid "Theme"
-msgstr "Theme"
+#: output/html/theme.php:126
+msgid "Body Classes"
+msgstr "Body Classes"
 
-#: classes/Util.php:141 output/html/theme.php:117
-msgid "Parent Theme"
-msgstr "Parent Theme"
+#: output/html/theme.php:44
+msgid "Template File"
+msgstr "Template File"
 
-#: classes/Util.php:148
-msgid "Core"
-msgstr "Core"
+#. translators: %s: Number of additional query variables
+#: output/html/request.php:176
+msgid "Request (+%s)"
+msgstr "Request (+%s)"
 
-#: classes/Util.php:152 output/html/db_components.php:107
-#: output/html/db_queries.php:387 output/html/environment.php:61
-#: output/html/environment.php:126 output/html/environment.php:236
-#: output/html/environment.php:245 output/html/overview.php:80
-#: output/html/php_errors.php:100 output/html/theme.php:47
-msgid "Unknown"
-msgstr "Unknown"
+#: output/html/request.php:111
+msgid "Queried Object"
+msgstr "Queried Object"
 
-#. translators: 1: Line number, 2: File name
-#: classes/Util.php:187
-msgid "Closure on line %1$d of %2$s"
-msgstr "Closure on line %1$d of %2$s"
+#: output/html/request.php:134
+msgid "Multisite"
+msgstr "Multisite"
 
-#. translators: 1: Line number, 2: File name
-#: classes/Util.php:214
-msgid "Anonymous function on line %1$d of %2$s"
-msgstr "Anonymous function on line %1$d of %2$s"
+#: output/html/request.php:69
+msgid "Query Vars"
+msgstr "Query Vars"
 
-#: collectors/admin.php:22
-msgid "Admin Screen"
-msgstr "Admin Screen"
+#: output/html/request.php:43
+msgid "Query String"
+msgstr "Query String"
 
-#: collectors/assets.php:117
-msgid "Scripts & Styles"
-msgstr "Scripts & Styles"
+#: output/html/request.php:42
+msgid "Matched Query"
+msgstr "Matched Query"
 
-#: collectors/conditionals.php:22
-msgid "Conditionals"
-msgstr "Conditionals"
+#: output/html/request.php:41
+msgid "Matched Rule"
+msgstr "Matched Rule"
 
-#: collectors/db_callers.php:22 output/html/db_callers.php:120
-msgid "Queries by Caller"
-msgstr "Queries by Caller"
+#: output/html/php_errors.php:40
+msgid "Location"
+msgstr "Location"
 
-#: collectors/db_components.php:22 output/html/db_components.php:124
-msgid "Queries by Component"
-msgstr "Queries by Component"
+#: output/html/db_dupes.php:41 output/html/php_errors.php:39
+msgid "Count"
+msgstr "Count"
 
-#: collectors/db_queries.php:30 output/html/db_queries.php:57
-msgid "Database Queries"
-msgstr "Database Queries"
+#: output/html/php_errors.php:38
+msgid "PHP Error"
+msgstr "PHP Error"
 
-#: collectors/environment.php:30
-msgid "Environment"
-msgstr "Environment"
+#. translators: %s: Memory used in kilobytes
+#: output/headers/overview.php:35 output/html/overview.php:86
+msgid "%s kB"
+msgstr "%s kB"
 
-#: collectors/hooks.php:22
-msgid "Hooks"
-msgstr "Hooks"
+#: output/html/overview.php:58
+msgid "Database queries"
+msgstr "Database queries"
 
-#: collectors/http.php:22 output/html/http.php:252
-msgid "HTTP Requests"
-msgstr "HTTP Requests"
+#: output/html/overview.php:57
+msgid "Database query time"
+msgstr "Database query time"
 
-#: collectors/http.php:180
-msgid "Request timed out"
-msgstr "Request timed out"
+#: output/html/overview.php:55
+msgid "Peak memory usage"
+msgstr "Peak memory usage"
 
-#: collectors/http.php:188 output/html/db_queries.php:88
-msgid "Error"
-msgstr "Error"
+#: output/html/overview.php:54
+msgid "Page generation time"
+msgstr "Page generation time"
 
-#: collectors/overview.php:22
-msgid "Overview"
-msgstr "Overview"
+#. translators: 1: Percentage of time limit used, 2: Time limit in seconds
+#: output/headers/overview.php:27 output/html/overview.php:73
+msgid "%1$s%% of %2$ss limit"
+msgstr "%1$s%% of %2$ss limit"
 
-#: collectors/php_errors.php:38
-msgid "PHP Errors"
-msgstr "PHP Errors"
+#. translators: 1: Percentage of memory limit used, 2: Memory limit in
+#. kilobytes
+#: output/headers/overview.php:40 output/html/overview.php:92
+msgid "%1$s%% of %2$s kB limit"
+msgstr "%1$s%% of %2$s kB limit"
 
-#: collectors/redirects.php:22
-msgid "Redirects"
-msgstr "Redirects"
+#. translators: %s: Number of HTTP requests
+#: output/html/http.php:252
+msgid "HTTP Requests (%s)"
+msgstr "HTTP Requests (%s)"
 
-#: collectors/request.php:22 output/html/request.php:33
-#: output/html/request.php:167
-msgid "Request"
-msgstr "Request"
+#: output/html/http.php:59
+msgid "Timeout"
+msgstr "Timeout"
 
-#. translators: 1: Post type name, 2: Post ID
-#: collectors/request.php:106
-msgid "Single %s: #%d"
-msgstr "Single %s: #%d"
+#: output/html/http.php:53
+msgid "Response"
+msgstr "Response"
 
-#. translators: %s: Author name
-#: collectors/request.php:115
-msgid "Author archive: %s"
-msgstr "Author archive: %s"
+#: output/html/http.php:51
+msgid "HTTP Request"
+msgstr "HTTP Request"
 
-#. translators: %s: Taxonomy term name
-#: collectors/request.php:124
-msgid "Term archive: %s"
-msgstr "Term archive: %s"
+#. translators: %s: Error message text
+#: output/html/hooks.php:133
+msgid "Error: %s"
+msgstr "Error: %s"
 
-#. translators: %s: Post type name
-#: collectors/request.php:133
-msgid "Post type archive: %s"
-msgstr "Post type archive: %s"
+#. translators: %s: Action name
+#: output/html/hooks.php:111
+msgid "Warning: The %s action is extremely resource intensive. Try to avoid using it."
+msgstr "Warning: The %s action is extremely resource intensive. Try to avoid using it."
 
-#: collectors/request.php:140
-msgid "Unknown queried object"
-msgstr "Unknown queried object"
+#: output/html/hooks.php:49
+msgid "Actions"
+msgstr "Actions"
 
-#: collectors/transients.php:22
-msgid "Transients"
-msgstr "Transients"
+#: output/html/hooks.php:46
+msgid "Hook"
+msgstr "Hook"
 
-#: dispatchers/Html.php:57
-msgid "Could not set authentication cookie."
-msgstr "Could not set authentication cookie."
+#: output/html/environment.php:225
+msgid "Server"
+msgstr "Server"
 
-#: dispatchers/Html.php:66
-msgid "Authentication cookie set. You can now view Query Monitor output while logged out or while logged in as a different user."
-msgstr "Authentication cookie set. You can now view Query Monitor output while logged out or while logged in as a different user."
+#: output/html/environment.php:162
+msgid "Help"
+msgstr "Help"
 
-#: dispatchers/Html.php:75
-msgid "Could not clear authentication cookie."
-msgstr "Could not clear authentication cookie."
+#. translators: %s: Search term
+#: output/html/environment.php:143
+msgid "https://www.google.com/search?q=mysql+performance+%s"
+msgstr "https://www.google.com/search?q=mysql+performance+%s"
 
-#: dispatchers/Html.php:82
-msgid "Authentication cookie cleared."
-msgstr "Authentication cookie cleared."
+#. translators: %s: Original value of a variable
+#: output/html/environment.php:79
+msgid "Overridden at runtime from %s"
+msgstr "Overridden at runtime from %s"
 
-#. #-#-#-#-#  tmp-query-monitor.pot (Query Monitor 2.12.0)  #-#-#-#-#
-#. Plugin Name of the plugin/theme
-#: dispatchers/Html.php:94 dispatchers/Html.php:234 dispatchers/Html.php:306
-msgid "Query Monitor"
-msgstr "Query Monitor"
+#: output/html/db_queries.php:485
+msgid "Queries"
+msgstr "Queries"
 
-#: dispatchers/Html.php:167
-msgid "PHP Error in AJAX Response"
-msgstr "PHP Error in AJAX Response"
+#. translators: %s: Number of slow database queries
+#: output/html/db_queries.php:465
+msgid "Slow Queries (%s)"
+msgstr "Slow Queries (%s)"
 
-#: dispatchers/Html.php:168
-msgid "Infinite Scroll has been paused by Query Monitor"
-msgstr "Infinite Scroll has been paused by Query Monitor"
+#. translators: %s: Number of database errors
+#: output/html/db_queries.php:454
+msgid "Database Errors (%s)"
+msgstr "Database Errors (%s)"
 
-#: dispatchers/Html.php:245
-msgid "Authentication"
-msgstr "Authentication"
+#. translators: %s: Number of database queries
+#: output/html/db_queries.php:255
+msgid "Total Queries: %s"
+msgstr "Total Queries: %s"
 
-#: dispatchers/Html.php:253
-msgid "You can set an authentication cookie which allows you to view Query Monitor output when you&rsquo;re not logged in."
-msgstr "You can set an authentication cookie which allows you to view Query Monitor output when you&rsquo;re not logged in."
+#. translators: %s: Number of database queries in the current filtered view
+#: output/html/db_queries.php:244
+msgid "Queries in filter: %s"
+msgstr "Queries in filter: %s"
 
-#: dispatchers/Html.php:256
-msgid "Set authentication cookie"
-msgstr "Set authentication cookie"
+#: output/html/db_queries.php:119 output/html/db_queries.php:212
+msgid "Rows"
+msgstr "Rows"
 
-#: dispatchers/Html.php:262
-msgid "You currently have an authentication cookie which allows you to view Query Monitor output."
-msgstr "You currently have an authentication cookie which allows you to view Query Monitor output."
+#. translators: 1: Symlink file name, 2: URL to wiki page
+#: output/html/db_queries.php:172
+msgid "Extended query information such as the component and affected rows is not available. Query Monitor was unable to symlink its %1$s file into place. <a href=\"%2$s\" target=\"_blank\">See this wiki page for more information.</a>"
+msgstr "Extended query information such as the component and affected rows is not available. Query Monitor was unable to symlink its %1$s file into place. <a href=\"%2$s\" target=\"_blank\">See this wiki page for more information.</a>"
 
-#: dispatchers/Html.php:265
-msgid "Clear authentication cookie"
-msgstr "Clear authentication cookie"
+#. translators: %s: Name of database controller
+#: output/html/db_queries.php:151
+msgid "%s Queries"
+msgstr "%s Queries"
+
+#: output/html/db_callers.php:40 output/html/db_queries.php:112
+#: output/html/db_queries.php:196 output/html/languages.php:44
+msgid "Caller"
+msgstr "Caller"
+
+#. translators: %s: Database query time in seconds
+#: output/html/db_queries.php:105
+msgid "Slow Database Queries (above %ss)"
+msgstr "Slow Database Queries (above %ss)"
+
+#: output/html/db_components.php:43 output/html/db_queries.php:81
+#: output/html/db_queries.php:115 output/html/db_queries.php:201
+#: output/html/http.php:57 output/html/php_errors.php:42
+#: output/html/transients.php:45
+msgid "Component"
+msgstr "Component"
+
+#: output/html/db_queries.php:80 output/html/http.php:55
+#: output/html/php_errors.php:41 output/html/transients.php:44
+msgid "Call Stack"
+msgstr "Call Stack"
+
+#: output/html/db_dupes.php:40 output/html/db_queries.php:79
+#: output/html/db_queries.php:111 output/html/db_queries.php:193
+#: output/html/rewrites.php:35
+msgid "Query"
+msgstr "Query"
+
+#: output/html/db_queries.php:76
+msgid "Database Errors"
+msgstr "Database Errors"
+
+#: output/html/db_callers.php:50 output/html/db_components.php:53
+#: output/html/db_queries.php:122 output/html/db_queries.php:218
+#: output/html/http.php:62
+msgid "Time"
+msgstr "Time"
+
+#. translators: %s: Script or style dependency name
+#: output/html/assets.php:163
+msgid "%s (missing)"
+msgstr "%s (missing)"
+
+#: output/html/assets.php:99 output/html/db_callers.php:101
+#: output/html/db_queries.php:267 output/html/http.php:209
+#: output/html/request.php:57 output/html/request.php:103
+#: output/html/transients.php:75 output/html/transients.php:118
+msgid "none"
+msgstr "none"
+
+#: output/html/assets.php:37
+msgid "Broken Dependencies"
+msgstr "Broken Dependencies"
+
+#: output/html/assets.php:64
+msgid "Version"
+msgstr "Version"
+
+#: output/html/assets.php:63
+msgid "Dependents"
+msgstr "Dependents"
+
+#: output/html/assets.php:62
+msgid "Dependencies"
+msgstr "Dependencies"
+
+#: output/html/assets.php:49 output/html/assets.php:228
+msgid "Styles"
+msgstr "Styles"
+
+#: output/html/assets.php:45 output/html/assets.php:227
+msgid "Scripts"
+msgstr "Scripts"
+
+#: output/html/admin.php:76
+msgid "Column Action"
+msgstr "Column Action"
+
+#: output/html/admin.php:68
+msgid "Column Filters"
+msgstr "Column Filters"
 
 #: output/Html.php:92
 msgctxt "\"All\" option for filters"
 msgid "All"
 msgstr "All"
 
-#: output/html/admin.php:106
-msgid "Column Filters"
-msgstr "Column Filters"
+#: dispatchers/Html.php:268
+msgid "Clear authentication cookie"
+msgstr "Clear authentication cookie"
 
-#: output/html/admin.php:114
-msgid "Column Action"
-msgstr "Column Action"
+#: dispatchers/Html.php:265
+msgid "You currently have an authentication cookie which allows you to view Query Monitor output."
+msgstr "You currently have an authentication cookie which allows you to view Query Monitor output."
 
-#: output/html/assets.php:52
-msgid "Scripts"
-msgstr "Scripts"
+#: dispatchers/Html.php:259
+msgid "Set authentication cookie"
+msgstr "Set authentication cookie"
 
-#: output/html/assets.php:53
-msgid "Styles"
-msgstr "Styles"
+#: dispatchers/Html.php:256
+msgid "You can set an authentication cookie which allows you to view Query Monitor output when you&rsquo;re not logged in."
+msgstr "You can set an authentication cookie which allows you to view Query Monitor output when you&rsquo;re not logged in."
 
-#: output/html/assets.php:66
-msgid "Dependencies"
-msgstr "Dependencies"
+#: dispatchers/Html.php:248
+msgid "Authentication"
+msgstr "Authentication"
 
-#: output/html/assets.php:67
-msgid "Dependents"
-msgstr "Dependents"
+#: dispatchers/Html.php:171
+msgid "Infinite Scroll has been paused by Query Monitor"
+msgstr "Infinite Scroll has been paused by Query Monitor"
 
-#: output/html/assets.php:68
-msgid "Version"
-msgstr "Version"
+#: dispatchers/Html.php:170
+msgid "PHP Error in AJAX Response"
+msgstr "PHP Error in AJAX Response"
 
-#: output/html/assets.php:39 output/html/assets.php:45
-msgid "Broken Dependencies"
-msgstr "Broken Dependencies"
+#. #-#-#-#-#  tmp-query-monitor.pot (Query Monitor 2.13.2)  #-#-#-#-#
+#. Plugin Name of the plugin/theme
+#: dispatchers/Html.php:95 dispatchers/Html.php:237 dispatchers/Html.php:309
+msgid "Query Monitor"
+msgstr "Query Monitor"
 
-#: output/html/assets.php:102 output/html/db_callers.php:103
-#: output/html/db_queries.php:271 output/html/http.php:211
-#: output/html/request.php:50 output/html/request.php:96
-#: output/html/transients.php:72 output/html/transients.php:109
-msgid "none"
-msgstr "none"
+#: dispatchers/Html.php:83
+msgid "Authentication cookie cleared."
+msgstr "Authentication cookie cleared."
 
-#. translators: %s: Script or style dependency name
-#: output/html/assets.php:166
-msgid "%s (missing)"
-msgstr "%s (missing)"
+#: dispatchers/Html.php:76
+msgid "Could not clear authentication cookie."
+msgstr "Could not clear authentication cookie."
 
-#: output/html/db_callers.php:52 output/html/db_components.php:55
-#: output/html/db_queries.php:130 output/html/db_queries.php:222
-#: output/html/http.php:50
-msgid "Time"
-msgstr "Time"
+#: dispatchers/Html.php:67
+msgid "Authentication cookie set. You can now view Query Monitor output while logged out or while logged in as a different user."
+msgstr "Authentication cookie set. You can now view Query Monitor output while logged out or while logged in as a different user."
 
-#: output/html/db_queries.php:82
-msgid "Database Errors"
-msgstr "Database Errors"
+#: dispatchers/Html.php:58
+msgid "Could not set authentication cookie."
+msgstr "Could not set authentication cookie."
 
-#: output/html/db_dupes.php:42 output/html/db_queries.php:85
-#: output/html/db_queries.php:119 output/html/db_queries.php:197
-msgid "Query"
-msgstr "Query"
+#: collectors/transients.php:22 output/html/transients.php:33
+msgid "Transients"
+msgstr "Transients"
 
-#: output/html/db_queries.php:86 output/html/http.php:43
-#: output/html/php_errors.php:40 output/html/transients.php:39
-msgid "Call Stack"
-msgstr "Call Stack"
+#: collectors/request.php:140
+msgid "Unknown queried object"
+msgstr "Unknown queried object"
 
-#: output/html/db_components.php:45 output/html/db_queries.php:87
-#: output/html/db_queries.php:123 output/html/db_queries.php:205
-#: output/html/http.php:45 output/html/php_errors.php:41
-#: output/html/transients.php:40
-msgid "Component"
-msgstr "Component"
+#. translators: %s: Post type name
+#: collectors/request.php:133
+msgid "Post type archive: %s"
+msgstr "Post type archive: %s"
 
-#. translators: %s: Database query time in seconds
-#: output/html/db_queries.php:113
-msgid "Slow Database Queries (above %ss)"
-msgstr "Slow Database Queries (above %ss)"
+#. translators: %s: Taxonomy term name
+#: collectors/request.php:124
+msgid "Term archive: %s"
+msgstr "Term archive: %s"
 
-#: output/html/db_callers.php:42 output/html/db_queries.php:120
-#: output/html/db_queries.php:200 output/html/languages.php:46
-msgid "Caller"
-msgstr "Caller"
+#. translators: %s: Author name
+#: collectors/request.php:115
+msgid "Author archive: %s"
+msgstr "Author archive: %s"
 
-#. translators: %s: Name of database controller
-#: output/html/db_queries.php:161
-msgid "%s Queries"
-msgstr "%s Queries"
+#: collectors/request.php:22 output/html/request.php:40
+#: output/html/request.php:174
+msgid "Request"
+msgstr "Request"
 
-#. translators: 1: Symlink file name, 2: URL to wiki page
-#: output/html/db_queries.php:179
-msgid "Extended query information such as the component and affected rows is not available. Query Monitor was unable to symlink its %1$s file into place. <a href=\"%2$s\" target=\"_blank\">See this wiki page for more information.</a>"
-msgstr "Extended query information such as the component and affected rows is not available. Query Monitor was unable to symlink its %1$s file into place. <a href=\"%2$s\" target=\"_blank\">See this wiki page for more information.</a>"
+#: collectors/redirects.php:22
+msgid "Redirects"
+msgstr "Redirects"
 
-#: output/html/db_queries.php:127 output/html/db_queries.php:216
-msgid "Rows"
-msgstr "Rows"
+#: collectors/php_errors.php:39
+msgid "PHP Errors"
+msgstr "PHP Errors"
 
-#. translators: %s: Number of database queries in the current filtered view
-#: output/html/db_queries.php:248
-msgid "Queries in filter: %s"
-msgstr "Queries in filter: %s"
+#: collectors/overview.php:22
+msgid "Overview"
+msgstr "Overview"
 
-#. translators: %s: Number of database queries
-#: output/html/db_queries.php:259
-msgid "Total Queries: %s"
-msgstr "Total Queries: %s"
+#: collectors/http.php:188 output/html/db_queries.php:82
+msgid "Error"
+msgstr "Error"
 
-#. translators: %s: Number of database errors
-#: output/html/db_queries.php:452
-msgid "Database Errors (%s)"
-msgstr "Database Errors (%s)"
+#: collectors/http.php:180
+msgid "Request timed out"
+msgstr "Request timed out"
 
-#. translators: %s: Number of slow database queries
-#: output/html/db_queries.php:463
-msgid "Slow Queries (%s)"
-msgstr "Slow Queries (%s)"
+#: collectors/http.php:22 output/html/http.php:44 output/html/http.php:203
+#: output/html/http.php:250
+msgid "HTTP Requests"
+msgstr "HTTP Requests"
 
-#: output/html/db_queries.php:483
-msgid "Queries"
-msgstr "Queries"
+#: collectors/hooks.php:22 output/html/hooks.php:42
+msgid "Hooks"
+msgstr "Hooks"
 
-#. translators: %s: Original value of a variable
-#: output/html/environment.php:77
-msgid "Overridden at runtime from %s"
-msgstr "Overridden at runtime from %s"
+#: collectors/environment.php:30
+msgid "Environment"
+msgstr "Environment"
 
-#. translators: %s: Search term
-#: output/html/environment.php:139
-msgid "https://www.google.com/search?q=mysql+performance+%s"
-msgstr "https://www.google.com/search?q=mysql+performance+%s"
+#: collectors/db_queries.php:34
+msgid "Database Queries"
+msgstr "Database Queries"
 
-#: output/html/environment.php:158
-msgid "Help"
-msgstr "Help"
+#: collectors/db_components.php:22 output/html/db_components.php:122
+msgid "Queries by Component"
+msgstr "Queries by Component"
 
-#: output/html/environment.php:221
-msgid "Server"
-msgstr "Server"
+#: collectors/db_callers.php:22 output/html/db_callers.php:118
+msgid "Queries by Caller"
+msgstr "Queries by Caller"
 
-#: output/html/hooks.php:45
-msgid "Hook"
-msgstr "Hook"
+#: collectors/conditionals.php:22
+msgid "Conditionals"
+msgstr "Conditionals"
 
-#: output/html/hooks.php:48
-msgid "Actions"
-msgstr "Actions"
+#: collectors/assets.php:117
+msgid "Scripts & Styles"
+msgstr "Scripts & Styles"
 
-#. translators: %s: Action name
-#: output/html/hooks.php:110
-msgid "Warning: The %s action is extremely resource intensive. Try to avoid using it."
-msgstr "Warning: The %s action is extremely resource intensive. Try to avoid using it."
+#: collectors/admin.php:22
+msgid "Admin Screen"
+msgstr "Admin Screen"
 
-#. translators: %s: Error message text
-#: output/html/hooks.php:132
-msgid "Error: %s"
-msgstr "Error: %s"
+#. translators: 1: Line number, 2: File name
+#: classes/Util.php:225
+msgid "Anonymous function on line %1$d of %2$s"
+msgstr "Anonymous function on line %1$d of %2$s"
 
-#: output/html/http.php:38
-msgid "HTTP Request"
-msgstr "HTTP Request"
+#. translators: 1: Line number, 2: File name
+#: classes/Util.php:198
+msgid "Closure on line %1$d of %2$s"
+msgstr "Closure on line %1$d of %2$s"
 
-#: output/html/http.php:40
-msgid "Response"
-msgstr "Response"
+#: classes/Util.php:163 output/html/db_components.php:105
+#: output/html/db_queries.php:384 output/html/environment.php:63
+#: output/html/environment.php:130 output/html/environment.php:244
+#: output/html/environment.php:253 output/html/overview.php:81
+#: output/html/php_errors.php:105 output/html/theme.php:55
+msgid "Unknown"
+msgstr "Unknown"
 
-#: output/html/http.php:42
-msgid "Transport"
-msgstr "Transport"
+#: classes/Util.php:159
+msgid "Core"
+msgstr "Core"
 
-#: output/html/http.php:47
-msgid "Timeout"
-msgstr "Timeout"
+#: classes/Util.php:152 output/html/theme.php:118
+msgid "Parent Theme"
+msgstr "Parent Theme"
 
-#. translators: %s: Number of HTTP requests
-#: output/html/http.php:254
-msgid "HTTP Requests (%s)"
-msgstr "HTTP Requests (%s)"
+#: classes/Util.php:148 collectors/theme.php:23 output/html/theme.php:111
+msgid "Theme"
+msgstr "Theme"
 
-#. translators: 1: Percentage of memory limit used, 2: Memory limit in
-#. kilobytes
-#: output/headers/overview.php:40 output/html/overview.php:89
-msgid "%1$s%% of %2$s kB limit"
-msgstr "%1$s%% of %2$s kB limit"
+#: classes/Util.php:146 output/html/theme.php:109
+msgid "Child Theme"
+msgstr "Child Theme"
 
-#. translators: 1: Percentage of time limit used, 2: Time limit in seconds
-#: output/headers/overview.php:27 output/html/overview.php:72
-msgid "%1$s%% of %2$ss limit"
-msgstr "%1$s%% of %2$ss limit"
+#. translators: %s: Plugin name
+#: classes/Util.php:141
+msgid "VIP Plugin: %s"
+msgstr "VIP Plugin: %s"
 
-#: output/html/overview.php:54
-msgid "Page generation time"
-msgstr "Page generation time"
-
-#: output/html/overview.php:55
-msgid "Peak memory usage"
-msgstr "Peak memory usage"
-
-#: output/html/overview.php:57
-msgid "Database query time"
-msgstr "Database query time"
-
-#: output/html/overview.php:58
-msgid "Database queries"
-msgstr "Database queries"
-
-#. translators: %s: Memory used in kilobytes
-#: output/headers/overview.php:35 output/html/overview.php:84
-msgid "%s kB"
-msgstr "%s kB"
-
-#. translators: %s: Page load time in seconds
-#: output/html/overview.php:147
-msgctxt "Page load time"
-msgid "%s<small>S</small>"
-msgstr "%s<small>S</small>"
-
-#. translators: %s: Memory usage in megabytes
-#: output/html/overview.php:152
-msgctxt "Memory usage"
-msgid "%s<small>MB</small>"
-msgstr "%s<small>MB</small>"
-
-#: output/html/php_errors.php:37
-msgid "PHP Error"
-msgstr "PHP Error"
-
-#: output/html/db_dupes.php:43 output/html/php_errors.php:38
-msgid "Count"
-msgstr "Count"
-
-#: output/html/php_errors.php:39
-msgid "Location"
-msgstr "Location"
-
-#. translators: %s: Number of PHP warnings
-#: output/html/php_errors.php:142
-msgid "PHP Warnings (%s)"
-msgstr "PHP Warnings (%s)"
-
-#. translators: %s: Number of PHP notices
-#: output/html/php_errors.php:152
-msgid "PHP Notices (%s)"
-msgstr "PHP Notices (%s)"
-
-#. translators: %s: Number of strict PHP errors
-#: output/html/php_errors.php:162
-msgid "PHP Stricts (%s)"
-msgstr "PHP Stricts (%s)"
-
-#. translators: %s: Number of deprecated PHP errors
-#: output/html/php_errors.php:172
-msgid "PHP Deprecated (%s)"
-msgstr "PHP Deprecated (%s)"
-
-#: output/html/request.php:34
-msgid "Matched Rule"
-msgstr "Matched Rule"
+#. translators: %s: Plugin name
+#: classes/Util.php:126
+msgid "Plugin: %s"
+msgstr "Plugin: %s"
